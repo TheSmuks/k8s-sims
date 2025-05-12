@@ -20,7 +20,7 @@ go build ./cmd #This will generate a binary called "cmd"
 ```
 Now that be binary is ready to be used, we can run the simulation.
 ## Creating a configuration file
-In this case there are already examples ready to be used in the project's source code, using the [simon-config.yaml](../example/simon-config.yaml) file as a template we obtain the following configuration file.
+In this case there are already examples ready to be used in the project's source code, using the [simon-config.yaml](./experiment/simon-config.yaml) file as a template we obtain the following configuration file.
 ```sh
 cd .. # cd to root folder
 cat <<EOF > simon-config.yaml
