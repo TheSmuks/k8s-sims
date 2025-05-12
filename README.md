@@ -20,6 +20,7 @@ Install the latest stable version of Go by following the official installation g
 Docker must be installed and running. It is used for containerization and managing development environments.
 
 - [Docker Installation Guide](https://docs.docker.com/get-docker/)
+- [Docker Compose Installation Guide](https://docs.docker.com/compose/install/)
 
 ### 3. `make`
 `make` is used to run predefined build and automation tasks from a Makefile.
@@ -67,6 +68,6 @@ Once we are in the proper directory, the csv data needs to be transformed into y
 After the script finishes there should be 23 folders, one per each csv file containing the traces.
 ## Running simulations
 - In order to run Alibaba's OpenSimulator refer to [README-OpenSim](./opensim/README.md)
-- In order to run Kubernetes Scheduler Simulator refer to [README-kube-sched-sim](./kub-scheduler-simulator/README.md)
+- In order to run Kubernetes Scheduler Simulator refer to [README-kube-sched-sim](./kube-scheduler-simulator/README.md)
 - In order to run SimKube refer to [README-SimKube](./simkube/README.md)
 
