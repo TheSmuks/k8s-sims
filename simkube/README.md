@@ -9,6 +9,12 @@ git clone https://github.com/acrlabs/simkube.git simkube-src
 cd simkube-src
 git reset --hard 9a3e671
 ```
+The controller expects a secrets provider that is not used, in order to avoid any issues when running simulations we need to edit the file [k8s/kustomize/sim/sk-ctrl.yml](k8s/kustomize/sim/sk-ctrl.yml).
+```sh
+# Comment the line related to the driver secret
+sed -i "s|- --driver-secrets|#- --driver-secrets|" k8s/kustomize/sim/sk-ctrl.yml 
+sed -i "s|- simkube|#- simkube|" k8s/kustomize/sim/sk-ctrl.yml 
+```
 Once we have acquired the source code the next step is to configure a simulation cluster.
 ## Configuring the simulation environment
 First we need to have [kind](https://kind.sigs.k8s.io/) installed and working, Docker should be running too.
@@ -54,10 +60,15 @@ Now we proceed to create some virtual node to deploy pods that will be managed b
 pwd # k8s-sim/simkube
 kubectl apply -f experiment/node.yml
 ```
+<!---
 ```sh
 # Expose Prometheus WebUI to port 9090
 kubectl --namespace monitoring port-forward svc/prometheus-k8s 9090
 ```
+```sh
+kubectl create secret docker-registry simkube -n simkube
+```
+--->
 ## Configuring the production environment
 The production environment is from where we are collecting the traces to be replayed later.
 In this case we are going to use a `kind` cluster as a production cluster.
@@ -85,14 +96,14 @@ kubectl create -f experiment/nginx-deployment.yaml --namespace=testing
 After the deployment has been successful we proceed to export the traces generated.
 ```sh
 pwd # k8s-sim/simkube
-skctl export -o experiment/trace.out
+skctl export -o experiment/data/trace.out
 ```
 ## Running a simulation
 In this case the `data` volume is mapped to the [experiment/data](experiment/data) folder in the kind node we created previously.
 ```
 pwd # k8s-sim/simkube
 cd simkube-src/
-skctl run test-sim --trace-path file:///data/trace.out --duration +5m
+skctl run test-sim --trace-path file:///data/trace.out --hooks config/hooks/default.yml --disable-metrics
 ```
 To check the status of the simulation we can use kubectl.
 ```sh

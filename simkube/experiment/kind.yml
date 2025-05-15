@@ -9,6 +9,6 @@ nodes:
     labels:
       type: kind-worker
     extraMounts:
-      - hostPath: ./data
+      - hostPath: experiment/data
         containerPath: /data
 
