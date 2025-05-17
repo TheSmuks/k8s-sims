@@ -72,7 +72,7 @@ spec:
         resources:
           requests:
             cpu: 10m
-            memory: 20M
+            memory: 10M
         securityContext:
           privileged: true
       - name: hollow-proxy
@@ -98,7 +98,7 @@ spec:
         resources:
           requests:
             cpu: 10m
-            memory: 20M
+            memory: 10M
         securityContext:
           privileged: true
       # Keep the pod running on unreachable node for 15 minutes.
