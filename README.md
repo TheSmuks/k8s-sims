@@ -1,5 +1,5 @@
 
-# K8sims
+# K8s-sims
 K8sims is a repository containing a guide on how to run a selected number of Kubernetes simulators.
 Specs of the computer where the simulations were run.
 ```
