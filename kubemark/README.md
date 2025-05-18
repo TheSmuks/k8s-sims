@@ -29,5 +29,3 @@ kind create cluster --config=experiments/kind-config.yaml --name testing --image
 ```
 Once the hollow nodes are up and running we can deploy the workload into them.
 ## Running a simulation
-
-
