@@ -8,11 +8,11 @@ kubectl create secret generic kubeconfig \
 --type=Opaque --namespace=kubemark \
 --from-file=kubelet.kubeconfig=config \
 --from-file=kubeproxy.kubeconfig=config
-kubectl create -f hollow-node.yml
-while [ $(kubectl get pods -n kubemark | grep "Running" | wc -l) -lt 750 ] 
-do 
-	RUNNING_CONTAINERS=$(kubectl get pods -n kubemark | grep "Running" | wc -l) 
-	echo -n -e " $RUNNING_CONTAINERS/750 pods running...\r" 
-	sleep 1
-done; 
-
+#kubectl create -f hollow-nodes.yml
+#while [ $(kubectl get pods -n kubemark | grep "Running" | wc -l) -lt 1213 ] 
+#do 
+#	RUNNING_CONTAINERS=$(kubectl get pods -n kubemark | grep "Running" | wc -l) 
+#	echo -n -e " $RUNNING_CONTAINERS/1213 pods running...\r" 
+#	sleep 1
+#done; 
+#
