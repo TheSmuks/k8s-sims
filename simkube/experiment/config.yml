@@ -1,8 +1,0 @@
-# config.yml for skctl snapshot to capture common resources
-
-# trackedObjects defines which Kubernetes API resources SimKube should observe
-# and include in the trace or snapshot.
-trackedObjects:
-    v1.Pod: {}
-    v1.Node: {}
-

@@ -36,7 +36,6 @@ while getopts 'h?p:s:r:d' opt; do
 	esac
 done
 shift "$(($OPTIND - 1))"
-exit 0
 
 was_last_command_success() {
 	if [ $? -ne 0 ]; then
