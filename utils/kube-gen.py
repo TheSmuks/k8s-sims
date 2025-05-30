@@ -3,10 +3,15 @@ import sys
 import yaml
 import copy
 import argparse
+import itertools
+import threading
+import time
 from collections.abc import Callable
 import pprint
+from datetime import datetime
 
 template_hollow_node = None
+done = False
 
 def get_yaml_file(yaml_path:str, single:bool=True, limit: int=-1):
     try:
@@ -22,7 +27,17 @@ def get_yaml_file(yaml_path:str, single:bool=True, limit: int=-1):
         print(f'Error opening file: {yaml_path}')
         sys.exit(-1)
 
-def patch_hollow_node(base_node: dict):
+def patch_kwok_node(base_node: dict)-> None:
+    patch_metadata = {
+        'metadata': {
+            'annotations': {
+                'kwok.x-k8s.io/node': 'fake'
+            }
+        }
+    }
+    base_node.update(patch_metadata)
+
+def patch_hollow_node(base_node: dict)-> None:
     global template_hollow_node
     new_node = copy.deepcopy(template_hollow_node)
     new_extended_resources = ','.join(f'{key}={value}' for key, value in base_node['status']['allocatable'].items())
@@ -35,8 +50,8 @@ def patch_hollow_node(base_node: dict):
     base_node.clear()
     base_node.update(new_node)
 
-def patch_hollow_pod(base_pod: dict):
-    affinity_block = {
+def patch_hollow_pod(base_pod: dict)-> None:
+    patch_affinity = {
                       'affinity': {
                         'nodeAffinity': {
                           'requiredDuringSchedulingIgnoredDuringExecution': {
@@ -58,7 +73,7 @@ def patch_hollow_pod(base_pod: dict):
     base_pod['spec']['containers'][0]['imagePullPolicy'] = 'IfNotPresent'
     base_pod['spec']['containers'][0]['image'] = 'docker.io/busybox:latest'
     base_pod['metadata']['namespace'] = 'kubemark'
-    base_pod['spec'].update(affinity_block)
+    base_pod['spec'].update(patch_affinity)
 
 def generate_n_nodes(node_count: int,  nodes_path: str, pods_path: str, output_folder: str, _node_callback:Callable=None, _pod_callback:Callable=None, file_preffix=''):
     nodes = get_yaml_file(nodes_path, False, node_count)
@@ -97,27 +112,66 @@ def generate_n_nodes(node_count: int,  nodes_path: str, pods_path: str, output_f
     with open(os.path.join(output_folder, f'{file_preffix}-pods-{node_count}.yaml'), 'w') as output_file:    
         yaml.dump_all(selected_pods, output_file, default_flow_style=False)
 
+def animate():
+    global done
+    for c in itertools.cycle(['|', '/', '-', '\\']):
+        if done:
+            break
+        print('\rProcessing... ' + c, end='')
+        time.sleep(0.1)
+
+def start_animation_thread():
+    t = threading.Thread(target=animate)
+    t.start()
+
+def print_msg(msg: str, cr:bool=False)-> None:
+    current_time = datetime.now().strftime("[%H:%M:%S]")
+    cr_str = "\r" if cr else ""    
+    print(f"{cr_str}{current_time} - {msg}")
+
+def print_ascii():
+    print(r"""
+      _  __     _           _____            
+     | |/ /    | |         / ____|           
+     | ' /_   _| |__   ___| |  __  ___ _ __  
+     |  <| | | | '_ \ / _ \ | |_ |/ _ \ '_ \ 
+     | . \ |_| | |_) |  __/ |__| |  __/ | | |
+     |_|\_\__,_|_.__/ \___|\_____|\___|_| |_|
+    
+-------------------------------------------------                                         
+    """)
+
 def main(args) -> None:
     if not os.path.exists(args.output_folder):
         os.mkdir(args.output_folder) 
+    if args.kubemark or args.simkube:
+        print_msg(f'{"SimKube" if args.simkube else "Kubemark"} selected.')
+    print_msg(f'Generating {args.node_count} nodes...')
+    start_animation_thread()
     if args.kubemark:
-        print("Kubemark hollow nodes and pods generation starting...")
         global template_hollow_node
         template_hollow_node = get_yaml_file(args.hollow_node_path)
         generate_n_nodes(args.node_count, args.nodes_path, args.pods_path, args.output_folder, patch_hollow_node, patch_hollow_pod, 'kubemark')
+    elif args.simkube:
+        generate_n_nodes(args.node_count, args.nodes_path, args.pods_path, args.output_folder, patch_kwok_node, None, 'simkube')
     else:
-        print("Nodes and pods generation starting...")
         generate_n_nodes(args.node_count, args.nodes_path, args.pods_path, args.output_folder)
+    global done    
+    done = True
+    print_msg('Finished!                 ', True)
+    print_msg(f'Files saved to output folder: {args.output_folder}')
         
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(
-                    prog='object-generator.py')
+                    prog='kube-gen.py')
     parser.add_argument('-o', '--output_folder', type=str, required=True)
     parser.add_argument('-c', '--node_count', type=int, default=400)
     parser.add_argument('-k', '--kubemark', default=False, action='store_true')
+    parser.add_argument('-s', '--simkube', default=False, action='store_true')
     parser.add_argument('-hn', '--hollow_node_path', type=str, default='hollow-node.yml')
     parser.add_argument('-n', '--nodes_path', type=str, default='../example/cluster/nodes/nodes.yaml')
     parser.add_argument('-p', '--pods_path', type=str, default='../example/applications/simulation/pods.yaml')
+    print_ascii()    
     try:
         args = parser.parse_args()
         if args.kubemark and (args.node_count is None or args.hollow_node_path is None or args.nodes_path is None or args.pods_path is None):
