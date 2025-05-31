@@ -1,16 +1,21 @@
 #!/bin/bash
 
+OUT_FILE="$(pwd)/run-opensim.csv"
 CLUSTER_NAME="testing"
 CGROUP_BASE="/sys/fs/cgroup/system.slice"
 RUNS=3
+EXPERIMENT_FILES_PATH=""
 
 if [ $# -eq 0 ]; then
     echo "Usage: $(basename $0) <-c cluster-name> [-r runs]"
     exit 1
 fi
 
-while getopts 'h?c:r:' opt; do
+while getopts 'h?c:r:e:' opt; do
 	case "$opt" in
+    e)
+        EXPERIMENT_FILES_PATH="$OPTARG"
+        ;;
 	r)
 		RUNS="$OPTARG"
 		;;
@@ -70,59 +75,63 @@ function track_containers(){
     for ((i=0; i<${#NODE_IDS[@]}; i++)); do
         TOTAL_MEM=$(($TOTAL_MEM + ${MAX_MEMORY_MEASUREMENTS[i]}))
     done
-    printf "%d" $(($END_TIME - $2)) >>$1
+    printf "%d" $(($END_TIME - $1)) >> $OUT_FILE
     for ((i=0; i<3; i++)); do
-        printf "|%.2f" ${CPU_MEASUREMENTS[i]} >> $1
+        printf "|%.2f" ${CPU_MEASUREMENTS[i]} >> $OUT_FILE
     done
-	printf "|%.2f\n" $(($TOTAL_MEM / 1024 / 1024 / 1024)) >> $1
+	printf "|%.2f\n" $(($TOTAL_MEM / 1024 / 1024 / 1024)) >> $OUT_FILE
 	exit 0
 }
 CURRENT_RUNS=0
-echo "run_time|total_cpu_seconds|user_cpu_seconds|system_cpu_seconds|memory_peak_gb" > "$1"
-while [ $CURRENT_RUNS -lt $RUNS ]; do
-    START_TIME=$(date +%s)
-    kind create cluster --config=kind-config.yaml --name $CLUSTER_NAME --image kindest/node:v1.29.0
-    track_containers $1 $START_TIME &
-    POLL_PID=$!
-    kind get kubeconfig --name $CLUSTER_NAME > ./config
-    sed -i 's|server: https://127.0.0.1:[0-9]\+|server: https://kubernetes.default.svc:443|' ./config
-    kubectl config use-context kind-$CLUSTER_NAME
-    kubectl create ns kubemark
-    kubectl create secret generic kubeconfig \
-    --type=Opaque --namespace=kubemark \
-    --from-file=kubelet.kubeconfig=config \
-    --from-file=kubeproxy.kubeconfig=config
-    kubectl create -f hollow-nodes.yml
-    echo "Creating pods"
-    kubectl create -f pods.yaml -n kubemark
-    FAILURE_FOUND="false"
-    PENDING_PODS_COUNT=$(kubectl get pods --field-selector=status.phase=Pending -n kubemark --no-headers | wc -l)
-    while [ $PENDING_PODS_COUNT -gt 0 ]
-    do
-        if [ $FAILURE_FOUND = "true" ]; then
-            break    
-        fi
-        PENDING_PODS=$(kubectl get pods --field-selector=status.phase=Pending -n kubemark -o jsonpath='{.items[*].metadata.name}')
-        FAILURE_COUNT=0    
-        for pod_name in $PENDING_PODS; do
-            FAILURE_CHECK=$(kubectl get events -n kubemark --field-selector involvedObject.name="$pod_name" | \
-                           grep "FailedScheduling" | \
-                           grep -E "(Insufficient cpu|Insufficient memory|No preemption victims found)")
-            
-            if [ -n "$FAILURE_CHECK" ]; then
-                FAILURE_COUNT=$((FAILURE_COUNT+1))
-                if [ $FAILURE_COUNT -ge $PENDING_PODS_COUNT ]; then
-                    FAILURE_FOUND="true"  
-                    break          
-                fi
-            fi
-        done
-        echo -ne "Pending pods: $PENDING_PODS_COUNT\r"
-        sleep 1
+echo "node_count|run_time|total_cpu_seconds|user_cpu_seconds|system_cpu_seconds|memory_peak_gb" > "$OUT_FILE"
+for node_file in "$EXPERIMENT_FILES_PATH"/nodes-*.yaml; do
+    NODE_COUNT=$(echo "$node_file" | rev | cut -d '-' -f 1 | rev | cut -d '.' -f 1 )
+    while [ $CURRENT_RUNS -lt $RUNS ]; do
+        echo -ne "$NODE_COUNT|" >> "$OUT_FILE"
+        START_TIME=$(date +%s)
+        kind create cluster --config=kind-config.yaml --name $CLUSTER_NAME --image kindest/node:v1.29.0
+        track_containers $START_TIME &
+        POLL_PID=$!
+        kind get kubeconfig --name $CLUSTER_NAME > ./config
+        sed -i 's|server: https://127.0.0.1:[0-9]\+|server: https://kubernetes.default.svc:443|' ./config
+        kubectl config use-context kind-$CLUSTER_NAME
+        kubectl create ns kubemark
+        kubectl create secret generic kubeconfig \
+        --type=Opaque --namespace=kubemark \
+        --from-file=kubelet.kubeconfig=config \
+        --from-file=kubeproxy.kubeconfig=config
+        kubectl create -f $node_file
+        echo "Creating pods"
+        kubectl create -f "$EXPERIMENT_FILES_PATH"/"kubemark-"pods-"$NODE_COUNT".yaml -n kubemark
+        FAILURE_FOUND="false"
         PENDING_PODS_COUNT=$(kubectl get pods --field-selector=status.phase=Pending -n kubemark --no-headers | wc -l)
-    done;
-    #kubectl get pods -A
-    kind delete cluster --name $CLUSTER_NAME
-    kill -s SIGINT $POLL_PID > /dev/null 2>&1;
-    CURRENT_RUNS=$(($CURRENT_RUNS + 1))
+        while [ $PENDING_PODS_COUNT -gt 0 ]
+        do
+            if [ $FAILURE_FOUND = "true" ]; then
+                break    
+            fi
+            PENDING_PODS=$(kubectl get pods --field-selector=status.phase=Pending -n kubemark -o jsonpath='{.items[*].metadata.name}')
+            FAILURE_COUNT=0    
+            for pod_name in $PENDING_PODS; do
+                FAILURE_CHECK=$(kubectl get events -n kubemark --field-selector involvedObject.name="$pod_name" | \
+                               grep "FailedScheduling" | \
+                               grep -E "(Insufficient cpu|Insufficient memory|No preemption victims found)")
+                
+                if [ -n "$FAILURE_CHECK" ]; then
+                    FAILURE_COUNT=$((FAILURE_COUNT+1))
+                    if [ $FAILURE_COUNT -ge $PENDING_PODS_COUNT ]; then
+                        FAILURE_FOUND="true"  
+                        break          
+                    fi
+                fi
+            done
+            echo -ne "Pending pods: $PENDING_PODS_COUNT\r"
+            sleep 1
+            PENDING_PODS_COUNT=$(kubectl get pods --field-selector=status.phase=Pending -n kubemark --no-headers | wc -l)
+        done;
+        #kubectl get pods -A
+        kind delete cluster --name $CLUSTER_NAME
+        kill -s SIGINT $POLL_PID > /dev/null 2>&1;
+        CURRENT_RUNS=$(($CURRENT_RUNS + 1))
+    done
 done

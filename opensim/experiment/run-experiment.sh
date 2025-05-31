@@ -3,12 +3,12 @@
 RUNS=3
 OUT_FILE="$(pwd)/run-opensim.csv"
 CGROUP_BASE="/sys/fs/cgroup/"
-EXPERIMENTS_PATH=""
+EXPERIMENT_FILES_PATH=""
 
 while getopts 'h?r:e:' opt; do
 	case "$opt" in
     e)
-        EXPERIMENTS_PATH="$OPTARG"
+        EXPERIMENT_FILES_PATH="$OPTARG"
         ;;
 	r)
 		RUNS="$OPTARG"
@@ -75,11 +75,11 @@ CURRENT_RUNS=0
 if [ ! -f $OUT_FILE ]; then
     echo "node_count|run_time|total_cpu_seconds|user_cpu_seconds|system_cpu_seconds|memory_peak_gb" > "$OUT_FILE"
 fi
-for simon_file in "$EXPERIMENTS_PATH"/simon-config*.yaml; do
+for simon_file in "$EXPERIMENT_FILES_PATH"/"opensim-"nodes*.yaml; do
+    NODE_COUNT=$(echo "$simon_file" | rev | cut -d '-' -f 1 | rev | cut -d '.' -f 1 )
     while [ $CURRENT_RUNS -lt $RUNS ]; do
         echo "RUN $CURRENT_RUNS"
 	    CGROUP_NAME="opensim"
-        NODE_COUNT=$(echo "$simon_file" | rev | cut -d '-' -f 1 | rev | cut -d '.' -f 1 )
         echo -ne "$NODE_COUNT|" >> "$OUT_FILE"
 	    sudo cgcreate -g memory,cpu:/$CGROUP_NAME
 	    was_last_command_success "Failed to create cgroup"
@@ -88,7 +88,7 @@ for simon_file in "$EXPERIMENTS_PATH"/simon-config*.yaml; do
 	    track_metrics "$CGROUP_BASE$CGROUP_NAME" $START_TIME &
 	    POLL_PID=$!
 	    echo "Poll process started: $POLL_PID"
-	    sudo cgexec -g memory,cpu:/$CGROUP_NAME ./cmd apply -f ${simon_file} --output-file opensim-out-${CURRENT_RUNS}.out
+	    sudo cgexec -g memory,cpu:/$CGROUP_NAME ./cmd apply -f ${simon_file} --output-file /dev/null #opensim-out-${CURRENT_RUNS}.out
 	    was_last_command_success "Failed to run program"
 	    kill -s SIGINT $POLL_PID
 	    sleep 1

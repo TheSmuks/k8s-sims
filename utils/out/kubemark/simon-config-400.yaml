@@ -1,0 +1,11 @@
+apiVersion: simon/v1alpha1
+kind: Config
+metadata:
+  name: simon-config
+spec:
+  appList:
+  - name: simulation-400
+    path: /home/matias/Uni/TFG/k8s-sims/utils/out/kubemark/applications/pods-400/opensim-pods-400.yaml
+  cluster:
+    customConfig: /home/matias/Uni/TFG/k8s-sims/utils/out/kubemark/cluster-400/opensim-nodes-400.yaml
+  newNode: /home/matias/Uni/TFG/k8s-sims/example/newnode

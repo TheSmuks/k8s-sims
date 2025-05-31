@@ -1,22 +1,22 @@
 #!/bin/bash
 
-CLUSTER_NAME="testing"
 CGROUP_BASE="/sys/fs/cgroup/system.slice"
 RUNS=3
+EXPERIMENT_FILES_PATH=""
+OUT_FILE="$(pwd)/run-kube-sched.csv"
 
 if [ $# -eq 0 ]; then
-    echo "Usage: $(basename $0) <-c cluster-name> [-r runs]"
+    echo "Usage: $(basename $0) [-r runs]"
     exit 1
 fi
 
-while getopts 'h?c:r:' opt; do
+while getopts 'h?e:r:' opt; do
 	case "$opt" in
+    e)
+        EXPERIMENT_FILES_PATH="$OPTARG"
+        ;;
 	r)
 		RUNS="$OPTARG"
-		;;
-
-	c)
-		CLUSTER_NAME="$OPTARG"
 		;;
 
 	h)
@@ -38,9 +38,8 @@ done
 shift "$(($OPTIND - 1))"
 
 function track_containers(){
-    OUT_FILE=$1
-    START_TIME=$2
-    CONTAINERS_TO_WATCH=$3
+    START_TIME=$1
+    CONTAINERS_TO_WATCH=$2
     CONTAINER_IDS=()
     for ((i=0; i<${#CONTAINERS_TO_WATCH[@]}; i++)); do
         CONTAINER_IDS[i]=$(docker ps --no-trunc -aqf "name=${CONTAINERS_TO_WATCH[i]}")
@@ -98,47 +97,50 @@ if [[ ! -f "kubeconfig.yaml" ]]; then
 fi
 KUBE_FILE="kubeconfig.yaml"
 CURRENT_RUNS=0
-OUT_FILE="./run.out"
+
 CONTAINERS_TO_WATCH=(simulator-scheduler simulator-server simulator-cluster)
-echo "run_time|total_cpu_seconds|user_cpu_seconds|system_cpu_seconds|memory_peak_gb" > "$OUT_FILE"
-while [ $CURRENT_RUNS -lt $RUNS ]; do
-    START_TIME=$(date +%s)
-    docker compose up -d "${CONTAINERS_TO_WATCH[@]}"
-    while ! docker logs "${CONTAINERS_TO_WATCH[-1]}" 2>&1 | grep -q "Starting to serve"; do
-        sleep 0.5
-    done
-    track_containers $OUT_FILE $START_TIME ${CONTAINERS_TO_WATCH} &
-    kubectl --kubeconfig kubeconfig.yaml create ns paib-gpu
-    kubectl --kubeconfig kubeconfig.yaml create -f ../../../example/cluster/nodes/nodes.yaml
-    kubectl --kubeconfig kubeconfig.yaml create -f ../../../example/applications/simulation/pods.yaml
-    FAILURE_FOUND="false"
-    PENDING_PODS_COUNT=$(kubectl --kubeconfig kubeconfig.yaml get pods --field-selector=status.phase=Pending -n paib-gpu --no-headers | wc -l)
-    while [ $PENDING_PODS_COUNT -gt 0 ]
-    do
-        if [ $FAILURE_FOUND = "true" ]; then
-            break    
-        fi
-        PENDING_PODS=$(kubectl --kubeconfig kubeconfig.yaml get pods --field-selector=status.phase=Pending -n paib-gpu -o jsonpath='{.items[*].metadata.name}')
-        FAILURE_COUNT=0    
-        for pod_name in $PENDING_PODS; do
-            FAILURE_CHECK=$(kubectl --kubeconfig kubeconfig.yaml get events -n paib-gpu --field-selector involvedObject.name="$pod_name" | \
-                           grep "FailedScheduling" | \
-                           grep -E "(Insufficient cpu|Insufficient memory|No preemption victims found)")
-            
-            if [ -n "$FAILURE_CHECK" ]; then
-                FAILURE_COUNT=$((FAILURE_COUNT+1))
-                if [ $FAILURE_COUNT -ge $PENDING_PODS_COUNT ]; then
-                    FAILURE_FOUND="true"  
-                    break          
-                fi
-            fi
+echo "node_count|run_time|total_cpu_seconds|user_cpu_seconds|system_cpu_seconds|memory_peak_gb" > "$OUT_FILE"
+for node_file in "$EXPERIMENT_FILES_PATH"/nodes-*.yaml; do
+    NODE_COUNT=$(echo "$node_file" | rev | cut -d '-' -f 1 | rev | cut -d '.' -f 1 )
+    while [ $CURRENT_RUNS -lt $RUNS ]; do
+        START_TIME=$(date +%s)
+        docker compose up -d "${CONTAINERS_TO_WATCH[@]}"
+        while ! docker logs "${CONTAINERS_TO_WATCH[-1]}" 2>&1 | grep -q "Starting to serve"; do
+            sleep 0.5
         done
-        echo -ne "Pending pods: $PENDING_PODS_COUNT\r"
-        sleep 1
+        track_containers $START_TIME ${CONTAINERS_TO_WATCH} &
+        kubectl --kubeconfig kubeconfig.yaml create ns paib-gpu
+        kubectl --kubeconfig kubeconfig.yaml create -f $node_file
+        kubectl --kubeconfig kubeconfig.yaml create -f "$EXPERIMENT_FILES_PATH"/pods-"$NODE_COUNT".yaml
+        FAILURE_FOUND="false"
         PENDING_PODS_COUNT=$(kubectl --kubeconfig kubeconfig.yaml get pods --field-selector=status.phase=Pending -n paib-gpu --no-headers | wc -l)
-    done;
-    docker compose down
-    START_TIME=$(date +%s)
-    kill -s SIGINT $POLL_PID > /dev/null 2>&1;
-    CURRENT_RUNS=$(($CURRENT_RUNS + 1))
+        while [ $PENDING_PODS_COUNT -gt 0 ]
+        do
+            if [ $FAILURE_FOUND = "true" ]; then
+                break    
+            fi
+            PENDING_PODS=$(kubectl --kubeconfig kubeconfig.yaml get pods --field-selector=status.phase=Pending -n paib-gpu -o jsonpath='{.items[*].metadata.name}')
+            FAILURE_COUNT=0    
+            for pod_name in $PENDING_PODS; do
+                FAILURE_CHECK=$(kubectl --kubeconfig kubeconfig.yaml get events -n paib-gpu --field-selector involvedObject.name="$pod_name" | \
+                               grep "FailedScheduling" | \
+                               grep -E "(Insufficient cpu|Insufficient memory|No preemption victims found)")
+                
+                if [ -n "$FAILURE_CHECK" ]; then
+                    FAILURE_COUNT=$((FAILURE_COUNT+1))
+                    if [ $FAILURE_COUNT -ge $PENDING_PODS_COUNT ]; then
+                        FAILURE_FOUND="true"  
+                        break          
+                    fi
+                fi
+            done
+            echo -ne "Pending pods: $PENDING_PODS_COUNT\r"
+            sleep 1
+            PENDING_PODS_COUNT=$(kubectl --kubeconfig kubeconfig.yaml get pods --field-selector=status.phase=Pending -n paib-gpu --no-headers | wc -l)
+        done;
+        docker compose down
+        START_TIME=$(date +%s)
+        kill -s SIGINT $POLL_PID > /dev/null 2>&1;
+        CURRENT_RUNS=$(($CURRENT_RUNS + 1))
+    done
 done

@@ -1,0 +1,11 @@
+apiVersion: simon/v1alpha1
+kind: Config
+metadata:
+  name: simon-config
+spec:
+  appList:
+  - name: simulation-1100
+    path: /home/matias/Uni/TFG/k8s-sims/utils/out/opensim/applications/pods-1100/opensim-pods-1100.yaml
+  cluster:
+    customConfig: /home/matias/Uni/TFG/k8s-sims/utils/out/opensim/cluster-1100/opensim-nodes-1100.yaml
+  newNode: /home/matias/Uni/TFG/k8s-sims/example/newnode
