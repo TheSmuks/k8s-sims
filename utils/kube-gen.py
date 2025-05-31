@@ -207,14 +207,15 @@ def print_ascii() -> None:
 def main(args: argparse.Namespace) -> None:
     """Main function that orchestrates the Kubernetes resource generation process."""
     global done, animation_msg, loaded_nodes_qty, simon_template, new_node_path
-    create_folder(args.output_folder) 
+    output_folder = os.path.abspath(args.output_folder)
+    create_folder(output_folder) 
 
     increment: int = args.increment if args.increment > 0 else args.node_count 
     node_callback: Optional[Callable] = None
     pod_callback: Optional[Callable] = None
     preffix: str = ''
-    node_output_folder: str = args.output_folder
-    pod_output_folder: str = args.output_folder
+    node_output_folder: str = output_folder
+    pod_output_folder: str = output_folder
     output_folders: List[Tuple[str, str]] = []
 
     print_msg("Loading resources...")
@@ -237,9 +238,9 @@ def main(args: argparse.Namespace) -> None:
         preffix = 'simkube-'
     elif args.open_sim:
         preffix = 'opensim-'
-        new_node_path = args.new_node_path
+        new_node_path = os.path.abspath(args.new_node_path)
         simon_template = get_yaml_file('simon-config.yaml')
-        output_folders = initialize_opensim_directory(args.output_folder, args.node_count, increment)
+        output_folders = initialize_opensim_directory(output_folder, args.node_count, increment)
 
     if preffix != '':
         print_msg(f'{preffix.capitalize()[:-1]} selected.')
@@ -267,7 +268,7 @@ def main(args: argparse.Namespace) -> None:
         done = True
         animation_thread.join()
         print_msg('Finished!                 ', True)
-    print_msg(f'Files saved to output folder: {args.output_folder}')
+    print_msg(f'Files saved to output folder: {output_folder}')
         
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(
