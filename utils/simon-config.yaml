@@ -1,0 +1,13 @@
+apiVersion: simon/v1alpha1
+kind: Config
+metadata:
+  name: simon-config 
+spec:
+  cluster:
+    # Cluster data location
+    customConfig: ../../example/cluster
+  appList:
+    - name: simulation
+      # Location to the Pods file
+      path: ../../example/applications/simulation
+  newNode: ../../example/newnode
