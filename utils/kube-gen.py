@@ -26,7 +26,7 @@ loaded_nodes_qty: int = 0
 def create_folder(path: str) -> None:
     """Create a directory if it doesn't exist."""
     if not os.path.exists(path):
-        os.mkdir(path)
+        os.makedirs(path, exist_ok=True)
 
 def get_yaml_file(yaml_path: str, single: bool = True, limit: int = -1) -> Any:
     """Load YAML file(s) and return the parsed content."""
