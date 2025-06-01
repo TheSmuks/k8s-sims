@@ -115,7 +115,7 @@ def generate_n_nodes(start_pos: int, end_pos: int, step_size: int, node_output_f
             # Mutate pod using callback
             _pod_callback(pod)
         available_res_id = next(
-            (idx for idx, remaining_res in enumerate(total_node_resources)
+            (idx for idx, remaining_res in enumerate(total_node_resources[:end_pos])
              if (remaining_res[0] - pod_cpu_req) >= 0 and (remaining_res[1] - pod_mem_req) >= 0),
             None
         )
@@ -123,8 +123,6 @@ def generate_n_nodes(start_pos: int, end_pos: int, step_size: int, node_output_f
             total_node_resources[available_res_id] = ((total_node_resources[available_res_id][0] - pod_cpu_req), (total_node_resources[available_res_id][1] - pod_mem_req))
             selected_pods.append(pod)
             pods_to_remove.append(pod)
-        else:
-            break
 
     remainder = node_count%step_size
     node_count = node_count if remainder == 0 else node_count-remainder
