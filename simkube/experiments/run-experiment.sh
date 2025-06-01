@@ -81,11 +81,11 @@ function track_containers(){
 
 CURRENT_RUNS=0
 echo "node_count|run_time|total_cpu_seconds|user_cpu_seconds|system_cpu_seconds|memory_peak_gb" > "$OUT_FILE"
-for node_file in "$EXPERIMENT_FILES_PATH"/"simkube-"nodes-*.yaml; do
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+for node_file in $(ls -1 "$EXPERIMENT_FILES_PATH"/"simkube-"nodes-*.yaml | xargs realpath | sort -V); do
     NODE_COUNT=$(echo "$node_file" | rev | cut -d '-' -f 1 | rev | cut -d '.' -f 1 )
-    SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
     while [ $CURRENT_RUNS -lt $RUNS ]; do
-        cp "$EXPERIMENT_FILES_PATH"/"simkube-"pods-"$NODE_COUNT" $SCRIPT_DIR/experiments/data/trace.out
+        cp "$EXPERIMENT_FILES_PATH"/simkube-"$NODE_COUNT"-trace.out $SCRIPT_DIR/experiments/data/trace.out
         START_TIME=$(date +%s)
         kind create cluster --name $CLUSTER_NAME --config experiments/kind.yml
         track_containers $OUT_FILE $START_TIME &

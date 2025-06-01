@@ -100,7 +100,7 @@ CURRENT_RUNS=0
 
 CONTAINERS_TO_WATCH=(simulator-scheduler simulator-server simulator-cluster)
 echo "node_count|run_time|total_cpu_seconds|user_cpu_seconds|system_cpu_seconds|memory_peak_gb" > "$OUT_FILE"
-for node_file in "$EXPERIMENT_FILES_PATH"/nodes-*.yaml; do
+for node_file in $(ls -1 "$EXPERIMENT_FILES_PATH"/nodes-*.yaml | xargs realpath | sort -V); do
     NODE_COUNT=$(echo "$node_file" | rev | cut -d '-' -f 1 | rev | cut -d '.' -f 1 )
     while [ $CURRENT_RUNS -lt $RUNS ]; do
         START_TIME=$(date +%s)
