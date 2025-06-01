@@ -1,6 +1,6 @@
 #!/bin/bash
 
-OUT_FILE="$(pwd)/run-opensim.csv"
+OUT_FILE="$(pwd)/run-kubemark.csv"
 CLUSTER_NAME="testing"
 CGROUP_BASE="/sys/fs/cgroup/system.slice"
 RUNS=3
@@ -84,12 +84,13 @@ function track_containers(){
 }
 CURRENT_RUNS=0
 echo "node_count|run_time|total_cpu_seconds|user_cpu_seconds|system_cpu_seconds|memory_peak_gb" > "$OUT_FILE"
-for node_file in "$EXPERIMENT_FILES_PATH"/nodes-*.yaml; do
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+for node_file in $(ls -1 "$EXPERIMENT_FILES_PATH"/"kubemark-"nodes-*.yaml | xargs realpath | sort -V); do
     NODE_COUNT=$(echo "$node_file" | rev | cut -d '-' -f 1 | rev | cut -d '.' -f 1 )
     while [ $CURRENT_RUNS -lt $RUNS ]; do
         echo -ne "$NODE_COUNT|" >> "$OUT_FILE"
         START_TIME=$(date +%s)
-        kind create cluster --config=kind-config.yaml --name $CLUSTER_NAME --image kindest/node:v1.29.0
+        kind create cluster --config="$SCRIPT_DIR/kind-config.yaml" --name $CLUSTER_NAME --image kindest/node:v1.29.0
         track_containers $START_TIME &
         POLL_PID=$!
         kind get kubeconfig --name $CLUSTER_NAME > ./config
@@ -125,7 +126,7 @@ for node_file in "$EXPERIMENT_FILES_PATH"/nodes-*.yaml; do
                     fi
                 fi
             done
-            echo -ne "Pending pods: $PENDING_PODS_COUNT\r"
+            echo -e "Pending pods: $PENDING_PODS_COUNT"
             sleep 1
             PENDING_PODS_COUNT=$(kubectl get pods --field-selector=status.phase=Pending -n kubemark --no-headers | wc -l)
         done;
