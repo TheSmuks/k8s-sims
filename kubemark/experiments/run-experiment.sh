@@ -8,6 +8,7 @@ readonly CGROUP_BASE="/sys/fs/cgroup/system.slice"
 readonly POLL_TIMEOUT=1
 readonly LOG_FILE="$SCRIPT_DIR/experiment.log"
 readonly MAIN_SCRIPT_PID=$$
+RUN_CONDITION="true"
 
 usage() {
     cat << EOF
@@ -105,17 +106,16 @@ get_cpu_usage(){
 track_containers(){
     local MAX_MEM_ALLOTED=$(get_max_alloted_memory)
     local MAX_MEMORY_MEASUREMENT=0
-    local RUN_CONDITION="true"
     local START_TIME="$1"
-
+    local LOCAL_RUN_CONDITION="true"
     local CONTAINER_IDS
 
-    trap 'RUN_CONDITION=false' SIGINT SIGTERM
+    trap 'LOCAL_RUN_CONDITION=false' SIGINT SIGTERM
 
-    while [[ $RUN_CONDITION = "true" ]]; do
+    while [[ $LOCAL_RUN_CONDITION = "true" ]]; do
         mapfile -t CONTAINER_IDS < <(get_container_ids)
         if [[ ${#CONTAINER_IDS[@]} -eq 0 ]]; then
-            RUN_CONDITION="false"
+            LOCAL_RUN_CONDITION="false"
             break
         fi
 
@@ -141,7 +141,6 @@ track_containers(){
 
         if [[ $TOTAL_MEM -gt $MAX_MEM_ALLOTED ]]; then
             RUN_CONDITION="false"
-            kill -SIGINT $MAIN_SCRIPT_PID > /dev/null 2>&1 || true
             break
         fi
 
@@ -249,7 +248,6 @@ trap 'RUN_CONDITION=false; cleanup_cluster; exit 130' SIGINT SIGTERM
 
 for node_file in $(find "$EXPERIMENT_FILES_PATH" -name "kubemark-nodes-*.yaml" -type f | sort -V); do
     NODE_COUNT=$(basename "$node_file" | grep -o '[0-9]\+' | tail -1)
-    RUN_CONDITION="true"
     POD_FILE="$EXPERIMENT_FILES_PATH/kubemark-pods-$NODE_COUNT.yaml"
     POD_COUNT=$(cat "$POD_FILE" | grep -c 'kind: Pod')
     for CURRENT_RUN in $(seq 1 $RUNS); do
@@ -270,7 +268,7 @@ for node_file in $(find "$EXPERIMENT_FILES_PATH" -name "kubemark-nodes-*.yaml" -
             POLL_PID=$!
             SETUP_OK="true"
         fi
-        set -euxo pipefail
+        # set -euxo pipefail
 
         UNSCHEDULED_PODS=0
         if [[ $SETUP_OK = "true" ]] && deploy_objects "$node_file" "$POD_FILE"; then
