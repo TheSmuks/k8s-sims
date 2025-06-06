@@ -8,23 +8,30 @@ readonly CGROUP_BASE="/sys/fs/cgroup/system.slice"
 readonly POLL_TIMEOUT=1
 readonly LOG_FILE="$SCRIPT_DIR/experiment.log"
 readonly MAIN_SCRIPT_PID=$$
+readonly DEFAULT_OUT_FILE="$SCRIPT_DIR/run-kubemark.csv"
+readonly NAMESPACE="kubemark"
+readonly DEFAULT_START=0
+
+START=0
 RUN_CONDITION="true"
+UNSCHEDULED_PODS=0
 
 usage() {
     cat << EOF
-Usage: $(basename "$0") -e EXPERIMENT_PATH [-c CLUSTER_NAME] [-r RUNS] [-t MEMORY_THRESHOLD]
+Usage: $(basename "$0") -e EXPERIMENT_PATH [-o OUT_FILE] [-c CLUSTER_NAME] [-r RUNS] [-s START] [-t MEMORY_THRESHOLD]
 
 Required arguments:
     -e EXPERIMENT_PATH   Path to experiment files directory
 
 Optional arguments:
-    -c CLUSTER_NAME      Name of the Kubernetes cluster (default: $DEFAULT_CLUSTER_NAME)
+    -o OUT_FILE         Output file for experiment results
     -r RUNS             Number of runs per experiment (default: $DEFAULT_RUNS)
+    -s START            Resume from a specific node count (default: $DEFAULT_START)
     -t MEMORY_THRESHOLD Memory threshold percentage (default: $DEFAULT_MEMORY_THRESHOLD)
     -h                  Show this help message
 
 Example:
-    $(basename "$0") -c my-cluster -e ./experiments -r 5
+    $(basename "$0") -c my-cluster -e ./experiments -r 5 -o results.csv
 EOF
 }
 
@@ -32,14 +39,17 @@ parse_args() {
     CLUSTER_NAME=$DEFAULT_CLUSTER_NAME
     RUNS=$DEFAULT_RUNS
     MEMORY_THRESHOLD=$DEFAULT_MEMORY_THRESHOLD
-
+    OUT_FILE=$DEFAULT_OUT_FILE
+    START=$DEFAULT_START
     local OPTIND
-    while getopts 'hc:r:e:t:' opt; do
+    while getopts 'hc:r:e:t:o:s:' opt; do
         case "$opt" in
             c) CLUSTER_NAME="$OPTARG" ;;
             r) RUNS="$OPTARG" ;;
             e) EXPERIMENT_FILES_PATH=$(realpath "$OPTARG") ;;
             t) MEMORY_THRESHOLD="$OPTARG" ;;
+            o) OUT_FILE=$(realpath "$OPTARG") ;;
+            s) START="$OPTARG" ;;
             h) usage; exit 0 ;;
             :) echo "Error: Option requires an argument." >&2; usage; exit 1 ;;
             ?) echo "Error: Invalid option." >&2; usage; exit 1 ;;
@@ -56,8 +66,6 @@ parse_args() {
         echo "Error: Experiment files path does not exist: $EXPERIMENT_FILES_PATH" >&2
         exit 1
     fi
-
-    OUT_FILE="$SCRIPT_DIR/run-kubemark.csv"
 }
 
 get_max_alloted_memory(){
@@ -200,23 +208,42 @@ deploy_objects(){
 }
 
 watch_pod_scheduling(){
-    local -n UNSCHEDULED_PODS=$1
-    while true; do
-        local PENDING_PODS_COUNT
-        PENDING_PODS_COUNT=$(kubectl get pods --field-selector=status.phase=Pending -n kubemark --no-headers 2>/dev/null | wc -l)
+    echo ""
+    while [[ $(kubectl get pods -n "$NAMESPACE" --no-headers 2>/dev/null | wc -l) -lt 2 && $RUN_CONDITION = "true" ]]; do
+        sleep 1
+    done
+    echo "Waiting for the count of pending pods to stabilize..."
 
-        if [[ $PENDING_PODS_COUNT -eq 0 ]]; then
+    local PREVIOUS_PENDING_COUNT=-1
+    local CURRENT_PENDING_COUNT=0
+    local PENDING_PODS
+
+    mapfile -t PENDING_PODS < <(kubectl get pods --field-selector=status.phase=Pending -n "$NAMESPACE" -o jsonpath='{range .items[*]}{.metadata.name}{"\n"}{end}' --no-headers 2>/dev/null || true)
+    CURRENT_PENDING_COUNT="${#PENDING_PODS[@]}"
+
+    while [[ "$CURRENT_PENDING_COUNT" -ne "$PREVIOUS_PENDING_COUNT" && $RUN_CONDITION = "true" ]]; do
+        PREVIOUS_PENDING_COUNT="$CURRENT_PENDING_COUNT"
+        mapfile -t PENDING_PODS < <(kubectl get pods --field-selector=status.phase=Pending -n "$NAMESPACE" -o jsonpath='{range .items[*]}{.metadata.name}{"\n"}{end}' --no-headers 2>/dev/null || true)
+        CURRENT_PENDING_COUNT="${#PENDING_PODS[@]}"
+        echo "Current pending count: $CURRENT_PENDING_COUNT, Previous: $PREVIOUS_PENDING_COUNT"
+        sleep 1
+    done
+
+    echo ""
+
+    while [[ $RUN_CONDITION = "true" ]]; do
+
+        mapfile -t PENDING_PODS < <(kubectl get pods --field-selector=status.phase=Pending -n "$NAMESPACE" -o jsonpath='{range .items[*]}{.metadata.name}{"\n"}{end}' --no-headers 2>/dev/null || true)
+        CURRENT_PENDING_COUNT="${#PENDING_PODS[@]}"
+
+        if [[ $CURRENT_PENDING_COUNT -eq 0 ]]; then
             echo "All pods scheduled successfully"
             break
         fi
-
-        local PENDING_PODS
-        PENDING_PODS=$(kubectl get pods --field-selector=status.phase=Pending -n kubemark -o jsonpath='{.items[*].metadata.name}' 2>/dev/null)
-
         local FAILURE_COUNT=0
-        for pod_name in $PENDING_PODS; do
+        for pod_name in ${PENDING_PODS[@]}; do
             local FAILURE_DETECTED
-            FAILURE_DETECTED=$(kubectl get events -n kubemark \
+            FAILURE_DETECTED=$(kubectl get events -n "$NAMESPACE" \
                 --field-selector "involvedObject.name=$pod_name" 2>/dev/null | \
                 grep -E "(FailedScheduling|Insufficient cpu|Insufficient memory|No preemption victims found)" || true)
 
@@ -225,15 +252,21 @@ watch_pod_scheduling(){
             fi
         done
 
-        if [[ $FAILURE_COUNT -ge $PENDING_PODS_COUNT && $PENDING_PODS_COUNT -gt 0 ]]; then
+        if [[ $CURRENT_PENDING_COUNT -gt 0 && $FAILURE_COUNT -eq $CURRENT_PENDING_COUNT ]]; then
             echo "All pending pods can not be scheduled." >&2
+            echo "RUN: $CURRENT_RUN" >> "$SCRIPT_DIR/debug.log"
+            echo "Reasons:" >> "$SCRIPT_DIR/debug.log"
+            for pod in "${PENDING_PODS[@]}"; do
+                kubectl get events -n "$NAMESPACE" --no-headers --field-selector "involvedObject.name=${pod}" 2>/dev/null >> "$SCRIPT_DIR/debug.log"
+            done
+            echo "---------------------------------------------------------------------------------------" >> "$SCRIPT_DIR/debug.log"
             break
         fi
 
-        echo "Pending pods: $PENDING_PODS_COUNT"
+        echo "Pending pods: $CURRENT_PENDING_COUNT"
         sleep 1
     done
-    UNSCHEDULED_PODS=${PENDING_PODS_COUNT:-0}
+    UNSCHEDULED_PODS=${CURRENT_PENDING_COUNT:-0}
 }
 
 parse_args "$@"
@@ -243,11 +276,22 @@ echo "Cluster: $CLUSTER_NAME"
 echo "Runs per experiment: $RUNS"
 echo "Results file: $OUT_FILE"
 
-echo "node_count|pod_count|run_time|total_cpu_seconds|user_cpu_seconds|system_cpu_seconds|memory_peak_gb|unscheduled_pods" > "$OUT_FILE"
+if [[ ! -f "$OUT_FILE" ]]; then
+    echo "node_count|pod_count|run_time|total_cpu_seconds|user_cpu_seconds|system_cpu_seconds|memory_peak_gb|unscheduled_pods" > "$OUT_FILE"
+fi
+
 trap 'RUN_CONDITION=false; cleanup_cluster; exit 130' SIGINT SIGTERM
 
 for node_file in $(find "$EXPERIMENT_FILES_PATH" -name "kubemark-nodes-*.yaml" -type f | sort -V); do
+    if [[ $RUN_CONDITION = "false" ]]; then
+        echo "Experiment interrupted"
+        break
+    fi
     NODE_COUNT=$(basename "$node_file" | grep -o '[0-9]\+' | tail -1)
+    if [[ $NODE_COUNT -lt $START ]]; then
+        echo "Skipping $NODE_COUNT nodes"
+        continue
+    fi
     POD_FILE="$EXPERIMENT_FILES_PATH/kubemark-pods-$NODE_COUNT.yaml"
     POD_COUNT=$(cat "$POD_FILE" | grep -c 'kind: Pod')
     for CURRENT_RUN in $(seq 1 $RUNS); do
@@ -268,11 +312,10 @@ for node_file in $(find "$EXPERIMENT_FILES_PATH" -name "kubemark-nodes-*.yaml" -
             POLL_PID=$!
             SETUP_OK="true"
         fi
-        # set -euxo pipefail
 
         UNSCHEDULED_PODS=0
         if [[ $SETUP_OK = "true" ]] && deploy_objects "$node_file" "$POD_FILE"; then
-            watch_pod_scheduling UNSCHEDULED_PODS
+            watch_pod_scheduling
         fi
         if [[ $POLL_PID -ne -1 ]]; then
             kill -SIGINT "$POLL_PID" 2>/dev/null || true

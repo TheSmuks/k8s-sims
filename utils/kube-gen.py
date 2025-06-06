@@ -59,13 +59,29 @@ def patch_kwok_node(base_node: Dict[str, Any]) -> None:
             'taints':[
                 {
                     'effect': 'NoSchedule',
-                    'key': 'kwok-provider',
+                    'key': 'openb-only',
                     'value': 'true'
                 }
             ]
         }
     }
-    base_node.update(patch_data)
+    base_node['metadata'].update(patch_data['metadata'])
+    base_node['spec'] = patch_data['spec']
+    # base_node['metadata']['labels'].update({"node-role.kubernetes.io/node": "simkube-node"})
+
+def patch_kwok_pod(base_pod: Dict[str, Any]) -> None:
+    """Apply KWOK node patches to the base node configuration."""
+    patch_affinity = {
+        "tolerations": [
+            {
+                "key": "openb-only",
+                "operator": "Equal",
+                "value": "true",
+                "effect": "NoSchedule"
+            }
+        ]
+    }
+    base_pod['spec'].update(patch_affinity)
 
 def patch_hollow_node(base_node: Dict[str, Any]) -> None:
     """Apply hollow node patches for Kubemark configuration."""
@@ -107,6 +123,12 @@ def patch_hollow_pod(base_pod: Dict[str, Any]) -> None:
     base_pod['metadata']['namespace'] = 'kubemark'
     base_pod['spec'].update(patch_affinity)
 
+def parse_cpu(cpu_str: str) -> int:
+    return int(cpu_str[:-1]) if cpu_str.endswith('m') else int(cpu_str)
+
+def parse_memory(mem_str: str) -> int:
+    return int(mem_str[:-2]) if mem_str.endswith('Mi') else int(mem_str)
+
 def generate_n_nodes(start_pos: int, end_pos: int, step_size: int, node_output_folder: str, pod_output_folder: str, _node_callback: Optional[Callable] = None, _pod_callback: Optional[Callable] = None, file_preffix: str = '') -> None:
     """Generate and save node and pod configurations within the specified range."""
     global nodes, pods, total_node_resources, selected_nodes, selected_pods, loaded_nodes_qty
@@ -119,17 +141,19 @@ def generate_n_nodes(start_pos: int, end_pos: int, step_size: int, node_output_f
         selected_nodes.append(node)
 
     for pod in pods:
-        pod_cpu_req = int(pod['spec']['containers'][0]['resources']['requests']['cpu'][:-1])
-        pod_mem_req = int(pod['spec']['containers'][0]['resources']['requests']['memory'][:-2])
+        pod_cpu_req = parse_cpu(pod['spec']['containers'][0]['resources']['requests']['cpu'])
+        pod_mem_req = parse_memory(pod['spec']['containers'][0]['resources']['requests']['memory'])
         if _pod_callback:
             # Mutate pod using callback
             _pod_callback(pod)
+        pod['spec']['containers'][0]['imagePullPolicy'] = 'IfNotPresent'
         available_res_id = next(
             (idx for idx, remaining_res in enumerate(total_node_resources[start_pos:end_pos])
              if (remaining_res[0] - pod_cpu_req) >= 0 and (remaining_res[1] - pod_mem_req) >= 0),
             None
         )
         if available_res_id is not None:
+            available_res_id = available_res_id + start_pos
             total_node_resources[available_res_id] = (
                                     (total_node_resources[available_res_id][0] - pod_cpu_req),
                                     (total_node_resources[available_res_id][1] - pod_mem_req)
@@ -146,7 +170,7 @@ def generate_n_nodes(start_pos: int, end_pos: int, step_size: int, node_output_f
     # Save pods file
     with open(os.path.join(pod_output_folder, f'{file_preffix}pods-{node_count}.yaml'), 'w') as output_file:
         yaml.dump_all(selected_pods, output_file, default_flow_style=False)
-
+    print_msg(f"Generated {node_count} nodes and {len(selected_pods)} pods.", True)
     for pod in pods_to_remove:
         pods.remove(pod)
 
@@ -246,6 +270,7 @@ def main(args: argparse.Namespace) -> None:
         preffix = 'kubemark-'
     elif args.simkube:
         node_callback = patch_kwok_node
+        pod_callback = patch_kwok_pod
         preffix = 'simkube-'
     elif args.open_sim:
         preffix = 'opensim-'
@@ -265,7 +290,7 @@ def main(args: argparse.Namespace) -> None:
         start_pos = i*increment
         end_pos = start_pos+increment
         node_qty = (i+1)*increment
-        if abs(node_qty - loaded_nodes_qty) <= increment:
+        if abs(node_qty - loaded_nodes_qty) < increment:
             stop_iteration = True
             node_qty = loaded_nodes_qty
             end_pos = loaded_nodes_qty
@@ -291,9 +316,9 @@ if __name__ == '__main__':
     parser.add_argument('-s', '--simkube', default=False, action='store_true', help='Applies the simkube patches to the generated files')
     parser.add_argument('-os', '--open_sim', default=False, action='store_true', help='Generates files with the opensim folder structure')
     parser.add_argument('-hn', '--hollow_node_path', type=str, default='hollow-node.yml', help='Template hollow node file used for Kubemark')
-    parser.add_argument('-nn', '--new_node_path', type=str, default='../example/newnode', help='Path to the YAML file containing the new node template for opensim')
-    parser.add_argument('-n', '--nodes_path', type=str, default='../example/cluster/nodes/nodes.yaml', help='Path to the YAML file containing the nodes')
-    parser.add_argument('-p', '--pods_path', type=str, default='../example/applications/simulation/pods.yaml',  help='Path to the YAML file containing the pods')
+    parser.add_argument('-nn', '--new_node_path', type=str, default='base/newnode', help='Path to the YAML file containing the new node template for opensim')
+    parser.add_argument('-n', '--nodes_path', type=str, default='base/nodes.yaml', help='Path to the YAML file containing the nodes')
+    parser.add_argument('-p', '--pods_path', type=str, default='base/pods.yaml',  help='Path to the YAML file containing the pods')
     print_ascii()
     try:
         args = parser.parse_args()
