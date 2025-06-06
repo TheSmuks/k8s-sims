@@ -41,21 +41,31 @@ def get_yaml_file(yaml_path: str, single: bool = True, limit: int = -1) -> Any:
                 return res_list[:limit]
     except Exception as e:
         global done
-        done=True        
+        done=True
         print(f'\rError opening file: {yaml_path}')
         print(e)
         sys.exit(-1)
 
 def patch_kwok_node(base_node: Dict[str, Any]) -> None:
     """Apply KWOK node patches to the base node configuration."""
-    patch_metadata = {
+    patch_data = {
         'metadata': {
+            'name': base_node['metadata']['name'],
             'annotations': {
                 'kwok.x-k8s.io/node': 'fake'
             }
+        },
+        'spec':{
+            'taints':[
+                {
+                    'effect': 'NoSchedule',
+                    'key': 'kwok-provider',
+                    'value': 'true'
+                }
+            ]
         }
     }
-    base_node.update(patch_metadata)
+    base_node.update(patch_data)
 
 def patch_hollow_node(base_node: Dict[str, Any]) -> None:
     """Apply hollow node patches for Kubemark configuration."""
@@ -67,7 +77,7 @@ def patch_hollow_node(base_node: Dict[str, Any]) -> None:
     new_node['metadata']['name'] = base_node['metadata']['name']
     new_node['metadata']['labels']['name'] = base_node['metadata']['name']
     new_node['spec']['containers'][0]['command'][-2] += f',{new_labels}'
-    new_node['spec']['containers'][0]['command'][-1] = new_node['spec']['containers'][0]['command'][-1].replace('template_node_extended_resources',new_extended_resources) 
+    new_node['spec']['containers'][0]['command'][-1] = new_node['spec']['containers'][0]['command'][-1].replace('template_node_extended_resources',new_extended_resources)
     base_node.clear()
     base_node.update(new_node)
 
@@ -91,7 +101,7 @@ def patch_hollow_pod(base_pod: Dict[str, Any]) -> None:
                           }
                         }
                       }
-                    }    
+                    }
     base_pod['spec']['containers'][0]['imagePullPolicy'] = 'IfNotPresent'
     base_pod['spec']['containers'][0]['image'] = 'docker.io/busybox:latest'
     base_pod['metadata']['namespace'] = 'kubemark'
@@ -115,23 +125,26 @@ def generate_n_nodes(start_pos: int, end_pos: int, step_size: int, node_output_f
             # Mutate pod using callback
             _pod_callback(pod)
         available_res_id = next(
-            (idx for idx, remaining_res in enumerate(total_node_resources[:end_pos])
+            (idx for idx, remaining_res in enumerate(total_node_resources[start_pos:end_pos])
              if (remaining_res[0] - pod_cpu_req) >= 0 and (remaining_res[1] - pod_mem_req) >= 0),
             None
         )
         if available_res_id is not None:
-            total_node_resources[available_res_id] = ((total_node_resources[available_res_id][0] - pod_cpu_req), (total_node_resources[available_res_id][1] - pod_mem_req))
+            total_node_resources[available_res_id] = (
+                                    (total_node_resources[available_res_id][0] - pod_cpu_req),
+                                    (total_node_resources[available_res_id][1] - pod_mem_req)
+                                )
             selected_pods.append(pod)
             pods_to_remove.append(pod)
 
     remainder = node_count%step_size
     node_count = node_count if remainder == 0 else node_count-remainder
     # Save nodes
-    with open(os.path.join(node_output_folder, f'{file_preffix}nodes-{node_count}.yaml'), 'w') as output_file:    
+    with open(os.path.join(node_output_folder, f'{file_preffix}nodes-{node_count}.yaml'), 'w') as output_file:
         yaml.dump_all(selected_nodes, output_file, default_flow_style=False)
 
     # Save pods file
-    with open(os.path.join(pod_output_folder, f'{file_preffix}pods-{node_count}.yaml'), 'w') as output_file:    
+    with open(os.path.join(pod_output_folder, f'{file_preffix}pods-{node_count}.yaml'), 'w') as output_file:
         yaml.dump_all(selected_pods, output_file, default_flow_style=False)
 
     for pod in pods_to_remove:
@@ -146,7 +159,7 @@ def generate_simon_config(output_folder: str, node_output_path: str, pod_output_
     new_simon_file['spec']['appList'][0]['path'] = os.path.join(pod_output_path, f'opensim-pods-{count}.yaml')
     new_simon_file['spec']['newNode'] = new_node_path
     # Save simon file
-    with open(os.path.join(output_folder, f'simon-config-{count}.yaml'), 'w') as output_file:    
+    with open(os.path.join(output_folder, f'simon-config-{count}.yaml'), 'w') as output_file:
         yaml.dump(new_simon_file, output_file, default_flow_style=False)
 
 def initialize_opensim_directory(output_path: str, node_count: int, step: int) -> List[Tuple[str, str]]:
@@ -188,27 +201,27 @@ def animate() -> None:
 def print_msg(msg: str, cr: bool = False) -> None:
     """Print timestamped message with optional carriage return."""
     current_time = datetime.now().strftime("[%H:%M:%S]")
-    cr_str = "\r" if cr else ""    
+    cr_str = "\r" if cr else ""
     print(f"{cr_str}{current_time} - {msg}")
 
 def print_ascii() -> None:
     """Print ASCII art banner for the application."""
-    print(r"""      _  __     _           _____            
-     | |/ /    | |         / ____|           
-     | ' /_   _| |__   ___| |  __  ___ _ __  
-     |  <| | | | '_ \ / _ \ | |_ |/ _ \ '_ \ 
+    print(r"""      _  __     _           _____
+     | |/ /    | |         / ____|
+     | ' /_   _| |__   ___| |  __  ___ _ __
+     |  <| | | | '_ \ / _ \ | |_ |/ _ \ '_ \
      | . \ |_| | |_) |  __/ |__| |  __/ | | |
      |_|\_\__,_|_.__/ \___|\_____|\___|_| |_|
-    
+
 -------------------------------------------------""")
 
 def main(args: argparse.Namespace) -> None:
     """Main function that orchestrates the Kubernetes resource generation process."""
     global done, animation_msg, loaded_nodes_qty, simon_template, new_node_path
     output_folder = os.path.abspath(args.output_folder)
-    create_folder(output_folder) 
+    create_folder(output_folder)
 
-    increment: int = args.increment if args.increment > 0 else args.node_count 
+    increment: int = args.increment if args.increment > 0 else args.node_count
     node_callback: Optional[Callable] = None
     pod_callback: Optional[Callable] = None
     preffix: str = ''
@@ -242,7 +255,7 @@ def main(args: argparse.Namespace) -> None:
 
     if preffix != '':
         print_msg(f'{preffix.capitalize()[:-1]} selected.')
-    
+
     stop_iteration = False
     steps = args.node_count//increment
     for i in range(0, steps):
@@ -267,7 +280,7 @@ def main(args: argparse.Namespace) -> None:
         animation_thread.join()
         print_msg('Finished!                 ', True)
     print_msg(f'Files saved to output folder: {output_folder}')
-        
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(
                     prog='kube-gen.py')
@@ -281,7 +294,7 @@ if __name__ == '__main__':
     parser.add_argument('-nn', '--new_node_path', type=str, default='../example/newnode', help='Path to the YAML file containing the new node template for opensim')
     parser.add_argument('-n', '--nodes_path', type=str, default='../example/cluster/nodes/nodes.yaml', help='Path to the YAML file containing the nodes')
     parser.add_argument('-p', '--pods_path', type=str, default='../example/applications/simulation/pods.yaml',  help='Path to the YAML file containing the pods')
-    print_ascii()    
+    print_ascii()
     try:
         args = parser.parse_args()
         if args.kubemark and (args.node_count is None or args.hollow_node_path is None or args.nodes_path is None or args.pods_path is None):
@@ -290,5 +303,5 @@ if __name__ == '__main__':
             raise Exception('No output folder provided')
     except:
         parser.print_help()
-        sys.exit(-1)   
+        sys.exit(-1)
     main(args)

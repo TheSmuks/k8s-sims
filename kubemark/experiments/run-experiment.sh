@@ -38,7 +38,7 @@ parse_args() {
         case "$opt" in
             c) CLUSTER_NAME="$OPTARG" ;;
             r) RUNS="$OPTARG" ;;
-            e) EXPERIMENT_FILES_PATH="$OPTARG" ;;
+            e) EXPERIMENT_FILES_PATH=$(realpath "$OPTARG") ;;
             t) MEMORY_THRESHOLD="$OPTARG" ;;
             h) usage; exit 0 ;;
             :) echo "Error: Option requires an argument." >&2; usage; exit 1 ;;
@@ -274,9 +274,10 @@ for node_file in $(find "$EXPERIMENT_FILES_PATH" -name "kubemark-nodes-*.yaml" -
         if [[ $SETUP_OK = "true" ]] && deploy_objects "$node_file" "$POD_FILE"; then
             watch_pod_scheduling UNSCHEDULED_PODS
         fi
-
-        kill -SIGINT "$POLL_PID" 2>/dev/null || true
-        wait "$POLL_PID" 2>/dev/null || true
+        if [[ $POLL_PID -ne -1 ]]; then
+            kill -SIGINT "$POLL_PID" 2>/dev/null || true
+            wait "$POLL_PID" 2>/dev/null || true
+        fi
         echo "|$UNSCHEDULED_PODS" >> "$OUT_FILE"
         cleanup_cluster
     done

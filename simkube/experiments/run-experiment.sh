@@ -41,7 +41,7 @@ parse_args() {
         case "$opt" in
             c) CLUSTER_NAME="$OPTARG" ;;
             r) RUNS="$OPTARG" ;;
-            e) EXPERIMENT_FILES_PATH="$OPTARG" ;;
+            e) EXPERIMENT_FILES_PATH=$(realpath "$OPTARG") ;;
             t) MEMORY_THRESHOLD="$OPTARG" ;;
             h) usage; exit 0 ;;
             :) echo "Error: Option requires an argument." >&2; usage; exit 1 ;;
