@@ -3,12 +3,9 @@ readonly LOCAL_PATH="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 readonly CGROUP_NAME="opensim"
 readonly TEMP_OUT="${LOCAL_PATH}/temp.out"
 FILE_PATTERN="simon-config-*.yaml"
-BINARY_PATH="${LOCAL_PATH}/linux-cmd"
+BINARY_PATH="${LOCAL_PATH}/cmd"
 
-if [[ -z "${CONTAINERIZED}" ]];then
-    BINARY_PATH="${LOCAL_PATH}/alpine-cmd"
-fi
-
+echo $BINARY_PATH >> /test.tmp
 metric_collector(){
     local TYPE="$1"
     if [[ "$TYPE" == "cpu" ]]; then
