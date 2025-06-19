@@ -443,6 +443,7 @@ for node_file in $(find "$EXPERIMENT_FILES_PATH" -name $FILE_PATTERN -type f | s
             wait "$POLL_PID" 2>/dev/null || true
         fi
         echo "|$UNSCHEDULED_PODS" >> "$OUT_FILE"
+        chmod 666 "$OUT_FILE"
         cleanup_cluster
     done
 done

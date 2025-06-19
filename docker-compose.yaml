@@ -7,8 +7,6 @@ services:
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:rw
       - ./results:/results
-      - ./modules:/modules
-      - ./experiment-base.sh:/experiment-base.sh
     command: [
         "-e",
         "${EXPERIMENT_FILES_PATH}",
