@@ -1,0 +1,11 @@
+apiVersion: simon/v1alpha1
+kind: Config
+metadata:
+  name: simon-config
+spec:
+  appList:
+  - name: simulation-700
+    path: pods-700.yaml
+  cluster:
+    customConfig: nodes-700.yaml
+  newNode: new-node.yaml

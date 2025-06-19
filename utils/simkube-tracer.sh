@@ -36,13 +36,13 @@ done
 shift "$(($OPTIND - 1))"
 
 install_kwok
-for pod_file in $(find "$EXPERIMENT_FILES_PATH" -name "simkube-pods-*.yaml" -type f | sort -V); do
+for pod_file in $(find "$EXPERIMENT_FILES_PATH" -name "pods-*.yaml" -type f | sort -V); do
     kwokctl create cluster --name tracer
     kubectl create ns paib-gpu
     kubectl config use-context kwok-tracer
     NODE_COUNT=$(echo $pod_file | rev | cut -d '-' -f 1 | rev | cut -d '.' -f 1)
     echo "Generating pod trace of file with $NODE_COUNT nodes"
     kubectl apply -f $pod_file --namespace paib-gpu
-    skctl snapshot -c config.yml -o "$EXPERIMENT_FILES_PATH/simkube-$NODE_COUNT-trace.out"
+    skctl snapshot -c base/config.yml -o "$EXPERIMENT_FILES_PATH/trace-$NODE_COUNT.sktrace"
     kwokctl delete cluster --name tracer
 done

@@ -3,4 +3,7 @@
 *.csv
 *.out
 *.png
+*.tmp
 trace.out
+utils/dummy-sched/*
+.ropeproject
