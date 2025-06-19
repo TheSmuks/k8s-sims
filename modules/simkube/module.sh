@@ -90,7 +90,8 @@ wait_for_simulator_state(){
         ELAPSED_TIME=$(($(date +%s)-$WAIT_START_TIME))
         if [ "$ELAPSED_TIME" -ge "$MAX_WAIT_TIME" ]; then
             log ERROR "Timeout waiting for simulation to reach state $WANTED_STATE"
-            TIMEOUT_REACHED="true"
+            TIMEOUT_REACHED="1"
+            RUN_CONDITION="false"
             break
         fi
         echo -ne "Waiting for simulation to reach state $WANTED_STATE. Elapsed: $ELAPSED_TIME seconds.\r";

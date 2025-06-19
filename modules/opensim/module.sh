@@ -22,10 +22,10 @@ create_cluster(){
 
     if [[ -d "/sys/fs/cgroup/$CGROUP_NAME" ]]; then
         log WARN "Cgroup already exists: $CGROUP_NAME"
-        sudo cgdelete -g memory,cpu:/$CGROUP_NAME
+         cgdelete -g memory,cpu:/$CGROUP_NAME
     fi
 
-    sudo cgcreate -g memory,cpu:/$CGROUP_NAME
+     cgcreate -g memory,cpu:/$CGROUP_NAME
 
     if [[ ! -d "/sys/fs/cgroup/$CGROUP_NAME" ]]; then
         log ERROR "Failed to create cgroup: $CGROUP_NAME"
@@ -54,20 +54,20 @@ cleanup_cluster(){
     echo "Superuser needed to delete cgroup."
     if [[ -f "/sys/fs/cgroup/$CGROUP_NAME/cgroup.procs" ]]; then
         local PIDS
-        PIDS=$(sudo cat "/sys/fs/cgroup/$CGROUP_NAME/cgroup.procs" 2>/dev/null || true)
+        PIDS=$( cat "/sys/fs/cgroup/$CGROUP_NAME/cgroup.procs" 2>/dev/null || true)
         if [[ -n "$PIDS" ]]; then
             echo "Terminating processes in cgroup: $PIDS"
-            echo "$PIDS" | xargs -r sudo kill -TERM 2>/dev/null || true
+            echo "$PIDS" | xargs -r  kill -TERM 2>/dev/null || true
             sleep 2
             # Force kill if still running
-            PIDS=$(sudo cat "/sys/fs/cgroup/$CGROUP_NAME/cgroup.procs" 2>/dev/null || true)
+            PIDS=$( cat "/sys/fs/cgroup/$CGROUP_NAME/cgroup.procs" 2>/dev/null || true)
             if [[ -n "$PIDS" ]]; then
-                echo "$PIDS" | xargs -r sudo kill -KILL 2>/dev/null || true
+                echo "$PIDS" | xargs -r  kill -KILL 2>/dev/null || true
             fi
         fi
     fi
 
-    sudo cgdelete memory,cpu:/$CGROUP_NAME 2>/dev/null || true
+     cgdelete memory,cpu:/$CGROUP_NAME 2>/dev/null || true
     log INFO "Cleaned up cgroup: $CGROUP_NAME"
 }
 
@@ -78,16 +78,16 @@ deploy_objects(){
     echo "Superuser needed to run experiment under a cgroup."
     LAST_PATH=$(pwd)
     cd $EXPERIMENT_PATH
-    sudo cgexec -g memory,cpu:/$CGROUP_NAME ${BINARY_PATH} apply -f $SIMON_FILE > ${TEMP_OUT} &
+     cgexec -g memory,cpu:/$CGROUP_NAME ${BINARY_PATH} apply -f $SIMON_FILE > ${TEMP_OUT} &
     EXPERIMENT_PID=$!
     while kill -0 "$EXPERIMENT_PID" 2>/dev/null; do
         if [[ $RUN_CONDITION = "false" ]]; then
             echo "Terminating experiment process..."
-            sudo kill -TERM "$EXPERIMENT_PID" 2>/dev/null || true
+             kill -TERM "$EXPERIMENT_PID" 2>/dev/null || true
             sleep 2
             # Force kill if still running
             if kill -0 "$EXPERIMENT_PID" 2>/dev/null; then
-                sudo kill -KILL "$MAIN_SCRIPT_PID" 2>/dev/null || true
+                 kill -KILL "$MAIN_SCRIPT_PID" 2>/dev/null || true
             fi
             break
         fi
