@@ -51,6 +51,7 @@ ENV PYTHONPATH=/pylib
 WORKDIR /
 COPY data /data
 COPY modules /modules
+RUN chmod +x /modules/opensim/cmd
 COPY experiment-base.sh /experiment-base.sh
 COPY run-all-experiments.sh /run-all-experiments.sh
 COPY requirements.txt /requirements.txt
@@ -64,4 +65,4 @@ COPY entrypoint.sh /entrypoint.sh
 RUN sed -i 's/\bsudo\b//g' /modules/opensim/module.sh
 RUN echo 'rc_cgroup_mode="unified"' | tee -a /etc/rc.conf
 
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["bash", "-c", "/entrypoint.sh"]
