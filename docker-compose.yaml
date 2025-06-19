@@ -1,0 +1,25 @@
+services:
+  k8s-sims:
+    image: thesmuks/k8s-sims:latest
+    container_name: k8s-sims
+    privileged: true
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:rw
+      - ./results:/results
+      - ./opensim-src:/opensim-src
+    cgroup: host
+    command: [
+        "-e",
+        "${EXPERIMENT_FILES_PATH}",
+        "-n",
+        "${RUNS}",
+        "-s",
+        "${START}",
+        "-o",
+        "${OUTPUT_FOLDER}",
+        "-t",
+        "${MEMORY_THRESHOLD}",
+        "-x",
+        "${MAX_SIMULATION_TIME}",
+        # "-v",
+      ]

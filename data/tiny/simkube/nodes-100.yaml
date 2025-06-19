@@ -1,0 +1,2999 @@
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: P100
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0000
+    kubernetes.io/os: linux
+  name: openb-node-0000
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '2'
+    alibabacloud.com/gpu-milli: '2000'
+    cpu: 64000m
+    memory: 262144Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '2'
+    alibabacloud.com/gpu-milli: '2000'
+    cpu: 64000m
+    memory: 262144Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: P100
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0001
+    kubernetes.io/os: linux
+  name: openb-node-0001
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '2'
+    alibabacloud.com/gpu-milli: '2000'
+    cpu: 64000m
+    memory: 262144Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '2'
+    alibabacloud.com/gpu-milli: '2000'
+    cpu: 64000m
+    memory: 262144Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: P100
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0002
+    kubernetes.io/os: linux
+  name: openb-node-0002
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '2'
+    alibabacloud.com/gpu-milli: '2000'
+    cpu: 64000m
+    memory: 262144Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '2'
+    alibabacloud.com/gpu-milli: '2000'
+    cpu: 64000m
+    memory: 262144Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: P100
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0003
+    kubernetes.io/os: linux
+  name: openb-node-0003
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '2'
+    alibabacloud.com/gpu-milli: '2000'
+    cpu: 64000m
+    memory: 262144Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '2'
+    alibabacloud.com/gpu-milli: '2000'
+    cpu: 64000m
+    memory: 262144Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: P100
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0004
+    kubernetes.io/os: linux
+  name: openb-node-0004
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '2'
+    alibabacloud.com/gpu-milli: '2000'
+    cpu: 64000m
+    memory: 262144Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '2'
+    alibabacloud.com/gpu-milli: '2000'
+    cpu: 64000m
+    memory: 262144Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: P100
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0005
+    kubernetes.io/os: linux
+  name: openb-node-0005
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '2'
+    alibabacloud.com/gpu-milli: '2000'
+    cpu: 64000m
+    memory: 262144Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '2'
+    alibabacloud.com/gpu-milli: '2000'
+    cpu: 64000m
+    memory: 262144Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: P100
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0006
+    kubernetes.io/os: linux
+  name: openb-node-0006
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '2'
+    alibabacloud.com/gpu-milli: '2000'
+    cpu: 64000m
+    memory: 262144Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '2'
+    alibabacloud.com/gpu-milli: '2000'
+    cpu: 64000m
+    memory: 262144Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: P100
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0007
+    kubernetes.io/os: linux
+  name: openb-node-0007
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '2'
+    alibabacloud.com/gpu-milli: '2000'
+    cpu: 64000m
+    memory: 262144Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '2'
+    alibabacloud.com/gpu-milli: '2000'
+    cpu: 64000m
+    memory: 262144Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: P100
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0008
+    kubernetes.io/os: linux
+  name: openb-node-0008
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '2'
+    alibabacloud.com/gpu-milli: '2000'
+    cpu: 64000m
+    memory: 262144Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '2'
+    alibabacloud.com/gpu-milli: '2000'
+    cpu: 64000m
+    memory: 262144Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: P100
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0009
+    kubernetes.io/os: linux
+  name: openb-node-0009
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '2'
+    alibabacloud.com/gpu-milli: '2000'
+    cpu: 64000m
+    memory: 262144Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '2'
+    alibabacloud.com/gpu-milli: '2000'
+    cpu: 64000m
+    memory: 262144Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: P100
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0010
+    kubernetes.io/os: linux
+  name: openb-node-0010
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '2'
+    alibabacloud.com/gpu-milli: '2000'
+    cpu: 64000m
+    memory: 262144Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '2'
+    alibabacloud.com/gpu-milli: '2000'
+    cpu: 64000m
+    memory: 262144Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: P100
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0011
+    kubernetes.io/os: linux
+  name: openb-node-0011
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '2'
+    alibabacloud.com/gpu-milli: '2000'
+    cpu: 64000m
+    memory: 262144Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '2'
+    alibabacloud.com/gpu-milli: '2000'
+    cpu: 64000m
+    memory: 262144Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: P100
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0012
+    kubernetes.io/os: linux
+  name: openb-node-0012
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '2'
+    alibabacloud.com/gpu-milli: '2000'
+    cpu: 64000m
+    memory: 262144Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '2'
+    alibabacloud.com/gpu-milli: '2000'
+    cpu: 64000m
+    memory: 262144Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: P100
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0013
+    kubernetes.io/os: linux
+  name: openb-node-0013
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '2'
+    alibabacloud.com/gpu-milli: '2000'
+    cpu: 64000m
+    memory: 262144Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '2'
+    alibabacloud.com/gpu-milli: '2000'
+    cpu: 64000m
+    memory: 262144Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: P100
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0014
+    kubernetes.io/os: linux
+  name: openb-node-0014
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '2'
+    alibabacloud.com/gpu-milli: '2000'
+    cpu: 64000m
+    memory: 262144Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '2'
+    alibabacloud.com/gpu-milli: '2000'
+    cpu: 64000m
+    memory: 262144Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: P100
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0015
+    kubernetes.io/os: linux
+  name: openb-node-0015
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '2'
+    alibabacloud.com/gpu-milli: '2000'
+    cpu: 64000m
+    memory: 262144Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '2'
+    alibabacloud.com/gpu-milli: '2000'
+    cpu: 64000m
+    memory: 262144Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: P100
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0016
+    kubernetes.io/os: linux
+  name: openb-node-0016
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '2'
+    alibabacloud.com/gpu-milli: '2000'
+    cpu: 64000m
+    memory: 262144Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '2'
+    alibabacloud.com/gpu-milli: '2000'
+    cpu: 64000m
+    memory: 262144Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: P100
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0017
+    kubernetes.io/os: linux
+  name: openb-node-0017
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '2'
+    alibabacloud.com/gpu-milli: '2000'
+    cpu: 64000m
+    memory: 262144Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '2'
+    alibabacloud.com/gpu-milli: '2000'
+    cpu: 64000m
+    memory: 262144Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: P100
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0018
+    kubernetes.io/os: linux
+  name: openb-node-0018
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '2'
+    alibabacloud.com/gpu-milli: '2000'
+    cpu: 64000m
+    memory: 262144Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '2'
+    alibabacloud.com/gpu-milli: '2000'
+    cpu: 64000m
+    memory: 262144Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: P100
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0019
+    kubernetes.io/os: linux
+  name: openb-node-0019
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '2'
+    alibabacloud.com/gpu-milli: '2000'
+    cpu: 64000m
+    memory: 262144Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '2'
+    alibabacloud.com/gpu-milli: '2000'
+    cpu: 64000m
+    memory: 262144Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: P100
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0020
+    kubernetes.io/os: linux
+  name: openb-node-0020
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '2'
+    alibabacloud.com/gpu-milli: '2000'
+    cpu: 64000m
+    memory: 262144Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '2'
+    alibabacloud.com/gpu-milli: '2000'
+    cpu: 64000m
+    memory: 262144Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: P100
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0021
+    kubernetes.io/os: linux
+  name: openb-node-0021
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '2'
+    alibabacloud.com/gpu-milli: '2000'
+    cpu: 64000m
+    memory: 262144Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '2'
+    alibabacloud.com/gpu-milli: '2000'
+    cpu: 64000m
+    memory: 262144Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: G3
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0022
+    kubernetes.io/os: linux
+  name: openb-node-0022
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 128000m
+    memory: 786432Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 128000m
+    memory: 786432Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: V100M32
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0023
+    kubernetes.io/os: linux
+  name: openb-node-0023
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 786432Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 786432Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: V100M32
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0024
+    kubernetes.io/os: linux
+  name: openb-node-0024
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 786432Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 786432Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: V100M16
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0025
+    kubernetes.io/os: linux
+  name: openb-node-0025
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '4'
+    alibabacloud.com/gpu-milli: '4000'
+    cpu: 32000m
+    memory: 131072Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '4'
+    alibabacloud.com/gpu-milli: '4000'
+    cpu: 32000m
+    memory: 131072Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: G2
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0026
+    kubernetes.io/os: linux
+  name: openb-node-0026
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: G2
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0027
+    kubernetes.io/os: linux
+  name: openb-node-0027
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: G2
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0028
+    kubernetes.io/os: linux
+  name: openb-node-0028
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: G2
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0029
+    kubernetes.io/os: linux
+  name: openb-node-0029
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: G2
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0030
+    kubernetes.io/os: linux
+  name: openb-node-0030
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: G2
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0031
+    kubernetes.io/os: linux
+  name: openb-node-0031
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: G2
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0032
+    kubernetes.io/os: linux
+  name: openb-node-0032
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: G2
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0033
+    kubernetes.io/os: linux
+  name: openb-node-0033
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: G2
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0034
+    kubernetes.io/os: linux
+  name: openb-node-0034
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: T4
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0035
+    kubernetes.io/os: linux
+  name: openb-node-0035
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '4'
+    alibabacloud.com/gpu-milli: '4000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '4'
+    alibabacloud.com/gpu-milli: '4000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: T4
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0036
+    kubernetes.io/os: linux
+  name: openb-node-0036
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '2'
+    alibabacloud.com/gpu-milli: '2000'
+    cpu: 104000m
+    memory: 524288Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '2'
+    alibabacloud.com/gpu-milli: '2000'
+    cpu: 104000m
+    memory: 524288Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: G3
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0037
+    kubernetes.io/os: linux
+  name: openb-node-0037
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 128000m
+    memory: 786432Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 128000m
+    memory: 786432Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: G2
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0038
+    kubernetes.io/os: linux
+  name: openb-node-0038
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: G2
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0039
+    kubernetes.io/os: linux
+  name: openb-node-0039
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: G2
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0040
+    kubernetes.io/os: linux
+  name: openb-node-0040
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: G2
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0041
+    kubernetes.io/os: linux
+  name: openb-node-0041
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: G2
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0042
+    kubernetes.io/os: linux
+  name: openb-node-0042
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: T4
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0043
+    kubernetes.io/os: linux
+  name: openb-node-0043
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '2'
+    alibabacloud.com/gpu-milli: '2000'
+    cpu: 104000m
+    memory: 524288Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '2'
+    alibabacloud.com/gpu-milli: '2000'
+    cpu: 104000m
+    memory: 524288Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: G2
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0044
+    kubernetes.io/os: linux
+  name: openb-node-0044
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: G2
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0045
+    kubernetes.io/os: linux
+  name: openb-node-0045
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: G2
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0046
+    kubernetes.io/os: linux
+  name: openb-node-0046
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: G2
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0047
+    kubernetes.io/os: linux
+  name: openb-node-0047
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: G2
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0048
+    kubernetes.io/os: linux
+  name: openb-node-0048
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: G3
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0049
+    kubernetes.io/os: linux
+  name: openb-node-0049
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 128000m
+    memory: 786432Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 128000m
+    memory: 786432Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: G3
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0050
+    kubernetes.io/os: linux
+  name: openb-node-0050
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 128000m
+    memory: 786432Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 128000m
+    memory: 786432Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: P100
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0051
+    kubernetes.io/os: linux
+  name: openb-node-0051
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '2'
+    alibabacloud.com/gpu-milli: '2000'
+    cpu: 16000m
+    memory: 122880Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '2'
+    alibabacloud.com/gpu-milli: '2000'
+    cpu: 16000m
+    memory: 122880Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: G2
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0052
+    kubernetes.io/os: linux
+  name: openb-node-0052
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: G2
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0053
+    kubernetes.io/os: linux
+  name: openb-node-0053
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: G2
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0054
+    kubernetes.io/os: linux
+  name: openb-node-0054
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: G2
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0055
+    kubernetes.io/os: linux
+  name: openb-node-0055
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: G2
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0056
+    kubernetes.io/os: linux
+  name: openb-node-0056
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: T4
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0057
+    kubernetes.io/os: linux
+  name: openb-node-0057
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '4'
+    alibabacloud.com/gpu-milli: '4000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '4'
+    alibabacloud.com/gpu-milli: '4000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: G2
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0058
+    kubernetes.io/os: linux
+  name: openb-node-0058
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: G2
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0059
+    kubernetes.io/os: linux
+  name: openb-node-0059
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: G2
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0060
+    kubernetes.io/os: linux
+  name: openb-node-0060
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: G2
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0061
+    kubernetes.io/os: linux
+  name: openb-node-0061
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: P100
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0062
+    kubernetes.io/os: linux
+  name: openb-node-0062
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '2'
+    alibabacloud.com/gpu-milli: '2000'
+    cpu: 16000m
+    memory: 122880Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '2'
+    alibabacloud.com/gpu-milli: '2000'
+    cpu: 16000m
+    memory: 122880Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: G2
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0063
+    kubernetes.io/os: linux
+  name: openb-node-0063
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: G2
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0064
+    kubernetes.io/os: linux
+  name: openb-node-0064
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: V100M32
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0065
+    kubernetes.io/os: linux
+  name: openb-node-0065
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 786432Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 786432Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: G2
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0066
+    kubernetes.io/os: linux
+  name: openb-node-0066
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: T4
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0067
+    kubernetes.io/os: linux
+  name: openb-node-0067
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '2'
+    alibabacloud.com/gpu-milli: '2000'
+    cpu: 104000m
+    memory: 524288Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '2'
+    alibabacloud.com/gpu-milli: '2000'
+    cpu: 104000m
+    memory: 524288Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: T4
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0068
+    kubernetes.io/os: linux
+  name: openb-node-0068
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '2'
+    alibabacloud.com/gpu-milli: '2000'
+    cpu: 104000m
+    memory: 524288Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '2'
+    alibabacloud.com/gpu-milli: '2000'
+    cpu: 104000m
+    memory: 524288Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: T4
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0069
+    kubernetes.io/os: linux
+  name: openb-node-0069
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '2'
+    alibabacloud.com/gpu-milli: '2000'
+    cpu: 104000m
+    memory: 524288Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '2'
+    alibabacloud.com/gpu-milli: '2000'
+    cpu: 104000m
+    memory: 524288Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: T4
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0070
+    kubernetes.io/os: linux
+  name: openb-node-0070
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '2'
+    alibabacloud.com/gpu-milli: '2000'
+    cpu: 104000m
+    memory: 524288Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '2'
+    alibabacloud.com/gpu-milli: '2000'
+    cpu: 104000m
+    memory: 524288Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: V100M16
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0071
+    kubernetes.io/os: linux
+  name: openb-node-0071
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '4'
+    alibabacloud.com/gpu-milli: '4000'
+    cpu: 32000m
+    memory: 131072Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '4'
+    alibabacloud.com/gpu-milli: '4000'
+    cpu: 32000m
+    memory: 131072Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: P100
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0072
+    kubernetes.io/os: linux
+  name: openb-node-0072
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '2'
+    alibabacloud.com/gpu-milli: '2000'
+    cpu: 16000m
+    memory: 122880Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '2'
+    alibabacloud.com/gpu-milli: '2000'
+    cpu: 16000m
+    memory: 122880Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: P100
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0073
+    kubernetes.io/os: linux
+  name: openb-node-0073
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '2'
+    alibabacloud.com/gpu-milli: '2000'
+    cpu: 16000m
+    memory: 122880Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '2'
+    alibabacloud.com/gpu-milli: '2000'
+    cpu: 16000m
+    memory: 122880Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: G2
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0074
+    kubernetes.io/os: linux
+  name: openb-node-0074
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: G2
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0075
+    kubernetes.io/os: linux
+  name: openb-node-0075
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: G2
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0076
+    kubernetes.io/os: linux
+  name: openb-node-0076
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: G2
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0077
+    kubernetes.io/os: linux
+  name: openb-node-0077
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: T4
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0078
+    kubernetes.io/os: linux
+  name: openb-node-0078
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '4'
+    alibabacloud.com/gpu-milli: '4000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '4'
+    alibabacloud.com/gpu-milli: '4000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: T4
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0079
+    kubernetes.io/os: linux
+  name: openb-node-0079
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '4'
+    alibabacloud.com/gpu-milli: '4000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '4'
+    alibabacloud.com/gpu-milli: '4000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: G2
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0080
+    kubernetes.io/os: linux
+  name: openb-node-0080
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: G2
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0081
+    kubernetes.io/os: linux
+  name: openb-node-0081
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: G2
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0082
+    kubernetes.io/os: linux
+  name: openb-node-0082
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: P100
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0083
+    kubernetes.io/os: linux
+  name: openb-node-0083
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '2'
+    alibabacloud.com/gpu-milli: '2000'
+    cpu: 16000m
+    memory: 122880Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '2'
+    alibabacloud.com/gpu-milli: '2000'
+    cpu: 16000m
+    memory: 122880Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: P100
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0084
+    kubernetes.io/os: linux
+  name: openb-node-0084
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '2'
+    alibabacloud.com/gpu-milli: '2000'
+    cpu: 16000m
+    memory: 122880Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '2'
+    alibabacloud.com/gpu-milli: '2000'
+    cpu: 16000m
+    memory: 122880Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: P100
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0085
+    kubernetes.io/os: linux
+  name: openb-node-0085
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '2'
+    alibabacloud.com/gpu-milli: '2000'
+    cpu: 16000m
+    memory: 122880Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '2'
+    alibabacloud.com/gpu-milli: '2000'
+    cpu: 16000m
+    memory: 122880Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: G2
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0086
+    kubernetes.io/os: linux
+  name: openb-node-0086
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: G2
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0087
+    kubernetes.io/os: linux
+  name: openb-node-0087
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: G2
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0088
+    kubernetes.io/os: linux
+  name: openb-node-0088
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: G2
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0089
+    kubernetes.io/os: linux
+  name: openb-node-0089
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: P100
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0090
+    kubernetes.io/os: linux
+  name: openb-node-0090
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '2'
+    alibabacloud.com/gpu-milli: '2000'
+    cpu: 16000m
+    memory: 122880Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '2'
+    alibabacloud.com/gpu-milli: '2000'
+    cpu: 16000m
+    memory: 122880Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: G2
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0091
+    kubernetes.io/os: linux
+  name: openb-node-0091
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: G2
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0092
+    kubernetes.io/os: linux
+  name: openb-node-0092
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: G2
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0093
+    kubernetes.io/os: linux
+  name: openb-node-0093
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: G2
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0094
+    kubernetes.io/os: linux
+  name: openb-node-0094
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: G2
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0095
+    kubernetes.io/os: linux
+  name: openb-node-0095
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '8'
+    alibabacloud.com/gpu-milli: '8000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: T4
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0096
+    kubernetes.io/os: linux
+  name: openb-node-0096
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '4'
+    alibabacloud.com/gpu-milli: '4000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '4'
+    alibabacloud.com/gpu-milli: '4000'
+    cpu: 96000m
+    memory: 393216Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: V100M16
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0097
+    kubernetes.io/os: linux
+  name: openb-node-0097
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '4'
+    alibabacloud.com/gpu-milli: '4000'
+    cpu: 32000m
+    memory: 131072Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '4'
+    alibabacloud.com/gpu-milli: '4000'
+    cpu: 32000m
+    memory: 131072Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: V100M16
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0098
+    kubernetes.io/os: linux
+  name: openb-node-0098
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '4'
+    alibabacloud.com/gpu-milli: '4000'
+    cpu: 32000m
+    memory: 131072Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '4'
+    alibabacloud.com/gpu-milli: '4000'
+    cpu: 32000m
+    memory: 131072Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kwok.x-k8s.io/node: fake
+  labels:
+    alibabacloud.com/gpu-card-model: V100M16
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: openb-node-0099
+    kubernetes.io/os: linux
+  name: openb-node-0099
+spec:
+  taints:
+  - effect: NoSchedule
+    key: openb-only
+    value: 'true'
+status:
+  allocatable:
+    alibabacloud.com/gpu-count: '4'
+    alibabacloud.com/gpu-milli: '4000'
+    cpu: 32000m
+    memory: 131072Mi
+    pods: '1001'
+  capacity:
+    alibabacloud.com/gpu-count: '4'
+    alibabacloud.com/gpu-milli: '4000'
+    cpu: 32000m
+    memory: 131072Mi
+    pods: '1001'
