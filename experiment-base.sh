@@ -323,6 +323,7 @@ watch_pod_scheduling(){
 }
 
 # Entry point
+log INFO "Received arguments $@"
 parse_args "$@"
 # Functions are overwritten in this part
 # It is done here to avoid overriding the function track_containers
