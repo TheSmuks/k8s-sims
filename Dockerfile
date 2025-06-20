@@ -65,4 +65,4 @@ COPY entrypoint.sh /entrypoint.sh
 RUN sed -i 's/\bsudo\b//g' /modules/opensim/module.sh
 RUN echo 'rc_cgroup_mode="unified"' | tee -a /etc/rc.conf
 
-ENTRYPOINT ["bash", "-c", "/entrypoint.sh"]
+ENTRYPOINT ["/entrypoint.sh"]

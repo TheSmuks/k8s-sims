@@ -83,10 +83,6 @@ log() {
 }
 
 parse_args() {
-    RUNS=$DEFAULT_RUNS
-    MEMORY_THRESHOLD=$DEFAULT_MEMORY_THRESHOLD
-    START=$DEFAULT_START
-    MAX_SIMULATION_TIME=$DEFAULT_MAX_SIMULATION_TIME
 
     local OPTIND
     while getopts 'he:m:c:n:s:o:p:t:x:' opt; do
@@ -103,6 +99,27 @@ parse_args() {
             ?) log ERROR "Invalid option -$OPTARG" >&2; usage; exit 1 ;;
         esac
     done
+
+    if [[ -z $MAX_SIMULATION_TIME ]]; then
+        MAX_SIMULATION_TIME=$DEFAULT_MAX_SIMULATION_TIME
+    fi
+
+    if [[ -z $EXPERIMENT_FILES_PATH ]]; then
+        EXPERIMENT_FILES_PATH="${DEFAULT_EXPERIMENT_FILES_PATH}"
+    fi
+
+    if [[ -z $START ]]; then
+        START=$DEFAULT_START
+    fi
+
+    if [[ -z $MEMORY_THRESHOLD ]]; then
+        MEMORY_THRESHOLD=$DEFAULT_MEMORY_THRESHOLD
+    fi
+
+    if [[ -z $RUNS ]]; then
+        RUNS=$DEFAULT_RUNS
+    fi
+
 
     if [[ -z "$EXPERIMENT_FILES_PATH" || -z "$SIMULATION_MODE" ]]; then
         log ERROR "Missing required arguments -e and -m." >&2
