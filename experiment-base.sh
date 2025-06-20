@@ -20,7 +20,7 @@ FILE_PATTERN="nodes-*.yaml"
 START=0
 RUN_CONDITION="true"
 UNSCHEDULED_PODS=0
-TIMEOUT_REACHED="false"
+TIMEOUT_REACHED="0"
 usage() {
     cat << EOF
 Usage: $(basename "$0") -e EXPERIMENT_PATH -m SIMULATION_MODE [options]
@@ -264,7 +264,7 @@ save_metrics() {
 
 watch_pod_scheduling(){
     wait_for_simulator_state "Running"
-    if [[ "$RUN_CONDITION" = "true" && "$TIMEOUT_REACHED" = "false" ]]; then
+    if [[ "$RUN_CONDITION" = "true" && "$TIMEOUT_REACHED" = "0" ]]; then
         echo ""
         while [[ $(kubectl get pods -n "$NAMESPACE" --no-headers 2>/dev/null | wc -l) -lt 2  && $RUN_CONDITION = "true" ]]; do
             sleep 1
@@ -414,7 +414,7 @@ for node_file in $(find "$EXPERIMENT_FILES_PATH" -name $FILE_PATTERN -type f | s
             break
         fi
 
-        TIMEOUT_REACHED="false"
+        TIMEOUT_REACHED="0"
 
         echo -n "$NODE_COUNT|" >> "$OUT_FILE"
         echo -n "$POD_COUNT|" >> "$OUT_FILE"
