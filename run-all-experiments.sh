@@ -4,7 +4,7 @@ readonly DEFAULT_RUNS=3
 readonly DEFAULT_START=0
 readonly DEFAULT_MEMORY_THRESHOLD=95
 readonly DEFAULT_MAX_SIMULATION_TIME=3600
-readonly DEFAULT_EXPERIMENT_FILES_PATH="${LOCAL_PATH}/data/small"
+readonly DEFAULT_EXPERIMENT_FILES_PATH="${LOCAL_PATH}/data/big"
 readonly DEFAULT_OUTPUT_FOLDER="${LOCAL_PATH}/results"
 
 VERBOSE=""
@@ -58,12 +58,6 @@ log() {
 }
 
 parse_args() {
-    RUNS=$DEFAULT_RUNS
-    MEMORY_THRESHOLD=$DEFAULT_MEMORY_THRESHOLD
-    START=$DEFAULT_START
-    MAX_SIMULATION_TIME=$DEFAULT_MAX_SIMULATION_TIME
-    EXPERIMENT_FILES_PATH="${DEFAULT_EXPERIMENT_FILES_PATH}"
-
     local OPTIND
     while getopts 'hve:c:n:s:o:p:t:x:' opt; do
         case "$opt" in
@@ -80,17 +74,6 @@ parse_args() {
         esac
     done
 
-    if [[ -z "$EXPERIMENT_FILES_PATH" ]]; then
-        log ERROR "Missing required argument -e." >&2
-        usage
-        exit 1
-    fi
-
-    if [[ ! -d "$EXPERIMENT_FILES_PATH" ]]; then
-        log ERROR "Experiment files path does not exist: $EXPERIMENT_FILES_PATH" >&2
-        exit 1
-    fi
-
     if [[ ! -z "$OUT_FOLDER" ]] && [[ ! -d "$OUT_FOLDER" ]]; then
         log ERROR "Output folder does not exist: $OUT_FOLDER" >&2
         exit 1
@@ -98,6 +81,31 @@ parse_args() {
 
     if [[ -z $OUT_FOLDER ]]; then
         OUT_FOLDER=$DEFAULT_OUTPUT_FOLDER
+    fi
+
+    if [[ -z $MAX_SIMULATION_TIME ]]; then
+        MAX_SIMULATION_TIME=$DEFAULT_MAX_SIMULATION_TIME
+    fi
+
+    if [[ -z $EXPERIMENT_FILES_PATH ]]; then
+        EXPERIMENT_FILES_PATH="${DEFAULT_EXPERIMENT_FILES_PATH}"
+    fi
+
+    if [[ -z $START ]]; then
+        START=$DEFAULT_START
+    fi
+
+    if [[ -z $MEMORY_THRESHOLD ]]; then
+        MEMORY_THRESHOLD=$DEFAULT_MEMORY_THRESHOLD
+    fi
+
+    if [[ -z $RUNS ]]; then
+        RUNS=$DEFAULT_RUNS
+    fi
+
+    if [[ ! -d "$EXPERIMENT_FILES_PATH" ]]; then
+        log ERROR "Experiment files path does not exist: $EXPERIMENT_FILES_PATH" >&2
+        exit 1
     fi
 }
 cleanup() {
@@ -108,9 +116,8 @@ cleanup() {
 }
 
 parse_args "$@"
-echo "$@"
-
-log INFO "IP: $HOST_IP"
+log INFO "[Run all] - Received arguments: $@"
+exit 0
 if [[ ! -z "${VERBOSE}" ]]; then
     set -euxo pipefail
 fi
