@@ -311,7 +311,7 @@ watch_pod_scheduling(){
     wait_for_simulator_state "Running"
     if [[ "$RUN_CONDITION" = "true" && "$TIMEOUT_REACHED" = "0" ]]; then
         echo ""
-        while [[ $(kubectl get pods -n "$NAMESPACE" --no-headers 2>/dev/null | wc -l) -lt 2  && $RUN_CONDITION = "true" ]]; do
+        while [[ $(kubectl get pods -n "$NAMESPACE" --no-headers 2>/dev/null | wc -l) -lt 1  && $RUN_CONDITION = "true" ]]; do
             sleep 1
         done
         log INFO "Waiting for the count of pending pods to stabilize..."
@@ -406,7 +406,6 @@ track_containers() {
     save_metrics "$START_TIME" "$MAX_MEMORY_MEASUREMENT" "${CPU_MEASUREMENTS[@]}"
 
 }
-
 log INFO "Simulation started with mode: $SIMULATION_MODE"
 if [[ ! -z $CLUSTER_NAME ]]; then
     log INFO "Cluster: $CLUSTER_NAME"
@@ -485,7 +484,7 @@ for node_file in $(find "$EXPERIMENT_FILES_PATH" -name $FILE_PATTERN -type f | s
             kill -SIGINT "$POLL_PID" 2>/dev/null || true
             wait "$POLL_PID" 2>/dev/null || true
         fi
-        echo "|$UNSCHEDULED_PODS" >> "$OUT_FILE"
+        echo "|${UNSCHEDULED_PODS:-0}" >> "$OUT_FILE"
         chmod 666 "$OUT_FILE"
         cleanup_cluster
     done

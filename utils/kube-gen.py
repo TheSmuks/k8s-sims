@@ -94,6 +94,7 @@ def patch_hollow_node(base_node: Dict[str, Any]) -> None:
 
     new_node['metadata']['name'] = base_node['metadata']['name']
     new_node['metadata']['labels']['name'] = base_node['metadata']['name']
+    new_node['metadata']['namespace'] = 'kubemark'
     new_node['spec']['containers'][0]['command'][-2] += f',{new_labels}'
     new_node['spec']['containers'][0]['command'][-1] = new_node['spec']['containers'][0]['command'][-1].replace('template_node_extended_resources',new_extended_resources)
     base_node.clear()
@@ -121,7 +122,7 @@ def patch_hollow_pod(base_pod: Dict[str, Any]) -> None:
                       }
                     }
     base_pod['spec']['containers'][0]['imagePullPolicy'] = 'IfNotPresent'
-    base_pod['spec']['containers'][0]['image'] = 'docker.io/busybox:latest'
+    # base_pod['spec']['containers'][0]['image'] = 'docker.io/busybox:latest' # To avoid fetching tensorflow
     base_pod['spec'].update(patch_affinity)
 
 def parse_cpu(cpu_str: str) -> int:

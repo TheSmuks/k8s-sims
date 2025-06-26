@@ -36,6 +36,7 @@ cleanup_cluster(){
 deploy_objects(){
     local NODE_FILE="$1"
     local POD_FILE="$2"
+    kubectl create ns kubemark
     kubectl create -f "$NODE_FILE"
     kubectl create -f "$POD_FILE"
 }

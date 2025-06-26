@@ -5,7 +5,6 @@ readonly TEMP_OUT="${LOCAL_PATH}/temp.out"
 FILE_PATTERN="simon-config-*.yaml"
 BINARY_PATH="${LOCAL_PATH}/cmd"
 
-echo $BINARY_PATH >> /test.tmp
 metric_collector(){
     local TYPE="$1"
     if [[ "$TYPE" == "cpu" ]]; then
