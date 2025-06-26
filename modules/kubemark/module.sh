@@ -21,6 +21,7 @@ cluster_setup(){
     sed -i 's|server: https://127.0.0.1:[0-9]\+|server: https://kubernetes.default.svc:443|' "$LOCAL_PATH/config"
     kubectl config use-context "kind-$CLUSTER_NAME"
     kubectl create ns $NAMESPACE
+    wait_for_namespace ${NAMESPACE}
     kubectl create secret generic kubeconfig \
         --type=Opaque --namespace=$NAMESPACE \
         --from-file=kubelet.kubeconfig="$LOCAL_PATH/config" \
@@ -37,11 +38,6 @@ deploy_objects(){
     local POD_FILE="$2"
     kubectl create -f "$NODE_FILE"
     kubectl create -f "$POD_FILE"
-}
-
-wait_for_simulator_state(){
-    # Dummy function
-    :;
 }
 
 log INFO "Kubemark module loaded!"

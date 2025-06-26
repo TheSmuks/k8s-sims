@@ -25,7 +25,7 @@ create_cluster(){
          cgdelete -g memory,cpu:/$CGROUP_NAME
     fi
 
-     cgcreate -g memory,cpu:/$CGROUP_NAME
+    sudo cgcreate -g memory,cpu:/$CGROUP_NAME
 
     if [[ ! -d "/sys/fs/cgroup/$CGROUP_NAME" ]]; then
         log ERROR "Failed to create cgroup: $CGROUP_NAME"
@@ -67,7 +67,7 @@ cleanup_cluster(){
         fi
     fi
 
-     cgdelete memory,cpu:/$CGROUP_NAME 2>/dev/null || true
+    sudo cgdelete memory,cpu:/$CGROUP_NAME 2>/dev/null || true
     log INFO "Cleaned up cgroup: $CGROUP_NAME"
 }
 
@@ -78,7 +78,7 @@ deploy_objects(){
     echo "Superuser needed to run experiment under a cgroup."
     LAST_PATH=$(pwd)
     cd $EXPERIMENT_PATH
-     cgexec -g memory,cpu:/$CGROUP_NAME ${BINARY_PATH} apply -f $SIMON_FILE > ${TEMP_OUT} &
+    sudo cgexec -g memory,cpu:/$CGROUP_NAME ${BINARY_PATH} apply -f $SIMON_FILE > ${TEMP_OUT} &
     EXPERIMENT_PID=$!
     while kill -0 "$EXPERIMENT_PID" 2>/dev/null; do
         if [[ $RUN_CONDITION = "false" ]]; then
@@ -104,11 +104,6 @@ deploy_objects(){
 }
 
 watch_pod_scheduling(){
-    #Dummy function
-    :;
-}
-
-wait_for_simulator_state(){
     #Dummy function
     :;
 }

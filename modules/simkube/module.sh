@@ -15,7 +15,8 @@ create_cluster(){
     cd "${LOCAL_PATH}"
     kind create cluster \
         --config="${LOCAL_PATH}/kind-config.yaml" \
-        --name "$CLUSTER_NAME"
+        --name "$CLUSTER_NAME" \
+        --image=kindest/node:v1.29.0
 }
 
 cluster_setup(){
@@ -68,9 +69,9 @@ cleanup_cluster(){
 deploy_objects(){
     local NODE_FILE="$1"
     local TRACE_FILE="$2"
-    # rm "$LOCAL_PATH/data/trace.out"
+    rm -f "$LOCAL_PATH/data/trace.out"
     kubectl create secret generic simkube --namespace=simkube
-    cp -r "$TRACE_FILE" "$LOCAL_PATH/data/trace.out"
+    cp "$TRACE_FILE" "$LOCAL_PATH/data/trace.out"
     kubectl create -f "$NODE_FILE"
     cd "$LOCAL_PATH/simkube-src/"
     skctl run test-sim \
@@ -86,6 +87,7 @@ wait_for_simulator_state(){
     local WANTED_STATE="$1"
     local MAX_WAIT_TIME=180
     local WAIT_START_TIME=$(date +%s)
+    local ELAPSED_TIME=0
     until kubectl get simulations | grep -q "$WANTED_STATE"; do
         ELAPSED_TIME=$(($(date +%s)-$WAIT_START_TIME))
         if [ "$ELAPSED_TIME" -ge "$MAX_WAIT_TIME" ]; then
@@ -94,6 +96,7 @@ wait_for_simulator_state(){
             RUN_CONDITION="false"
             break
         fi
+        check_max_time
         echo -ne "Waiting for simulation to reach state $WANTED_STATE. Elapsed: $ELAPSED_TIME seconds.\r";
         sleep 1;
     done

@@ -12,6 +12,7 @@ from datetime import datetime
 from typing import List, Dict, Tuple, Optional, Any
 import shutil
 
+script_dir = os.path.dirname(os.path.realpath(__file__))
 animation_msg: str = ""
 template_hollow_node = None
 simon_template = None
@@ -257,7 +258,7 @@ def main(args: argparse.Namespace) -> None:
     elif args.open_sim:
         new_node_path = os.path.abspath(args.new_node_path)
         shutil.copyfile(new_node_path, os.path.join(output_folder, "new-node.yaml"))
-        simon_template = get_yaml_file('base/simon-config.yaml')
+        simon_template = get_yaml_file(f'{os.path.join(script_dir, "base", "simon-config.yaml")}')
         simulator="OpenSim"
 
     if simulator != '':
@@ -300,10 +301,10 @@ if __name__ == '__main__':
     parser.add_argument('-k', '--kubemark', default=False, action='store_true', help='Applies the kubemark patches to the generated files')
     parser.add_argument('-s', '--simkube', default=False, action='store_true', help='Applies the simkube patches to the generated files')
     parser.add_argument('-os', '--open_sim', default=False, action='store_true', help='Generates files with the opensim folder structure')
-    parser.add_argument('-hn', '--hollow_node_path', type=str, default='base/hollow-node.yml', help='Template hollow node file used for Kubemark')
-    parser.add_argument('-nn', '--new_node_path', type=str, default='base/new-node.yaml', help='Path to the YAML file containing the new node template for opensim')
-    parser.add_argument('-n', '--nodes_path', type=str, default='base/nodes.yaml', help='Path to the YAML file containing the nodes')
-    parser.add_argument('-p', '--pods_path', type=str, default='base/pods.yaml',  help='Path to the YAML file containing the pods')
+    parser.add_argument('-hn', '--hollow_node_path', type=str, default=f'{os.path.join(script_dir, "base", "hollow-node.yml")}', help='Template hollow node file used for Kubemark')
+    parser.add_argument('-nn', '--new_node_path', type=str, default=f'{os.path.join(script_dir, "base", "new-node.yaml")}', help='Path to the YAML file containing the new node template for opensim')
+    parser.add_argument('-n', '--nodes_path', type=str, default=f'{os.path.join(script_dir, "base", "nodes.yaml")}', help='Path to the YAML file containing the nodes')
+    parser.add_argument('-p', '--pods_path', type=str, default=f'{os.path.join(script_dir, "base", "pods.yaml")}',  help='Path to the YAML file containing the pods')
     print_ascii()
     try:
         args = parser.parse_args()

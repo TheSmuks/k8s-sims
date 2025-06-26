@@ -14,6 +14,7 @@ create_cluster(){
         cd simulator-src
         git checkout v0.4.0
     fi
+    sed 's|\(registry\.k8s\.io/kwok/cluster:\)[^[:space:]]\+|\1v0.5.1-k8s.v1.29.0|g' compose.yml
     cp simulator/kubeconfig.yaml "$KUBE_FILE"
     LOCAL_IP=$(ip route get 1 | awk '{print $7; exit}')
     sed -i "s|server: http://fake-source-cluster:3132|server: http://$LOCAL_IP:3131|" "$KUBE_FILE"
@@ -35,14 +36,10 @@ deploy_objects(){
     local NODE_FILE="$1"
     local POD_FILE="$2"
     export KUBECONFIG="$KUBE_FILE"
-    kubectl create ns paib-gpu
+    kubectl create ns ${NAMESPACE}
+    wait_for_namespace ${NAMESPACE}
     kubectl create -f $NODE_FILE
-    kubectl create -f $POD_FILE -n paib-gpu
-}
-
-wait_for_simulator_state(){
-    # Dummy function
-    :;
+    kubectl create -f $POD_FILE -n ${NAMESPACE}
 }
 
 log INFO "Kubernetes Scheduler Simulator module loaded!"

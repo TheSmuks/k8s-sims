@@ -1,5 +1,6 @@
 #!/bin/bash
-
+readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+NAMESPACE="paib-gpu"
 function install_kwok(){
     GO_BIN_PATH='export PATH="$HOME/go/bin:$PATH"'
     grep -Fxq "$GO_BIN_PATH" "$HOME/.bashrc" || echo "$GO_BIN_PATH" >> "$HOME/.bashrc"
@@ -37,12 +38,17 @@ shift "$(($OPTIND - 1))"
 
 install_kwok
 for pod_file in $(find "$EXPERIMENT_FILES_PATH" -name "pods-*.yaml" -type f | sort -V); do
+    echo "Processing file: $pod_file"
     kwokctl create cluster --name tracer
-    kubectl create ns paib-gpu
+    kubectl create ns ${NAMESPACE}
+    while ! kubectl get serviceaccount default -n ${NAMESPACE} >/dev/null 2>&1; do
+      echo "Waiting for default service account in ${NAMESPACE}..."
+      sleep 1
+    done
     kubectl config use-context kwok-tracer
     NODE_COUNT=$(echo $pod_file | rev | cut -d '-' -f 1 | rev | cut -d '.' -f 1)
     echo "Generating pod trace of file with $NODE_COUNT nodes"
-    kubectl apply -f $pod_file --namespace paib-gpu
-    skctl snapshot -c base/config.yml -o "$EXPERIMENT_FILES_PATH/trace-$NODE_COUNT.sktrace"
+    kubectl apply -f $pod_file --namespace ${NAMESPACE}
+    skctl snapshot -c ${SCRIPT_DIR}/base/config.yml -o "$EXPERIMENT_FILES_PATH/trace-$NODE_COUNT.sktrace"
     kwokctl delete cluster --name tracer
 done

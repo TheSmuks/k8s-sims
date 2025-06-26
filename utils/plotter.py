@@ -30,9 +30,6 @@ def load_and_clean_data(filepath:str):
 
         df = df.groupby('node_count', as_index=False).mean()
         df.sort_values(by='node_count', inplace=True)
-        # df.groupby(['node_count']).mean().dropna().reset_index()
-        # df.sort_values(by='node_count', inplace=True)
-        print(df)
         return df
     except Exception as e:
         print(f"Error processing file {filepath}: {e}")
@@ -51,6 +48,12 @@ def plot_comparison(data: dict[str, pd.DataFrame], output_dir: str):
         'system_cpu_seconds': 'System CPU Seconds',
         'memory_peak_gb': 'Peak Memory (GB)'
     }
+    styles=[':', '--', '-.', '-']
+    style_index=0
+    simulator_style=dict()    
+    for simulator in data.keys():
+        simulator_style[simulator]=styles[style_index%len(styles)]
+        style_index+=1
 
     for metric_col, y_label in metrics_to_plot.items():
         plt.figure(figsize=(12, 7))
@@ -60,10 +63,12 @@ def plot_comparison(data: dict[str, pd.DataFrame], output_dir: str):
                 X_Y_Spline = make_interp_spline(x, y)
                 X_ = np.linspace(x.min(), x.max(), 500)
                 Y_ = X_Y_Spline(X_)
-                plt.plot(X_, Y_, linestyle='-', label=simulator)
+                curr_style=simulator_style[simulator]
+                plt.plot(X_, Y_, linestyle=curr_style, label=simulator)
+
             else:
                 print(f"Skipping plot for {metric_col} for program {simulator} due to missing data.")
-
+        
         plt.xlabel('Node Count')
         plt.ylabel(y_label)
         plt.title(f'{y_label} vs. Node Count for all simulators')

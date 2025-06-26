@@ -11,12 +11,12 @@ create_cluster(){
         kwokctl delete cluster --name "$CLUSTER_NAME" 2>/dev/null || true
     fi
     kwokctl create cluster --name $CLUSTER_NAME \
-    --timeout 60s
+    --timeout 60s \
+    --kind-node-image kindest/node:v1.29.0
 }
 
 cluster_setup(){
     kubectl config use-context kwok-${CLUSTER_NAME}
-    kubectl create namespace ${NAMESPACE}
 }
 
 cleanup_cluster(){
@@ -26,14 +26,10 @@ cleanup_cluster(){
 deploy_objects(){
     local NODE_FILE="$1"
     local POD_FILE="$2"
-    kubectl create ns paib-gpu
+    kubectl create namespace ${NAMESPACE}
+    wait_for_namespace ${NAMESPACE}
     kubectl create -f $NODE_FILE
-    kubectl create -f $POD_FILE -n paib-gpu
-}
-
-wait_for_simulator_state(){
-    # Dummy function
-    :;
+    kubectl create -f $POD_FILE -n ${NAMESPACE}
 }
 
 log INFO "KWOK module loaded!"

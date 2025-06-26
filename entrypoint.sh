@@ -24,6 +24,5 @@ docker image pull docker.io/kindest/node:v1.29.0
 
 export CONTAINERIZED="true"
 #Pre-run to ensure proper working
-echo "$@"
-/run-all-experiments.sh -n 1 -o /tmp -e /data/tiny
+/run-all-experiments.sh -n 1 -o /tmp -e /data/test
 /run-all-experiments.sh "$@"

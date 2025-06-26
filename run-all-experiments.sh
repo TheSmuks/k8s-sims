@@ -117,7 +117,6 @@ cleanup() {
 
 parse_args "$@"
 log INFO "[Run all] - Received arguments: $@"
-exit 0
 if [[ ! -z "${VERBOSE}" ]]; then
     set -euxo pipefail
 fi

@@ -10,9 +10,11 @@ readonly MAIN_SCRIPT_PID=$$
 readonly DEFAULT_START=0
 readonly DEAFULT_SIMULATION_MODE="kwok"
 readonly CGROUP_BASE="/sys/fs/cgroup/system.slice"
-readonly DEFAULT_MAX_SIMULATION_TIME=3600
+readonly DEFAULT_MAX_SIMULATION_TIME=-1
 readonly TIMEOUT_FLAG_FILE="${SCRIPT_DIR}/timeout.flag"
+readonly MAX_MEM_FLAG_FILE="${SCRIPT_DIR}/max_mem.flag"
 
+START_TIME=0
 CLUSTER_NAME=""
 NAMESPACE="paib-gpu"
 CONTAINERS_TO_WATCH=""
@@ -157,7 +159,7 @@ load_simulator_code() {
 get_max_alloted_memory(){
     local CURRENT_FREE_MEMORY
     CURRENT_FREE_MEMORY=$(awk '/MemFree/ {free=$2} /^Cached:/ {cached=$2} END { print (free + cached) * 1024 }' /proc/meminfo)
-    local MAX_MEM_ALLOTED=$(($CURRENT_FREE_MEMORY*$MEMORY_THRESHOLD/100))
+    local MAX_MEM_ALLOTED=$((($CURRENT_FREE_MEMORY*$MEMORY_THRESHOLD)/100))
     echo $MAX_MEM_ALLOTED
 }
 
@@ -170,11 +172,9 @@ get_container_ids(){
 get_cgroup_base(){
     local IS_CONTAINER="$1"
     local PROGRAM_INFO="$2"
-    echo "Container: $IS_CONTAINER, container mode: $CONTAINERIZED" >> /test.temp
     if [[ $IS_CONTAINER = "true" ]]; then
         if [[ ! -z $CONTAINERIZED ]]; then
             echo "/sys/fs/cgroup/docker/${PROGRAM_INFO}"
-            echo "/sys/fs/cgroup/docker/${PROGRAM_INFO}" >> /test.temp
         else
             echo "${CGROUP_BASE}/docker-${PROGRAM_INFO}.scope"
         fi
@@ -251,7 +251,6 @@ metric_collector(){
 }
 
 save_metrics() {
-    local START_TIME="$1"
     local MAX_MEMORY_MEASUREMENT="$2"
     shift 2
     local CPU_MEASUREMENTS=("$@")
@@ -270,13 +269,42 @@ save_metrics() {
         TIMEOUT_REACHED="1"
     fi
 
-    printf "%s|%d|%s|%s|%s|%s" \
+    MAX_MEM_REACHED="0"
+    if [[ -f $MAX_MEM_FLAG_FILE ]]; then
+        rm $MAX_MEM_FLAG_FILE
+        MAX_MEM_REACHED="1"
+    fi
+
+    printf "%s|%s|%d|%s|%s|%s|%s" \
         "$TIMEOUT_REACHED" \
+        "$MAX_MEM_REACHED" \
         "$RUNTIME" \
         "$CPU_TOTAL_SEC" \
         "$CPU_USER_SEC" \
         "$CPU_SYS_SEC" \
         "$MEMORY_GB"  >> "$OUT_FILE"
+}
+
+wait_for_namespace(){
+    local namespace="$1"
+    while ! kubectl get serviceaccount default -n ${NAMESPACE} >/dev/null 2>&1; do
+      log INFO "Waiting for default service account in ${NAMESPACE}..."
+      sleep 1
+    done
+}
+
+wait_for_simulator_state(){
+    # Dummy function
+    :;
+}
+
+check_max_time(){
+    local ELAPSED_TIME=$(( $(date +%s) - $START_TIME ))
+    if [[ $MAX_SIMULATION_TIME -gt 0 && $ELAPSED_TIME -gt $MAX_SIMULATION_TIME ]]; then
+        RUN_CONDITION="false"
+        log ERROR "Simulation time exceeded: $ELAPSED_TIME seconds."
+        touch $TIMEOUT_FLAG_FILE
+    fi
 }
 
 watch_pod_scheduling(){
@@ -295,7 +323,7 @@ watch_pod_scheduling(){
         mapfile -t PENDING_PODS < <(kubectl get pods --field-selector=status.phase=Pending -n "$NAMESPACE" -o jsonpath='{range .items[*]}{.metadata.name}{"\n"}{end}' --no-headers 2>/dev/null || true)
         CURRENT_PENDING_COUNT="${#PENDING_PODS[@]}"
 
-        while [[ "$CURRENT_PENDING_COUNT" -ne "$PREVIOUS_PENDING_COUNT" ]]; do
+        while [[ "$CURRENT_PENDING_COUNT" -ne "$PREVIOUS_PENDING_COUNT" && $RUN_CONDITION = "true" ]]; do
             PREVIOUS_PENDING_COUNT="$CURRENT_PENDING_COUNT"
             mapfile -t PENDING_PODS < <(kubectl get pods --field-selector=status.phase=Pending -n "$NAMESPACE" -o jsonpath='{range .items[*]}{.metadata.name}{"\n"}{end}' --no-headers 2>/dev/null || true)
             CURRENT_PENDING_COUNT="${#PENDING_PODS[@]}"
@@ -305,7 +333,7 @@ watch_pod_scheduling(){
 
         echo ""
         local LOCAL_RUN_CONDITION="true"
-        while [[ $LOCAL_RUN_CONDITION = "true" ]]; do
+        while [[ $LOCAL_RUN_CONDITION = "true" && $RUN_CONDITION = "true" ]]; do
             mapfile -t PENDING_PODS < <(kubectl get pods --field-selector=status.phase=Pending -n "$NAMESPACE" -o jsonpath='{range .items[*]}{.metadata.name}{"\n"}{end}' --no-headers 2>/dev/null || true)
             CURRENT_PENDING_COUNT="${#PENDING_PODS[@]}"
 
@@ -330,6 +358,8 @@ watch_pod_scheduling(){
                 break
             fi
 
+            check_max_time
+
             log INFO "Pending pods: $CURRENT_PENDING_COUNT"
             sleep 1
         done
@@ -350,7 +380,6 @@ track_containers() {
     log INFO "Starting container tracking..."
     local MAX_MEM_ALLOTED=$(get_max_alloted_memory)
     local MAX_MEMORY_MEASUREMENT=0
-    local START_TIME="$1"
     local RUN_CONDITION="true"
     trap 'RUN_CONDITION=false' SIGINT SIGTERM
 
@@ -363,17 +392,13 @@ track_containers() {
         fi
 
         if [[ $TOTAL_MEM -gt $MAX_MEM_ALLOTED ]]; then
-            break
-        fi
-
-        ELAPSED_TIME=$(( $(date +%s) - START_TIME ))
-
-        if [[ $ELAPSED_TIME -gt $MAX_SIMULATION_TIME ]]; then
             RUN_CONDITION="false"
-            log ERROR "Simulation time exceeded: $ELAPSED_TIME seconds."
-            touch $TIMEOUT_FLAG_FILE
+            log ERROR "Simulation max memory exceeded: $TOTAL_MEM > $MAX_MEM_ALLOTED."
+            touch $MAX_MEM_FLAG_FILE
             break
         fi
+
+        check_max_time
 
         sleep "$POLL_TIMEOUT"
     done
@@ -402,7 +427,7 @@ if [[ -f "${OUT_FILE}" ]]; then
     mv "${OUT_FILE}" "${OLD_OUT_FILE}"
 fi
 
-echo "node_count|pod_count|timeout_reached|run_time|total_cpu_seconds|user_cpu_seconds|system_cpu_seconds|memory_peak_gb|unscheduled_pods" > "$OUT_FILE"
+echo "node_count|pod_count|timeout_reached|mem_exceeded|run_time|total_cpu_seconds|user_cpu_seconds|system_cpu_seconds|memory_peak_gb|unscheduled_pods" > "$OUT_FILE"
 
 trap 'RUN_CONDITION=false; cleanup_cluster; exit 130' SIGINT SIGTERM
 
@@ -446,7 +471,7 @@ for node_file in $(find "$EXPERIMENT_FILES_PATH" -name $FILE_PATTERN -type f | s
         CREATE_CLUSTER_SETUP_STATUS=$?
         if [[ $CREATE_CLUSTER_STATUS -eq 0 && $CREATE_CLUSTER_SETUP_STATUS -eq 0 ]]; then
             log INFO "Cluster setup successful"
-            track_containers $START_TIME &
+            track_containers &
             POLL_PID=$!
             SETUP_OK="true"
         fi
@@ -455,6 +480,7 @@ for node_file in $(find "$EXPERIMENT_FILES_PATH" -name $FILE_PATTERN -type f | s
         if [[ $SETUP_OK = "true" ]] && deploy_objects "$node_file" "$POD_FILE"; then
             watch_pod_scheduling
         fi
+
         if [[ $POLL_PID -ne -1 ]]; then
             kill -SIGINT "$POLL_PID" 2>/dev/null || true
             wait "$POLL_PID" 2>/dev/null || true
