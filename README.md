@@ -33,6 +33,8 @@ Once we are in the proper directory, the csv data needs to be transformed into y
 ./prepare_input.sh
 ```
 After the script finishes there should be 23 folders, one per each csv file containing the traces.
+### Modifying traces
+[kube-gen.py](utils/kube-gen.py) is a script that can be used to modify the traces to generate new traces that fit the supported simulators (Vanilla Kubernetes, OpenSimulator, SimKube, Kubemark). For more detail refer to the [README.md](utils/README.md).
 ## Running simulations
 Simulations can be run by setting up the environment step by step or spin up a docker compose for an easy and fast setup.
 ### Docker Compose

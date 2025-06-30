@@ -1,42 +1,52 @@
 #!/bin/bash
 readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-NAMESPACE="paib-gpu"
-function install_kwok(){
-    GO_BIN_PATH='export PATH="$HOME/go/bin:$PATH"'
-    grep -Fxq "$GO_BIN_PATH" "$HOME/.bashrc" || echo "$GO_BIN_PATH" >> "$HOME/.bashrc"
-    if command -v go >/dev/null 2>&1; then
-        :
-    else
-        go install sigs.k8s.io/kwok/cmd/{kwok,kwokctl}@"v0.7.0"
+
+check_kwok() {
+    if ! command -v kwokctl &> /dev/null; then
+        echo "kwokctl could not be found"
+        exit 1
     fi
 }
 
-EXPERIMENT_FILES_PATH="./out/simkube"
+parse_args() {
+    while getopts 'h?e:n:' opt; do
+        case "$opt" in
+        e)
+            EXPERIMENT_FILES_PATH="$OPTARG"
+            ;;
+        n)
+            NAMESPACE="$OPTARG"
+            ;;
+        h)
+            echo "Usage: $(basename $0) <-e EXPERIMENT_FILES_PATH> <-n NAMESPACE>"
+            exit 0
+            ;;
+        :)
+            echo -e "option requires an argument.\nUsage: $(basename $0) <-e EXPERIMENT_FILES_PATH> <-n NAMESPACE>"
+            exit 1
+            ;;
+        ?)
+            echo -e "Invalid command option.\nUsage: $(basename $0) <-e EXPERIMENT_FILES_PATH> <-n NAMESPACE>"
+            exit 1
+            ;;
+        esac
+    done
 
-while getopts 'h?r:e:' opt; do
-	case "$opt" in
-    e)
-        EXPERIMENT_FILES_PATH="$OPTARG"
-        ;;
-	h)
-		echo "Usage: $(basename $0) <-e EXPERIMENT_FILES_PATH>"
-		exit 0
-		;;
+    if [ -z "$EXPERIMENT_FILES_PATH" ]; then
+        echo -e "Missing required argument.\nUsage: $(basename $0) <-e EXPERIMENT_FILES_PATH> <-n NAMESPACE>"
+        exit 1
+    fi
 
-	:)
-		echo -e "option requires an argument.\nUsage: $(basename $0) <-e EXPERIMENT_FILES_PATH>"
-		exit 1
-		;;
+    if [ -z "$NAMESPACE" ]; then
+        echo -e "Missing required argument.\nUsage: $(basename $0) <-e EXPERIMENT_FILES_PATH> <-n NAMESPACE>"
+        exit 1
+    fi
+}
 
-	?)
-		echo -e "Invalid command option.\nUsage: $(basename $0) <-e EXPERIMENT_FILES_PATH>"
-		exit 1
-		;;
-	esac
-done
-shift "$(($OPTIND - 1))"
+parse_args "$@"
 
-install_kwok
+check_kwok
+
 for pod_file in $(find "$EXPERIMENT_FILES_PATH" -name "pods-*.yaml" -type f | sort -V); do
     echo "Processing file: $pod_file"
     kwokctl create cluster --name tracer
