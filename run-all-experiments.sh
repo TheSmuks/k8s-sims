@@ -115,13 +115,25 @@ cleanup() {
     exit 1
 }
 
+load_modules() {
+    read -a SIMULATORS -d EOF < MODULES
+    if [[ ${#SIMULATORS[@]} -eq 0 ]]; then
+        log ERROR "No simulators found in MODULES file" >&2
+        exit 1
+    fi
+}
+
+log INFO "Loading modules..."
+load_modules
+log INFO "Modules loaded: ${SIMULATORS[*]}"
+
 parse_args "$@"
 log INFO "[Run all] - Received arguments: $@"
 if [[ ! -z "${VERBOSE}" ]]; then
     set -euxo pipefail
 fi
 
-SIMULATORS=(opensim kwok kube-sched simkube kubemark)
+exit 0
 trap cleanup SIGINT
 for i in ${!SIMULATORS[@]}; do
     log INFO "Starting experiments for ${SIMULATORS[i]}"
