@@ -133,7 +133,6 @@ if [[ ! -z "${VERBOSE}" ]]; then
     set -euxo pipefail
 fi
 
-exit 0
 trap cleanup SIGINT
 for i in ${!SIMULATORS[@]}; do
     log INFO "Starting experiments for ${SIMULATORS[i]}"
