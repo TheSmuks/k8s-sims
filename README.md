@@ -41,6 +41,16 @@ To reproduce the default experiments just deploy the [docker-compose.yaml](docke
 ```sh
 docker compose up
 ```
+### Experiment Script
+If all the dependencies are installed, the user can opt to run the experiments on the host machine.
+This can be done by executing the file [run-all-experiments.sh](run-all-experiments.sh).
+```bash
+./run-all-experiments.sh
+```
+Alternatively, to run a single experiment, the user can execute the file [experiment-base.sh](experiment-base.sh).
+```bash
+./experiment-base.sh -m module_name -d data_path
+```
 ### Manual Approach
 - In order to run Alibaba's OpenSimulator refer to [README-OpenSim](modules/opensim/README.md)
 - In order to run Kubernetes Scheduler Simulator refer to [README-kube-sched-sim](modules/kube-sched/README.md)
