@@ -1,57 +1,24 @@
 
+
 # K8s-sims
 K8sims is a repository containing a guide on how to run a selected number of Kubernetes simulators.
 Specs of the computer where the simulations were run.
 ```
-OS: Linux Mint 22.1 x86_64
-Kernel: Linux 6.8.0-59-generic
-CPU: 12th Gen Intel(R) Core(TM) i5-12600K (16) @ 4.90 Gz
-GPU: NVIDIA GeForce RTX 3080 LHR
-Memory: 32 GiB DDR4 3200 Mhz
-Shell: bash 5.2.21
+OS: Alpine Linux v3.22
+CPU: 2 x Intel(R) Xeon(R) Silver 4210R (40) @ 3.20 Gz
+Memory: 128GB DDR4
 ```
 ## Required Dependencies
 This project requires several tools and languages to be installed on your system. Ensure all dependencies below are properly installed before proceeding.
 
-### 1. [Go](https://go.dev/doc/install)
-Install the latest stable version of Go by following the official installation guide.
-
-### 2. Docker
-Docker must be installed and running. It is used for containerization and managing development environments.
-
-- [Docker Installation Guide](https://docs.docker.com/get-docker/)
-- [Docker Compose Installation Guide](https://docs.docker.com/compose/install/)
-
-### 3. `make`
-`make` is used to run predefined build and automation tasks from a Makefile.
-
-- Linux: Usually available via the system package manager (`sudo apt install make` or `sudo pacman -S make`)
-- macOS: Install via Xcode Command Line Tools (`xcode-select --install`)
-- Windows: Use via MSYS2 or WSL, or install GNU Make via [GnuWin](http://gnuwin32.sourceforge.net/packages/make.htm)
-
-### 4. Python Environment
-
-Ensure Python 3 and associated tooling are installed.
-
-- **Python 3**
-  - Recommended version: ≥ 3.8
-  - [Download Python](https://www.python.org/downloads/)
-- **pip** (Python package installer)
-  - Usually comes bundled with Python 3
-- **venv** (Virtual Environment module)
-  - Included in the Python 3 standard library (`python3 -m venv`)
-
-### 5. Rust
-
-Install the Rust toolchain, including `cargo`.
-
-- Recommended installation method: [Rustup](https://rustup.rs)
-## Installing dependencies
-```sh
-python3 -m venv venv # Virtual env to avoid messing with existing packages
-venv/bin/activate
-pip install -r requirements.txt
-```
+1. [Go](https://go.dev/doc/install)
+2. [Docker](https://docs.docker.com/engine/install/)
+	2.1 [Docker Compose](https://docs.docker.com/compose/install/)
+3. [make](https://www.gnu.org/software/make/)
+4. [Python3.12.3](https://www.python.org/downloads/release/python-3123/) and [requirements.txt](requirements.txt)
+5. [Rust 1.86.0](https://www.rust-lang.org/tools/install)
+6. skctl: `cargo install skctl`
+7. [Alibaba Cluster Traces](https://github.com/alibaba/clusterdata.git)
 ## Obtain traces
 The first step is to clone the clusterdata repository containing Alibaba's production traces.
 ```sh
@@ -67,8 +34,15 @@ Once we are in the proper directory, the csv data needs to be transformed into y
 ```
 After the script finishes there should be 23 folders, one per each csv file containing the traces.
 ## Running simulations
-- In order to run Alibaba's OpenSimulator refer to [README-OpenSim](./opensim/README.md)
-- In order to run Kubernetes Scheduler Simulator refer to [README-kube-sched-sim](./kube-scheduler-simulator/README.md)
-- In order to run SimKube refer to [README-SimKube](./simkube/README.md)
-- In order to run Kubemark refer to [README-Kubemark](./kubemark/README.md)
-
+Simulations can be run by setting up the environment step by step or spin up a docker compose for an easy and fast setup.
+### Docker Compose
+To reproduce the default experiments just deploy the [docker-compose.yaml](docker-compose.yaml) provided. This will pull the proper image and run all the experiments using the [big dataset](data/big).
+[.env](.env) cotains variable that can be changed and loaded on the compose.
+```sh
+docker compose up
+```
+### Manual Approach
+- In order to run Alibaba's OpenSimulator refer to [README-OpenSim](modules/opensim/README.md)
+- In order to run Kubernetes Scheduler Simulator refer to [README-kube-sched-sim](modules/kube-sched/README.md)
+- In order to run SimKube refer to [README-SimKube](modules/simkube/README.md)
+- In order to run Kubemark refer to [README-Kubemark](modules/kubemark/README.md)

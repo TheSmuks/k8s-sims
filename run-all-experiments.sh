@@ -3,7 +3,7 @@ readonly LOCAL_PATH="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 readonly DEFAULT_RUNS=3
 readonly DEFAULT_START=0
 readonly DEFAULT_MEMORY_THRESHOLD=95
-readonly DEFAULT_MAX_SIMULATION_TIME=3600
+readonly DEFAULT_MAX_SIMULATION_TIME=-1
 readonly DEFAULT_EXPERIMENT_FILES_PATH="${LOCAL_PATH}/data/big"
 readonly DEFAULT_OUTPUT_FOLDER="${LOCAL_PATH}/results"
 
