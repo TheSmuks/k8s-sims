@@ -49,7 +49,7 @@ ENV PATH="/root/go/bin:/root/.cargo/bin:${PATH}"
 ENV PYTHONPATH=/pylib
 
 WORKDIR /
-COPY data /data
+COPY data/ /data
 COPY modules /modules
 RUN chmod +x /modules/opensim/cmd
 COPY experiment-base.sh /experiment-base.sh

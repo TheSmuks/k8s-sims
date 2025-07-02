@@ -44,7 +44,6 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-${i}
-  namespace: kube-bench
 spec:
   containers:
   - image: busybox

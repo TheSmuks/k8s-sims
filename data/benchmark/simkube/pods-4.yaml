@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-1
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -29,7 +29,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-2
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -56,7 +56,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-3
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -83,7 +83,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-4
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -110,7 +110,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-5
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -137,7 +137,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-6
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -164,7 +164,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-7
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -191,7 +191,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-8
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -218,7 +218,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-9
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -245,7 +245,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-10
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -272,7 +272,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-11
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -299,7 +299,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-12
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -326,7 +326,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-13
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -353,7 +353,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-14
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -380,7 +380,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-15
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -407,7 +407,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-16
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -434,7 +434,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-17
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -461,7 +461,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-18
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -488,7 +488,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-19
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -515,7 +515,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-20
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -542,7 +542,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-21
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -569,7 +569,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-22
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -596,7 +596,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-23
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -623,7 +623,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-24
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -650,7 +650,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-25
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -677,7 +677,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-26
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -704,7 +704,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-27
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -731,7 +731,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-28
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -758,7 +758,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-29
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -785,7 +785,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-30
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -812,7 +812,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-31
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -839,7 +839,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-32
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -866,7 +866,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-33
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -893,7 +893,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-34
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -920,7 +920,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-35
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -947,7 +947,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-36
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -974,7 +974,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-37
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -1001,7 +1001,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-38
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -1028,7 +1028,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-39
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -1055,7 +1055,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-40
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -1082,7 +1082,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-41
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -1109,7 +1109,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-42
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -1136,7 +1136,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-43
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -1163,7 +1163,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-44
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -1190,7 +1190,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-45
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -1217,7 +1217,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-46
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -1244,7 +1244,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-47
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -1271,7 +1271,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-48
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -1298,7 +1298,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-49
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -1325,7 +1325,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-50
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -1352,7 +1352,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-51
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -1379,7 +1379,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-52
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -1406,7 +1406,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-53
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -1433,7 +1433,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-54
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -1460,7 +1460,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-55
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -1487,7 +1487,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-56
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -1514,7 +1514,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-57
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -1541,7 +1541,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-58
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -1568,7 +1568,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-59
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -1595,7 +1595,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-60
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -1622,7 +1622,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-61
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -1649,7 +1649,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-62
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -1676,7 +1676,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-63
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -1703,7 +1703,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-64
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -1730,7 +1730,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-65
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -1757,7 +1757,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-66
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -1784,7 +1784,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-67
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -1811,7 +1811,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-68
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -1838,7 +1838,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-69
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -1865,7 +1865,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-70
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -1892,7 +1892,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-71
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -1919,7 +1919,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-72
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -1946,7 +1946,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-73
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -1973,7 +1973,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-74
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -2000,7 +2000,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-75
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -2027,7 +2027,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-76
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -2054,7 +2054,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-77
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -2081,7 +2081,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-78
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -2108,7 +2108,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-79
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -2135,7 +2135,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-80
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -2162,7 +2162,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-81
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -2189,7 +2189,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-82
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -2216,7 +2216,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-83
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -2243,7 +2243,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-84
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -2270,7 +2270,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-85
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -2297,7 +2297,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-86
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -2324,7 +2324,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-87
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -2351,7 +2351,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-88
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -2378,7 +2378,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-89
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -2405,7 +2405,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-90
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -2432,7 +2432,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-91
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -2459,7 +2459,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-92
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -2486,7 +2486,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-93
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -2513,7 +2513,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-94
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -2540,7 +2540,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-95
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -2567,7 +2567,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-96
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -2594,7 +2594,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-97
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -2621,7 +2621,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-98
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -2648,7 +2648,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-99
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -2675,7 +2675,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-100
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -2702,7 +2702,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-101
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -2729,7 +2729,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-102
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -2756,7 +2756,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-103
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -2783,7 +2783,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-104
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -2810,7 +2810,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-105
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -2837,7 +2837,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-106
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -2864,7 +2864,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-107
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -2891,7 +2891,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-108
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -2918,7 +2918,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-109
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -2945,7 +2945,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-110
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -2972,7 +2972,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-111
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -2999,7 +2999,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-112
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -3026,7 +3026,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-113
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -3053,7 +3053,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-114
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -3080,7 +3080,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-115
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -3107,7 +3107,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-116
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -3134,7 +3134,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-117
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -3161,7 +3161,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-118
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -3188,7 +3188,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-119
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -3215,7 +3215,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-120
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -3242,7 +3242,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-121
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -3269,7 +3269,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-122
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -3296,7 +3296,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-123
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -3323,7 +3323,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-124
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -3350,7 +3350,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-125
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -3377,7 +3377,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-126
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -3404,7 +3404,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-127
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -3431,7 +3431,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-128
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -3458,7 +3458,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-129
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -3485,7 +3485,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-130
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -3512,7 +3512,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-131
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -3539,7 +3539,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-132
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -3566,7 +3566,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-133
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -3593,7 +3593,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-134
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -3620,7 +3620,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-135
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -3647,7 +3647,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-136
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -3674,7 +3674,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-137
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -3701,7 +3701,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-138
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -3728,7 +3728,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-139
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -3755,7 +3755,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-140
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -3782,7 +3782,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-141
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -3809,7 +3809,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-142
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -3836,7 +3836,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-143
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -3863,7 +3863,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-144
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -3890,7 +3890,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-145
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -3917,7 +3917,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-146
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -3944,7 +3944,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-147
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -3971,7 +3971,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-148
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -3998,7 +3998,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-149
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -4025,7 +4025,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-150
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -4052,7 +4052,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-151
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -4079,7 +4079,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-152
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -4106,7 +4106,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-153
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -4133,7 +4133,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-154
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -4160,7 +4160,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-155
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -4187,7 +4187,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-156
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -4214,7 +4214,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-157
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -4241,7 +4241,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-158
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -4268,7 +4268,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-159
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -4295,7 +4295,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-160
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -4322,7 +4322,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-161
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -4349,7 +4349,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-162
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -4376,7 +4376,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-163
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -4403,7 +4403,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-164
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -4430,7 +4430,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-165
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -4457,7 +4457,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-166
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -4484,7 +4484,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-167
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -4511,7 +4511,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-168
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -4538,7 +4538,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-169
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -4565,7 +4565,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-170
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -4592,7 +4592,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-171
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -4619,7 +4619,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-172
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -4646,7 +4646,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-173
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -4673,7 +4673,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-174
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -4700,7 +4700,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-175
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -4727,7 +4727,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-176
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -4754,7 +4754,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-177
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -4781,7 +4781,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-178
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -4808,7 +4808,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-179
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -4835,7 +4835,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-180
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -4862,7 +4862,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-181
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -4889,7 +4889,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-182
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -4916,7 +4916,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-183
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -4943,7 +4943,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-184
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -4970,7 +4970,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-185
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -4997,7 +4997,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-186
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -5024,7 +5024,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-187
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -5051,7 +5051,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-188
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -5078,7 +5078,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-189
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -5105,7 +5105,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-190
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -5132,7 +5132,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-191
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -5159,7 +5159,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-192
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -5186,7 +5186,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-193
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -5213,7 +5213,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-194
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -5240,7 +5240,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-195
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -5267,7 +5267,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-196
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -5294,7 +5294,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-197
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -5321,7 +5321,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-198
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -5348,7 +5348,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-199
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -5375,7 +5375,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-200
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -5402,7 +5402,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-201
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -5429,7 +5429,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-202
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -5456,7 +5456,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-203
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -5483,7 +5483,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-204
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -5510,7 +5510,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-205
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -5537,7 +5537,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-206
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -5564,7 +5564,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-207
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -5591,7 +5591,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-208
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -5618,7 +5618,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-209
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -5645,7 +5645,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-210
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -5672,7 +5672,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-211
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -5699,7 +5699,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-212
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -5726,7 +5726,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-213
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -5753,7 +5753,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-214
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -5780,7 +5780,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-215
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -5807,7 +5807,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-216
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -5834,7 +5834,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-217
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -5861,7 +5861,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-218
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -5888,7 +5888,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-219
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -5915,7 +5915,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-220
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -5942,7 +5942,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-221
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -5969,7 +5969,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-222
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -5996,7 +5996,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-223
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -6023,7 +6023,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-224
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -6050,7 +6050,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-225
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -6077,7 +6077,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-226
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -6104,7 +6104,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-227
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -6131,7 +6131,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-228
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -6158,7 +6158,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-229
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -6185,7 +6185,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-230
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -6212,7 +6212,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-231
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -6239,7 +6239,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-232
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -6266,7 +6266,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-233
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -6293,7 +6293,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-234
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -6320,7 +6320,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-235
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -6347,7 +6347,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-236
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -6374,7 +6374,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-237
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -6401,7 +6401,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-238
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -6428,7 +6428,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-239
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -6455,7 +6455,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-240
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -6482,7 +6482,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-241
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -6509,7 +6509,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-242
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -6536,7 +6536,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-243
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -6563,7 +6563,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-244
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -6590,7 +6590,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-245
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -6617,7 +6617,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-246
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -6644,7 +6644,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-247
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -6671,7 +6671,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-248
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -6698,7 +6698,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-249
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -6725,7 +6725,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-250
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -6752,7 +6752,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-251
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -6779,7 +6779,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-252
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -6806,7 +6806,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-253
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -6833,7 +6833,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-254
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -6860,7 +6860,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-255
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -6887,7 +6887,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-256
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -6914,7 +6914,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-257
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -6941,7 +6941,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-258
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -6968,7 +6968,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-259
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -6995,7 +6995,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-260
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -7022,7 +7022,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-261
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -7049,7 +7049,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-262
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -7076,7 +7076,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-263
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -7103,7 +7103,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-264
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -7130,7 +7130,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-265
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -7157,7 +7157,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-266
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -7184,7 +7184,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-267
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -7211,7 +7211,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-268
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -7238,7 +7238,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-269
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -7265,7 +7265,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-270
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -7292,7 +7292,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-271
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -7319,7 +7319,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-272
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -7346,7 +7346,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-273
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -7373,7 +7373,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-274
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -7400,7 +7400,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-275
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -7427,7 +7427,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-276
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -7454,7 +7454,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-277
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -7481,7 +7481,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-278
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -7508,7 +7508,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-279
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -7535,7 +7535,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-280
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -7562,7 +7562,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-281
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -7589,7 +7589,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-282
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -7616,7 +7616,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-283
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -7643,7 +7643,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-284
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -7670,7 +7670,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-285
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -7697,7 +7697,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-286
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -7724,7 +7724,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-287
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -7751,7 +7751,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-288
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -7778,7 +7778,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-289
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -7805,7 +7805,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-290
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -7832,7 +7832,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-291
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -7859,7 +7859,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-292
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -7886,7 +7886,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-293
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -7913,7 +7913,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-294
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -7940,7 +7940,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-295
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -7967,7 +7967,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-296
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -7994,7 +7994,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-297
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -8021,7 +8021,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-298
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -8048,7 +8048,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-299
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -8075,7 +8075,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-300
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -8102,7 +8102,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-301
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -8129,7 +8129,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-302
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -8156,7 +8156,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-303
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -8183,7 +8183,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-304
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -8210,7 +8210,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-305
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -8237,7 +8237,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-306
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -8264,7 +8264,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-307
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -8291,7 +8291,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-308
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -8318,7 +8318,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-309
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -8345,7 +8345,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-310
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -8372,7 +8372,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-311
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -8399,7 +8399,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-312
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -8426,7 +8426,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-313
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -8453,7 +8453,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-314
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -8480,7 +8480,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-315
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -8507,7 +8507,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-316
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -8534,7 +8534,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-317
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -8561,7 +8561,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-318
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -8588,7 +8588,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-319
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -8615,7 +8615,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-320
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -8642,7 +8642,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-321
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -8669,7 +8669,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-322
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -8696,7 +8696,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-323
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -8723,7 +8723,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-324
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -8750,7 +8750,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-325
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -8777,7 +8777,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-326
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -8804,7 +8804,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-327
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -8831,7 +8831,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-328
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -8858,7 +8858,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-329
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -8885,7 +8885,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-330
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -8912,7 +8912,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-331
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -8939,7 +8939,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-332
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -8966,7 +8966,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-333
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -8993,7 +8993,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-334
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -9020,7 +9020,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-335
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -9047,7 +9047,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-336
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -9074,7 +9074,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-337
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -9101,7 +9101,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-338
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -9128,7 +9128,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-339
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -9155,7 +9155,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-340
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -9182,7 +9182,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-341
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -9209,7 +9209,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-342
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -9236,7 +9236,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-343
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -9263,7 +9263,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-344
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -9290,7 +9290,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-345
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -9317,7 +9317,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-346
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -9344,7 +9344,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-347
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -9371,7 +9371,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-348
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -9398,7 +9398,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-349
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -9425,7 +9425,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-350
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -9452,7 +9452,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-351
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -9479,7 +9479,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-352
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -9506,7 +9506,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-353
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -9533,7 +9533,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-354
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -9560,7 +9560,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-355
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -9587,7 +9587,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-356
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -9614,7 +9614,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-357
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -9641,7 +9641,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-358
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -9668,7 +9668,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-359
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -9695,7 +9695,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-360
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -9722,7 +9722,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-361
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -9749,7 +9749,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-362
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -9776,7 +9776,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-363
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -9803,7 +9803,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-364
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -9830,7 +9830,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-365
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -9857,7 +9857,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-366
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -9884,7 +9884,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-367
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -9911,7 +9911,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-368
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -9938,7 +9938,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-369
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -9965,7 +9965,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-370
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -9992,7 +9992,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-371
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -10019,7 +10019,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-372
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -10046,7 +10046,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-373
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -10073,7 +10073,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-374
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -10100,7 +10100,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-375
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -10127,7 +10127,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-376
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -10154,7 +10154,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-377
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -10181,7 +10181,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-378
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -10208,7 +10208,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-379
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -10235,7 +10235,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-380
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -10262,7 +10262,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-381
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -10289,7 +10289,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-382
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -10316,7 +10316,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-383
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -10343,7 +10343,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-384
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -10370,7 +10370,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-385
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -10397,7 +10397,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-386
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -10424,7 +10424,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-387
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -10451,7 +10451,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-388
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -10478,7 +10478,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-389
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -10505,7 +10505,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-390
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -10532,7 +10532,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-391
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -10559,7 +10559,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-392
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -10586,7 +10586,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-393
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -10613,7 +10613,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-394
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -10640,7 +10640,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-395
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -10667,7 +10667,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-396
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -10694,7 +10694,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-397
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -10721,7 +10721,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-398
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -10748,7 +10748,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-399
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
@@ -10775,7 +10775,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-400
-  namespace: kube-bench
+
 spec:
   containers:
   - command:
