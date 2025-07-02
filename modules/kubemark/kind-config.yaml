@@ -8,11 +8,11 @@ nodes:
         kind: JoinConfiguration
         nodeRegistration:
           kubeletExtraArgs:
-            max-pods: "5000"
+            max-pods: "10000"
   - role: worker
     kubeadmConfigPatches:
       - |
         kind: JoinConfiguration
         nodeRegistration:
           kubeletExtraArgs:
-            max-pods: "5000"
+            max-pods: "10000"

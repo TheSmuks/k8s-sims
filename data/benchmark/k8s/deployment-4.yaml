@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: busybox-bench-deployment
+  namespace: kube-bench
+  labels:
+    app: busybox-bench
+spec:
+  replicas: 500
+  selector:
+    matchLabels:
+      app: busybox-bench
+  template:
+    metadata:
+      labels:
+        app: busybox-bench
+    spec:
+      containers:
+      - image: busybox
+        command:
+          - sleep
+          - "7200"
+        imagePullPolicy: IfNotPresent
+        name: busybox
+        resources:
+            limits:
+              memory: 200Mi
+              cpu: 1
+            requests:
+              memory: 100Mi
+              cpu: 100m
+      restartPolicy: Always
