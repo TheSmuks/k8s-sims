@@ -1,0 +1,71 @@
+apiVersion: v1
+kind: Node
+metadata:
+  labels:
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: node-1
+    kubernetes.io/os: linux
+  name: node-1
+status:
+  allocatable:
+    cpu: 1000m
+    memory: 81920Mi
+    pods: '1001'
+  capacity:
+    cpu: 1000m
+    memory: 81920Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  labels:
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: node-2
+    kubernetes.io/os: linux
+  name: node-2
+status:
+  allocatable:
+    cpu: 1000m
+    memory: 81920Mi
+    pods: '1001'
+  capacity:
+    cpu: 1000m
+    memory: 81920Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  labels:
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: node-3
+    kubernetes.io/os: linux
+  name: node-3
+status:
+  allocatable:
+    cpu: 1000m
+    memory: 81920Mi
+    pods: '1001'
+  capacity:
+    cpu: 1000m
+    memory: 81920Mi
+    pods: '1001'
+---
+apiVersion: v1
+kind: Node
+metadata:
+  labels:
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: node-4
+    kubernetes.io/os: linux
+  name: node-4
+status:
+  allocatable:
+    cpu: 1000m
+    memory: 81920Mi
+    pods: '1001'
+  capacity:
+    cpu: 1000m
+    memory: 81920Mi
+    pods: '1001'

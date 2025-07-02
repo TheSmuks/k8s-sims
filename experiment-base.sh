@@ -23,6 +23,8 @@ START=0
 RUN_CONDITION="true"
 UNSCHEDULED_PODS=0
 TIMEOUT_REACHED="0"
+
+
 usage() {
     cat << EOF
 Usage: $(basename "$0") -e EXPERIMENT_PATH -m SIMULATION_MODE [options]
@@ -129,7 +131,7 @@ parse_args() {
         exit 1
     fi
 
-    if [[ ! "$SIMULATION_MODE" =~ ^(simkube|kube-sched|kubemark|kwok|opensim)$ ]]; then
+    if [[ ! "$SIMULATION_MODE" =~ ^(simkube|kube-sched|kubemark|kwok|opensim|vanilla)$ ]]; then
         log ERROR "Unsupported simulator '$SIMULATION_MODE'" >&2
         usage
         exit 1
@@ -259,9 +261,9 @@ save_metrics() {
 
     local MEMORY_GB CPU_TOTAL_SEC CPU_USER_SEC CPU_SYS_SEC
     MEMORY_GB=$(awk "BEGIN {printf \"%.2f\", $MAX_MEMORY_MEASUREMENT / 1024 / 1024 / 1024}")
-    CPU_TOTAL_SEC=$(awk "BEGIN {printf \"%.2f\", ${CPU_MEASUREMENTS[0]}}")
-    CPU_USER_SEC=$(awk "BEGIN {printf \"%.2f\", ${CPU_MEASUREMENTS[1]}}")
-    CPU_SYS_SEC=$(awk "BEGIN {printf \"%.2f\", ${CPU_MEASUREMENTS[2]}}")
+    CPU_TOTAL_SEC=$(awk "BEGIN {printf \"%d\", ${CPU_MEASUREMENTS[0]}}")
+    CPU_USER_SEC=$(awk "BEGIN {printf \"%d\", ${CPU_MEASUREMENTS[1]}}")
+    CPU_SYS_SEC=$(awk "BEGIN {printf \"%d\", ${CPU_MEASUREMENTS[2]}}")
 
     TIMEOUT_REACHED="0"
     if [[ -f $TIMEOUT_FLAG_FILE ]]; then
@@ -312,7 +314,7 @@ watch_pod_scheduling(){
     if [[ "$RUN_CONDITION" = "true" && "$TIMEOUT_REACHED" = "0" ]]; then
         echo ""
         while [[ $(kubectl get pods -n "$NAMESPACE" --no-headers 2>/dev/null | wc -l) -lt 1  && $RUN_CONDITION = "true" ]]; do
-            sleep 1
+            sleep 2
         done
         log INFO "Waiting for the count of pending pods to stabilize..."
 
@@ -330,9 +332,14 @@ watch_pod_scheduling(){
             log INFO "Current pending count: $CURRENT_PENDING_COUNT, Previous: $PREVIOUS_PENDING_COUNT"
             sleep 1
         done
-
         echo ""
+        log INFO "Waiting for pods to be scheduled..."
         local LOCAL_RUN_CONDITION="true"
+        local INITIAL_TIME=$(date +%s)
+        if [[ $MAX_SIMULATION_TIME -eq -1 ]]; then
+            local SCHEDULE_TIMEOUT=300
+        fi
+        local LAST_PENDING_COUNT=-1
         while [[ $LOCAL_RUN_CONDITION = "true" && $RUN_CONDITION = "true" ]]; do
             mapfile -t PENDING_PODS < <(kubectl get pods --field-selector=status.phase=Pending -n "$NAMESPACE" -o jsonpath='{range .items[*]}{.metadata.name}{"\n"}{end}' --no-headers 2>/dev/null || true)
             CURRENT_PENDING_COUNT="${#PENDING_PODS[@]}"
@@ -358,6 +365,17 @@ watch_pod_scheduling(){
                 break
             fi
 
+            if [[ $LAST_PENDING_COUNT -ne $CURRENT_PENDING_COUNT ]]; then
+                INITIAL_TIME=$(date +%s)
+                LAST_PENDING_COUNT=$CURRENT_PENDING_COUNT
+            else
+                local ELAPSED_SCHEDULING_TIME=$(($(date +%s) - $INITIAL_TIME))
+                if [[ $MAX_SIMULATION_TIME -lt $SCHEDULE_TIMEOUT && $ELAPSED_SCHEDULING_TIME -gt $SCHEDULE_TIMEOUT ]]; then
+                    log INFO "Scheduling timeout reached: $SCHEDULE_TIMEOUT seconds."
+                    break
+                fi
+            fi
+
             check_max_time
 
             log INFO "Pending pods: $CURRENT_PENDING_COUNT"
@@ -368,13 +386,6 @@ watch_pod_scheduling(){
         log ERROR "Simulation failed"
     fi
 }
-
-# Entry point
-log INFO "Received arguments $@"
-parse_args "$@"
-# Functions are overwritten in this part
-# It is done here to avoid overriding the function track_containers
-load_simulator_code $SIMULATION_MODE
 
 track_containers() {
     log INFO "Starting container tracking..."
@@ -406,6 +417,13 @@ track_containers() {
     save_metrics "$START_TIME" "$MAX_MEMORY_MEASUREMENT" "${CPU_MEASUREMENTS[@]}"
 
 }
+
+# Entry point
+log INFO "Received arguments $@"
+parse_args "$@"
+
+load_simulator_code $SIMULATION_MODE
+
 log INFO "Simulation started with mode: $SIMULATION_MODE"
 if [[ ! -z $CLUSTER_NAME ]]; then
     log INFO "Cluster: $CLUSTER_NAME"
@@ -431,19 +449,23 @@ echo "node_count|pod_count|timeout_reached|mem_exceeded|run_time|total_cpu_secon
 trap 'RUN_CONDITION=false; cleanup_cluster; exit 130' SIGINT SIGTERM
 
 for node_file in $(find "$EXPERIMENT_FILES_PATH" -name $FILE_PATTERN -type f | sort -V); do
+    # Extract node count from file name
     NODE_COUNT=$(basename "$node_file" | grep -o '[0-9]\+' | tail -1)
     if [[ $NODE_COUNT -lt $START ]]; then
         log INFO "Skipping $NODE_COUNT nodes"
         continue
     fi
-
+    CLUSTER_CONFIG="$EXPERIMENT_FILES_PATH/cluster-$NODE_COUNT.yaml"
     POD_FILE="$EXPERIMENT_FILES_PATH/pods-$NODE_COUNT.yaml"
     POD_COUNT=$(cat "$POD_FILE" | grep -c 'kind: Pod')
 
     if [[ $SIMULATION_MODE = "simkube" ]]; then
+        # Simkube does not follow the format
         POD_FILE="$EXPERIMENT_FILES_PATH/trace-$NODE_COUNT.sktrace"
     fi
-
+    if [[ -f $CLUSTER_CONFIG ]]; then
+        log INFO "Cluster config file: $CLUSTER_CONFIG"
+    fi
     log INFO "Node file: $node_file"
     log INFO "Pod file: $POD_FILE"
 
@@ -464,7 +486,7 @@ for node_file in $(find "$EXPERIMENT_FILES_PATH" -name $FILE_PATTERN -type f | s
         POLL_PID=-1
         SETUP_OK="false"
         log INFO "Starting cluster setup..."
-        create_cluster
+        create_cluster $CLUSTER_CONFIG
         CREATE_CLUSTER_STATUS=$?
         cluster_setup
         CREATE_CLUSTER_SETUP_STATUS=$?

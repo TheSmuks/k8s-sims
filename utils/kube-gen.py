@@ -38,7 +38,7 @@ def get_yaml_file(yaml_path: str, single: bool = True, limit: int = -1) -> Any:
                 return yaml.safe_load(yaml_file)
             else:
                 data = yaml.safe_load_all(yaml_file)
-                res_list = list(data)
+                res_list = [val for val in data if val is not None]
                 limit = limit if 0 < limit < len(res_list) else len(res_list)
                 return res_list[:limit]
     except Exception as e:
@@ -126,7 +126,7 @@ def patch_hollow_pod(base_pod: Dict[str, Any]) -> None:
     base_pod['spec'].update(patch_affinity)
 
 def parse_cpu(cpu_str: str) -> int:
-    return int(cpu_str[:-1]) if cpu_str.endswith('m') else int(cpu_str)
+    return int(cpu_str[:-1]) if type(cpu_str) is not int and cpu_str.endswith('m') else int(cpu_str)
 
 def parse_memory(mem_str: str) -> int:
     return int(mem_str[:-2]) if mem_str.endswith('Mi') else int(mem_str)
@@ -164,7 +164,8 @@ def generate_n_nodes(start_pos: int, end_pos: int, step_size: int, node_output_f
             pods_to_remove.append(pod)
 
     remainder = node_count%step_size
-    node_count = node_count if remainder == 0 else node_count-remainder
+    if remainder != 0 and node_count - remainder != 0:
+        node_count -= remainder
     # Save nodes
     with open(os.path.join(node_output_folder, f'nodes-{node_count}.yaml'), 'w') as output_file:
         yaml.dump_all(selected_nodes, output_file, default_flow_style=False)
@@ -194,7 +195,9 @@ def initialize_resources(node_count: int, nodes_path: str, pods_path: str) -> No
     nodes = get_yaml_file(args.nodes_path, False, args.node_count)
     pods = get_yaml_file(args.pods_path, False)
     for node in nodes:
-        total_node_resources.append((int(node['status']['capacity']['cpu'][:-1]), int(node['status']['capacity']['memory'][:-2])))
+        cpu_res = parse_cpu(node['status']['capacity']['cpu'])
+        mem_res = parse_memory(node['status']['capacity']['memory'])
+        total_node_resources.append((cpu_res,mem_res))
     loaded_nodes_qty = len(nodes)
 
 def animate() -> None:
@@ -282,7 +285,12 @@ def main(args: argparse.Namespace) -> None:
         animation_msg = "Generating"
         animation_thread = threading.Thread(target=animate)
         animation_thread.start()
-        rounded_qty = (node_qty // increment) * increment
+        val = (node_qty // increment)
+        if val == 0:
+            val = node_qty
+        else:
+            val *= increment 
+        rounded_qty = val
         # if len(output_folders) > 0:
         #     node_output_folder, pod_output_folder = output_folders.pop(0)
         if args.open_sim:

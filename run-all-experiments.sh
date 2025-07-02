@@ -116,7 +116,7 @@ cleanup() {
 }
 
 load_modules() {
-    read -a SIMULATORS -d EOF < MODULES
+    read -a SIMULATORS -d EOF < SIM_MODULES
     if [[ ${#SIMULATORS[@]} -eq 0 ]]; then
         log ERROR "No simulators found in MODULES file" >&2
         exit 1
@@ -136,7 +136,7 @@ fi
 trap cleanup SIGINT
 for i in ${!SIMULATORS[@]}; do
     log INFO "Starting experiments for ${SIMULATORS[i]}"
-    if [[ ${SIMULATORS[i]} =~ ^(kwok|kube-sched)$ ]]; then
+    if [[ ${SIMULATORS[i]} =~ ^(kwok|kube-sched|vanilla)$ ]]; then
         DATA_PATH="${EXPERIMENT_FILES_PATH}/vanilla"
     else
         DATA_PATH="${EXPERIMENT_FILES_PATH}/${SIMULATORS[i]}"

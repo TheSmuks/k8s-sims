@@ -64,6 +64,6 @@ COPY entrypoint.sh /entrypoint.sh
 
 RUN sed -i 's/\bsudo\b//g' /modules/opensim/module.sh
 RUN echo 'rc_cgroup_mode="unified"' | tee -a /etc/rc.conf
-COPY MODULES /MODULES
+COPY SIM_MODULES /SIM_MODULES
 
 ENTRYPOINT ["/entrypoint.sh"]
