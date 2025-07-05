@@ -4,7 +4,7 @@ metadata:
   labels:
     name: openb-node-0000
   name: openb-node-0000
-  namespace: kubemark
+
 spec:
   containers:
     - command:

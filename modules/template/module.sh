@@ -1,9 +1,9 @@
 # Template for creating a module, if the behavior of a certain function
 # should not be modified then remove the code block corresponding to the function
 
-# module.sh is then loaded into experiment-base.sh
+# module.sh is then loaded into kube-run.sh
 
-# Can override any of the variables used in experiment-base.sh. Such as:
+# Can override any of the variables used in kube-run.sh. Such as:
 # START_TIME=0
 # CLUSTER_NAME=""
 # NAMESPACE="paib-gpu"

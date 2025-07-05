@@ -45,13 +45,13 @@ docker compose up
 ```
 ### Experiment Script
 If all the dependencies are installed, the user can opt to run the experiments on the host machine.
-This can be done by executing the file [run-all-experiments.sh](run-all-experiments.sh).
+This can be done by executing the file [kube-director.sh](kube-director.sh).
 ```bash
-./run-all-experiments.sh
+./kube-director.sh
 ```
-Alternatively, to run a single experiment, the user can execute the file [experiment-base.sh](experiment-base.sh).
+Alternatively, to run a single experiment, the user can execute the file [kube-run.sh](kube-run.sh).
 ```bash
-./experiment-base.sh -m module_name -d data_path
+./kube-run.sh -m module_name -d data_path
 ```
 ### Manual Approach
 - In order to run Alibaba's OpenSimulator refer to [README-OpenSim](modules/opensim/README.md)

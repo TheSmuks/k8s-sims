@@ -1,0 +1,137 @@
+{
+    "kube-sched": {
+        "total_cpu_seconds": {
+            "min": 64.33,
+            "avg": 825.67,
+            "max": 1244.0
+        },
+        "user_cpu_seconds": {
+            "min": 58.0,
+            "avg": 768.17,
+            "max": 1167.67
+        },
+        "system_cpu_seconds": {
+            "min": 8.0,
+            "avg": 57.61,
+            "max": 76.33
+        },
+        "memory_peak_gb": {
+            "min": 0.9,
+            "avg": 5.01,
+            "max": 8.28
+        },
+        "run_time": {
+            "min": 64.0,
+            "avg": 270.03,
+            "max": 361.0
+        }
+    },
+    "opensim": {
+        "total_cpu_seconds": {
+            "min": 6.33,
+            "avg": 260.47,
+            "max": 631.67
+        },
+        "user_cpu_seconds": {
+            "min": 6.0,
+            "avg": 254.06,
+            "max": 616.67
+        },
+        "system_cpu_seconds": {
+            "min": 0.0,
+            "avg": 6.33,
+            "max": 15.0
+        },
+        "memory_peak_gb": {
+            "min": 0.11,
+            "avg": 2.63,
+            "max": 6.29
+        },
+        "run_time": {
+            "min": 3.0,
+            "avg": 88.89,
+            "max": 204.33
+        }
+    },
+    "simkube": {
+        "total_cpu_seconds": {
+            "min": 174.67,
+            "avg": 698.14,
+            "max": 1492.67
+        },
+        "user_cpu_seconds": {
+            "min": 141.0,
+            "avg": 588.39,
+            "max": 1275.0
+        },
+        "system_cpu_seconds": {
+            "min": 34.33,
+            "avg": 109.8,
+            "max": 217.33
+        },
+        "memory_peak_gb": {
+            "min": 5.96,
+            "avg": 8.69,
+            "max": 11.2
+        },
+        "run_time": {
+            "min": 102.0,
+            "avg": 205.2,
+            "max": 325.0
+        }
+    },
+    "kubemark": {
+        "total_cpu_seconds": {
+            "min": 317.0,
+            "avg": 7439.08,
+            "max": 14387.33
+        },
+        "user_cpu_seconds": {
+            "min": 240.67,
+            "avg": 6286.03,
+            "max": 12213.0
+        },
+        "system_cpu_seconds": {
+            "min": 76.67,
+            "avg": 1153.14,
+            "max": 2174.67
+        },
+        "memory_peak_gb": {
+            "min": 9.09,
+            "avg": 15.54,
+            "max": 18.49
+        },
+        "run_time": {
+            "min": 92.0,
+            "avg": 1304.56,
+            "max": 2304.67
+        }
+    },
+    "kwok": {
+        "total_cpu_seconds": {
+            "min": 38.33,
+            "avg": 193.08,
+            "max": 293.67
+        },
+        "user_cpu_seconds": {
+            "min": 32.33,
+            "avg": 163.47,
+            "max": 249.0
+        },
+        "system_cpu_seconds": {
+            "min": 5.33,
+            "avg": 29.92,
+            "max": 44.33
+        },
+        "memory_peak_gb": {
+            "min": 0.52,
+            "avg": 1.15,
+            "max": 1.51
+        },
+        "run_time": {
+            "min": 64.33,
+            "avg": 298.97,
+            "max": 417.33
+        }
+    }
+}

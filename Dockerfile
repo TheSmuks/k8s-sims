@@ -38,7 +38,8 @@ RUN apk update && apk add --no-cache \
     iproute2 \
     bash \
     cgroup-tools \
-    go
+    go \
+    openrc
 
 COPY --from=builder /root/go/bin /root/go/bin
 COPY --from=builder /kubectl /root/go/bin/kubectl
@@ -52,8 +53,8 @@ WORKDIR /
 COPY data/ /data
 COPY modules /modules
 RUN chmod +x /modules/opensim/cmd
-COPY experiment-base.sh /experiment-base.sh
-COPY run-all-experiments.sh /run-all-experiments.sh
+COPY kube-run.sh /kube-run.sh
+COPY kube-director.sh /kube-director.sh
 COPY requirements.txt /requirements.txt
 
 RUN mkdir -p /utils /results

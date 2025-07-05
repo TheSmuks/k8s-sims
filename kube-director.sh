@@ -8,7 +8,19 @@ readonly DEFAULT_EXPERIMENT_FILES_PATH="${LOCAL_PATH}/data/big"
 readonly DEFAULT_OUTPUT_FOLDER="${LOCAL_PATH}/results"
 
 VERBOSE=""
+print_logo(){
+    cat << EOF
+  _  __     _          _____  _               _             
+ | |/ /    | |        |  __ \(_)             | |            
+ | ' /_   _| |__   ___| |  | |_ _ __ ___  ___| |_ ___  _ __ 
+ |  <| | | | '_ \ / _ \ |  | | | '__/ _ \/ __| __/ _ \| '__|
+ | . \ |_| | |_) |  __/ |__| | | | |  __/ (__| || (_) | |   
+ |_|\_\__,_|_.__/ \___|_____/|_|_|  \___|\___|\__\___/|_|   
+------------------------------------------------------------
+EOF
+}
 usage() {
+    print_logo
     cat << EOF
 Usage: $(basename "$0") [options]
 
@@ -123,6 +135,16 @@ load_modules() {
     fi
 }
 
+clean_cluster() {
+    local SIMULATOR="$1"
+    if [[ ${SIMULATOR} =~ ^(kube-sched|kubemark|simkube)$ ]]; then
+        kind delete clusters --all
+    elif [[ ${SIMULATOR} = "kwok" ]]; then
+        kwokctl delete cluster --all
+    fi
+}
+
+print_logo
 log INFO "Loading modules..."
 load_modules
 log INFO "Modules loaded: ${SIMULATORS[*]}"
@@ -138,23 +160,24 @@ for i in ${!SIMULATORS[@]}; do
     log INFO "Starting experiments for ${SIMULATORS[i]}"
     if [[ ${SIMULATORS[i]} =~ ^(kwok|kube-sched)$ ]]; then
         DATA_PATH="${EXPERIMENT_FILES_PATH}/vanilla"
-    else if [[ ${SIMULATORS[i]} = "k8s" ]]; then
+    elif [[ ${SIMULATORS[i]} = "k8s" ]]; then
         DATA_PATH="${EXPERIMENT_FILES_PATH}/k8s"
     else
         DATA_PATH="${EXPERIMENT_FILES_PATH}/${SIMULATORS[i]}"
     fi
-    ${LOCAL_PATH}/experiment-base.sh -m ${SIMULATORS[i]} \
+    ${LOCAL_PATH}/kube-run.sh -m ${SIMULATORS[i]} \
     -e "${DATA_PATH}" \
     -n ${RUNS} \
     -s ${START} \
     -t ${MEMORY_THRESHOLD} \
     -x ${MAX_SIMULATION_TIME} \
     -o "${OUT_FOLDER}/${SIMULATORS[i]}.csv"
+    if [[ $? -ne 0 ]]; then
+        log WARN "${SIMULATORS[i]} experiment interrupted."
+        clean_cluster "${SIMULATORS[i]}"
+        break
+    fi
     log INFO "Experiment for ${SIMULATORS[i]} completed"
     log INFO "Deleting all remaining kind clusters"
-    if [[ ${SIMULATORS[i]} =~ ^(kube-sched|kubemark|simkube)$ ]]; then
-        kind delete clusters --all
-    elif [[ ${SIMULATORS[i]} = "kwok" ]]; then
-        kwokctl delete cluster --all
-    fi
+    clean_cluster "${SIMULATORS[i]}"
 done

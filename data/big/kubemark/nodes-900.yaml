@@ -4,7 +4,7 @@ metadata:
   labels:
     name: openb-node-0000
   name: openb-node-0000
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -91,7 +91,7 @@ metadata:
   labels:
     name: openb-node-0001
   name: openb-node-0001
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -178,7 +178,7 @@ metadata:
   labels:
     name: openb-node-0002
   name: openb-node-0002
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -265,7 +265,7 @@ metadata:
   labels:
     name: openb-node-0003
   name: openb-node-0003
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -352,7 +352,7 @@ metadata:
   labels:
     name: openb-node-0004
   name: openb-node-0004
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -439,7 +439,7 @@ metadata:
   labels:
     name: openb-node-0005
   name: openb-node-0005
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -526,7 +526,7 @@ metadata:
   labels:
     name: openb-node-0006
   name: openb-node-0006
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -613,7 +613,7 @@ metadata:
   labels:
     name: openb-node-0007
   name: openb-node-0007
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -700,7 +700,7 @@ metadata:
   labels:
     name: openb-node-0008
   name: openb-node-0008
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -787,7 +787,7 @@ metadata:
   labels:
     name: openb-node-0009
   name: openb-node-0009
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -874,7 +874,7 @@ metadata:
   labels:
     name: openb-node-0010
   name: openb-node-0010
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -961,7 +961,7 @@ metadata:
   labels:
     name: openb-node-0011
   name: openb-node-0011
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -1048,7 +1048,7 @@ metadata:
   labels:
     name: openb-node-0012
   name: openb-node-0012
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -1135,7 +1135,7 @@ metadata:
   labels:
     name: openb-node-0013
   name: openb-node-0013
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -1222,7 +1222,7 @@ metadata:
   labels:
     name: openb-node-0014
   name: openb-node-0014
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -1309,7 +1309,7 @@ metadata:
   labels:
     name: openb-node-0015
   name: openb-node-0015
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -1396,7 +1396,7 @@ metadata:
   labels:
     name: openb-node-0016
   name: openb-node-0016
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -1483,7 +1483,7 @@ metadata:
   labels:
     name: openb-node-0017
   name: openb-node-0017
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -1570,7 +1570,7 @@ metadata:
   labels:
     name: openb-node-0018
   name: openb-node-0018
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -1657,7 +1657,7 @@ metadata:
   labels:
     name: openb-node-0019
   name: openb-node-0019
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -1744,7 +1744,7 @@ metadata:
   labels:
     name: openb-node-0020
   name: openb-node-0020
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -1831,7 +1831,7 @@ metadata:
   labels:
     name: openb-node-0021
   name: openb-node-0021
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -1918,7 +1918,7 @@ metadata:
   labels:
     name: openb-node-0022
   name: openb-node-0022
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -2005,7 +2005,7 @@ metadata:
   labels:
     name: openb-node-0023
   name: openb-node-0023
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -2092,7 +2092,7 @@ metadata:
   labels:
     name: openb-node-0024
   name: openb-node-0024
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -2179,7 +2179,7 @@ metadata:
   labels:
     name: openb-node-0025
   name: openb-node-0025
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -2266,7 +2266,7 @@ metadata:
   labels:
     name: openb-node-0026
   name: openb-node-0026
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -2353,7 +2353,7 @@ metadata:
   labels:
     name: openb-node-0027
   name: openb-node-0027
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -2440,7 +2440,7 @@ metadata:
   labels:
     name: openb-node-0028
   name: openb-node-0028
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -2527,7 +2527,7 @@ metadata:
   labels:
     name: openb-node-0029
   name: openb-node-0029
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -2614,7 +2614,7 @@ metadata:
   labels:
     name: openb-node-0030
   name: openb-node-0030
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -2701,7 +2701,7 @@ metadata:
   labels:
     name: openb-node-0031
   name: openb-node-0031
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -2788,7 +2788,7 @@ metadata:
   labels:
     name: openb-node-0032
   name: openb-node-0032
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -2875,7 +2875,7 @@ metadata:
   labels:
     name: openb-node-0033
   name: openb-node-0033
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -2962,7 +2962,7 @@ metadata:
   labels:
     name: openb-node-0034
   name: openb-node-0034
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -3049,7 +3049,7 @@ metadata:
   labels:
     name: openb-node-0035
   name: openb-node-0035
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -3136,7 +3136,7 @@ metadata:
   labels:
     name: openb-node-0036
   name: openb-node-0036
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -3223,7 +3223,7 @@ metadata:
   labels:
     name: openb-node-0037
   name: openb-node-0037
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -3310,7 +3310,7 @@ metadata:
   labels:
     name: openb-node-0038
   name: openb-node-0038
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -3397,7 +3397,7 @@ metadata:
   labels:
     name: openb-node-0039
   name: openb-node-0039
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -3484,7 +3484,7 @@ metadata:
   labels:
     name: openb-node-0040
   name: openb-node-0040
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -3571,7 +3571,7 @@ metadata:
   labels:
     name: openb-node-0041
   name: openb-node-0041
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -3658,7 +3658,7 @@ metadata:
   labels:
     name: openb-node-0042
   name: openb-node-0042
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -3745,7 +3745,7 @@ metadata:
   labels:
     name: openb-node-0043
   name: openb-node-0043
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -3832,7 +3832,7 @@ metadata:
   labels:
     name: openb-node-0044
   name: openb-node-0044
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -3919,7 +3919,7 @@ metadata:
   labels:
     name: openb-node-0045
   name: openb-node-0045
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -4006,7 +4006,7 @@ metadata:
   labels:
     name: openb-node-0046
   name: openb-node-0046
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -4093,7 +4093,7 @@ metadata:
   labels:
     name: openb-node-0047
   name: openb-node-0047
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -4180,7 +4180,7 @@ metadata:
   labels:
     name: openb-node-0048
   name: openb-node-0048
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -4267,7 +4267,7 @@ metadata:
   labels:
     name: openb-node-0049
   name: openb-node-0049
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -4354,7 +4354,7 @@ metadata:
   labels:
     name: openb-node-0050
   name: openb-node-0050
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -4441,7 +4441,7 @@ metadata:
   labels:
     name: openb-node-0051
   name: openb-node-0051
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -4528,7 +4528,7 @@ metadata:
   labels:
     name: openb-node-0052
   name: openb-node-0052
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -4615,7 +4615,7 @@ metadata:
   labels:
     name: openb-node-0053
   name: openb-node-0053
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -4702,7 +4702,7 @@ metadata:
   labels:
     name: openb-node-0054
   name: openb-node-0054
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -4789,7 +4789,7 @@ metadata:
   labels:
     name: openb-node-0055
   name: openb-node-0055
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -4876,7 +4876,7 @@ metadata:
   labels:
     name: openb-node-0056
   name: openb-node-0056
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -4963,7 +4963,7 @@ metadata:
   labels:
     name: openb-node-0057
   name: openb-node-0057
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -5050,7 +5050,7 @@ metadata:
   labels:
     name: openb-node-0058
   name: openb-node-0058
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -5137,7 +5137,7 @@ metadata:
   labels:
     name: openb-node-0059
   name: openb-node-0059
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -5224,7 +5224,7 @@ metadata:
   labels:
     name: openb-node-0060
   name: openb-node-0060
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -5311,7 +5311,7 @@ metadata:
   labels:
     name: openb-node-0061
   name: openb-node-0061
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -5398,7 +5398,7 @@ metadata:
   labels:
     name: openb-node-0062
   name: openb-node-0062
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -5485,7 +5485,7 @@ metadata:
   labels:
     name: openb-node-0063
   name: openb-node-0063
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -5572,7 +5572,7 @@ metadata:
   labels:
     name: openb-node-0064
   name: openb-node-0064
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -5659,7 +5659,7 @@ metadata:
   labels:
     name: openb-node-0065
   name: openb-node-0065
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -5746,7 +5746,7 @@ metadata:
   labels:
     name: openb-node-0066
   name: openb-node-0066
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -5833,7 +5833,7 @@ metadata:
   labels:
     name: openb-node-0067
   name: openb-node-0067
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -5920,7 +5920,7 @@ metadata:
   labels:
     name: openb-node-0068
   name: openb-node-0068
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -6007,7 +6007,7 @@ metadata:
   labels:
     name: openb-node-0069
   name: openb-node-0069
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -6094,7 +6094,7 @@ metadata:
   labels:
     name: openb-node-0070
   name: openb-node-0070
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -6181,7 +6181,7 @@ metadata:
   labels:
     name: openb-node-0071
   name: openb-node-0071
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -6268,7 +6268,7 @@ metadata:
   labels:
     name: openb-node-0072
   name: openb-node-0072
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -6355,7 +6355,7 @@ metadata:
   labels:
     name: openb-node-0073
   name: openb-node-0073
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -6442,7 +6442,7 @@ metadata:
   labels:
     name: openb-node-0074
   name: openb-node-0074
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -6529,7 +6529,7 @@ metadata:
   labels:
     name: openb-node-0075
   name: openb-node-0075
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -6616,7 +6616,7 @@ metadata:
   labels:
     name: openb-node-0076
   name: openb-node-0076
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -6703,7 +6703,7 @@ metadata:
   labels:
     name: openb-node-0077
   name: openb-node-0077
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -6790,7 +6790,7 @@ metadata:
   labels:
     name: openb-node-0078
   name: openb-node-0078
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -6877,7 +6877,7 @@ metadata:
   labels:
     name: openb-node-0079
   name: openb-node-0079
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -6964,7 +6964,7 @@ metadata:
   labels:
     name: openb-node-0080
   name: openb-node-0080
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -7051,7 +7051,7 @@ metadata:
   labels:
     name: openb-node-0081
   name: openb-node-0081
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -7138,7 +7138,7 @@ metadata:
   labels:
     name: openb-node-0082
   name: openb-node-0082
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -7225,7 +7225,7 @@ metadata:
   labels:
     name: openb-node-0083
   name: openb-node-0083
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -7312,7 +7312,7 @@ metadata:
   labels:
     name: openb-node-0084
   name: openb-node-0084
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -7399,7 +7399,7 @@ metadata:
   labels:
     name: openb-node-0085
   name: openb-node-0085
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -7486,7 +7486,7 @@ metadata:
   labels:
     name: openb-node-0086
   name: openb-node-0086
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -7573,7 +7573,7 @@ metadata:
   labels:
     name: openb-node-0087
   name: openb-node-0087
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -7660,7 +7660,7 @@ metadata:
   labels:
     name: openb-node-0088
   name: openb-node-0088
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -7747,7 +7747,7 @@ metadata:
   labels:
     name: openb-node-0089
   name: openb-node-0089
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -7834,7 +7834,7 @@ metadata:
   labels:
     name: openb-node-0090
   name: openb-node-0090
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -7921,7 +7921,7 @@ metadata:
   labels:
     name: openb-node-0091
   name: openb-node-0091
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -8008,7 +8008,7 @@ metadata:
   labels:
     name: openb-node-0092
   name: openb-node-0092
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -8095,7 +8095,7 @@ metadata:
   labels:
     name: openb-node-0093
   name: openb-node-0093
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -8182,7 +8182,7 @@ metadata:
   labels:
     name: openb-node-0094
   name: openb-node-0094
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -8269,7 +8269,7 @@ metadata:
   labels:
     name: openb-node-0095
   name: openb-node-0095
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -8356,7 +8356,7 @@ metadata:
   labels:
     name: openb-node-0096
   name: openb-node-0096
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -8443,7 +8443,7 @@ metadata:
   labels:
     name: openb-node-0097
   name: openb-node-0097
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -8530,7 +8530,7 @@ metadata:
   labels:
     name: openb-node-0098
   name: openb-node-0098
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -8617,7 +8617,7 @@ metadata:
   labels:
     name: openb-node-0099
   name: openb-node-0099
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -8704,7 +8704,7 @@ metadata:
   labels:
     name: openb-node-0100
   name: openb-node-0100
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -8791,7 +8791,7 @@ metadata:
   labels:
     name: openb-node-0101
   name: openb-node-0101
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -8878,7 +8878,7 @@ metadata:
   labels:
     name: openb-node-0102
   name: openb-node-0102
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -8965,7 +8965,7 @@ metadata:
   labels:
     name: openb-node-0103
   name: openb-node-0103
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -9052,7 +9052,7 @@ metadata:
   labels:
     name: openb-node-0104
   name: openb-node-0104
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -9139,7 +9139,7 @@ metadata:
   labels:
     name: openb-node-0105
   name: openb-node-0105
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -9226,7 +9226,7 @@ metadata:
   labels:
     name: openb-node-0106
   name: openb-node-0106
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -9313,7 +9313,7 @@ metadata:
   labels:
     name: openb-node-0107
   name: openb-node-0107
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -9400,7 +9400,7 @@ metadata:
   labels:
     name: openb-node-0108
   name: openb-node-0108
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -9487,7 +9487,7 @@ metadata:
   labels:
     name: openb-node-0109
   name: openb-node-0109
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -9574,7 +9574,7 @@ metadata:
   labels:
     name: openb-node-0110
   name: openb-node-0110
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -9661,7 +9661,7 @@ metadata:
   labels:
     name: openb-node-0111
   name: openb-node-0111
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -9748,7 +9748,7 @@ metadata:
   labels:
     name: openb-node-0112
   name: openb-node-0112
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -9835,7 +9835,7 @@ metadata:
   labels:
     name: openb-node-0113
   name: openb-node-0113
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -9922,7 +9922,7 @@ metadata:
   labels:
     name: openb-node-0114
   name: openb-node-0114
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -10009,7 +10009,7 @@ metadata:
   labels:
     name: openb-node-0115
   name: openb-node-0115
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -10096,7 +10096,7 @@ metadata:
   labels:
     name: openb-node-0116
   name: openb-node-0116
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -10183,7 +10183,7 @@ metadata:
   labels:
     name: openb-node-0117
   name: openb-node-0117
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -10270,7 +10270,7 @@ metadata:
   labels:
     name: openb-node-0118
   name: openb-node-0118
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -10357,7 +10357,7 @@ metadata:
   labels:
     name: openb-node-0119
   name: openb-node-0119
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -10444,7 +10444,7 @@ metadata:
   labels:
     name: openb-node-0120
   name: openb-node-0120
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -10531,7 +10531,7 @@ metadata:
   labels:
     name: openb-node-0121
   name: openb-node-0121
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -10618,7 +10618,7 @@ metadata:
   labels:
     name: openb-node-0122
   name: openb-node-0122
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -10705,7 +10705,7 @@ metadata:
   labels:
     name: openb-node-0123
   name: openb-node-0123
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -10792,7 +10792,7 @@ metadata:
   labels:
     name: openb-node-0124
   name: openb-node-0124
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -10879,7 +10879,7 @@ metadata:
   labels:
     name: openb-node-0125
   name: openb-node-0125
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -10966,7 +10966,7 @@ metadata:
   labels:
     name: openb-node-0126
   name: openb-node-0126
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -11053,7 +11053,7 @@ metadata:
   labels:
     name: openb-node-0127
   name: openb-node-0127
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -11140,7 +11140,7 @@ metadata:
   labels:
     name: openb-node-0128
   name: openb-node-0128
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -11227,7 +11227,7 @@ metadata:
   labels:
     name: openb-node-0129
   name: openb-node-0129
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -11314,7 +11314,7 @@ metadata:
   labels:
     name: openb-node-0130
   name: openb-node-0130
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -11401,7 +11401,7 @@ metadata:
   labels:
     name: openb-node-0131
   name: openb-node-0131
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -11488,7 +11488,7 @@ metadata:
   labels:
     name: openb-node-0132
   name: openb-node-0132
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -11575,7 +11575,7 @@ metadata:
   labels:
     name: openb-node-0133
   name: openb-node-0133
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -11662,7 +11662,7 @@ metadata:
   labels:
     name: openb-node-0134
   name: openb-node-0134
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -11749,7 +11749,7 @@ metadata:
   labels:
     name: openb-node-0135
   name: openb-node-0135
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -11836,7 +11836,7 @@ metadata:
   labels:
     name: openb-node-0136
   name: openb-node-0136
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -11923,7 +11923,7 @@ metadata:
   labels:
     name: openb-node-0137
   name: openb-node-0137
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -12010,7 +12010,7 @@ metadata:
   labels:
     name: openb-node-0138
   name: openb-node-0138
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -12097,7 +12097,7 @@ metadata:
   labels:
     name: openb-node-0139
   name: openb-node-0139
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -12184,7 +12184,7 @@ metadata:
   labels:
     name: openb-node-0140
   name: openb-node-0140
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -12271,7 +12271,7 @@ metadata:
   labels:
     name: openb-node-0141
   name: openb-node-0141
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -12358,7 +12358,7 @@ metadata:
   labels:
     name: openb-node-0142
   name: openb-node-0142
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -12445,7 +12445,7 @@ metadata:
   labels:
     name: openb-node-0143
   name: openb-node-0143
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -12532,7 +12532,7 @@ metadata:
   labels:
     name: openb-node-0144
   name: openb-node-0144
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -12619,7 +12619,7 @@ metadata:
   labels:
     name: openb-node-0145
   name: openb-node-0145
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -12706,7 +12706,7 @@ metadata:
   labels:
     name: openb-node-0146
   name: openb-node-0146
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -12793,7 +12793,7 @@ metadata:
   labels:
     name: openb-node-0147
   name: openb-node-0147
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -12880,7 +12880,7 @@ metadata:
   labels:
     name: openb-node-0148
   name: openb-node-0148
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -12967,7 +12967,7 @@ metadata:
   labels:
     name: openb-node-0149
   name: openb-node-0149
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -13054,7 +13054,7 @@ metadata:
   labels:
     name: openb-node-0150
   name: openb-node-0150
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -13141,7 +13141,7 @@ metadata:
   labels:
     name: openb-node-0151
   name: openb-node-0151
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -13228,7 +13228,7 @@ metadata:
   labels:
     name: openb-node-0152
   name: openb-node-0152
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -13315,7 +13315,7 @@ metadata:
   labels:
     name: openb-node-0153
   name: openb-node-0153
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -13402,7 +13402,7 @@ metadata:
   labels:
     name: openb-node-0154
   name: openb-node-0154
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -13489,7 +13489,7 @@ metadata:
   labels:
     name: openb-node-0155
   name: openb-node-0155
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -13576,7 +13576,7 @@ metadata:
   labels:
     name: openb-node-0156
   name: openb-node-0156
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -13663,7 +13663,7 @@ metadata:
   labels:
     name: openb-node-0157
   name: openb-node-0157
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -13750,7 +13750,7 @@ metadata:
   labels:
     name: openb-node-0158
   name: openb-node-0158
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -13837,7 +13837,7 @@ metadata:
   labels:
     name: openb-node-0159
   name: openb-node-0159
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -13924,7 +13924,7 @@ metadata:
   labels:
     name: openb-node-0160
   name: openb-node-0160
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -14011,7 +14011,7 @@ metadata:
   labels:
     name: openb-node-0161
   name: openb-node-0161
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -14098,7 +14098,7 @@ metadata:
   labels:
     name: openb-node-0162
   name: openb-node-0162
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -14185,7 +14185,7 @@ metadata:
   labels:
     name: openb-node-0163
   name: openb-node-0163
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -14272,7 +14272,7 @@ metadata:
   labels:
     name: openb-node-0164
   name: openb-node-0164
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -14359,7 +14359,7 @@ metadata:
   labels:
     name: openb-node-0165
   name: openb-node-0165
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -14446,7 +14446,7 @@ metadata:
   labels:
     name: openb-node-0166
   name: openb-node-0166
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -14533,7 +14533,7 @@ metadata:
   labels:
     name: openb-node-0167
   name: openb-node-0167
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -14620,7 +14620,7 @@ metadata:
   labels:
     name: openb-node-0168
   name: openb-node-0168
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -14707,7 +14707,7 @@ metadata:
   labels:
     name: openb-node-0169
   name: openb-node-0169
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -14794,7 +14794,7 @@ metadata:
   labels:
     name: openb-node-0170
   name: openb-node-0170
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -14881,7 +14881,7 @@ metadata:
   labels:
     name: openb-node-0171
   name: openb-node-0171
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -14968,7 +14968,7 @@ metadata:
   labels:
     name: openb-node-0172
   name: openb-node-0172
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -15055,7 +15055,7 @@ metadata:
   labels:
     name: openb-node-0173
   name: openb-node-0173
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -15142,7 +15142,7 @@ metadata:
   labels:
     name: openb-node-0174
   name: openb-node-0174
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -15229,7 +15229,7 @@ metadata:
   labels:
     name: openb-node-0175
   name: openb-node-0175
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -15316,7 +15316,7 @@ metadata:
   labels:
     name: openb-node-0176
   name: openb-node-0176
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -15403,7 +15403,7 @@ metadata:
   labels:
     name: openb-node-0177
   name: openb-node-0177
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -15490,7 +15490,7 @@ metadata:
   labels:
     name: openb-node-0178
   name: openb-node-0178
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -15577,7 +15577,7 @@ metadata:
   labels:
     name: openb-node-0179
   name: openb-node-0179
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -15664,7 +15664,7 @@ metadata:
   labels:
     name: openb-node-0180
   name: openb-node-0180
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -15751,7 +15751,7 @@ metadata:
   labels:
     name: openb-node-0181
   name: openb-node-0181
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -15838,7 +15838,7 @@ metadata:
   labels:
     name: openb-node-0182
   name: openb-node-0182
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -15925,7 +15925,7 @@ metadata:
   labels:
     name: openb-node-0183
   name: openb-node-0183
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -16012,7 +16012,7 @@ metadata:
   labels:
     name: openb-node-0184
   name: openb-node-0184
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -16099,7 +16099,7 @@ metadata:
   labels:
     name: openb-node-0185
   name: openb-node-0185
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -16186,7 +16186,7 @@ metadata:
   labels:
     name: openb-node-0186
   name: openb-node-0186
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -16273,7 +16273,7 @@ metadata:
   labels:
     name: openb-node-0187
   name: openb-node-0187
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -16360,7 +16360,7 @@ metadata:
   labels:
     name: openb-node-0188
   name: openb-node-0188
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -16447,7 +16447,7 @@ metadata:
   labels:
     name: openb-node-0189
   name: openb-node-0189
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -16534,7 +16534,7 @@ metadata:
   labels:
     name: openb-node-0190
   name: openb-node-0190
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -16621,7 +16621,7 @@ metadata:
   labels:
     name: openb-node-0191
   name: openb-node-0191
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -16708,7 +16708,7 @@ metadata:
   labels:
     name: openb-node-0192
   name: openb-node-0192
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -16795,7 +16795,7 @@ metadata:
   labels:
     name: openb-node-0193
   name: openb-node-0193
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -16882,7 +16882,7 @@ metadata:
   labels:
     name: openb-node-0194
   name: openb-node-0194
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -16969,7 +16969,7 @@ metadata:
   labels:
     name: openb-node-0195
   name: openb-node-0195
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -17056,7 +17056,7 @@ metadata:
   labels:
     name: openb-node-0196
   name: openb-node-0196
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -17143,7 +17143,7 @@ metadata:
   labels:
     name: openb-node-0197
   name: openb-node-0197
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -17230,7 +17230,7 @@ metadata:
   labels:
     name: openb-node-0198
   name: openb-node-0198
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -17317,7 +17317,7 @@ metadata:
   labels:
     name: openb-node-0199
   name: openb-node-0199
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -17404,7 +17404,7 @@ metadata:
   labels:
     name: openb-node-0200
   name: openb-node-0200
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -17491,7 +17491,7 @@ metadata:
   labels:
     name: openb-node-0201
   name: openb-node-0201
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -17578,7 +17578,7 @@ metadata:
   labels:
     name: openb-node-0202
   name: openb-node-0202
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -17665,7 +17665,7 @@ metadata:
   labels:
     name: openb-node-0203
   name: openb-node-0203
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -17752,7 +17752,7 @@ metadata:
   labels:
     name: openb-node-0204
   name: openb-node-0204
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -17839,7 +17839,7 @@ metadata:
   labels:
     name: openb-node-0205
   name: openb-node-0205
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -17926,7 +17926,7 @@ metadata:
   labels:
     name: openb-node-0206
   name: openb-node-0206
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -18013,7 +18013,7 @@ metadata:
   labels:
     name: openb-node-0207
   name: openb-node-0207
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -18100,7 +18100,7 @@ metadata:
   labels:
     name: openb-node-0208
   name: openb-node-0208
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -18187,7 +18187,7 @@ metadata:
   labels:
     name: openb-node-0209
   name: openb-node-0209
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -18274,7 +18274,7 @@ metadata:
   labels:
     name: openb-node-0210
   name: openb-node-0210
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -18361,7 +18361,7 @@ metadata:
   labels:
     name: openb-node-0211
   name: openb-node-0211
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -18448,7 +18448,7 @@ metadata:
   labels:
     name: openb-node-0212
   name: openb-node-0212
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -18535,7 +18535,7 @@ metadata:
   labels:
     name: openb-node-0213
   name: openb-node-0213
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -18622,7 +18622,7 @@ metadata:
   labels:
     name: openb-node-0214
   name: openb-node-0214
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -18709,7 +18709,7 @@ metadata:
   labels:
     name: openb-node-0215
   name: openb-node-0215
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -18796,7 +18796,7 @@ metadata:
   labels:
     name: openb-node-0216
   name: openb-node-0216
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -18883,7 +18883,7 @@ metadata:
   labels:
     name: openb-node-0217
   name: openb-node-0217
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -18970,7 +18970,7 @@ metadata:
   labels:
     name: openb-node-0218
   name: openb-node-0218
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -19057,7 +19057,7 @@ metadata:
   labels:
     name: openb-node-0219
   name: openb-node-0219
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -19144,7 +19144,7 @@ metadata:
   labels:
     name: openb-node-0220
   name: openb-node-0220
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -19231,7 +19231,7 @@ metadata:
   labels:
     name: openb-node-0221
   name: openb-node-0221
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -19318,7 +19318,7 @@ metadata:
   labels:
     name: openb-node-0222
   name: openb-node-0222
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -19405,7 +19405,7 @@ metadata:
   labels:
     name: openb-node-0223
   name: openb-node-0223
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -19492,7 +19492,7 @@ metadata:
   labels:
     name: openb-node-0224
   name: openb-node-0224
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -19579,7 +19579,7 @@ metadata:
   labels:
     name: openb-node-0225
   name: openb-node-0225
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -19666,7 +19666,7 @@ metadata:
   labels:
     name: openb-node-0226
   name: openb-node-0226
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -19753,7 +19753,7 @@ metadata:
   labels:
     name: openb-node-0227
   name: openb-node-0227
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -19840,7 +19840,7 @@ metadata:
   labels:
     name: openb-node-0228
   name: openb-node-0228
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -19927,7 +19927,7 @@ metadata:
   labels:
     name: openb-node-0229
   name: openb-node-0229
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -20014,7 +20014,7 @@ metadata:
   labels:
     name: openb-node-0230
   name: openb-node-0230
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -20101,7 +20101,7 @@ metadata:
   labels:
     name: openb-node-0231
   name: openb-node-0231
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -20188,7 +20188,7 @@ metadata:
   labels:
     name: openb-node-0232
   name: openb-node-0232
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -20275,7 +20275,7 @@ metadata:
   labels:
     name: openb-node-0233
   name: openb-node-0233
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -20362,7 +20362,7 @@ metadata:
   labels:
     name: openb-node-0234
   name: openb-node-0234
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -20449,7 +20449,7 @@ metadata:
   labels:
     name: openb-node-0235
   name: openb-node-0235
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -20536,7 +20536,7 @@ metadata:
   labels:
     name: openb-node-0236
   name: openb-node-0236
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -20623,7 +20623,7 @@ metadata:
   labels:
     name: openb-node-0237
   name: openb-node-0237
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -20710,7 +20710,7 @@ metadata:
   labels:
     name: openb-node-0238
   name: openb-node-0238
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -20797,7 +20797,7 @@ metadata:
   labels:
     name: openb-node-0239
   name: openb-node-0239
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -20884,7 +20884,7 @@ metadata:
   labels:
     name: openb-node-0240
   name: openb-node-0240
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -20971,7 +20971,7 @@ metadata:
   labels:
     name: openb-node-0241
   name: openb-node-0241
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -21058,7 +21058,7 @@ metadata:
   labels:
     name: openb-node-0242
   name: openb-node-0242
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -21145,7 +21145,7 @@ metadata:
   labels:
     name: openb-node-0243
   name: openb-node-0243
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -21232,7 +21232,7 @@ metadata:
   labels:
     name: openb-node-0244
   name: openb-node-0244
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -21319,7 +21319,7 @@ metadata:
   labels:
     name: openb-node-0245
   name: openb-node-0245
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -21406,7 +21406,7 @@ metadata:
   labels:
     name: openb-node-0246
   name: openb-node-0246
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -21493,7 +21493,7 @@ metadata:
   labels:
     name: openb-node-0247
   name: openb-node-0247
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -21580,7 +21580,7 @@ metadata:
   labels:
     name: openb-node-0248
   name: openb-node-0248
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -21667,7 +21667,7 @@ metadata:
   labels:
     name: openb-node-0249
   name: openb-node-0249
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -21754,7 +21754,7 @@ metadata:
   labels:
     name: openb-node-0250
   name: openb-node-0250
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -21841,7 +21841,7 @@ metadata:
   labels:
     name: openb-node-0251
   name: openb-node-0251
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -21928,7 +21928,7 @@ metadata:
   labels:
     name: openb-node-0252
   name: openb-node-0252
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -22015,7 +22015,7 @@ metadata:
   labels:
     name: openb-node-0253
   name: openb-node-0253
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -22102,7 +22102,7 @@ metadata:
   labels:
     name: openb-node-0254
   name: openb-node-0254
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -22189,7 +22189,7 @@ metadata:
   labels:
     name: openb-node-0255
   name: openb-node-0255
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -22276,7 +22276,7 @@ metadata:
   labels:
     name: openb-node-0256
   name: openb-node-0256
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -22363,7 +22363,7 @@ metadata:
   labels:
     name: openb-node-0257
   name: openb-node-0257
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -22450,7 +22450,7 @@ metadata:
   labels:
     name: openb-node-0258
   name: openb-node-0258
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -22537,7 +22537,7 @@ metadata:
   labels:
     name: openb-node-0259
   name: openb-node-0259
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -22624,7 +22624,7 @@ metadata:
   labels:
     name: openb-node-0260
   name: openb-node-0260
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -22711,7 +22711,7 @@ metadata:
   labels:
     name: openb-node-0261
   name: openb-node-0261
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -22798,7 +22798,7 @@ metadata:
   labels:
     name: openb-node-0262
   name: openb-node-0262
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -22885,7 +22885,7 @@ metadata:
   labels:
     name: openb-node-0263
   name: openb-node-0263
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -22972,7 +22972,7 @@ metadata:
   labels:
     name: openb-node-0264
   name: openb-node-0264
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -23059,7 +23059,7 @@ metadata:
   labels:
     name: openb-node-0265
   name: openb-node-0265
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -23146,7 +23146,7 @@ metadata:
   labels:
     name: openb-node-0266
   name: openb-node-0266
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -23233,7 +23233,7 @@ metadata:
   labels:
     name: openb-node-0267
   name: openb-node-0267
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -23320,7 +23320,7 @@ metadata:
   labels:
     name: openb-node-0268
   name: openb-node-0268
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -23407,7 +23407,7 @@ metadata:
   labels:
     name: openb-node-0269
   name: openb-node-0269
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -23494,7 +23494,7 @@ metadata:
   labels:
     name: openb-node-0270
   name: openb-node-0270
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -23581,7 +23581,7 @@ metadata:
   labels:
     name: openb-node-0271
   name: openb-node-0271
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -23668,7 +23668,7 @@ metadata:
   labels:
     name: openb-node-0272
   name: openb-node-0272
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -23755,7 +23755,7 @@ metadata:
   labels:
     name: openb-node-0273
   name: openb-node-0273
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -23842,7 +23842,7 @@ metadata:
   labels:
     name: openb-node-0274
   name: openb-node-0274
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -23929,7 +23929,7 @@ metadata:
   labels:
     name: openb-node-0275
   name: openb-node-0275
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -24016,7 +24016,7 @@ metadata:
   labels:
     name: openb-node-0276
   name: openb-node-0276
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -24103,7 +24103,7 @@ metadata:
   labels:
     name: openb-node-0277
   name: openb-node-0277
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -24190,7 +24190,7 @@ metadata:
   labels:
     name: openb-node-0278
   name: openb-node-0278
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -24277,7 +24277,7 @@ metadata:
   labels:
     name: openb-node-0279
   name: openb-node-0279
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -24364,7 +24364,7 @@ metadata:
   labels:
     name: openb-node-0280
   name: openb-node-0280
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -24451,7 +24451,7 @@ metadata:
   labels:
     name: openb-node-0281
   name: openb-node-0281
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -24538,7 +24538,7 @@ metadata:
   labels:
     name: openb-node-0282
   name: openb-node-0282
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -24625,7 +24625,7 @@ metadata:
   labels:
     name: openb-node-0283
   name: openb-node-0283
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -24712,7 +24712,7 @@ metadata:
   labels:
     name: openb-node-0284
   name: openb-node-0284
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -24799,7 +24799,7 @@ metadata:
   labels:
     name: openb-node-0285
   name: openb-node-0285
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -24886,7 +24886,7 @@ metadata:
   labels:
     name: openb-node-0286
   name: openb-node-0286
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -24973,7 +24973,7 @@ metadata:
   labels:
     name: openb-node-0287
   name: openb-node-0287
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -25060,7 +25060,7 @@ metadata:
   labels:
     name: openb-node-0288
   name: openb-node-0288
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -25147,7 +25147,7 @@ metadata:
   labels:
     name: openb-node-0289
   name: openb-node-0289
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -25234,7 +25234,7 @@ metadata:
   labels:
     name: openb-node-0290
   name: openb-node-0290
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -25321,7 +25321,7 @@ metadata:
   labels:
     name: openb-node-0291
   name: openb-node-0291
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -25408,7 +25408,7 @@ metadata:
   labels:
     name: openb-node-0292
   name: openb-node-0292
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -25495,7 +25495,7 @@ metadata:
   labels:
     name: openb-node-0293
   name: openb-node-0293
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -25582,7 +25582,7 @@ metadata:
   labels:
     name: openb-node-0294
   name: openb-node-0294
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -25669,7 +25669,7 @@ metadata:
   labels:
     name: openb-node-0295
   name: openb-node-0295
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -25756,7 +25756,7 @@ metadata:
   labels:
     name: openb-node-0296
   name: openb-node-0296
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -25843,7 +25843,7 @@ metadata:
   labels:
     name: openb-node-0297
   name: openb-node-0297
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -25930,7 +25930,7 @@ metadata:
   labels:
     name: openb-node-0298
   name: openb-node-0298
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -26017,7 +26017,7 @@ metadata:
   labels:
     name: openb-node-0299
   name: openb-node-0299
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -26104,7 +26104,7 @@ metadata:
   labels:
     name: openb-node-0300
   name: openb-node-0300
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -26191,7 +26191,7 @@ metadata:
   labels:
     name: openb-node-0301
   name: openb-node-0301
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -26278,7 +26278,7 @@ metadata:
   labels:
     name: openb-node-0302
   name: openb-node-0302
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -26365,7 +26365,7 @@ metadata:
   labels:
     name: openb-node-0303
   name: openb-node-0303
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -26452,7 +26452,7 @@ metadata:
   labels:
     name: openb-node-0304
   name: openb-node-0304
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -26539,7 +26539,7 @@ metadata:
   labels:
     name: openb-node-0305
   name: openb-node-0305
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -26626,7 +26626,7 @@ metadata:
   labels:
     name: openb-node-0306
   name: openb-node-0306
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -26713,7 +26713,7 @@ metadata:
   labels:
     name: openb-node-0307
   name: openb-node-0307
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -26800,7 +26800,7 @@ metadata:
   labels:
     name: openb-node-0308
   name: openb-node-0308
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -26887,7 +26887,7 @@ metadata:
   labels:
     name: openb-node-0309
   name: openb-node-0309
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -26974,7 +26974,7 @@ metadata:
   labels:
     name: openb-node-0310
   name: openb-node-0310
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -27061,7 +27061,7 @@ metadata:
   labels:
     name: openb-node-0311
   name: openb-node-0311
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -27148,7 +27148,7 @@ metadata:
   labels:
     name: openb-node-0312
   name: openb-node-0312
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -27235,7 +27235,7 @@ metadata:
   labels:
     name: openb-node-0313
   name: openb-node-0313
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -27322,7 +27322,7 @@ metadata:
   labels:
     name: openb-node-0314
   name: openb-node-0314
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -27409,7 +27409,7 @@ metadata:
   labels:
     name: openb-node-0315
   name: openb-node-0315
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -27496,7 +27496,7 @@ metadata:
   labels:
     name: openb-node-0316
   name: openb-node-0316
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -27583,7 +27583,7 @@ metadata:
   labels:
     name: openb-node-0317
   name: openb-node-0317
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -27670,7 +27670,7 @@ metadata:
   labels:
     name: openb-node-0318
   name: openb-node-0318
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -27757,7 +27757,7 @@ metadata:
   labels:
     name: openb-node-0319
   name: openb-node-0319
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -27844,7 +27844,7 @@ metadata:
   labels:
     name: openb-node-0320
   name: openb-node-0320
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -27931,7 +27931,7 @@ metadata:
   labels:
     name: openb-node-0321
   name: openb-node-0321
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -28018,7 +28018,7 @@ metadata:
   labels:
     name: openb-node-0322
   name: openb-node-0322
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -28105,7 +28105,7 @@ metadata:
   labels:
     name: openb-node-0323
   name: openb-node-0323
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -28192,7 +28192,7 @@ metadata:
   labels:
     name: openb-node-0324
   name: openb-node-0324
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -28279,7 +28279,7 @@ metadata:
   labels:
     name: openb-node-0325
   name: openb-node-0325
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -28366,7 +28366,7 @@ metadata:
   labels:
     name: openb-node-0326
   name: openb-node-0326
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -28453,7 +28453,7 @@ metadata:
   labels:
     name: openb-node-0327
   name: openb-node-0327
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -28540,7 +28540,7 @@ metadata:
   labels:
     name: openb-node-0328
   name: openb-node-0328
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -28627,7 +28627,7 @@ metadata:
   labels:
     name: openb-node-0329
   name: openb-node-0329
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -28714,7 +28714,7 @@ metadata:
   labels:
     name: openb-node-0330
   name: openb-node-0330
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -28801,7 +28801,7 @@ metadata:
   labels:
     name: openb-node-0331
   name: openb-node-0331
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -28888,7 +28888,7 @@ metadata:
   labels:
     name: openb-node-0332
   name: openb-node-0332
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -28975,7 +28975,7 @@ metadata:
   labels:
     name: openb-node-0333
   name: openb-node-0333
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -29062,7 +29062,7 @@ metadata:
   labels:
     name: openb-node-0334
   name: openb-node-0334
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -29149,7 +29149,7 @@ metadata:
   labels:
     name: openb-node-0335
   name: openb-node-0335
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -29236,7 +29236,7 @@ metadata:
   labels:
     name: openb-node-0336
   name: openb-node-0336
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -29323,7 +29323,7 @@ metadata:
   labels:
     name: openb-node-0337
   name: openb-node-0337
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -29410,7 +29410,7 @@ metadata:
   labels:
     name: openb-node-0338
   name: openb-node-0338
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -29497,7 +29497,7 @@ metadata:
   labels:
     name: openb-node-0339
   name: openb-node-0339
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -29584,7 +29584,7 @@ metadata:
   labels:
     name: openb-node-0340
   name: openb-node-0340
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -29671,7 +29671,7 @@ metadata:
   labels:
     name: openb-node-0341
   name: openb-node-0341
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -29758,7 +29758,7 @@ metadata:
   labels:
     name: openb-node-0342
   name: openb-node-0342
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -29845,7 +29845,7 @@ metadata:
   labels:
     name: openb-node-0343
   name: openb-node-0343
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -29932,7 +29932,7 @@ metadata:
   labels:
     name: openb-node-0344
   name: openb-node-0344
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -30019,7 +30019,7 @@ metadata:
   labels:
     name: openb-node-0345
   name: openb-node-0345
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -30106,7 +30106,7 @@ metadata:
   labels:
     name: openb-node-0346
   name: openb-node-0346
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -30193,7 +30193,7 @@ metadata:
   labels:
     name: openb-node-0347
   name: openb-node-0347
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -30280,7 +30280,7 @@ metadata:
   labels:
     name: openb-node-0348
   name: openb-node-0348
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -30367,7 +30367,7 @@ metadata:
   labels:
     name: openb-node-0349
   name: openb-node-0349
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -30454,7 +30454,7 @@ metadata:
   labels:
     name: openb-node-0350
   name: openb-node-0350
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -30541,7 +30541,7 @@ metadata:
   labels:
     name: openb-node-0351
   name: openb-node-0351
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -30628,7 +30628,7 @@ metadata:
   labels:
     name: openb-node-0352
   name: openb-node-0352
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -30715,7 +30715,7 @@ metadata:
   labels:
     name: openb-node-0353
   name: openb-node-0353
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -30802,7 +30802,7 @@ metadata:
   labels:
     name: openb-node-0354
   name: openb-node-0354
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -30889,7 +30889,7 @@ metadata:
   labels:
     name: openb-node-0355
   name: openb-node-0355
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -30976,7 +30976,7 @@ metadata:
   labels:
     name: openb-node-0356
   name: openb-node-0356
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -31063,7 +31063,7 @@ metadata:
   labels:
     name: openb-node-0357
   name: openb-node-0357
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -31150,7 +31150,7 @@ metadata:
   labels:
     name: openb-node-0358
   name: openb-node-0358
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -31237,7 +31237,7 @@ metadata:
   labels:
     name: openb-node-0359
   name: openb-node-0359
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -31324,7 +31324,7 @@ metadata:
   labels:
     name: openb-node-0360
   name: openb-node-0360
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -31411,7 +31411,7 @@ metadata:
   labels:
     name: openb-node-0361
   name: openb-node-0361
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -31498,7 +31498,7 @@ metadata:
   labels:
     name: openb-node-0362
   name: openb-node-0362
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -31585,7 +31585,7 @@ metadata:
   labels:
     name: openb-node-0363
   name: openb-node-0363
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -31672,7 +31672,7 @@ metadata:
   labels:
     name: openb-node-0364
   name: openb-node-0364
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -31759,7 +31759,7 @@ metadata:
   labels:
     name: openb-node-0365
   name: openb-node-0365
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -31846,7 +31846,7 @@ metadata:
   labels:
     name: openb-node-0366
   name: openb-node-0366
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -31933,7 +31933,7 @@ metadata:
   labels:
     name: openb-node-0367
   name: openb-node-0367
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -32020,7 +32020,7 @@ metadata:
   labels:
     name: openb-node-0368
   name: openb-node-0368
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -32107,7 +32107,7 @@ metadata:
   labels:
     name: openb-node-0369
   name: openb-node-0369
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -32194,7 +32194,7 @@ metadata:
   labels:
     name: openb-node-0370
   name: openb-node-0370
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -32281,7 +32281,7 @@ metadata:
   labels:
     name: openb-node-0371
   name: openb-node-0371
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -32368,7 +32368,7 @@ metadata:
   labels:
     name: openb-node-0372
   name: openb-node-0372
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -32455,7 +32455,7 @@ metadata:
   labels:
     name: openb-node-0373
   name: openb-node-0373
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -32542,7 +32542,7 @@ metadata:
   labels:
     name: openb-node-0374
   name: openb-node-0374
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -32629,7 +32629,7 @@ metadata:
   labels:
     name: openb-node-0375
   name: openb-node-0375
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -32716,7 +32716,7 @@ metadata:
   labels:
     name: openb-node-0376
   name: openb-node-0376
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -32803,7 +32803,7 @@ metadata:
   labels:
     name: openb-node-0377
   name: openb-node-0377
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -32890,7 +32890,7 @@ metadata:
   labels:
     name: openb-node-0378
   name: openb-node-0378
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -32977,7 +32977,7 @@ metadata:
   labels:
     name: openb-node-0379
   name: openb-node-0379
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -33064,7 +33064,7 @@ metadata:
   labels:
     name: openb-node-0380
   name: openb-node-0380
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -33151,7 +33151,7 @@ metadata:
   labels:
     name: openb-node-0381
   name: openb-node-0381
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -33238,7 +33238,7 @@ metadata:
   labels:
     name: openb-node-0382
   name: openb-node-0382
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -33325,7 +33325,7 @@ metadata:
   labels:
     name: openb-node-0383
   name: openb-node-0383
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -33412,7 +33412,7 @@ metadata:
   labels:
     name: openb-node-0384
   name: openb-node-0384
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -33499,7 +33499,7 @@ metadata:
   labels:
     name: openb-node-0385
   name: openb-node-0385
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -33586,7 +33586,7 @@ metadata:
   labels:
     name: openb-node-0386
   name: openb-node-0386
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -33673,7 +33673,7 @@ metadata:
   labels:
     name: openb-node-0387
   name: openb-node-0387
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -33760,7 +33760,7 @@ metadata:
   labels:
     name: openb-node-0388
   name: openb-node-0388
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -33847,7 +33847,7 @@ metadata:
   labels:
     name: openb-node-0389
   name: openb-node-0389
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -33934,7 +33934,7 @@ metadata:
   labels:
     name: openb-node-0390
   name: openb-node-0390
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -34021,7 +34021,7 @@ metadata:
   labels:
     name: openb-node-0391
   name: openb-node-0391
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -34108,7 +34108,7 @@ metadata:
   labels:
     name: openb-node-0392
   name: openb-node-0392
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -34195,7 +34195,7 @@ metadata:
   labels:
     name: openb-node-0393
   name: openb-node-0393
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -34282,7 +34282,7 @@ metadata:
   labels:
     name: openb-node-0394
   name: openb-node-0394
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -34369,7 +34369,7 @@ metadata:
   labels:
     name: openb-node-0395
   name: openb-node-0395
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -34456,7 +34456,7 @@ metadata:
   labels:
     name: openb-node-0396
   name: openb-node-0396
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -34543,7 +34543,7 @@ metadata:
   labels:
     name: openb-node-0397
   name: openb-node-0397
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -34630,7 +34630,7 @@ metadata:
   labels:
     name: openb-node-0398
   name: openb-node-0398
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -34717,7 +34717,7 @@ metadata:
   labels:
     name: openb-node-0399
   name: openb-node-0399
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -34804,7 +34804,7 @@ metadata:
   labels:
     name: openb-node-0400
   name: openb-node-0400
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -34891,7 +34891,7 @@ metadata:
   labels:
     name: openb-node-0401
   name: openb-node-0401
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -34978,7 +34978,7 @@ metadata:
   labels:
     name: openb-node-0402
   name: openb-node-0402
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -35065,7 +35065,7 @@ metadata:
   labels:
     name: openb-node-0403
   name: openb-node-0403
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -35152,7 +35152,7 @@ metadata:
   labels:
     name: openb-node-0404
   name: openb-node-0404
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -35239,7 +35239,7 @@ metadata:
   labels:
     name: openb-node-0405
   name: openb-node-0405
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -35326,7 +35326,7 @@ metadata:
   labels:
     name: openb-node-0406
   name: openb-node-0406
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -35413,7 +35413,7 @@ metadata:
   labels:
     name: openb-node-0407
   name: openb-node-0407
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -35500,7 +35500,7 @@ metadata:
   labels:
     name: openb-node-0408
   name: openb-node-0408
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -35587,7 +35587,7 @@ metadata:
   labels:
     name: openb-node-0409
   name: openb-node-0409
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -35674,7 +35674,7 @@ metadata:
   labels:
     name: openb-node-0410
   name: openb-node-0410
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -35761,7 +35761,7 @@ metadata:
   labels:
     name: openb-node-0411
   name: openb-node-0411
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -35848,7 +35848,7 @@ metadata:
   labels:
     name: openb-node-0412
   name: openb-node-0412
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -35935,7 +35935,7 @@ metadata:
   labels:
     name: openb-node-0413
   name: openb-node-0413
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -36022,7 +36022,7 @@ metadata:
   labels:
     name: openb-node-0414
   name: openb-node-0414
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -36109,7 +36109,7 @@ metadata:
   labels:
     name: openb-node-0415
   name: openb-node-0415
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -36196,7 +36196,7 @@ metadata:
   labels:
     name: openb-node-0416
   name: openb-node-0416
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -36283,7 +36283,7 @@ metadata:
   labels:
     name: openb-node-0417
   name: openb-node-0417
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -36370,7 +36370,7 @@ metadata:
   labels:
     name: openb-node-0418
   name: openb-node-0418
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -36457,7 +36457,7 @@ metadata:
   labels:
     name: openb-node-0419
   name: openb-node-0419
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -36544,7 +36544,7 @@ metadata:
   labels:
     name: openb-node-0420
   name: openb-node-0420
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -36631,7 +36631,7 @@ metadata:
   labels:
     name: openb-node-0421
   name: openb-node-0421
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -36718,7 +36718,7 @@ metadata:
   labels:
     name: openb-node-0422
   name: openb-node-0422
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -36805,7 +36805,7 @@ metadata:
   labels:
     name: openb-node-0423
   name: openb-node-0423
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -36892,7 +36892,7 @@ metadata:
   labels:
     name: openb-node-0424
   name: openb-node-0424
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -36979,7 +36979,7 @@ metadata:
   labels:
     name: openb-node-0425
   name: openb-node-0425
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -37066,7 +37066,7 @@ metadata:
   labels:
     name: openb-node-0426
   name: openb-node-0426
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -37153,7 +37153,7 @@ metadata:
   labels:
     name: openb-node-0427
   name: openb-node-0427
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -37240,7 +37240,7 @@ metadata:
   labels:
     name: openb-node-0428
   name: openb-node-0428
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -37327,7 +37327,7 @@ metadata:
   labels:
     name: openb-node-0429
   name: openb-node-0429
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -37414,7 +37414,7 @@ metadata:
   labels:
     name: openb-node-0430
   name: openb-node-0430
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -37501,7 +37501,7 @@ metadata:
   labels:
     name: openb-node-0431
   name: openb-node-0431
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -37588,7 +37588,7 @@ metadata:
   labels:
     name: openb-node-0432
   name: openb-node-0432
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -37675,7 +37675,7 @@ metadata:
   labels:
     name: openb-node-0433
   name: openb-node-0433
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -37762,7 +37762,7 @@ metadata:
   labels:
     name: openb-node-0434
   name: openb-node-0434
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -37849,7 +37849,7 @@ metadata:
   labels:
     name: openb-node-0435
   name: openb-node-0435
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -37936,7 +37936,7 @@ metadata:
   labels:
     name: openb-node-0436
   name: openb-node-0436
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -38023,7 +38023,7 @@ metadata:
   labels:
     name: openb-node-0437
   name: openb-node-0437
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -38110,7 +38110,7 @@ metadata:
   labels:
     name: openb-node-0438
   name: openb-node-0438
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -38197,7 +38197,7 @@ metadata:
   labels:
     name: openb-node-0439
   name: openb-node-0439
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -38284,7 +38284,7 @@ metadata:
   labels:
     name: openb-node-0440
   name: openb-node-0440
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -38371,7 +38371,7 @@ metadata:
   labels:
     name: openb-node-0441
   name: openb-node-0441
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -38458,7 +38458,7 @@ metadata:
   labels:
     name: openb-node-0442
   name: openb-node-0442
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -38545,7 +38545,7 @@ metadata:
   labels:
     name: openb-node-0443
   name: openb-node-0443
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -38632,7 +38632,7 @@ metadata:
   labels:
     name: openb-node-0444
   name: openb-node-0444
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -38719,7 +38719,7 @@ metadata:
   labels:
     name: openb-node-0445
   name: openb-node-0445
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -38806,7 +38806,7 @@ metadata:
   labels:
     name: openb-node-0446
   name: openb-node-0446
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -38893,7 +38893,7 @@ metadata:
   labels:
     name: openb-node-0447
   name: openb-node-0447
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -38980,7 +38980,7 @@ metadata:
   labels:
     name: openb-node-0448
   name: openb-node-0448
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -39067,7 +39067,7 @@ metadata:
   labels:
     name: openb-node-0449
   name: openb-node-0449
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -39154,7 +39154,7 @@ metadata:
   labels:
     name: openb-node-0450
   name: openb-node-0450
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -39241,7 +39241,7 @@ metadata:
   labels:
     name: openb-node-0451
   name: openb-node-0451
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -39328,7 +39328,7 @@ metadata:
   labels:
     name: openb-node-0452
   name: openb-node-0452
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -39415,7 +39415,7 @@ metadata:
   labels:
     name: openb-node-0453
   name: openb-node-0453
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -39502,7 +39502,7 @@ metadata:
   labels:
     name: openb-node-0454
   name: openb-node-0454
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -39589,7 +39589,7 @@ metadata:
   labels:
     name: openb-node-0455
   name: openb-node-0455
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -39676,7 +39676,7 @@ metadata:
   labels:
     name: openb-node-0456
   name: openb-node-0456
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -39763,7 +39763,7 @@ metadata:
   labels:
     name: openb-node-0457
   name: openb-node-0457
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -39850,7 +39850,7 @@ metadata:
   labels:
     name: openb-node-0458
   name: openb-node-0458
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -39937,7 +39937,7 @@ metadata:
   labels:
     name: openb-node-0459
   name: openb-node-0459
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -40024,7 +40024,7 @@ metadata:
   labels:
     name: openb-node-0460
   name: openb-node-0460
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -40111,7 +40111,7 @@ metadata:
   labels:
     name: openb-node-0461
   name: openb-node-0461
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -40198,7 +40198,7 @@ metadata:
   labels:
     name: openb-node-0462
   name: openb-node-0462
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -40285,7 +40285,7 @@ metadata:
   labels:
     name: openb-node-0463
   name: openb-node-0463
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -40372,7 +40372,7 @@ metadata:
   labels:
     name: openb-node-0464
   name: openb-node-0464
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -40459,7 +40459,7 @@ metadata:
   labels:
     name: openb-node-0465
   name: openb-node-0465
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -40546,7 +40546,7 @@ metadata:
   labels:
     name: openb-node-0466
   name: openb-node-0466
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -40633,7 +40633,7 @@ metadata:
   labels:
     name: openb-node-0467
   name: openb-node-0467
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -40720,7 +40720,7 @@ metadata:
   labels:
     name: openb-node-0468
   name: openb-node-0468
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -40807,7 +40807,7 @@ metadata:
   labels:
     name: openb-node-0469
   name: openb-node-0469
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -40894,7 +40894,7 @@ metadata:
   labels:
     name: openb-node-0470
   name: openb-node-0470
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -40981,7 +40981,7 @@ metadata:
   labels:
     name: openb-node-0471
   name: openb-node-0471
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -41068,7 +41068,7 @@ metadata:
   labels:
     name: openb-node-0472
   name: openb-node-0472
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -41155,7 +41155,7 @@ metadata:
   labels:
     name: openb-node-0473
   name: openb-node-0473
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -41242,7 +41242,7 @@ metadata:
   labels:
     name: openb-node-0474
   name: openb-node-0474
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -41329,7 +41329,7 @@ metadata:
   labels:
     name: openb-node-0475
   name: openb-node-0475
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -41416,7 +41416,7 @@ metadata:
   labels:
     name: openb-node-0476
   name: openb-node-0476
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -41503,7 +41503,7 @@ metadata:
   labels:
     name: openb-node-0477
   name: openb-node-0477
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -41590,7 +41590,7 @@ metadata:
   labels:
     name: openb-node-0478
   name: openb-node-0478
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -41677,7 +41677,7 @@ metadata:
   labels:
     name: openb-node-0479
   name: openb-node-0479
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -41764,7 +41764,7 @@ metadata:
   labels:
     name: openb-node-0480
   name: openb-node-0480
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -41851,7 +41851,7 @@ metadata:
   labels:
     name: openb-node-0481
   name: openb-node-0481
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -41938,7 +41938,7 @@ metadata:
   labels:
     name: openb-node-0482
   name: openb-node-0482
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -42025,7 +42025,7 @@ metadata:
   labels:
     name: openb-node-0483
   name: openb-node-0483
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -42112,7 +42112,7 @@ metadata:
   labels:
     name: openb-node-0484
   name: openb-node-0484
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -42199,7 +42199,7 @@ metadata:
   labels:
     name: openb-node-0485
   name: openb-node-0485
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -42286,7 +42286,7 @@ metadata:
   labels:
     name: openb-node-0486
   name: openb-node-0486
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -42373,7 +42373,7 @@ metadata:
   labels:
     name: openb-node-0487
   name: openb-node-0487
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -42460,7 +42460,7 @@ metadata:
   labels:
     name: openb-node-0488
   name: openb-node-0488
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -42547,7 +42547,7 @@ metadata:
   labels:
     name: openb-node-0489
   name: openb-node-0489
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -42634,7 +42634,7 @@ metadata:
   labels:
     name: openb-node-0490
   name: openb-node-0490
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -42721,7 +42721,7 @@ metadata:
   labels:
     name: openb-node-0491
   name: openb-node-0491
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -42808,7 +42808,7 @@ metadata:
   labels:
     name: openb-node-0492
   name: openb-node-0492
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -42895,7 +42895,7 @@ metadata:
   labels:
     name: openb-node-0493
   name: openb-node-0493
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -42982,7 +42982,7 @@ metadata:
   labels:
     name: openb-node-0494
   name: openb-node-0494
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -43069,7 +43069,7 @@ metadata:
   labels:
     name: openb-node-0495
   name: openb-node-0495
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -43156,7 +43156,7 @@ metadata:
   labels:
     name: openb-node-0496
   name: openb-node-0496
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -43243,7 +43243,7 @@ metadata:
   labels:
     name: openb-node-0497
   name: openb-node-0497
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -43330,7 +43330,7 @@ metadata:
   labels:
     name: openb-node-0498
   name: openb-node-0498
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -43417,7 +43417,7 @@ metadata:
   labels:
     name: openb-node-0499
   name: openb-node-0499
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -43504,7 +43504,7 @@ metadata:
   labels:
     name: openb-node-0500
   name: openb-node-0500
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -43591,7 +43591,7 @@ metadata:
   labels:
     name: openb-node-0501
   name: openb-node-0501
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -43678,7 +43678,7 @@ metadata:
   labels:
     name: openb-node-0502
   name: openb-node-0502
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -43765,7 +43765,7 @@ metadata:
   labels:
     name: openb-node-0503
   name: openb-node-0503
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -43852,7 +43852,7 @@ metadata:
   labels:
     name: openb-node-0504
   name: openb-node-0504
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -43939,7 +43939,7 @@ metadata:
   labels:
     name: openb-node-0505
   name: openb-node-0505
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -44026,7 +44026,7 @@ metadata:
   labels:
     name: openb-node-0506
   name: openb-node-0506
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -44113,7 +44113,7 @@ metadata:
   labels:
     name: openb-node-0507
   name: openb-node-0507
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -44200,7 +44200,7 @@ metadata:
   labels:
     name: openb-node-0508
   name: openb-node-0508
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -44287,7 +44287,7 @@ metadata:
   labels:
     name: openb-node-0509
   name: openb-node-0509
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -44374,7 +44374,7 @@ metadata:
   labels:
     name: openb-node-0510
   name: openb-node-0510
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -44461,7 +44461,7 @@ metadata:
   labels:
     name: openb-node-0511
   name: openb-node-0511
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -44548,7 +44548,7 @@ metadata:
   labels:
     name: openb-node-0512
   name: openb-node-0512
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -44635,7 +44635,7 @@ metadata:
   labels:
     name: openb-node-0513
   name: openb-node-0513
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -44722,7 +44722,7 @@ metadata:
   labels:
     name: openb-node-0514
   name: openb-node-0514
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -44809,7 +44809,7 @@ metadata:
   labels:
     name: openb-node-0515
   name: openb-node-0515
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -44896,7 +44896,7 @@ metadata:
   labels:
     name: openb-node-0516
   name: openb-node-0516
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -44983,7 +44983,7 @@ metadata:
   labels:
     name: openb-node-0517
   name: openb-node-0517
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -45070,7 +45070,7 @@ metadata:
   labels:
     name: openb-node-0518
   name: openb-node-0518
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -45157,7 +45157,7 @@ metadata:
   labels:
     name: openb-node-0519
   name: openb-node-0519
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -45244,7 +45244,7 @@ metadata:
   labels:
     name: openb-node-0520
   name: openb-node-0520
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -45331,7 +45331,7 @@ metadata:
   labels:
     name: openb-node-0521
   name: openb-node-0521
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -45418,7 +45418,7 @@ metadata:
   labels:
     name: openb-node-0522
   name: openb-node-0522
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -45505,7 +45505,7 @@ metadata:
   labels:
     name: openb-node-0523
   name: openb-node-0523
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -45592,7 +45592,7 @@ metadata:
   labels:
     name: openb-node-0524
   name: openb-node-0524
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -45679,7 +45679,7 @@ metadata:
   labels:
     name: openb-node-0525
   name: openb-node-0525
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -45766,7 +45766,7 @@ metadata:
   labels:
     name: openb-node-0526
   name: openb-node-0526
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -45853,7 +45853,7 @@ metadata:
   labels:
     name: openb-node-0527
   name: openb-node-0527
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -45940,7 +45940,7 @@ metadata:
   labels:
     name: openb-node-0528
   name: openb-node-0528
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -46027,7 +46027,7 @@ metadata:
   labels:
     name: openb-node-0529
   name: openb-node-0529
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -46114,7 +46114,7 @@ metadata:
   labels:
     name: openb-node-0530
   name: openb-node-0530
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -46201,7 +46201,7 @@ metadata:
   labels:
     name: openb-node-0531
   name: openb-node-0531
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -46288,7 +46288,7 @@ metadata:
   labels:
     name: openb-node-0532
   name: openb-node-0532
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -46375,7 +46375,7 @@ metadata:
   labels:
     name: openb-node-0533
   name: openb-node-0533
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -46462,7 +46462,7 @@ metadata:
   labels:
     name: openb-node-0534
   name: openb-node-0534
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -46549,7 +46549,7 @@ metadata:
   labels:
     name: openb-node-0535
   name: openb-node-0535
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -46636,7 +46636,7 @@ metadata:
   labels:
     name: openb-node-0536
   name: openb-node-0536
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -46723,7 +46723,7 @@ metadata:
   labels:
     name: openb-node-0537
   name: openb-node-0537
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -46810,7 +46810,7 @@ metadata:
   labels:
     name: openb-node-0538
   name: openb-node-0538
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -46897,7 +46897,7 @@ metadata:
   labels:
     name: openb-node-0539
   name: openb-node-0539
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -46984,7 +46984,7 @@ metadata:
   labels:
     name: openb-node-0540
   name: openb-node-0540
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -47071,7 +47071,7 @@ metadata:
   labels:
     name: openb-node-0541
   name: openb-node-0541
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -47158,7 +47158,7 @@ metadata:
   labels:
     name: openb-node-0542
   name: openb-node-0542
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -47245,7 +47245,7 @@ metadata:
   labels:
     name: openb-node-0543
   name: openb-node-0543
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -47332,7 +47332,7 @@ metadata:
   labels:
     name: openb-node-0544
   name: openb-node-0544
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -47419,7 +47419,7 @@ metadata:
   labels:
     name: openb-node-0545
   name: openb-node-0545
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -47506,7 +47506,7 @@ metadata:
   labels:
     name: openb-node-0546
   name: openb-node-0546
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -47593,7 +47593,7 @@ metadata:
   labels:
     name: openb-node-0547
   name: openb-node-0547
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -47680,7 +47680,7 @@ metadata:
   labels:
     name: openb-node-0548
   name: openb-node-0548
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -47767,7 +47767,7 @@ metadata:
   labels:
     name: openb-node-0549
   name: openb-node-0549
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -47854,7 +47854,7 @@ metadata:
   labels:
     name: openb-node-0550
   name: openb-node-0550
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -47941,7 +47941,7 @@ metadata:
   labels:
     name: openb-node-0551
   name: openb-node-0551
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -48028,7 +48028,7 @@ metadata:
   labels:
     name: openb-node-0552
   name: openb-node-0552
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -48115,7 +48115,7 @@ metadata:
   labels:
     name: openb-node-0553
   name: openb-node-0553
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -48202,7 +48202,7 @@ metadata:
   labels:
     name: openb-node-0554
   name: openb-node-0554
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -48289,7 +48289,7 @@ metadata:
   labels:
     name: openb-node-0555
   name: openb-node-0555
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -48376,7 +48376,7 @@ metadata:
   labels:
     name: openb-node-0556
   name: openb-node-0556
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -48463,7 +48463,7 @@ metadata:
   labels:
     name: openb-node-0557
   name: openb-node-0557
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -48550,7 +48550,7 @@ metadata:
   labels:
     name: openb-node-0558
   name: openb-node-0558
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -48637,7 +48637,7 @@ metadata:
   labels:
     name: openb-node-0559
   name: openb-node-0559
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -48724,7 +48724,7 @@ metadata:
   labels:
     name: openb-node-0560
   name: openb-node-0560
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -48811,7 +48811,7 @@ metadata:
   labels:
     name: openb-node-0561
   name: openb-node-0561
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -48898,7 +48898,7 @@ metadata:
   labels:
     name: openb-node-0562
   name: openb-node-0562
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -48985,7 +48985,7 @@ metadata:
   labels:
     name: openb-node-0563
   name: openb-node-0563
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -49072,7 +49072,7 @@ metadata:
   labels:
     name: openb-node-0564
   name: openb-node-0564
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -49159,7 +49159,7 @@ metadata:
   labels:
     name: openb-node-0565
   name: openb-node-0565
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -49246,7 +49246,7 @@ metadata:
   labels:
     name: openb-node-0566
   name: openb-node-0566
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -49333,7 +49333,7 @@ metadata:
   labels:
     name: openb-node-0567
   name: openb-node-0567
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -49420,7 +49420,7 @@ metadata:
   labels:
     name: openb-node-0568
   name: openb-node-0568
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -49507,7 +49507,7 @@ metadata:
   labels:
     name: openb-node-0569
   name: openb-node-0569
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -49594,7 +49594,7 @@ metadata:
   labels:
     name: openb-node-0570
   name: openb-node-0570
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -49681,7 +49681,7 @@ metadata:
   labels:
     name: openb-node-0571
   name: openb-node-0571
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -49768,7 +49768,7 @@ metadata:
   labels:
     name: openb-node-0572
   name: openb-node-0572
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -49855,7 +49855,7 @@ metadata:
   labels:
     name: openb-node-0573
   name: openb-node-0573
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -49942,7 +49942,7 @@ metadata:
   labels:
     name: openb-node-0574
   name: openb-node-0574
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -50029,7 +50029,7 @@ metadata:
   labels:
     name: openb-node-0575
   name: openb-node-0575
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -50116,7 +50116,7 @@ metadata:
   labels:
     name: openb-node-0576
   name: openb-node-0576
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -50203,7 +50203,7 @@ metadata:
   labels:
     name: openb-node-0577
   name: openb-node-0577
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -50290,7 +50290,7 @@ metadata:
   labels:
     name: openb-node-0578
   name: openb-node-0578
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -50377,7 +50377,7 @@ metadata:
   labels:
     name: openb-node-0579
   name: openb-node-0579
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -50464,7 +50464,7 @@ metadata:
   labels:
     name: openb-node-0580
   name: openb-node-0580
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -50551,7 +50551,7 @@ metadata:
   labels:
     name: openb-node-0581
   name: openb-node-0581
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -50638,7 +50638,7 @@ metadata:
   labels:
     name: openb-node-0582
   name: openb-node-0582
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -50725,7 +50725,7 @@ metadata:
   labels:
     name: openb-node-0583
   name: openb-node-0583
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -50812,7 +50812,7 @@ metadata:
   labels:
     name: openb-node-0584
   name: openb-node-0584
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -50899,7 +50899,7 @@ metadata:
   labels:
     name: openb-node-0585
   name: openb-node-0585
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -50986,7 +50986,7 @@ metadata:
   labels:
     name: openb-node-0586
   name: openb-node-0586
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -51073,7 +51073,7 @@ metadata:
   labels:
     name: openb-node-0587
   name: openb-node-0587
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -51160,7 +51160,7 @@ metadata:
   labels:
     name: openb-node-0588
   name: openb-node-0588
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -51247,7 +51247,7 @@ metadata:
   labels:
     name: openb-node-0589
   name: openb-node-0589
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -51334,7 +51334,7 @@ metadata:
   labels:
     name: openb-node-0590
   name: openb-node-0590
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -51421,7 +51421,7 @@ metadata:
   labels:
     name: openb-node-0591
   name: openb-node-0591
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -51508,7 +51508,7 @@ metadata:
   labels:
     name: openb-node-0592
   name: openb-node-0592
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -51595,7 +51595,7 @@ metadata:
   labels:
     name: openb-node-0593
   name: openb-node-0593
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -51682,7 +51682,7 @@ metadata:
   labels:
     name: openb-node-0594
   name: openb-node-0594
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -51769,7 +51769,7 @@ metadata:
   labels:
     name: openb-node-0595
   name: openb-node-0595
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -51856,7 +51856,7 @@ metadata:
   labels:
     name: openb-node-0596
   name: openb-node-0596
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -51943,7 +51943,7 @@ metadata:
   labels:
     name: openb-node-0597
   name: openb-node-0597
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -52030,7 +52030,7 @@ metadata:
   labels:
     name: openb-node-0598
   name: openb-node-0598
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -52117,7 +52117,7 @@ metadata:
   labels:
     name: openb-node-0599
   name: openb-node-0599
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -52204,7 +52204,7 @@ metadata:
   labels:
     name: openb-node-0600
   name: openb-node-0600
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -52291,7 +52291,7 @@ metadata:
   labels:
     name: openb-node-0601
   name: openb-node-0601
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -52378,7 +52378,7 @@ metadata:
   labels:
     name: openb-node-0602
   name: openb-node-0602
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -52465,7 +52465,7 @@ metadata:
   labels:
     name: openb-node-0603
   name: openb-node-0603
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -52552,7 +52552,7 @@ metadata:
   labels:
     name: openb-node-0604
   name: openb-node-0604
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -52639,7 +52639,7 @@ metadata:
   labels:
     name: openb-node-0605
   name: openb-node-0605
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -52726,7 +52726,7 @@ metadata:
   labels:
     name: openb-node-0606
   name: openb-node-0606
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -52813,7 +52813,7 @@ metadata:
   labels:
     name: openb-node-0607
   name: openb-node-0607
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -52900,7 +52900,7 @@ metadata:
   labels:
     name: openb-node-0608
   name: openb-node-0608
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -52987,7 +52987,7 @@ metadata:
   labels:
     name: openb-node-0609
   name: openb-node-0609
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -53074,7 +53074,7 @@ metadata:
   labels:
     name: openb-node-0610
   name: openb-node-0610
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -53161,7 +53161,7 @@ metadata:
   labels:
     name: openb-node-0611
   name: openb-node-0611
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -53248,7 +53248,7 @@ metadata:
   labels:
     name: openb-node-0612
   name: openb-node-0612
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -53335,7 +53335,7 @@ metadata:
   labels:
     name: openb-node-0613
   name: openb-node-0613
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -53422,7 +53422,7 @@ metadata:
   labels:
     name: openb-node-0614
   name: openb-node-0614
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -53509,7 +53509,7 @@ metadata:
   labels:
     name: openb-node-0615
   name: openb-node-0615
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -53596,7 +53596,7 @@ metadata:
   labels:
     name: openb-node-0616
   name: openb-node-0616
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -53683,7 +53683,7 @@ metadata:
   labels:
     name: openb-node-0617
   name: openb-node-0617
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -53770,7 +53770,7 @@ metadata:
   labels:
     name: openb-node-0618
   name: openb-node-0618
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -53857,7 +53857,7 @@ metadata:
   labels:
     name: openb-node-0619
   name: openb-node-0619
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -53944,7 +53944,7 @@ metadata:
   labels:
     name: openb-node-0620
   name: openb-node-0620
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -54031,7 +54031,7 @@ metadata:
   labels:
     name: openb-node-0621
   name: openb-node-0621
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -54118,7 +54118,7 @@ metadata:
   labels:
     name: openb-node-0622
   name: openb-node-0622
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -54205,7 +54205,7 @@ metadata:
   labels:
     name: openb-node-0623
   name: openb-node-0623
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -54292,7 +54292,7 @@ metadata:
   labels:
     name: openb-node-0624
   name: openb-node-0624
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -54379,7 +54379,7 @@ metadata:
   labels:
     name: openb-node-0625
   name: openb-node-0625
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -54466,7 +54466,7 @@ metadata:
   labels:
     name: openb-node-0626
   name: openb-node-0626
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -54553,7 +54553,7 @@ metadata:
   labels:
     name: openb-node-0627
   name: openb-node-0627
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -54640,7 +54640,7 @@ metadata:
   labels:
     name: openb-node-0628
   name: openb-node-0628
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -54727,7 +54727,7 @@ metadata:
   labels:
     name: openb-node-0629
   name: openb-node-0629
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -54814,7 +54814,7 @@ metadata:
   labels:
     name: openb-node-0630
   name: openb-node-0630
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -54901,7 +54901,7 @@ metadata:
   labels:
     name: openb-node-0631
   name: openb-node-0631
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -54988,7 +54988,7 @@ metadata:
   labels:
     name: openb-node-0632
   name: openb-node-0632
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -55075,7 +55075,7 @@ metadata:
   labels:
     name: openb-node-0633
   name: openb-node-0633
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -55162,7 +55162,7 @@ metadata:
   labels:
     name: openb-node-0634
   name: openb-node-0634
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -55249,7 +55249,7 @@ metadata:
   labels:
     name: openb-node-0635
   name: openb-node-0635
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -55336,7 +55336,7 @@ metadata:
   labels:
     name: openb-node-0636
   name: openb-node-0636
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -55423,7 +55423,7 @@ metadata:
   labels:
     name: openb-node-0637
   name: openb-node-0637
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -55510,7 +55510,7 @@ metadata:
   labels:
     name: openb-node-0638
   name: openb-node-0638
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -55597,7 +55597,7 @@ metadata:
   labels:
     name: openb-node-0639
   name: openb-node-0639
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -55684,7 +55684,7 @@ metadata:
   labels:
     name: openb-node-0640
   name: openb-node-0640
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -55771,7 +55771,7 @@ metadata:
   labels:
     name: openb-node-0641
   name: openb-node-0641
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -55858,7 +55858,7 @@ metadata:
   labels:
     name: openb-node-0642
   name: openb-node-0642
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -55945,7 +55945,7 @@ metadata:
   labels:
     name: openb-node-0643
   name: openb-node-0643
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -56032,7 +56032,7 @@ metadata:
   labels:
     name: openb-node-0644
   name: openb-node-0644
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -56119,7 +56119,7 @@ metadata:
   labels:
     name: openb-node-0645
   name: openb-node-0645
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -56206,7 +56206,7 @@ metadata:
   labels:
     name: openb-node-0646
   name: openb-node-0646
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -56293,7 +56293,7 @@ metadata:
   labels:
     name: openb-node-0647
   name: openb-node-0647
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -56380,7 +56380,7 @@ metadata:
   labels:
     name: openb-node-0648
   name: openb-node-0648
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -56467,7 +56467,7 @@ metadata:
   labels:
     name: openb-node-0649
   name: openb-node-0649
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -56554,7 +56554,7 @@ metadata:
   labels:
     name: openb-node-0650
   name: openb-node-0650
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -56641,7 +56641,7 @@ metadata:
   labels:
     name: openb-node-0651
   name: openb-node-0651
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -56728,7 +56728,7 @@ metadata:
   labels:
     name: openb-node-0652
   name: openb-node-0652
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -56815,7 +56815,7 @@ metadata:
   labels:
     name: openb-node-0653
   name: openb-node-0653
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -56902,7 +56902,7 @@ metadata:
   labels:
     name: openb-node-0654
   name: openb-node-0654
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -56989,7 +56989,7 @@ metadata:
   labels:
     name: openb-node-0655
   name: openb-node-0655
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -57076,7 +57076,7 @@ metadata:
   labels:
     name: openb-node-0656
   name: openb-node-0656
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -57163,7 +57163,7 @@ metadata:
   labels:
     name: openb-node-0657
   name: openb-node-0657
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -57250,7 +57250,7 @@ metadata:
   labels:
     name: openb-node-0658
   name: openb-node-0658
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -57337,7 +57337,7 @@ metadata:
   labels:
     name: openb-node-0659
   name: openb-node-0659
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -57424,7 +57424,7 @@ metadata:
   labels:
     name: openb-node-0660
   name: openb-node-0660
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -57511,7 +57511,7 @@ metadata:
   labels:
     name: openb-node-0661
   name: openb-node-0661
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -57598,7 +57598,7 @@ metadata:
   labels:
     name: openb-node-0662
   name: openb-node-0662
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -57685,7 +57685,7 @@ metadata:
   labels:
     name: openb-node-0663
   name: openb-node-0663
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -57772,7 +57772,7 @@ metadata:
   labels:
     name: openb-node-0664
   name: openb-node-0664
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -57859,7 +57859,7 @@ metadata:
   labels:
     name: openb-node-0665
   name: openb-node-0665
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -57946,7 +57946,7 @@ metadata:
   labels:
     name: openb-node-0666
   name: openb-node-0666
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -58033,7 +58033,7 @@ metadata:
   labels:
     name: openb-node-0667
   name: openb-node-0667
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -58120,7 +58120,7 @@ metadata:
   labels:
     name: openb-node-0668
   name: openb-node-0668
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -58207,7 +58207,7 @@ metadata:
   labels:
     name: openb-node-0669
   name: openb-node-0669
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -58294,7 +58294,7 @@ metadata:
   labels:
     name: openb-node-0670
   name: openb-node-0670
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -58381,7 +58381,7 @@ metadata:
   labels:
     name: openb-node-0671
   name: openb-node-0671
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -58468,7 +58468,7 @@ metadata:
   labels:
     name: openb-node-0672
   name: openb-node-0672
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -58555,7 +58555,7 @@ metadata:
   labels:
     name: openb-node-0673
   name: openb-node-0673
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -58642,7 +58642,7 @@ metadata:
   labels:
     name: openb-node-0674
   name: openb-node-0674
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -58729,7 +58729,7 @@ metadata:
   labels:
     name: openb-node-0675
   name: openb-node-0675
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -58816,7 +58816,7 @@ metadata:
   labels:
     name: openb-node-0676
   name: openb-node-0676
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -58903,7 +58903,7 @@ metadata:
   labels:
     name: openb-node-0677
   name: openb-node-0677
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -58990,7 +58990,7 @@ metadata:
   labels:
     name: openb-node-0678
   name: openb-node-0678
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -59077,7 +59077,7 @@ metadata:
   labels:
     name: openb-node-0679
   name: openb-node-0679
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -59164,7 +59164,7 @@ metadata:
   labels:
     name: openb-node-0680
   name: openb-node-0680
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -59251,7 +59251,7 @@ metadata:
   labels:
     name: openb-node-0681
   name: openb-node-0681
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -59338,7 +59338,7 @@ metadata:
   labels:
     name: openb-node-0682
   name: openb-node-0682
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -59425,7 +59425,7 @@ metadata:
   labels:
     name: openb-node-0683
   name: openb-node-0683
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -59512,7 +59512,7 @@ metadata:
   labels:
     name: openb-node-0684
   name: openb-node-0684
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -59599,7 +59599,7 @@ metadata:
   labels:
     name: openb-node-0685
   name: openb-node-0685
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -59686,7 +59686,7 @@ metadata:
   labels:
     name: openb-node-0686
   name: openb-node-0686
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -59773,7 +59773,7 @@ metadata:
   labels:
     name: openb-node-0687
   name: openb-node-0687
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -59860,7 +59860,7 @@ metadata:
   labels:
     name: openb-node-0688
   name: openb-node-0688
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -59947,7 +59947,7 @@ metadata:
   labels:
     name: openb-node-0689
   name: openb-node-0689
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -60034,7 +60034,7 @@ metadata:
   labels:
     name: openb-node-0690
   name: openb-node-0690
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -60121,7 +60121,7 @@ metadata:
   labels:
     name: openb-node-0691
   name: openb-node-0691
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -60208,7 +60208,7 @@ metadata:
   labels:
     name: openb-node-0692
   name: openb-node-0692
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -60295,7 +60295,7 @@ metadata:
   labels:
     name: openb-node-0693
   name: openb-node-0693
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -60382,7 +60382,7 @@ metadata:
   labels:
     name: openb-node-0694
   name: openb-node-0694
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -60469,7 +60469,7 @@ metadata:
   labels:
     name: openb-node-0695
   name: openb-node-0695
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -60556,7 +60556,7 @@ metadata:
   labels:
     name: openb-node-0696
   name: openb-node-0696
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -60643,7 +60643,7 @@ metadata:
   labels:
     name: openb-node-0697
   name: openb-node-0697
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -60730,7 +60730,7 @@ metadata:
   labels:
     name: openb-node-0698
   name: openb-node-0698
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -60817,7 +60817,7 @@ metadata:
   labels:
     name: openb-node-0699
   name: openb-node-0699
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -60904,7 +60904,7 @@ metadata:
   labels:
     name: openb-node-0700
   name: openb-node-0700
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -60991,7 +60991,7 @@ metadata:
   labels:
     name: openb-node-0701
   name: openb-node-0701
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -61078,7 +61078,7 @@ metadata:
   labels:
     name: openb-node-0702
   name: openb-node-0702
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -61165,7 +61165,7 @@ metadata:
   labels:
     name: openb-node-0703
   name: openb-node-0703
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -61252,7 +61252,7 @@ metadata:
   labels:
     name: openb-node-0704
   name: openb-node-0704
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -61339,7 +61339,7 @@ metadata:
   labels:
     name: openb-node-0705
   name: openb-node-0705
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -61426,7 +61426,7 @@ metadata:
   labels:
     name: openb-node-0706
   name: openb-node-0706
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -61513,7 +61513,7 @@ metadata:
   labels:
     name: openb-node-0707
   name: openb-node-0707
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -61600,7 +61600,7 @@ metadata:
   labels:
     name: openb-node-0708
   name: openb-node-0708
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -61687,7 +61687,7 @@ metadata:
   labels:
     name: openb-node-0709
   name: openb-node-0709
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -61774,7 +61774,7 @@ metadata:
   labels:
     name: openb-node-0710
   name: openb-node-0710
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -61861,7 +61861,7 @@ metadata:
   labels:
     name: openb-node-0711
   name: openb-node-0711
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -61948,7 +61948,7 @@ metadata:
   labels:
     name: openb-node-0712
   name: openb-node-0712
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -62035,7 +62035,7 @@ metadata:
   labels:
     name: openb-node-0713
   name: openb-node-0713
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -62122,7 +62122,7 @@ metadata:
   labels:
     name: openb-node-0714
   name: openb-node-0714
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -62209,7 +62209,7 @@ metadata:
   labels:
     name: openb-node-0715
   name: openb-node-0715
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -62296,7 +62296,7 @@ metadata:
   labels:
     name: openb-node-0716
   name: openb-node-0716
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -62383,7 +62383,7 @@ metadata:
   labels:
     name: openb-node-0717
   name: openb-node-0717
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -62470,7 +62470,7 @@ metadata:
   labels:
     name: openb-node-0718
   name: openb-node-0718
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -62557,7 +62557,7 @@ metadata:
   labels:
     name: openb-node-0719
   name: openb-node-0719
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -62644,7 +62644,7 @@ metadata:
   labels:
     name: openb-node-0720
   name: openb-node-0720
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -62731,7 +62731,7 @@ metadata:
   labels:
     name: openb-node-0721
   name: openb-node-0721
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -62818,7 +62818,7 @@ metadata:
   labels:
     name: openb-node-0722
   name: openb-node-0722
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -62905,7 +62905,7 @@ metadata:
   labels:
     name: openb-node-0723
   name: openb-node-0723
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -62992,7 +62992,7 @@ metadata:
   labels:
     name: openb-node-0724
   name: openb-node-0724
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -63079,7 +63079,7 @@ metadata:
   labels:
     name: openb-node-0725
   name: openb-node-0725
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -63166,7 +63166,7 @@ metadata:
   labels:
     name: openb-node-0726
   name: openb-node-0726
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -63253,7 +63253,7 @@ metadata:
   labels:
     name: openb-node-0727
   name: openb-node-0727
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -63340,7 +63340,7 @@ metadata:
   labels:
     name: openb-node-0728
   name: openb-node-0728
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -63427,7 +63427,7 @@ metadata:
   labels:
     name: openb-node-0729
   name: openb-node-0729
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -63514,7 +63514,7 @@ metadata:
   labels:
     name: openb-node-0730
   name: openb-node-0730
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -63601,7 +63601,7 @@ metadata:
   labels:
     name: openb-node-0731
   name: openb-node-0731
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -63688,7 +63688,7 @@ metadata:
   labels:
     name: openb-node-0732
   name: openb-node-0732
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -63775,7 +63775,7 @@ metadata:
   labels:
     name: openb-node-0733
   name: openb-node-0733
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -63862,7 +63862,7 @@ metadata:
   labels:
     name: openb-node-0734
   name: openb-node-0734
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -63949,7 +63949,7 @@ metadata:
   labels:
     name: openb-node-0735
   name: openb-node-0735
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -64036,7 +64036,7 @@ metadata:
   labels:
     name: openb-node-0736
   name: openb-node-0736
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -64123,7 +64123,7 @@ metadata:
   labels:
     name: openb-node-0737
   name: openb-node-0737
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -64210,7 +64210,7 @@ metadata:
   labels:
     name: openb-node-0738
   name: openb-node-0738
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -64297,7 +64297,7 @@ metadata:
   labels:
     name: openb-node-0739
   name: openb-node-0739
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -64384,7 +64384,7 @@ metadata:
   labels:
     name: openb-node-0740
   name: openb-node-0740
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -64471,7 +64471,7 @@ metadata:
   labels:
     name: openb-node-0741
   name: openb-node-0741
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -64558,7 +64558,7 @@ metadata:
   labels:
     name: openb-node-0742
   name: openb-node-0742
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -64645,7 +64645,7 @@ metadata:
   labels:
     name: openb-node-0743
   name: openb-node-0743
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -64732,7 +64732,7 @@ metadata:
   labels:
     name: openb-node-0744
   name: openb-node-0744
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -64819,7 +64819,7 @@ metadata:
   labels:
     name: openb-node-0745
   name: openb-node-0745
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -64906,7 +64906,7 @@ metadata:
   labels:
     name: openb-node-0746
   name: openb-node-0746
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -64993,7 +64993,7 @@ metadata:
   labels:
     name: openb-node-0747
   name: openb-node-0747
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -65080,7 +65080,7 @@ metadata:
   labels:
     name: openb-node-0748
   name: openb-node-0748
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -65167,7 +65167,7 @@ metadata:
   labels:
     name: openb-node-0749
   name: openb-node-0749
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -65254,7 +65254,7 @@ metadata:
   labels:
     name: openb-node-0750
   name: openb-node-0750
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -65341,7 +65341,7 @@ metadata:
   labels:
     name: openb-node-0751
   name: openb-node-0751
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -65428,7 +65428,7 @@ metadata:
   labels:
     name: openb-node-0752
   name: openb-node-0752
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -65515,7 +65515,7 @@ metadata:
   labels:
     name: openb-node-0753
   name: openb-node-0753
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -65602,7 +65602,7 @@ metadata:
   labels:
     name: openb-node-0754
   name: openb-node-0754
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -65689,7 +65689,7 @@ metadata:
   labels:
     name: openb-node-0755
   name: openb-node-0755
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -65776,7 +65776,7 @@ metadata:
   labels:
     name: openb-node-0756
   name: openb-node-0756
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -65863,7 +65863,7 @@ metadata:
   labels:
     name: openb-node-0757
   name: openb-node-0757
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -65950,7 +65950,7 @@ metadata:
   labels:
     name: openb-node-0758
   name: openb-node-0758
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -66037,7 +66037,7 @@ metadata:
   labels:
     name: openb-node-0759
   name: openb-node-0759
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -66124,7 +66124,7 @@ metadata:
   labels:
     name: openb-node-0760
   name: openb-node-0760
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -66211,7 +66211,7 @@ metadata:
   labels:
     name: openb-node-0761
   name: openb-node-0761
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -66298,7 +66298,7 @@ metadata:
   labels:
     name: openb-node-0762
   name: openb-node-0762
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -66385,7 +66385,7 @@ metadata:
   labels:
     name: openb-node-0763
   name: openb-node-0763
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -66472,7 +66472,7 @@ metadata:
   labels:
     name: openb-node-0764
   name: openb-node-0764
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -66559,7 +66559,7 @@ metadata:
   labels:
     name: openb-node-0765
   name: openb-node-0765
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -66646,7 +66646,7 @@ metadata:
   labels:
     name: openb-node-0766
   name: openb-node-0766
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -66733,7 +66733,7 @@ metadata:
   labels:
     name: openb-node-0767
   name: openb-node-0767
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -66820,7 +66820,7 @@ metadata:
   labels:
     name: openb-node-0768
   name: openb-node-0768
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -66907,7 +66907,7 @@ metadata:
   labels:
     name: openb-node-0769
   name: openb-node-0769
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -66994,7 +66994,7 @@ metadata:
   labels:
     name: openb-node-0770
   name: openb-node-0770
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -67081,7 +67081,7 @@ metadata:
   labels:
     name: openb-node-0771
   name: openb-node-0771
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -67168,7 +67168,7 @@ metadata:
   labels:
     name: openb-node-0772
   name: openb-node-0772
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -67255,7 +67255,7 @@ metadata:
   labels:
     name: openb-node-0773
   name: openb-node-0773
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -67342,7 +67342,7 @@ metadata:
   labels:
     name: openb-node-0774
   name: openb-node-0774
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -67429,7 +67429,7 @@ metadata:
   labels:
     name: openb-node-0775
   name: openb-node-0775
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -67516,7 +67516,7 @@ metadata:
   labels:
     name: openb-node-0776
   name: openb-node-0776
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -67603,7 +67603,7 @@ metadata:
   labels:
     name: openb-node-0777
   name: openb-node-0777
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -67690,7 +67690,7 @@ metadata:
   labels:
     name: openb-node-0778
   name: openb-node-0778
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -67777,7 +67777,7 @@ metadata:
   labels:
     name: openb-node-0779
   name: openb-node-0779
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -67864,7 +67864,7 @@ metadata:
   labels:
     name: openb-node-0780
   name: openb-node-0780
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -67951,7 +67951,7 @@ metadata:
   labels:
     name: openb-node-0781
   name: openb-node-0781
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -68038,7 +68038,7 @@ metadata:
   labels:
     name: openb-node-0782
   name: openb-node-0782
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -68125,7 +68125,7 @@ metadata:
   labels:
     name: openb-node-0783
   name: openb-node-0783
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -68212,7 +68212,7 @@ metadata:
   labels:
     name: openb-node-0784
   name: openb-node-0784
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -68299,7 +68299,7 @@ metadata:
   labels:
     name: openb-node-0785
   name: openb-node-0785
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -68386,7 +68386,7 @@ metadata:
   labels:
     name: openb-node-0786
   name: openb-node-0786
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -68473,7 +68473,7 @@ metadata:
   labels:
     name: openb-node-0787
   name: openb-node-0787
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -68560,7 +68560,7 @@ metadata:
   labels:
     name: openb-node-0788
   name: openb-node-0788
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -68647,7 +68647,7 @@ metadata:
   labels:
     name: openb-node-0789
   name: openb-node-0789
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -68734,7 +68734,7 @@ metadata:
   labels:
     name: openb-node-0790
   name: openb-node-0790
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -68821,7 +68821,7 @@ metadata:
   labels:
     name: openb-node-0791
   name: openb-node-0791
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -68908,7 +68908,7 @@ metadata:
   labels:
     name: openb-node-0792
   name: openb-node-0792
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -68995,7 +68995,7 @@ metadata:
   labels:
     name: openb-node-0793
   name: openb-node-0793
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -69082,7 +69082,7 @@ metadata:
   labels:
     name: openb-node-0794
   name: openb-node-0794
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -69169,7 +69169,7 @@ metadata:
   labels:
     name: openb-node-0795
   name: openb-node-0795
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -69256,7 +69256,7 @@ metadata:
   labels:
     name: openb-node-0796
   name: openb-node-0796
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -69343,7 +69343,7 @@ metadata:
   labels:
     name: openb-node-0797
   name: openb-node-0797
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -69430,7 +69430,7 @@ metadata:
   labels:
     name: openb-node-0798
   name: openb-node-0798
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -69517,7 +69517,7 @@ metadata:
   labels:
     name: openb-node-0799
   name: openb-node-0799
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -69604,7 +69604,7 @@ metadata:
   labels:
     name: openb-node-0800
   name: openb-node-0800
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -69691,7 +69691,7 @@ metadata:
   labels:
     name: openb-node-0801
   name: openb-node-0801
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -69778,7 +69778,7 @@ metadata:
   labels:
     name: openb-node-0802
   name: openb-node-0802
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -69865,7 +69865,7 @@ metadata:
   labels:
     name: openb-node-0803
   name: openb-node-0803
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -69952,7 +69952,7 @@ metadata:
   labels:
     name: openb-node-0804
   name: openb-node-0804
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -70039,7 +70039,7 @@ metadata:
   labels:
     name: openb-node-0805
   name: openb-node-0805
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -70126,7 +70126,7 @@ metadata:
   labels:
     name: openb-node-0806
   name: openb-node-0806
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -70213,7 +70213,7 @@ metadata:
   labels:
     name: openb-node-0807
   name: openb-node-0807
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -70300,7 +70300,7 @@ metadata:
   labels:
     name: openb-node-0808
   name: openb-node-0808
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -70387,7 +70387,7 @@ metadata:
   labels:
     name: openb-node-0809
   name: openb-node-0809
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -70474,7 +70474,7 @@ metadata:
   labels:
     name: openb-node-0810
   name: openb-node-0810
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -70561,7 +70561,7 @@ metadata:
   labels:
     name: openb-node-0811
   name: openb-node-0811
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -70648,7 +70648,7 @@ metadata:
   labels:
     name: openb-node-0812
   name: openb-node-0812
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -70735,7 +70735,7 @@ metadata:
   labels:
     name: openb-node-0813
   name: openb-node-0813
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -70822,7 +70822,7 @@ metadata:
   labels:
     name: openb-node-0814
   name: openb-node-0814
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -70909,7 +70909,7 @@ metadata:
   labels:
     name: openb-node-0815
   name: openb-node-0815
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -70996,7 +70996,7 @@ metadata:
   labels:
     name: openb-node-0816
   name: openb-node-0816
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -71083,7 +71083,7 @@ metadata:
   labels:
     name: openb-node-0817
   name: openb-node-0817
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -71170,7 +71170,7 @@ metadata:
   labels:
     name: openb-node-0818
   name: openb-node-0818
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -71257,7 +71257,7 @@ metadata:
   labels:
     name: openb-node-0819
   name: openb-node-0819
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -71344,7 +71344,7 @@ metadata:
   labels:
     name: openb-node-0820
   name: openb-node-0820
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -71431,7 +71431,7 @@ metadata:
   labels:
     name: openb-node-0821
   name: openb-node-0821
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -71518,7 +71518,7 @@ metadata:
   labels:
     name: openb-node-0822
   name: openb-node-0822
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -71605,7 +71605,7 @@ metadata:
   labels:
     name: openb-node-0823
   name: openb-node-0823
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -71692,7 +71692,7 @@ metadata:
   labels:
     name: openb-node-0824
   name: openb-node-0824
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -71779,7 +71779,7 @@ metadata:
   labels:
     name: openb-node-0825
   name: openb-node-0825
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -71866,7 +71866,7 @@ metadata:
   labels:
     name: openb-node-0826
   name: openb-node-0826
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -71953,7 +71953,7 @@ metadata:
   labels:
     name: openb-node-0827
   name: openb-node-0827
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -72040,7 +72040,7 @@ metadata:
   labels:
     name: openb-node-0828
   name: openb-node-0828
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -72127,7 +72127,7 @@ metadata:
   labels:
     name: openb-node-0829
   name: openb-node-0829
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -72214,7 +72214,7 @@ metadata:
   labels:
     name: openb-node-0830
   name: openb-node-0830
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -72301,7 +72301,7 @@ metadata:
   labels:
     name: openb-node-0831
   name: openb-node-0831
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -72388,7 +72388,7 @@ metadata:
   labels:
     name: openb-node-0832
   name: openb-node-0832
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -72475,7 +72475,7 @@ metadata:
   labels:
     name: openb-node-0833
   name: openb-node-0833
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -72562,7 +72562,7 @@ metadata:
   labels:
     name: openb-node-0834
   name: openb-node-0834
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -72649,7 +72649,7 @@ metadata:
   labels:
     name: openb-node-0835
   name: openb-node-0835
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -72736,7 +72736,7 @@ metadata:
   labels:
     name: openb-node-0836
   name: openb-node-0836
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -72823,7 +72823,7 @@ metadata:
   labels:
     name: openb-node-0837
   name: openb-node-0837
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -72910,7 +72910,7 @@ metadata:
   labels:
     name: openb-node-0838
   name: openb-node-0838
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -72997,7 +72997,7 @@ metadata:
   labels:
     name: openb-node-0839
   name: openb-node-0839
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -73084,7 +73084,7 @@ metadata:
   labels:
     name: openb-node-0840
   name: openb-node-0840
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -73171,7 +73171,7 @@ metadata:
   labels:
     name: openb-node-0841
   name: openb-node-0841
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -73258,7 +73258,7 @@ metadata:
   labels:
     name: openb-node-0842
   name: openb-node-0842
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -73345,7 +73345,7 @@ metadata:
   labels:
     name: openb-node-0843
   name: openb-node-0843
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -73432,7 +73432,7 @@ metadata:
   labels:
     name: openb-node-0844
   name: openb-node-0844
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -73519,7 +73519,7 @@ metadata:
   labels:
     name: openb-node-0845
   name: openb-node-0845
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -73606,7 +73606,7 @@ metadata:
   labels:
     name: openb-node-0846
   name: openb-node-0846
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -73693,7 +73693,7 @@ metadata:
   labels:
     name: openb-node-0847
   name: openb-node-0847
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -73780,7 +73780,7 @@ metadata:
   labels:
     name: openb-node-0848
   name: openb-node-0848
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -73867,7 +73867,7 @@ metadata:
   labels:
     name: openb-node-0849
   name: openb-node-0849
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -73954,7 +73954,7 @@ metadata:
   labels:
     name: openb-node-0850
   name: openb-node-0850
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -74041,7 +74041,7 @@ metadata:
   labels:
     name: openb-node-0851
   name: openb-node-0851
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -74128,7 +74128,7 @@ metadata:
   labels:
     name: openb-node-0852
   name: openb-node-0852
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -74215,7 +74215,7 @@ metadata:
   labels:
     name: openb-node-0853
   name: openb-node-0853
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -74302,7 +74302,7 @@ metadata:
   labels:
     name: openb-node-0854
   name: openb-node-0854
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -74389,7 +74389,7 @@ metadata:
   labels:
     name: openb-node-0855
   name: openb-node-0855
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -74476,7 +74476,7 @@ metadata:
   labels:
     name: openb-node-0856
   name: openb-node-0856
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -74563,7 +74563,7 @@ metadata:
   labels:
     name: openb-node-0857
   name: openb-node-0857
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -74650,7 +74650,7 @@ metadata:
   labels:
     name: openb-node-0858
   name: openb-node-0858
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -74737,7 +74737,7 @@ metadata:
   labels:
     name: openb-node-0859
   name: openb-node-0859
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -74824,7 +74824,7 @@ metadata:
   labels:
     name: openb-node-0860
   name: openb-node-0860
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -74911,7 +74911,7 @@ metadata:
   labels:
     name: openb-node-0861
   name: openb-node-0861
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -74998,7 +74998,7 @@ metadata:
   labels:
     name: openb-node-0862
   name: openb-node-0862
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -75085,7 +75085,7 @@ metadata:
   labels:
     name: openb-node-0863
   name: openb-node-0863
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -75172,7 +75172,7 @@ metadata:
   labels:
     name: openb-node-0864
   name: openb-node-0864
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -75259,7 +75259,7 @@ metadata:
   labels:
     name: openb-node-0865
   name: openb-node-0865
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -75346,7 +75346,7 @@ metadata:
   labels:
     name: openb-node-0866
   name: openb-node-0866
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -75433,7 +75433,7 @@ metadata:
   labels:
     name: openb-node-0867
   name: openb-node-0867
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -75520,7 +75520,7 @@ metadata:
   labels:
     name: openb-node-0868
   name: openb-node-0868
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -75607,7 +75607,7 @@ metadata:
   labels:
     name: openb-node-0869
   name: openb-node-0869
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -75694,7 +75694,7 @@ metadata:
   labels:
     name: openb-node-0870
   name: openb-node-0870
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -75781,7 +75781,7 @@ metadata:
   labels:
     name: openb-node-0871
   name: openb-node-0871
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -75868,7 +75868,7 @@ metadata:
   labels:
     name: openb-node-0872
   name: openb-node-0872
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -75955,7 +75955,7 @@ metadata:
   labels:
     name: openb-node-0873
   name: openb-node-0873
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -76042,7 +76042,7 @@ metadata:
   labels:
     name: openb-node-0874
   name: openb-node-0874
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -76129,7 +76129,7 @@ metadata:
   labels:
     name: openb-node-0875
   name: openb-node-0875
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -76216,7 +76216,7 @@ metadata:
   labels:
     name: openb-node-0876
   name: openb-node-0876
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -76303,7 +76303,7 @@ metadata:
   labels:
     name: openb-node-0877
   name: openb-node-0877
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -76390,7 +76390,7 @@ metadata:
   labels:
     name: openb-node-0878
   name: openb-node-0878
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -76477,7 +76477,7 @@ metadata:
   labels:
     name: openb-node-0879
   name: openb-node-0879
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -76564,7 +76564,7 @@ metadata:
   labels:
     name: openb-node-0880
   name: openb-node-0880
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -76651,7 +76651,7 @@ metadata:
   labels:
     name: openb-node-0881
   name: openb-node-0881
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -76738,7 +76738,7 @@ metadata:
   labels:
     name: openb-node-0882
   name: openb-node-0882
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -76825,7 +76825,7 @@ metadata:
   labels:
     name: openb-node-0883
   name: openb-node-0883
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -76912,7 +76912,7 @@ metadata:
   labels:
     name: openb-node-0884
   name: openb-node-0884
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -76999,7 +76999,7 @@ metadata:
   labels:
     name: openb-node-0885
   name: openb-node-0885
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -77086,7 +77086,7 @@ metadata:
   labels:
     name: openb-node-0886
   name: openb-node-0886
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -77173,7 +77173,7 @@ metadata:
   labels:
     name: openb-node-0887
   name: openb-node-0887
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -77260,7 +77260,7 @@ metadata:
   labels:
     name: openb-node-0888
   name: openb-node-0888
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -77347,7 +77347,7 @@ metadata:
   labels:
     name: openb-node-0889
   name: openb-node-0889
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -77434,7 +77434,7 @@ metadata:
   labels:
     name: openb-node-0890
   name: openb-node-0890
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -77521,7 +77521,7 @@ metadata:
   labels:
     name: openb-node-0891
   name: openb-node-0891
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -77608,7 +77608,7 @@ metadata:
   labels:
     name: openb-node-0892
   name: openb-node-0892
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -77695,7 +77695,7 @@ metadata:
   labels:
     name: openb-node-0893
   name: openb-node-0893
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -77782,7 +77782,7 @@ metadata:
   labels:
     name: openb-node-0894
   name: openb-node-0894
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -77869,7 +77869,7 @@ metadata:
   labels:
     name: openb-node-0895
   name: openb-node-0895
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -77956,7 +77956,7 @@ metadata:
   labels:
     name: openb-node-0896
   name: openb-node-0896
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -78043,7 +78043,7 @@ metadata:
   labels:
     name: openb-node-0897
   name: openb-node-0897
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -78130,7 +78130,7 @@ metadata:
   labels:
     name: openb-node-0898
   name: openb-node-0898
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:
@@ -78217,7 +78217,7 @@ metadata:
   labels:
     name: openb-node-0899
   name: openb-node-0899
-  namespace: paib-gpu
+  
 spec:
   containers:
   - command:

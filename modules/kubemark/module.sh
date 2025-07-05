@@ -17,17 +17,19 @@ create_cluster(){
 }
 
 cluster_setup(){
-    kind get kubeconfig --name "$CLUSTER_NAME" > "$LOCAL_PATH/config"
-    sed -i 's|server: https://127.0.0.1:[0-9]\+|server: https://kubernetes.default.svc:443|' "$LOCAL_PATH/config"
+    local CONFIG_PATH="$LOCAL_PATH/config"
+    kind get kubeconfig --name "$CLUSTER_NAME" > "$CONFIG_PATH"
+    #sed -i 's|server: https://127.0.0.1:[0-9]\+|server: https://kubernetes.default.svc:443|' "$LOCAL_PATH/config"
     kubectl config use-context "kind-$CLUSTER_NAME"
     kubectl create ns $NAMESPACE
-    wait_for_namespace kubemark
+    kubectl create ns "kubemark"
+    wait_for_namespace "kubemark"
     wait_for_namespace ${NAMESPACE}
 
     kubectl create secret generic kubeconfig \
-        --type=Opaque --namespace=kubemark\
-        --from-file=kubelet.kubeconfig="$LOCAL_PATH/config" \
-        --from-file=kubeproxy.kubeconfig="$LOCAL_PATH/config"
+        --type=Opaque --namespace="kubemark" \
+        --from-file=kubelet.kubeconfig="$CONFIG_PATH" \
+        --from-file=kubeproxy.kubeconfig="$CONFIG_PATH"
 }
 
 cleanup_cluster(){
@@ -38,8 +40,7 @@ cleanup_cluster(){
 deploy_objects(){
     local NODE_FILE="$1"
     local POD_FILE="$2"
-    kubectl create ns kubemark
-    kubectl create -f "$NODE_FILE" --namespace=kubemark
+    kubectl create -f "$NODE_FILE" --namespace="kubemark"
     kubectl create -f "$POD_FILE" --namespace=${NAMESPACE}
 }
 

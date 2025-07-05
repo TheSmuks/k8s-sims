@@ -24,8 +24,20 @@ RUN_CONDITION="true"
 UNSCHEDULED_PODS=0
 TIMEOUT_REACHED="0"
 
+print_logo() {
+    cat << EOF
+  _  __     _          _____             
+ | |/ /    | |        |  __ \            
+ | ' /_   _| |__   ___| |__) |   _ _ __  
+ |  <| | | | '_ \ / _ \  _  / | | | '_ \ 
+ | . \ |_| | |_) |  __/ | \ \ |_| | | | |
+ |_|\_\__,_|_.__/ \___|_|  \_\__,_|_| |_|
+------------------------------------------
+EOF
+}
 
 usage() {
+    print_logo
     cat << EOF
 Usage: $(basename "$0") -e EXPERIMENT_PATH -m SIMULATION_MODE [options]
 
@@ -42,7 +54,7 @@ Optional arguments:
   -h                   Show this help message
 
 Example:
-  $(basename "$0") -e ./experiments -m simkube -n 5 -o results.csv -c my-cluster
+  $(basename "$0") -e ./experiments -m simkube -n 5 -o results.csv
 EOF
 }
 
@@ -371,7 +383,8 @@ watch_pod_scheduling(){
             else
                 local ELAPSED_SCHEDULING_TIME=$(($(date +%s) - $INITIAL_TIME))
                 if [[ $MAX_SIMULATION_TIME -lt $SCHEDULE_TIMEOUT && $ELAPSED_SCHEDULING_TIME -gt $SCHEDULE_TIMEOUT ]]; then
-                    log INFO "Scheduling timeout reached: $SCHEDULE_TIMEOUT seconds."
+                    log INFO "No changes after $SCHEDULE_TIMEOUT seconds. Simulation stopped."
+                    touch $TIMEOUT_FLAG_FILE
                     break
                 fi
             fi
@@ -419,6 +432,7 @@ track_containers() {
 }
 
 # Entry point
+print_logo
 log INFO "Received arguments $@"
 parse_args "$@"
 
