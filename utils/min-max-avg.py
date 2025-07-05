@@ -4,7 +4,7 @@ import os
 import json
 
 def main():
-    parser = argparse.ArgumentParser(description="Generate plots from CSV data.")
+    parser = argparse.ArgumentParser(description="Generate summaries of performance from CSV data.")
     parser.add_argument("-d", "--data_directory", type=str, help="Path to the directory containing CSV files.", required=True)
     parser.add_argument("-o", "--output_dir", type=str, default="plots", help="Directory to save generated plots.")
     args = parser.parse_args()
