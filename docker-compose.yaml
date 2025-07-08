@@ -8,8 +8,6 @@ services:
       - /sys/fs/cgroup:/sys/fs/cgroup:rw
       - ./results:/results
       - ./plots:/plots
-      - ./entrypoint.sh:/entrypoint.sh
-      - ./kube-director.sh:/kube-director.sh
     command:
       [
         "-e",
