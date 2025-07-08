@@ -6,6 +6,15 @@ import argparse
 from scipy.interpolate import make_interp_spline
 import seaborn as sns
 
+simulator_style = {
+    'kubemark': {'style': '-', 'color': 'tab:red'},
+    'kwok': {'style': '--', 'color': 'tab:green'},
+    'opensim': {'style': '-.', 'color': 'tab:orange'},
+    'simkube': {'style': ':', 'color': 'tab:purple'},
+    'kube-sched': {'style': '-', 'color': 'tab:blue'},
+    'kubernetes': {'style': '--', 'color': 'tab:brown'}
+}
+
 def load_and_clean_data(filepath: str) -> pd.DataFrame | None:
     try:
         df = pd.read_csv(filepath, sep='|', decimal=',')
@@ -70,7 +79,8 @@ def load_and_clean_data(filepath: str) -> pd.DataFrame | None:
         return None
 
 
-def plot_comparison(data: dict[str, pd.DataFrame], output_dir: str):
+def plot_line_charts(data: dict[str, pd.DataFrame], output_dir: str):
+    global simulator_style
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
     metrics_to_plot = {
@@ -84,27 +94,32 @@ def plot_comparison(data: dict[str, pd.DataFrame], output_dir: str):
         'scheduling_success_rate': 'Scheduling Sucess Rate - Higher is better',
         'cpu_efficiency': 'CPU Efficiency - Higher is better',
     }
-    styles=[':', '--', '-.', '-']
-    style_index=0
-    simulator_style=dict()
-    for simulator in data.keys():
-        simulator_style[simulator]=styles[style_index%len(styles)]
-        style_index+=1
+    # styles=[':', '--', '-.', '-']
+    # style_index=0
+    # simulator_style=dict()
+    # for simulator in data.keys():
+    #     simulator_style[simulator]=styles[style_index%len(styles)]
+    #     style_index+=1
 
     for metric_col, y_label in metrics_to_plot.items():
+        plotted = False
         plt.figure(figsize=(8, 5))
         for simulator, df in data.items():
             if metric_col in df.columns and not df[metric_col].isnull().all():
                 x, y = df['node_count'], df[metric_col]
+                if len(x) < 2:
+                    continue
                 X_Y_Spline = make_interp_spline(x, y)
                 X_ = np.linspace(x.min(), x.max(), 500)
                 Y_ = X_Y_Spline(X_)
                 curr_style=simulator_style[simulator]
-                plt.plot(X_, Y_, linestyle=curr_style, label=simulator)
-
+                plt.plot(X_, Y_, linestyle=curr_style['style'], color=curr_style['color'], label=simulator)
+                plotted = True
             else:
                 print(f"Skipping plot for {metric_col} for program {simulator} due to missing data.")
-
+        if not plotted:
+            print("Not enough data to plot line charts.")
+            return
         plt.xlabel('Node Count')
         plt.ylabel(y_label)
         plt.title(f'{y_label.split(' -')[0]} vs. Node Count for all simulators')
@@ -116,13 +131,12 @@ def plot_comparison(data: dict[str, pd.DataFrame], output_dir: str):
         print(f"Saved plot: {plot_filename}")
         plt.close()
 
-
     size_metrics = {'pod_count': 'Pod Count'}
     for metric_col, x_label in size_metrics.items():
         for simulator, df in data.items():
             x, y = df[metric_col], df['run_time']
             curr_style=simulator_style[simulator]
-            plt.plot(x, y, linestyle=curr_style, label=simulator)
+            plt.plot(x, y, linestyle=curr_style['style'], color=curr_style['color'], label=simulator)
         plt.xlabel(x_label)
         plt.ylabel("Run Time (seconds)")
         plt.title(f'{x_label} vs. Run Time (seconds) for all simulators')
@@ -152,8 +166,6 @@ def plot_comparison(data: dict[str, pd.DataFrame], output_dir: str):
         plt.savefig(plot_filename)
         print(f"Saved plot: {plot_filename}")
         plt.close()
-    plot_cpu_ratio_bar(data, output_dir)
-    print(f"\nPlots saved to '{output_dir}' directory.")
 
 def plot_cpu_ratio_bar(data: dict[str, pd.DataFrame], output_dir: str):
     plt.figure(figsize=(8, 5))
@@ -174,16 +186,31 @@ def plot_cpu_ratio_bar(data: dict[str, pd.DataFrame], output_dir: str):
     plt.tight_layout()
     plot_filename = os.path.join(output_dir, f'cpu_ratio.png')
     plt.savefig(plot_filename)
+    print(f"Saved plot: {plot_filename}")
     plt.close()
 
-def plot_bar(data: dict[str, pd.DataFrame], output_dir: str):
+def plot_bars(melted_df: pd.DataFrame, output_dir: str):
+    plt.figure(figsize=(12,8))
+    simulator_colors={key:simulator_style[key]['color'] for key in simulator_style.keys() }
+    ax = sns.barplot(data=melted_df,x='Metric',y='Normalized Value',hue='Simulator',palette=simulator_colors)
+    for container in ax.containers:
+        ax.bar_label(container, fmt='%.2f')
+    ax.legend()
+    plt.title('Simulators Metrics Comparison')
+    plt.ylabel('Normalized Value')
+    plt.xlabel('')
+    plt.xticks(ha='right')
+    plt.tight_layout()
+    metrics = '_'.join(melted_df['Metric'].unique().tolist())
+    plot_filename = os.path.join(output_dir, f'bars_{metrics}.png')
+    plt.savefig(plot_filename)
+    print(f"Saved plot: {plot_filename}")
+    plt.close()
+
+
+def plot_summary_bars(data: dict[str, pd.DataFrame], output_dir: str):
     data_list = []
     for simulator, df in data.items():
-        df = df.drop(columns=[
-            'node_count', 'pod_count', 'timeout_reached', 
-            'mem_exceeded', 'user_cpu_seconds', 'system_cpu_seconds',
-            'cpu_user_system_ratio', 'cpu_system_user_ratio', 'unscheduled_pods'
-        ])
         df['Simulator'] = simulator
         data_list.append(df)
     combined_df = pd.concat(data_list, ignore_index=True)
@@ -191,37 +218,46 @@ def plot_bar(data: dict[str, pd.DataFrame], output_dir: str):
     melted_df['Normalized Value'] = melted_df.groupby('Metric')['Value'].transform(
         lambda x: (x-x.min())/(x.max()- x.min() if x.max() > x.min() else 0)
     )
-    plt.figure(figsize=(12,8))
-    ax = sns.barplot(data=melted_df,x='Metric',y='Normalized Value',hue='Simulator')
-    for container in ax.containers:
-        ax.bar_label(container, fmt='%.2f')
-    ax.legend(loc='upper left', bbox_to_anchor=(1, 1))
-    plt.title('Simulators Metrics Comparison')
-    plt.ylabel('Normalized Value')
-    plt.xlabel('')
-    plt.xticks(rotation=15, ha='right')
-    plt.tight_layout()
-    plot_filename = os.path.join(output_dir, f'benchmark.png')
-    plt.savefig(plot_filename)
-    plt.close()
+    filtered_cpu_mem_run_pods = melted_df[melted_df['Metric'].isin(['run_time', 'total_cpu_seconds', 'memory_peak_gb', 'unscheduled_pods'])]
+    plot_bars(filtered_cpu_mem_run_pods, output_dir)
+    filtered_cpu_mem_run = melted_df[melted_df['Metric'].isin(['cpu_efficiency', 'scheduling_success_rate'])]
+    plot_bars(filtered_cpu_mem_run, output_dir)
+
+def plot_comparison(data: dict[str, pd.DataFrame], output_dir: str, plot_lines: bool = False, plot_bars: bool = False):
+    if plot_lines:
+        plot_line_charts(data, output_dir)
+    if plot_bars:
+        plot_cpu_ratio_bar(data, output_dir)
+        plot_summary_bars(data, output_dir)
+    print(f"\nPlots saved to '{output_dir}' directory.")
 
 def main():
     print(r"""
-  _  __     _          _____  _       _   _            
- | |/ /    | |        |  __ \| |     | | | |           
- | ' /_   _| |__   ___| |__) | | ___ | |_| |_ ___ _ __ 
- |  <| | | | '_ \ / _ \  ___/| |/ _ \| __| __/ _ \ '__|
- | . \ |_| | |_) |  __/ |    | | (_) | |_| ||  __/ |   
- |_|\_\__,_|_.__/ \___|_|    |_|\___/ \__|\__\___|_|   
--------------------------------------------------------""")
+  _  __     _          _____  _       _   
+ | |/ /    | |        |  __ \| |     | |  
+ | ' /_   _| |__   ___| |__) | | ___ | |_ 
+ |  <| | | | '_ \ / _ \  ___/| |/ _ \| __|
+ | . \ |_| | |_) |  __/ |    | | (_) | |_ 
+ |_|\_\__,_|_.__/ \___|_|    |_|\___/ \__|
+-------------------------------------------""")
     parser = argparse.ArgumentParser(description="Generate plots from CSV data.")
     parser.add_argument("-d", "--data_directory", type=str, help="Path to the directory containing CSV files.", required=True)
     parser.add_argument("-o", "--output_dir", type=str, default="plots", help="Directory to save generated plots.")
+    parser.add_argument("-l", "--plot_lines", default=False, action='store_true', help="Indicates if line chart should be plotted.")
+    parser.add_argument("-b", "--plot_bars", default=False, action='store_true', help="Indicates if bar chart should be plotted.")
     args = parser.parse_args()
-
+    if not args.plot_bars and not args.plot_lines:
+        parser.error("At least -l/--plot_lines or -b/--plot_bars must be provided.")
     simulator_data = {}
 
-    if not os.path.isdir(args.data_directory):
+    if not os.path.exists(args.output_dir):
+        os.makedirs(args.output_dir)
+
+    if  not os.path.isdir(args.output_dir):
+        print(f"Error: Output directory '{args.output_dir}' not found.")
+        return
+
+    if not os.path.exists(args.data_directory) and not os.path.isdit(args.data_directory):
         print(f"Error: Data directory '{args.data_directory}' not found.")
         return
 
@@ -239,8 +275,7 @@ def main():
     if not simulator_data:
         print("Error, no data found.")
         return
-    # plot_bar(simulator_data, args.output_dir)
-    plot_comparison(simulator_data, args.output_dir)
+    plot_comparison(simulator_data, args.output_dir, args.plot_lines, args.plot_bars)
 
 if __name__ == '__main__':
     main()

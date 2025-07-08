@@ -222,6 +222,13 @@ def run_simkube_tracer(output_folder: str, namespace:str="paib-gpu"):
     tracer_path = os.path.join(script_dir, "simkube-tracer.sh")
     subprocess.check_call(f"{tracer_path} -e {result_path} -n {namespace}", shell=True)
 
+def invoke_kube_run(output_folder: str, arguments: str):
+    print_msg("Starting kube-run")
+    result_path = os.path.join(output_folder)
+    root_dir = os.path.dirname(os.path.dirname(script_dir))
+    kube_director_path = os.path.join(root_dir, "kube-director.sh")
+    subprocess.check_call(f"{kube_director_path} -e {result_path} {arguments}", shell=True)
+
 def print_ascii() -> None:
     """Print ASCII art banner for the application."""
     print(r"""      _  __     _           _____
@@ -309,6 +316,8 @@ def main(args: argparse.Namespace) -> None:
     print_msg(f'Files saved to output folder: {output_folder}')
     if args.simkube and args.tracer:
         run_simkube_tracer(output_folder, args.tracer_namespace)
+    if args.run_experiments:
+        invoke_kube_run(output_folder, args.kube_director_arguments)
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(
@@ -320,6 +329,8 @@ if __name__ == '__main__':
     parser.add_argument('-s', '--simkube', default=False, action='store_true', help='Applies the simkube patches to the generated files')
     parser.add_argument('-os', '--open_sim', default=False, action='store_true', help='Generates files with the OpenSimulator format')
     parser.add_argument('-t', '--tracer', default=False, action='store_true', help='Generates SimKube traces at the end of the process')
+    parser.add_argument('-e', '--run_experiments', default=False, action='store_true', help='Indicates whether to run experiments after generating the datasets.')
+    parser.add_argument('-a', '--kube_director_arguments', type=str, default='-n 3 -p', help='Arguments to be passed to KubeDirector if run experiments is enabled.')
     parser.add_argument('-tn', '--tracer_namespace', type=str, default=f'paib-gpu', help='Specifies the namespace that will be used to generate SimKube traces')
     parser.add_argument('-hn', '--hollow_node_path', type=str, default=f'{os.path.join(script_dir, "base", "hollow-node.yml")}', help='Template hollow node file used for Kubemark')
     parser.add_argument('-nn', '--new_node_path', type=str, default=f'{os.path.join(script_dir, "base", "new-node.yaml")}', help='Path to the YAML file containing the new node template for opensim')

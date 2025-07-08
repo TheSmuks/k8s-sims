@@ -1,11 +1,6 @@
 #!/bin/bash
-if [[ -S /var/run/docker.sock ]]; then
-    echo "Docker already running."
-    pkill dockerd
-    rm /var/run/docker.sock
-fi
 echo "Starting Docker daemon..."
-dockerd &
+pkill dockerd || dockerd &
 for i in {1..30}; do
     [[ -S /var/run/docker.sock ]] && break
     echo "Waiting for dockerd..."
@@ -25,4 +20,4 @@ docker image pull docker.io/kindest/node:v1.29.0
 export CONTAINERIZED="true"
 #Pre-run to ensure proper working
 /kube-director.sh -n 1 -o /tmp -e /data/test
-/kube-director.sh "$@"
+/kube-director.sh $@

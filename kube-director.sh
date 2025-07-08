@@ -31,6 +31,7 @@ Optional arguments:
   -o OUT_FOLDER        Output folder for experiment results (default: $DEFAULT_OUTPUT_FOLDER)
   -t MEMORY_THRESHOLD  Memory threshold percentage (default: $DEFAULT_MEMORY_THRESHOLD)
   -x MAX_SIMULATION_TIME  Max allowed duration for a simulation (default: $DEFAULT_MAX_SIMULATION_TIME)
+  -p PLOT_RESULTS      Automatically plots results from the experimentation (default: False)
   -v                   Verbose mode (default: false)
   -h                   Show this help message
 
@@ -71,7 +72,7 @@ log() {
 
 parse_args() {
     local OPTIND
-    while getopts 'hve:c:n:s:o:p:t:x:' opt; do
+    while getopts 'hvpe:c:n:s:o:t:x:' opt; do
         case "$opt" in
             e) EXPERIMENT_FILES_PATH=$(realpath "$OPTARG") ;;
             n) RUNS="$OPTARG" ;;
@@ -80,6 +81,7 @@ parse_args() {
             t) MEMORY_THRESHOLD="$OPTARG" ;;
             x) MAX_SIMULATION_TIME="$OPTARG" ;;
             v) VERBOSE="true" ;;
+            p) PLOT_RESULTS="true" ;;
             h) usage; exit 0 ;;
             :) log ERROR "Option -$OPTARG requires an argument." >&2; usage; exit 1 ;;
             ?) log ERROR "Invalid option -$OPTARG" >&2; usage; exit 1 ;;
@@ -181,3 +183,6 @@ for i in ${!SIMULATORS[@]}; do
     log INFO "Deleting all remaining kind clusters"
     clean_cluster "${SIMULATORS[i]}"
 done
+if [[ ! -z $PLOT_RESULTS ]]; then
+    python3 utils/kube-plot.py -d $OUT_FOLDER -l -b
+fi

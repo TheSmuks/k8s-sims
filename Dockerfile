@@ -53,13 +53,14 @@ WORKDIR /
 COPY data/ /data
 COPY modules /modules
 RUN chmod +x /modules/opensim/cmd
-COPY kube-run.sh /kube-run.sh
+
 COPY kube-director.sh /kube-director.sh
-COPY requirements.txt /requirements.txt
+COPY kube-run.sh /kube-run.sh
 
 RUN mkdir -p /utils /results
 COPY utils/base /utils/base
 COPY utils/kube-gen.py /utils/kube-gen.py
+COPY utils/kube-plot.py /utils/kube-plot.py
 COPY utils/simkube-tracer.sh /utils/simkube-tracer.sh
 COPY entrypoint.sh /entrypoint.sh
 

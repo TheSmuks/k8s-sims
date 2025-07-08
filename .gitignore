@@ -1,4 +1,5 @@
 .venv
+.venv-w
 *.log
 *.csv
 *.out
