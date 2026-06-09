@@ -71,12 +71,30 @@ cmd_docs() {
   git -C "$ROOT_DIR" grep -n "sarteco-2026\|privileged\|simulator mode\|reproduc" -- . ':!data/**'
 }
 
+cmd_bash_tests() {
+  section "bash test suite"
+  if [[ ! -x "$ROOT_DIR/tests/bash/run.sh" ]]; then
+    echo "Bash test suite is not installed: $ROOT_DIR/tests/bash/run.sh missing" >&2
+    return 1
+  fi
+  local report_dir="${BASH_TEST_REPORT_DIR:-$OUT_BASE/bash-tests}"
+  run bash "$ROOT_DIR/tests/bash/run.sh" --report-dir "$report_dir"
+  local rc=$?
+  if [[ -f "$report_dir/latest.summary" ]]; then
+    echo
+    echo "Bash test summary ($report_dir/latest.summary):"
+    cat "$report_dir/latest.summary"
+  fi
+  return $rc
+}
+
 case "${1:-all}" in
   baseline) cmd_baseline ;;
   plotting) cmd_plotting ;;
   path-spaces) cmd_path_spaces ;;
   collision) cmd_collision ;;
   docs) cmd_docs ;;
-  all) cmd_baseline && cmd_plotting && cmd_path_spaces && cmd_collision && cmd_docs ;;
-  *) echo "Usage: $0 {baseline|plotting|path-spaces|collision|docs|all}" >&2; exit 2 ;;
+  bash-tests) cmd_bash_tests ;;
+  all) cmd_baseline && cmd_plotting && cmd_path_spaces && cmd_collision && cmd_docs && cmd_bash_tests ;;
+  *) echo "Usage: $0 {baseline|plotting|path-spaces|collision|docs|bash-tests|all}" >&2; exit 2 ;;
 esac

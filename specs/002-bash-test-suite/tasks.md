@@ -16,14 +16,14 @@
 
 **Purpose**: Create the suite's own scaffolding so the rest of the work has a home.
 
-- [ ] T001 Create the suite directory tree under `tests/bash/` and `tests/mocks/` per `specs/002-bash-test-suite/plan.md`
-- [ ] T002 Add `tests/bash/.bats/`, `tests/bash/.reports/`, and `tests/bash/.cache/` to `.gitignore` so bootstrapped bats and per-run reports are not committed
-- [ ] T003 Create the empty allowlist `tests/bash/excluded-scripts.bash` with the documented format
-- [ ] T004 Create `tests/bash/helpers/inventory.bash` with the glob + allowlist enumeration
-- [ ] T005 [P] Create `tests/bash/helpers/skip.bash` with the `batslib_skip` and missing-tool helpers
-- [ ] T006 [P] Create `tests/bash/helpers/bats.bash` with the bats resolution and report-writing helpers
-- [ ] T007 Create `tests/bash/fixtures/.keep` so the fixtures directory is tracked
-- [ ] T008 [P] Create `tests/mocks/conf/.keep` and `tests/mocks/bin/.keep` placeholders
+- [X] T001 Create the suite directory tree under `tests/bash/` and `tests/mocks/` per `specs/002-bash-test-suite/plan.md`
+- [X] T002 Add `tests/bash/.bats/`, `tests/bash/.reports/`, and `tests/bash/.cache/` to `.gitignore` so bootstrapped bats and per-run reports are not committed
+- [X] T003 Create the empty allowlist `tests/bash/excluded-scripts.bash` with the documented format
+- [X] T004 Create `tests/bash/helpers/inventory.bash` with the glob + allowlist enumeration
+- [X] T005 [P] Create `tests/bash/helpers/skip.bash` with the `batslib_skip` and missing-tool helpers
+- [X] T006 [P] Create `tests/bash/helpers/bats.bash` with the bats resolution and report-writing helpers
+- [X] T007 Create `tests/bash/fixtures/.keep` so the fixtures directory is tracked
+- [X] T008 [P] Create `tests/mocks/conf/.keep` and `tests/mocks/bin/.keep` placeholders
 
 ---
 
@@ -33,12 +33,12 @@
 
 **Critical**: US1 tests cannot run without these.
 
-- [ ] T009 Implement `tests/bash/bootstrap-bats.sh` that downloads bats-core 1.11.0 into `tests/bash/.bats/` on first run and is a no-op thereafter
-- [ ] T010 Implement `tests/bash/run.sh` that bootstraps bats, enumerates the inventory, runs every test under `tests/bash/tests/`, writes the TAP and summary reports, and exits with the suite's overall result
-- [ ] T011 Smoke-run `tests/bash/run.sh` on a host with no `.bats` directory to confirm the bootstrap and TAP output, and record the run in `specs/002-bash-test-suite/checkpoints.md`
-- [ ] T012 Add `bash-tests` subcommand and fold it into the `all` sequence in `utils/validate-checkpoint.sh`
-- [ ] T013 Run `utils/validate-checkpoint.sh bash-tests` and record the result in `specs/002-bash-test-suite/checkpoints.md`
-- [ ] T014 Commit the foundational checkpoint and record the commit reference in `specs/002-bash-test-suite/checkpoints.md`
+- [X] T009 Implement `tests/bash/bootstrap-bats.sh` that downloads bats-core 1.11.0 into `tests/bash/.bats/` on first run and is a no-op thereafter
+- [X] T010 Implement `tests/bash/run.sh` that bootstraps bats, enumerates the inventory, runs every test under `tests/bash/tests/`, writes the TAP and summary reports, and exits with the suite's overall result
+- [X] T011 Smoke-run `tests/bash/run.sh` on a host with no `.bats` directory to confirm the bootstrap and TAP output, and record the run in `specs/002-bash-test-suite/checkpoints.md`
+- [X] T012 Add `bash-tests` subcommand and fold it into the `all` sequence in `utils/validate-checkpoint.sh`
+- [X] T013 Run `utils/validate-checkpoint.sh bash-tests` and record the result in `specs/002-bash-test-suite/checkpoints.md`
+- [X] T014 Commit the foundational checkpoint and record the commit reference in `specs/002-bash-test-suite/checkpoints.md`
 
 **Checkpoint**: Foundation ready. The runner exists, the bootstrap works, and `utils/validate-checkpoint.sh` can invoke the suite. No tests yet.
 
@@ -52,18 +52,18 @@
 
 ### Tests for User Story 1
 
-- [ ] T015 [P] [US1] Author `tests/bash/tests/static-syntax.bats` that iterates the inventory and runs `bash -n` on every entry, failing with the script path and parse error
-- [ ] T016 [P] [US1] Author `tests/bash/tests/static-strict.bats` that runs the runner scripts under `set -u` and `set -o pipefail` in a subshell and fails on unbound variable or pipeline errors
-- [ ] T017 [P] [US1] Author `tests/bash/tests/behavioral-runner.bats` covering `kube-run.sh` argument parsing, missing-experiment-path error, and result preservation default behavior using fixtures and PATH shims
-- [ ] T018 [US1] Run the new tests on the unmodified scripts and confirm they all pass (US1 tests-first checkpoint) in `specs/002-bash-test-suite/checkpoints.md`
+- [X] T015 [P] [US1] Author `tests/bash/tests/static-syntax.bats` that iterates the inventory and runs `bash -n` on every entry, failing with the script path and parse error
+- [X] T016 [P] [US1] Author `tests/bash/tests/static-strict.bats` that runs the runner scripts under `set -u` and `set -o pipefail` in a subshell and fails on unbound variable or pipeline errors
+- [X] T017 [P] [US1] Author `tests/bash/tests/behavioral-runner.bats` covering `kube-run.sh` argument parsing, missing-experiment-path error, and result preservation default behavior using fixtures and PATH shims
+- [X] T018 [US1] Run the new tests on the unmodified scripts and confirm they all pass (US1 tests-first checkpoint) in `specs/002-bash-test-suite/checkpoints.md`
 
 ### Implementation for User Story 1
 
-- [ ] T019 [P] [US1] Implement shim binaries for `kwokctl`, `kubectl`, `kind`, and `docker` under `tests/mocks/bin/` plus a small shared shell helper at `tests/mocks/bin/_shim.sh` and a per-shim `<name>.conf` at `tests/mocks/conf/`
-- [ ] T020 [P] [US1] Add behavioral fixtures under `tests/bash/fixtures/experiment-missing/`, `tests/bash/fixtures/experiment-spaced/`, and `tests/bash/fixtures/result-csv/` so the runner tests have deterministic inputs
-- [ ] T021 [US1] Wire the inventory and the `--with-mocks` path into `tests/bash/run.sh` so US1's behavioral tests pick up the shims and the inventory size appears in the summary
-- [ ] T022 [US1] Run `tests/bash/run.sh` and confirm pass counts, fail counts, and inventory size match expectations; record the run in `specs/002-bash-test-suite/checkpoints.md`
-- [ ] T023 [US1] Commit US1 checkpoint and record the commit reference in `specs/002-bash-test-suite/checkpoints.md`
+- [X] T019 [P] [US1] Implement shim binaries for `kwokctl`, `kubectl`, `kind`, and `docker` under `tests/mocks/bin/` plus a small shared shell helper at `tests/mocks/bin/_shim.sh` and a per-shim `<name>.conf` at `tests/mocks/conf/`
+- [X] T020 [P] [US1] Add behavioral fixtures under `tests/bash/fixtures/experiment-missing/`, `tests/bash/fixtures/experiment-spaced/`, and `tests/bash/fixtures/result-csv/` so the runner tests have deterministic inputs
+- [X] T021 [US1] Wire the inventory and the `--with-mocks` path into `tests/bash/run.sh` so US1's behavioral tests pick up the shims and the inventory size appears in the summary
+- [X] T022 [US1] Run `tests/bash/run.sh` and confirm pass counts, fail counts, and inventory size match expectations; record the run in `specs/002-bash-test-suite/checkpoints.md`
+- [X] T023 [US1] Commit US1 checkpoint and record the commit reference in `specs/002-bash-test-suite/checkpoints.md`
 
 **Checkpoint**: User Story 1 is independently functional when a maintainer can run `./tests/bash/run.sh`, see a TAP summary, and rely on a regression in `kube-run.sh` to fail a specific named test.
 
@@ -77,17 +77,17 @@
 
 ### Tests for User Story 2
 
-- [ ] T024 [P] [US2] Author `tests/bash/tests/skip-reason.bats` that asserts every behavioral test file emits a `skip` TAP line with `missing tool: <name>` when its external dependency is absent
-- [ ] T025 [P] [US2] Author `tests/bash/tests/with-mocks.bats` that asserts `--with-mocks` results in PASS for at least one behavioral test per script category
-- [ ] T026 [US2] Run the new tests on the current host (no simulator tools) and confirm skip behavior is correct in `specs/002-bash-test-suite/checkpoints.md`
+- [X] T024 [P] [US2] Author `tests/bash/tests/skip-reason.bats` that asserts every behavioral test file emits a `skip` TAP line with `missing tool: <name>` when its external dependency is absent
+- [X] T025 [P] [US2] Author `tests/bash/tests/with-mocks.bats` that asserts `--with-mocks` results in PASS for at least one behavioral test per script category
+- [X] T026 [US2] Run the new tests on the current host (no simulator tools) and confirm skip behavior is correct in `specs/002-bash-test-suite/checkpoints.md`
 
 ### Implementation for User Story 2
 
-- [ ] T027 [P] [US2] Extend the shim layer with `cgexec`, `cgdelete`, and the `cgcreate` companion if the modules under test reference them, including per-shim `.conf` rules
-- [ ] T028 [P] [US2] Add the missing-tool detection helper to `tests/bash/helpers/skip.bash` so each behavioral test can declare its dependencies once
-- [ ] T029 [US2] Add the `--with-mocks` flag to `tests/bash/run.sh` and ensure the shim layer is prepended to `PATH` only when requested
-- [ ] T030 [US2] Run `tests/bash/run.sh` and `tests/bash/run.sh --with-mocks` and record both results in `specs/002-bash-test-suite/checkpoints.md`
-- [ ] T031 [US2] Commit US2 checkpoint and record the commit reference in `specs/002-bash-test-suite/checkpoints.md`
+- [X] T027 [P] [US2] Extend the shim layer with `cgexec`, `cgdelete`, and the `cgcreate` companion if the modules under test reference them, including per-shim `.conf` rules
+- [X] T028 [P] [US2] Add the missing-tool detection helper to `tests/bash/helpers/skip.bash` so each behavioral test can declare its dependencies once
+- [X] T029 [US2] Add the `--with-mocks` flag to `tests/bash/run.sh` and ensure the shim layer is prepended to `PATH` only when requested
+- [X] T030 [US2] Run `tests/bash/run.sh` and `tests/bash/run.sh --with-mocks` and record both results in `specs/002-bash-test-suite/checkpoints.md`
+- [X] T031 [US2] Commit US2 checkpoint and record the commit reference in `specs/002-bash-test-suite/checkpoints.md`
 
 **Checkpoint**: User Story 2 is independently functional when a maintainer on a bare host sees a TAP summary with every behavioral test either passing or skipped with a clear reason, and `--with-mocks` produces a non-skipping summary.
 
@@ -101,14 +101,14 @@
 
 ### Tests for User Story 3
 
-- [ ] T032 [US3] Author `tests/bash/tests/helper-integration.bats` that asserts `utils/validate-checkpoint.sh bash-tests` exits 0 when the suite passes and non-zero when a synthetic test fails (using a temp copy of the runner and a deliberately failing bats file)
+- [X] T032 [US3] Author `tests/bash/tests/helper-integration.bats` that asserts `utils/validate-checkpoint.sh bash-tests` exits 0 when the suite passes and non-zero when a synthetic test fails (using a temp copy of the runner and a deliberately failing bats file)
 
 ### Implementation for User Story 3
 
-- [ ] T033 [P] [US3] Add the `bash-tests` subcommand handler to `utils/validate-checkpoint.sh` and append it to the `all` subcommand sequence
-- [ ] T034 [US3] Print the latest report path at the end of the `bash-tests` step so the checkpoint log can reference it
-- [ ] T035 [US3] Run `utils/validate-checkpoint.sh all` on the local host and record the result in `specs/002-bash-test-suite/checkpoints.md`
-- [ ] T036 [US3] Commit US3 checkpoint and record the commit reference in `specs/002-bash-test-suite/checkpoints.md`
+- [X] T033 [P] [US3] Add the `bash-tests` subcommand handler to `utils/validate-checkpoint.sh` and append it to the `all` subcommand sequence
+- [X] T034 [US3] Print the latest report path at the end of the `bash-tests` step so the checkpoint log can reference it
+- [X] T035 [US3] Run `utils/validate-checkpoint.sh all` on the local host and record the result in `specs/002-bash-test-suite/checkpoints.md`
+- [X] T036 [US3] Commit US3 checkpoint and record the commit reference in `specs/002-bash-test-suite/checkpoints.md`
 
 **Checkpoint**: User Story 3 is independently functional when a maintainer who already knows `utils/validate-checkpoint.sh` can run `bash-tests` and `all` without learning a new command, and the helper's exit code reflects the suite's overall result.
 
@@ -118,12 +118,12 @@
 
 **Purpose**: Final consistency checks and any cleanup across all user stories.
 
-- [ ] T037 [P] Update `specs/002-bash-test-suite/quickstart.md` with the actual run command outputs once all stories are merged
-- [ ] T038 [P] Update `specs/002-bash-test-suite/tasks.md` final notes with the actual commit references
-- [ ] T039 [P] Update `specs/002-bash-test-suite/checkpoints.md` with the final consolidated report and a short summary of pass/fail/skip counts
-- [ ] T040 Run the full local validation suite (`utils/validate-checkpoint.sh all`) and record the output in `specs/002-bash-test-suite/checkpoints.md`
-- [ ] T041 Run `git status --short` and record clean/expected state in `specs/002-bash-test-suite/checkpoints.md`
-- [ ] T042 Commit the final polish checkpoint and record the commit reference in `specs/002-bash-test-suite/checkpoints.md`
+- [X] T037 [P] Update `specs/002-bash-test-suite/quickstart.md` with the actual run command outputs once all stories are merged
+- [X] T038 [P] Update `specs/002-bash-test-suite/tasks.md` final notes with the actual commit references
+- [X] T039 [P] Update `specs/002-bash-test-suite/checkpoints.md` with the final consolidated report and a short summary of pass/fail/skip counts
+- [X] T040 Run the full local validation suite (`utils/validate-checkpoint.sh all`) and record the output in `specs/002-bash-test-suite/checkpoints.md`
+- [X] T041 Run `git status --short` and record clean/expected state in `specs/002-bash-test-suite/checkpoints.md`
+- [X] T042 Commit the final polish checkpoint and record the commit reference in `specs/002-bash-test-suite/checkpoints.md`
 
 ---
 
