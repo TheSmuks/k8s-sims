@@ -1,0 +1,72 @@
+apiVersion: v1
+kind: Node
+metadata:
+  name: node-a
+  labels:
+    kubernetes.io/os: linux
+    kubernetes.io/hostname: node-a
+    zone: us-east-1a
+    gpu: "true"
+spec: {}
+status:
+  capacity:
+    cpu: "4"
+    memory: "8192Mi"
+---
+apiVersion: v1
+kind: Node
+metadata:
+  name: node-b
+  labels:
+    kubernetes.io/os: linux
+    kubernetes.io/hostname: node-b
+    zone: us-east-1b
+spec: {}
+status:
+  capacity:
+    cpu: "4"
+    memory: "8192Mi"
+---
+apiVersion: v1
+kind: Node
+metadata:
+  name: node-c
+  labels:
+    kubernetes.io/os: linux
+    kubernetes.io/hostname: node-c
+    zone: us-east-1a
+    gpu: "true"
+spec: {}
+status:
+  capacity:
+    cpu: "2"
+    memory: "4096Mi"
+---
+apiVersion: v1
+kind: Node
+metadata:
+  name: node-d
+  labels:
+    kubernetes.io/os: linux
+    kubernetes.io/hostname: node-d
+    zone: us-east-1b
+spec: {}
+status:
+  capacity:
+    cpu: "8"
+    memory: "16384Mi"
+---
+apiVersion: v1
+kind: Node
+metadata:
+  name: node-e
+  labels:
+    kubernetes.io/os: linux
+    kubernetes.io/hostname: node-e
+    zone: us-east-1a
+    special: "true"
+spec: {}
+status:
+  capacity:
+    cpu: "4"
+    memory: "8192Mi"

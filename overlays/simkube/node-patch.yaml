@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Node
+metadata:
+  name: node-placeholder
+  annotations:
+    kwok.x-k8s.io/node: "fake"
+spec:
+  taints:
+    - key: openb-only
+      value: "true"
+      effect: NoSchedule

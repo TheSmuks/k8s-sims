@@ -83,6 +83,18 @@ deploy_objects(){
     --driver-verbosity debug
 }
 
+# generate_traces: generate .sktrace files directly via kube-gen.py (no cluster needed)
+# Usage: generate_traces <output_dir> <node_count> <increment>
+generate_traces(){
+    local OUTPUT_DIR="${1:-output/simkube-traces}"
+    local NODE_COUNT="${2:-100}"
+    local INCREMENT="${3:-25}"
+    python "${LOCAL_PATH}/../../utils/kube-gen.py" \
+        --simkube --tracer \
+        -c "$NODE_COUNT" -i "$INCREMENT" \
+        -o "$OUTPUT_DIR"
+}
+
 wait_for_simulator_state(){
     local WANTED_STATE="$1"
     local MAX_WAIT_TIME=180

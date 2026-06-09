@@ -11,10 +11,10 @@ _  __     _           _____
 |_|\_\__,_|_.__/ \___|\_____|\___|_| |_|
 
 -------------------------------------------------
-usage: kube-gen.py [-h] -o OUTPUT_FOLDER [-c NODE_COUNT] [-i INCREMENT] [-k] [-s] [-os] [-hn HOLLOW_NODE_PATH]
+usage: kube-gen.py [-h] -o OUTPUT_FOLDER [-c NODE_COUNT] [-i INCREMENT] [-k] [-s] [-t] [-os] [-hn HOLLOW_NODE_PATH]
              [-nn NEW_NODE_PATH] [-n NODES_PATH] [-p PODS_PATH]
 kube-gen.py: error: the following arguments are required: -o/--output_folder
-usage: kube-gen.py [-h] -o OUTPUT_FOLDER [-c NODE_COUNT] [-i INCREMENT] [-k] [-s] [-os] [-hn HOLLOW_NODE_PATH]
+usage: kube-gen.py [-h] -o OUTPUT_FOLDER [-c NODE_COUNT] [-i INCREMENT] [-k] [-s] [-t] [-os] [-hn HOLLOW_NODE_PATH]
              [-nn NEW_NODE_PATH] [-n NODES_PATH] [-p PODS_PATH]
 
 options:
@@ -27,6 +27,7 @@ options:
                   Used to generate multiple files with steps of size n
 -k, --kubemark        Applies the kubemark patches to the generated files
 -s, --simkube         Applies the simkube patches to the generated files
+-t, --tracer          Generates .sktrace files directly (no cluster required)
 -os, --open_sim       Generates files with the opensim folder structure
 -hn HOLLOW_NODE_PATH, --hollow_node_path HOLLOW_NODE_PATH
                   Template hollow node file used for Kubemark
@@ -36,15 +37,12 @@ options:
                   Path to the YAML file containing the nodes
 -p PODS_PATH, --pods_path PODS_PATH
                   Path to the YAML file containing the pods
+
+Example (SimKube with tracer):
+  python utils/kube-gen.py --simkube -t -c 100 -i 25 -o output/test/
 ```
 ## Plotter
 [plotter.py](plotter.py) is a script that can be used to plot the results of the simulation.
 ```text
 usage: plotter.py [-h] -d DATA_DIRECTORY [-o OUTPUT_DIR]
-```
-## SimKube tracer
-[simkube-tracer.sh](simkube-tracer.sh) is a script that converts vanilla Kubernetes nodes and pods into a trace admitted by SimKube.
-
-```text
-Usage: simkube-tracer.sh <-e EXPERIMENT_FILES_PATH> <-n NAMESPACE>
 ```

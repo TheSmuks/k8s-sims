@@ -1,0 +1,155 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-plain-1
+  namespace: default
+spec:
+  containers:
+  - name: app
+    image: busybox
+    resources:
+      requests:
+        cpu: "1"
+        memory: "2048Mi"
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-plain-2
+  namespace: default
+spec:
+  containers:
+  - name: app
+    image: busybox
+    resources:
+      requests:
+        cpu: "1"
+        memory: "2048Mi"
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-plain-3
+  namespace: default
+spec:
+  containers:
+  - name: app
+    image: busybox
+    resources:
+      requests:
+        cpu: "1"
+        memory: "2048Mi"
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-plain-4
+  namespace: default
+spec:
+  containers:
+  - name: app
+    image: busybox
+    resources:
+      requests:
+        cpu: "1"
+        memory: "2048Mi"
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-plain-5
+  namespace: default
+spec:
+  containers:
+  - name: app
+    image: busybox
+    resources:
+      requests:
+        cpu: "1"
+        memory: "2048Mi"
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-affinity-gpu
+  namespace: default
+spec:
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: gpu
+            operator: In
+            values:
+            - "true"
+  containers:
+  - name: app
+    image: busybox
+    resources:
+      requests:
+        cpu: "1"
+        memory: "2048Mi"
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-affinity-gpu-2
+  namespace: default
+spec:
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: gpu
+            operator: In
+            values:
+            - "true"
+  containers:
+  - name: app
+    image: busybox
+    resources:
+      requests:
+        cpu: "1"
+        memory: "2048Mi"
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-no-resources
+  namespace: default
+spec:
+  containers:
+  - name: app
+    image: busybox
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-selector
+  namespace: default
+spec:
+  nodeSelector:
+    zone: us-east-1a
+  containers:
+  - name: app
+    image: busybox
+    resources:
+      requests:
+        cpu: "1"
+        memory: "2048Mi"
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-big-cpu
+  namespace: default
+spec:
+  containers:
+  - name: app
+    image: busybox
+    resources:
+      requests:
+        cpu: "6"
+        memory: "4096Mi"

@@ -1,6 +1,12 @@
 # config.yml for skctl snapshot to capture common resources
-
+#
 # trackedObjects defines which Kubernetes API resources SimKube should observe
 # and include in the trace or snapshot.
+#
+# Only v1.Pod is tracked because k8s-sims generates static snapshots (no
+# higher-level owners like Deployments or StatefulSets). The trace represents
+# a point-in-time placement of pods onto nodes, so pod-level tracking is
+# sufficient. If dynamic simulation with controllers is added later, include
+# apps/v1.Deployment, apps/v1.ReplicaSet, etc.
 trackedObjects:
     v1.Pod: {}
