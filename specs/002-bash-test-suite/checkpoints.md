@@ -54,4 +54,4 @@
 ## Commit references
 
 - `b7add19 [Spec Kit] Add tasks` (auto-committed after `/speckit-tasks`)
-- Implementation commit will be created by the `after_implement` auto-commit hook
+- `bd27de4 feat(tests): add bash correctness test suite (002-bash-test-suite)` (this implementation)
