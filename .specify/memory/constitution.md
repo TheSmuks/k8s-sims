@@ -1,50 +1,92 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+# k8s-sims Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. Shell Safety
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+All shell scripts must pass `bash -n` syntax checking, use `set -u` for unbound variable detection, and quote all variable expansions. The bash correctness test suite (`tests/bash/run.sh`) enforces this on every inventory entry.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### II. Conventional Commits (NON-NEGOTIABLE)
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+All commits MUST follow the [Conventional Commits](https://www.conventionalcommits.org/) v1.0.0 specification. Format:
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+```
+<type>(<scope>): <description>
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+[optional body]
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+[optional footer(s)]
+```
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+**Allowed types**: `feat`, `fix`, `docs`, `style`, `refactor`, `test`, `chore`, `ci`, `build`, `perf`, `revert`.
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+**Scopes**: `runner`, `director`, `modules`, `entrypoint`, `utils`, `tests`, `deps`, `docker`, `spec`, `infra`, or omitted for repo-wide changes.
+
+Examples:
+- `feat(runner): add --with-mocks flag for shim-based testing`
+- `fix(director): quote experiment path in module invocation`
+- `docs: update ARCHITECTURE.md with test suite layer`
+- `test(modules): add behavioral tests for kwok and simkube`
+- `chore(deps): pin bats-core to 1.11.0`
+
+Non-conforming commit messages must be amended before merge.
+
+### III. Conventional Branches (NON-NEGOTIABLE)
+
+All non-trunk branches MUST follow the [Conventional Branch](https://conventionalbranch.org/) specification. Format:
+
+```
+<type>/<description>
+```
+
+**Allowed types**: `feature` (or `feat`), `bugfix` (or `fix`), `hotfix`, `release`, `chore`.
+
+**Trunk branches**: `main`, `develop` (no prefix).
+
+**Rules**:
+- Lowercase alphanumerics and hyphens only (no underscores, no spaces, no uppercase).
+- No consecutive, leading, or trailing hyphens.
+- Descriptions must be concise and descriptive.
+- Include ticket numbers where applicable (e.g., `feat/issue-12-bash-test-suite`).
+
+Examples:
+- `feature/bash-test-suite`
+- `fix/quote-paths-in-director`
+- `hotfix/entrypoint-image-pull`
+- `release/v1.2.0`
+- `chore/pin-bats-version`
+
+Non-conforming branch names must be renamed before merge.
+
+### IV. Test-First for Shell Changes
+
+Any change to a shell script in the inventory must be accompanied by a corresponding test in the bats suite. Red-Green-Refactor: write or update the test, confirm it fails, then make the change, confirm it passes.
+
+### V. No Silent Overwrites
+
+Result files (`results/*.csv`) are never silently overwritten. The runner preserves existing files as `*.preserved-YYYYmmdd-HHMMSS.csv`. Plotting tools ignore preserved backups by default.
+
+### VI. Privileged Execution Awareness
+
+Full simulator execution requires Docker-in-Docker, host cgroup access, or network pulls. Non-privileged validation paths (syntax checks, Python compilation, fixture plotting, bash test suite) must always remain available and passing.
+
+## Development Constraints
+
+- **Platform**: Scripts must work on POSIX sh (bash 5+) and be validated on both Linux and Windows/Git-Bash (MSYS2).
+- **Line endings**: CRLF is the repo default; all tools must handle it.
+- **Python**: 3.12+; dependencies listed in `requirements.txt`.
+- **External tools**: kwokctl, kubectl, kind, docker, cgexec are runtime-only dependencies. Tests skip gracefully when these are absent; `--with-mocks` provides PATH shims for forced execution.
+
+## Workflow
+
+1. Create a feature branch from `main` using the Spec Kit workflow or manually with conventional commit prefix.
+2. Implement changes with tests.
+3. Validate: `bash tests/bash/run.sh` and `utils/validate-checkpoint.sh all`.
+4. Commit with conventional commit format.
+5. Push and open a PR for review.
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+This constitution supersedes ad-hoc practices. Amendments require documentation in this file, a conventional commit of type `docs(spec)`, and verification that existing tests still pass.
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 1.1.0 | **Ratified**: 2026-06-09 | **Last Amended**: 2026-06-09

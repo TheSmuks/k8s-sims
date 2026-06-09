@@ -35,5 +35,9 @@ secrets/
 kubeconfig*
 *.key
 *.crt
-.env*
+*.env*
 !.env.example
+# Bash test suite runtime artifacts
+tests/bash/.bats/
+tests/bash/.reports/
+tests/bash/.cache/

@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+export SHIM_NAME="skctl"
+export SHIM_DIR="tests/mocks/bin"
+source "tests/mocks/bin/_shim.sh" "$@"
