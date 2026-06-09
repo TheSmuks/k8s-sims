@@ -1,6 +1,35 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
-resources:
-  - node-patch.yaml
-  - pod-patch.yaml
+# Apply KWOK node annotation + openb-only taint to all Node resources.
+# Usage: kubectl kustomize --load-restrictor LoadRestrictionsNone \
+#          <base-dir> | this overlay
+patches:
+  - target:
+      kind: Node
+    patch: |
+      apiVersion: v1
+      kind: Node
+      metadata:
+        name: .
+        annotations:
+          kwok.x-k8s.io/node: "fake"
+      spec:
+        taints:
+          - key: openb-only
+            value: "true"
+            effect: NoSchedule
+
+  - target:
+      kind: Pod
+    patch: |
+      apiVersion: v1
+      kind: Pod
+      metadata:
+        name: .
+      spec:
+        tolerations:
+          - key: openb-only
+            operator: Equal
+            value: "true"
+            effect: NoSchedule

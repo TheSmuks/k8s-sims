@@ -1,6 +1,38 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
-resources:
-  - node-patch.yaml
-  - pod-patch.yaml
+# Apply Kubemark nodeAffinity to all Pod resources and
+# ConfigMap-style node transform to all Node resources.
+patches:
+  - target:
+      kind: Node
+    patch: |
+      apiVersion: v1
+      kind: Node
+      metadata:
+        name: .
+        annotations:
+          kwok.x-k8s.io/node: "fake"
+      spec:
+        taints:
+          - key: openb-only
+            value: "true"
+            effect: NoSchedule
+
+  - target:
+      kind: Pod
+    patch: |
+      apiVersion: v1
+      kind: Pod
+      metadata:
+        name: .
+      spec:
+        affinity:
+          nodeAffinity:
+            requiredDuringSchedulingIgnoredDuringExecution:
+              nodeSelectorTerms:
+                - matchExpressions:
+                    - key: node-role.kubernetes.io/node
+                      operator: In
+                      values:
+                        - kubemark-node

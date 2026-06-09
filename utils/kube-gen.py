@@ -107,7 +107,12 @@ def apply_overlay(manifests: list[dict], overlay_dir: str) -> list[dict]:
 
 
 def _apply_overlay_kubectl(manifests: list[dict], overlay_dir: str) -> list[dict]:
-    """Apply overlay using kubectl kustomize subprocess."""
+    """Apply overlay using kubectl kustomize subprocess.
+
+    Writes manifests as a base resources.yaml, then creates a
+    kustomization.yaml that imports the overlay's patches (inline or file)
+    and applies them to the base resources.
+    """
     subprocess.run(
         ["kubectl", "version", "--client"],
         capture_output=True,
@@ -115,28 +120,39 @@ def _apply_overlay_kubectl(manifests: list[dict], overlay_dir: str) -> list[dict
     )
 
     with tempfile.TemporaryDirectory(prefix="k8s-sims-kust-") as tmpdir:
+        # Write base manifests
         resources_path = os.path.join(tmpdir, "resources.yaml")
         with open(resources_path, "w") as f:
             yaml.dump_all(manifests, f, default_flow_style=False)
 
+        # Read the overlay's kustomization.yaml to extract patches
+        overlay_kust_path = os.path.join(overlay_dir, "kustomization.yaml")
+        overlay_patches = []
+        if os.path.exists(overlay_kust_path):
+            with open(overlay_kust_path) as f:
+                overlay_kust = yaml.safe_load(f) or {}
+            overlay_patches = overlay_kust.get("patches", [])
+
+        if not overlay_patches:
+            return manifests
+
+        # Build composite kustomization: base resources + overlay patches
         kust = {
             "apiVersion": "kustomize.config.k8s.io/v1beta1",
             "kind": "Kustomization",
             "resources": ["resources.yaml"],
-            "patches": [],
+            "patches": overlay_patches,
         }
 
+        # Copy any referenced patch files into tmpdir
         for fname in sorted(os.listdir(overlay_dir)):
+            if fname == "kustomization.yaml":
+                continue
             if fname.endswith(".yaml") or fname.endswith(".yml"):
-                if fname == "kustomization.yaml":
-                    continue
-                patch_path = os.path.join(overlay_dir, fname)
-                dst = os.path.join(tmpdir, fname)
-                shutil.copy2(patch_path, dst)
-                kust["patches"].append({"path": fname})
-
-        if not kust["patches"]:
-            return manifests
+                shutil.copy2(
+                    os.path.join(overlay_dir, fname),
+                    os.path.join(tmpdir, fname),
+                )
 
         kust_path = os.path.join(tmpdir, "kustomization.yaml")
         with open(kust_path, "w") as f:
@@ -192,21 +208,49 @@ def _strategic_merge(base: dict, patch: dict) -> dict:
 
 
 def _apply_overlay_python(manifests: list[dict], overlay_dir: str) -> list[dict]:
-    """Apply overlay using Python-based strategic merge patching (fallback)."""
-    # Load all patch files
+    """Apply overlay using Python-based strategic merge patching (fallback).
+
+    Reads patches from the kustomization.yaml `patches` field, supporting
+    both inline patches (with `target` selector and `patch` YAML string)
+    and file-based patches.
+    """
+    kust_path = os.path.join(overlay_dir, "kustomization.yaml")
+    if not os.path.exists(kust_path):
+        return manifests
+
+    with open(kust_path) as f:
+        kust = yaml.safe_load(f) or {}
+
+    raw_patches = kust.get("patches", [])
+    if not raw_patches:
+        return manifests
+
+    # Parse patches into (target_kind, patch_dict) pairs
     patches_by_kind: dict[str, list[dict]] = {}
-    for fname in sorted(os.listdir(overlay_dir)):
-        if fname == "kustomization.yaml":
-            continue
-        if not (fname.endswith(".yaml") or fname.endswith(".yml")):
-            continue
-        fpath = os.path.join(overlay_dir, fname)
-        with open(fpath) as f:
-            docs = list(yaml.safe_load_all(f))
-            for doc in docs:
-                if doc and "kind" in doc:
-                    kind = doc["kind"]
-                    patches_by_kind.setdefault(kind, []).append(doc)
+    for entry in raw_patches:
+        patch_dict = None
+        target_kind = None
+
+        if isinstance(entry, dict):
+            # Inline patch with target selector
+            target = entry.get("target", {})
+            target_kind = target.get("kind")
+            patch_yaml = entry.get("patch", "")
+            if patch_yaml:
+                patch_dict = yaml.safe_load(patch_yaml)
+
+        if patch_dict and target_kind:
+            patches_by_kind.setdefault(target_kind, []).append(patch_dict)
+
+        elif isinstance(entry, str):
+            # File-based patch
+            fpath = os.path.join(overlay_dir, entry)
+            if os.path.exists(fpath):
+                with open(fpath) as pf:
+                    docs = list(yaml.safe_load_all(pf))
+                    for doc in docs:
+                        if doc and "kind" in doc:
+                            patches_by_kind.setdefault(doc["kind"], []).append(doc)
 
     if not patches_by_kind:
         return manifests
