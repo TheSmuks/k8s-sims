@@ -19,7 +19,7 @@ Each checkpoint records scope, commands, outcome, blockers, and commit/reference
   - `python -m py_compile utils/*.py` -> exit 0 (after `.venv` install of `requirements.txt`)
   - `python utils/kube-gen.py -o /tmp/k8s-sims-validation/gen -c 1 -i 1` -> produced `nodes-1.yaml` and `pods-1.yaml`
 - Local environment blocker recorded: `kwokctl`, `kubectl`, `kind`, and Docker are not installed in this Git-Bash environment, so full simulator execution cannot be performed; baseline is therefore limited to syntax checks, Python compile, dataset generator smoke, and fixture-based plotting.
-- Commit/reference: commit deferred; checkpoints log records all validation evidence and blockers; verified tree clean apart from intentional files.
+- Commit/reference: 481856a "[Spec Kit] Implementation progress"; verified tree clean apart from intentional files.
 
 ## User Story 1 - Plotting and summary reliability
 
@@ -30,7 +30,7 @@ Each checkpoint records scope, commands, outcome, blockers, and commit/reference
   - Valid fixtures: produced line, bar, correlation, and CPU ratio artifacts under `/tmp/k8s-sims-validation/plots/`; `summary.json` written.
   - Edge fixtures: constant-metric, zero-pod, unknown-simulator, malformed, and empty files processed without traceback; empty file skipped, malformed file skipped, unknown simulator accepted with default style, zero-pod handled.
   - Missing directory: clear error `Error: Data directory '...' does not exist or is not a directory.` and exit code 1.
-- Commit/reference: commit deferred; checkpoints log records all validation evidence and blockers.
+- Commit/reference: 481856a "[Spec Kit] Implementation progress".
 
 ## User Story 2 - Runner predictability
 
@@ -55,7 +55,7 @@ Each checkpoint records scope, commands, outcome, blockers, and commit/reference
   - `python utils/kube-gen.py -o "/tmp/k8s-sims-validation/path with spaces" -c 1 -i 1` -> produced `nodes-1.yaml` and `pods-1.yaml` in the spaced path.
   - `(cd /tmp && bash <repo>/kube-run.sh -e "<spaced path>" -m kwok -n 1 -x 1)` -> runner invoked from outside the repo root, accepted the spaced path, preserved the existing `kwok.csv` as `kwok.preserved-20260609-*.csv` with a visible WARN, then recorded a failed-run row because `kwokctl`/`kubectl` are not installed in this environment.
 - Local environment blocker recorded: full simulator execution requires Docker, kind, KWOK, and kubectl, which are not present in this Git-Bash environment. The closest completed validation is fixture generation, runner invocation from outside the repo root, and the visible preservation behavior.
-- Commit/reference: commit deferred; checkpoints log records all validation evidence and blockers.
+- Commit/reference: 481856a "[Spec Kit] Implementation progress".
 
 ## User Story 3 - Simulator setup, mode inventory, and reproducibility
 
@@ -66,7 +66,7 @@ Each checkpoint records scope, commands, outcome, blockers, and commit/reference
 - `SECURITY.md`: documents privileged Docker, Docker-in-Docker, host cgroup access, and local environment file risks; recommends disposable VMs and reviews of module scripts.
 - `SIM_MODULES.md`: authoritative inventory of active, experimental, unavailable, and legacy modes plus result preservation policy.
 - Validation: `git grep -n "sarteco-2026\|privileged\|simulator mode\|reproduc" -- . ':!data/**'` returns matches in `quickstart.md`, `plan.md`, `research.md`, `contracts/cli-contracts.md`, and `SIM_MODULES.md`.
-- Commit/reference: commit deferred; checkpoints log records all validation evidence and blockers.
+- Commit/reference: 481856a "[Spec Kit] Implementation progress".
 
 ## User Story 4 - Result preservation
 
@@ -77,7 +77,7 @@ Each checkpoint records scope, commands, outcome, blockers, and commit/reference
   - `mkdir -p /tmp/k8s-sims-validation/results; printf 'existing\n' > example.csv` and rerunning the runner preserved the original contents and left the backup under a `*.preserved-*.csv` name.
   - The plotting workflow now explicitly filters `*.preserved-*.csv` files (see `candidate_result_files` and `min-max-avg.py`).
   - All earlier checkpoints have validation evidence recorded in this document.
-- Commit/reference: commit deferred; checkpoints log records all validation evidence and blockers.
+- Commit/reference: 481856a "[Spec Kit] Implementation progress".
 
 ## Final validation
 
@@ -88,4 +88,4 @@ Each checkpoint records scope, commands, outcome, blockers, and commit/reference
 - `python utils/min-max-avg.py -d tests/fixtures/results/valid -o <summary-output>` -> produces `summary.json`.
 - Local environment blocker: full simulator execution requires Docker, kind, KWOK, kubectl, and OpenSimulator tooling; the closest available validation is fixture-based plotting, dataset generation, runner invocation, and visible preservation behavior.
 - `git status --short` after the implementation changes shows the expected modified and new files described above and no unrelated untracked files (apart from `.venv/` which is gitignored).
-- Commit/reference: final commit deferred; checkpoints log records all validation evidence and blockers.
+- Commit/reference: 481856a "[Spec Kit] Implementation progress" (final).
