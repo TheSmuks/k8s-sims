@@ -31,15 +31,42 @@ Examples:
 
 Non-conforming commit messages must be amended before merge.
 
-### III. Test-First for Shell Changes
+### III. Conventional Branches (NON-NEGOTIABLE)
+
+All non-trunk branches MUST follow the [Conventional Branch](https://conventionalbranch.org/) specification. Format:
+
+```
+<type>/<description>
+```
+
+**Allowed types**: `feature` (or `feat`), `bugfix` (or `fix`), `hotfix`, `release`, `chore`.
+
+**Trunk branches**: `main`, `develop` (no prefix).
+
+**Rules**:
+- Lowercase alphanumerics and hyphens only (no underscores, no spaces, no uppercase).
+- No consecutive, leading, or trailing hyphens.
+- Descriptions must be concise and descriptive.
+- Include ticket numbers where applicable (e.g., `feat/issue-12-bash-test-suite`).
+
+Examples:
+- `feature/bash-test-suite`
+- `fix/quote-paths-in-director`
+- `hotfix/entrypoint-image-pull`
+- `release/v1.2.0`
+- `chore/pin-bats-version`
+
+Non-conforming branch names must be renamed before merge.
+
+### IV. Test-First for Shell Changes
 
 Any change to a shell script in the inventory must be accompanied by a corresponding test in the bats suite. Red-Green-Refactor: write or update the test, confirm it fails, then make the change, confirm it passes.
 
-### IV. No Silent Overwrites
+### V. No Silent Overwrites
 
 Result files (`results/*.csv`) are never silently overwritten. The runner preserves existing files as `*.preserved-YYYYmmdd-HHMMSS.csv`. Plotting tools ignore preserved backups by default.
 
-### V. Privileged Execution Awareness
+### VI. Privileged Execution Awareness
 
 Full simulator execution requires Docker-in-Docker, host cgroup access, or network pulls. Non-privileged validation paths (syntax checks, Python compilation, fixture plotting, bash test suite) must always remain available and passing.
 
@@ -62,4 +89,4 @@ Full simulator execution requires Docker-in-Docker, host cgroup access, or netwo
 
 This constitution supersedes ad-hoc practices. Amendments require documentation in this file, a conventional commit of type `docs(spec)`, and verification that existing tests still pass.
 
-**Version**: 1.0.0 | **Ratified**: 2026-06-09 | **Last Amended**: 2026-06-09
+**Version**: 1.1.0 | **Ratified**: 2026-06-09 | **Last Amended**: 2026-06-09
