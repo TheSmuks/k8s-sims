@@ -70,16 +70,11 @@ utils/
 
 overlays/                    # NEW: Kustomize overlay directories
 ├── simkube/
-│   ├── kustomization.yaml
-│   ├── node-patch.yaml
-│   └── pod-patch.yaml
+│   └── kustomization.yaml   # Inline patches with target selectors (Node, Pod)
 ├── kubemark/
-│   ├── kustomization.yaml
-│   ├── node-patch.yaml
-│   └── pod-patch.yaml
+│   └── kustomization.yaml   # Inline patches with target selectors (Node, Pod)
 └── opensim/
-    ├── kustomization.yaml
-    └── ...
+    └── kustomization.yaml   # Placeholder (no patches)
 
 tests/
 ├── test_binpack.py          # NEW: Bin-packing unit tests
@@ -153,12 +148,12 @@ tests/
 
 **Scope**: Replace Python patch callbacks with declarative overlays.
 
-- Create `overlays/simkube/kustomization.yaml` referencing node-patch.yaml and pod-patch.yaml
-- Create `overlays/simkube/node-patch.yaml` with strategic merge patch: `kwok.x-k8s.io/node: fake` annotation + `openb-only` taint
-- Create `overlays/simkube/pod-patch.yaml` with strategic merge patch: toleration for `openb-only`
-- Create `overlays/kubemark/kustomization.yaml` and patches matching current `patch_hollow_node` / `patch_hollow_pod` behavior
-- Create `overlays/opensim/kustomization.yaml` (if applicable, may be placeholder)
-- Verify with `kubectl kustomize overlays/simkube/` that output is semantically equivalent to current Python patch output
+- Create `overlays/simkube/kustomization.yaml` with inline patches using `target.kind` selectors for Node and Pod
+- Simkube Node patch: `kwok.x-k8s.io/node: fake` annotation + `openb-only` taint
+- Simkube Pod patch: toleration for `openb-only`
+- Create `overlays/kubemark/kustomization.yaml` with inline patches matching current `patch_hollow_node` / `patch_hollow_pod` behavior
+- Create `overlays/opensim/kustomization.yaml` (placeholder)
+- Verify with `kubectl kustomize` that output is semantically equivalent to current Python patch output
 
 **Commit**: `feat(overlays): add kustomize overlays for simkube and kubemark`
 

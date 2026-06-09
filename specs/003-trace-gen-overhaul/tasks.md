@@ -109,13 +109,13 @@
 109|109|109|
 110|110|110|### Implementation for User Story 3
 111|111|111|
-112|112|112|- [X] T029 [P] [US3] Create `overlays/simkube/kustomization.yaml` with resources and patches referencing node-patch.yaml, pod-patch.yaml
-113|113|113|- [X] T030 [P] [US3] Create `overlays/simkube/node-patch.yaml` -- strategic merge patch: `kwok.x-k8s.io/node: fake` annotation + `openb-only=true:NoSchedule` taint
-114|114|114|- [X] T031 [P] [US3] Create `overlays/simkube/pod-patch.yaml` -- strategic merge patch: toleration for `openb-only` key Equal true NoSchedule
-115|115|115|- [X] T032 [P] [US3] Create `overlays/kubemark/kustomization.yaml` and `overlays/kubemark/node-patch.yaml` matching current `patch_hollow_node` behavior (ConfigMap transform)
-116|116|116|- [X] T033 [P] [US3] Create `overlays/kubemark/pod-patch.yaml` matching current `patch_hollow_pod` behavior (nodeAffinity for `kubemark-node`)
-117|117|117|- [X] T034 [US3] Verify semantic equivalence: load both Python-patched and kustomize-patched output with `yaml.safe_load_all`, compare parsed dicts for nodes and pods
-118|118|118|- [X] T035 [P] [US3] Create `overlays/opensim/kustomization.yaml` placeholder (minimal, no patches until OpenSim module is reworked)
+- [X] T029 [P] [US3] Create `overlays/simkube/kustomization.yaml` with inline patches using `target.kind` selectors for Node and Pod
+- [X] T030 [P] [US3] Simkube Node inline patch: `kwok.x-k8s.io/node: fake` annotation + `openb-only=true:NoSchedule` taint
+- [X] T031 [P] [US3] Simkube Pod inline patch: toleration for `openb-only` key Equal true NoSchedule
+- [X] T032 [P] [US3] Create `overlays/kubemark/kustomization.yaml` with inline patches matching current `patch_hollow_node` behavior (KWOK annotation, taint)
+- [X] T033 [P] [US3] Kubemark Pod inline patch matching current `patch_hollow_pod` behavior (nodeAffinity for `kubemark-node`)
+- [X] T034 [US3] Verify semantic equivalence: load both Python-patched and kustomize-patched output with `yaml.safe_load_all`, compare parsed dicts for nodes and pods
+- [X] T035 [P] [US3] Create `overlays/opensim/kustomization.yaml` placeholder (minimal, no patches until OpenSim module is reworked)
 119|119|119|
 120|120|120|**Checkpoint**: User Story 3 complete -- kustomize overlays produce semantically equivalent output. Verify with `kubectl kustomize overlays/simkube/`.
 121|121|121|
@@ -213,12 +213,12 @@
 213|213|213|Task T021: "Implement write_sktrace in utils/sktrace.py"
 214|214|214|Task T022: "Implement validate_sktrace in utils/sktrace.py"
 215|215|215|
-216|216|216|# Stream B: Kustomize overlays (independent, different files)
-217|217|217|Task T029: "Create overlays/simkube/kustomization.yaml"
-218|218|218|Task T030: "Create overlays/simkube/node-patch.yaml"
-219|219|219|Task T031: "Create overlays/simkube/pod-patch.yaml"
-220|220|220|Task T032: "Create overlays/kubemark/kustomization.yaml + node-patch.yaml"
-221|221|221|Task T033: "Create overlays/kubemark/pod-patch.yaml"
+# Stream B: Kustomize overlays (independent, different files)
+Task T029: "Create overlays/simkube/kustomization.yaml with inline patches"
+Task T030: "Simkube Node inline patch: KWOK annotation + taint"
+Task T031: "Simkube Pod inline patch: toleration for openb-only"
+Task T032: "Create overlays/kubemark/kustomization.yaml with inline patches"
+Task T033: "Kubemark Pod inline patch: nodeAffinity for kubemark-node"
 222|222|222|```
 223|223|223|
 224|224|224|---

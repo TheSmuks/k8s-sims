@@ -62,19 +62,16 @@ The overlay directory structure will be:
 ```
 overlays/
 ├── simkube/
-│   ├── kustomization.yaml
-│   ├── node-patch.yaml    # KWOK annotation + taint
-│   └── pod-patch.yaml     # toleration for openb-only
+│   └── kustomization.yaml   # Inline patches with target.kind selectors
 ├── kubemark/
-│   ├── kustomization.yaml
-│   ├── node-patch.yaml    # hollow node ConfigMap transform
-│   └── pod-patch.yaml     # nodeAffinity for kubemark-node
+│   └── kustomization.yaml   # Inline patches with target.kind selectors
 └── opensim/
-    ├── kustomization.yaml
-    └── ...                 # OpenSim-specific patches
+    └── kustomization.yaml   # Placeholder (no patches)
 ```
 
-`kube-gen.py` calls `kubectl kustomize overlays/simkube/` for each generated node/pod file, captures stdout as YAML, and parses it with `yaml.safe_load_all`.
+Each `kustomization.yaml` uses inline `patches` with `target.kind` selectors instead of separate patch files. This keeps overlays self-contained (single file per simulator) while remaining standard kustomize consumable by `kubectl kustomize`.
+
+`kube-gen.py` calls `kubectl kustomize` with a temporary directory containing base resources + overlay patches. Falls back to Python-based strategic merge when kubectl is not on PATH.
 
 **Alternatives considered**:
 - Standalone `kustomize` binary -- extra install step, `kubectl` already has it built-in
