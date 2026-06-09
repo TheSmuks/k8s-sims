@@ -5,7 +5,7 @@
 ## Active simulator modes
 
 | Mode | Module | Data path rule | Requirements | Runtime dependencies | Cleanup | Verification |
-|---|---|---|---|---|---|---|---|
+|---|---|---|---|---|---|---|
 | `kwok` | `modules/kwok/module.sh` | `vanilla/` datasets from director, or direct `nodes-*.yaml`/`pods-*.yaml` | `kwokctl`, `kubectl` | kind node image pinned to `kindest/node:v1.29.0`; KWOK installed externally or in container | `kwokctl delete cluster --name kwok` | syntax, path, best-effort run |
 | `kube-sched` | `modules/kube-sched/module.sh` | `vanilla/` datasets | Docker Compose, scheduler simulator, `kubectl` | scheduler simulator repository checked out at `v0.4.0`; KWOK cluster image pinned to `registry.k8s.io/kwok/cluster:v0.5.1-k8s.v1.29.0` | `docker compose down` | syntax and documented runtime blocker when Docker unavailable |
 | `simkube` | `modules/simkube/module.sh` | `simkube/` datasets with `trace-*.sktrace` | kind, KWOK manifests, Prometheus, SimKube | KWOK manifests pinned to v0.7.0 URLs; SimKube repository checked out at `v2.3.0`; kube-prometheus currently follows upstream default branch and is intentionally variable | kind cluster deletion | syntax and documented runtime blocker when tooling unavailable |
