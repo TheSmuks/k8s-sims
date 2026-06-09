@@ -12,6 +12,7 @@ from datetime import datetime
 from typing import List, Dict, Tuple, Optional, Any
 import shutil
 import subprocess
+import shlex
 
 script_dir = os.path.dirname(os.path.realpath(__file__))
 animation_msg: str = ""
@@ -218,16 +219,16 @@ def print_msg(msg: str, cr: bool = False) -> None:
 
 def run_simkube_tracer(output_folder: str, namespace:str="paib-gpu"):
     print_msg("Starting simkube-tracer")
-    result_path = os.path.join(output_folder)
+    result_path = os.path.abspath(output_folder)
     tracer_path = os.path.join(script_dir, "simkube-tracer.sh")
-    subprocess.check_call(f"{tracer_path} -e {result_path} -n {namespace}", shell=True)
+    subprocess.check_call([tracer_path, "-e", result_path, "-n", namespace])
 
 def invoke_kube_run(output_folder: str, arguments: str):
     print_msg("Starting kube-run")
-    result_path = os.path.join(output_folder)
-    root_dir = os.path.dirname(os.path.dirname(script_dir))
+    result_path = os.path.abspath(output_folder)
+    root_dir = os.path.dirname(script_dir)
     kube_director_path = os.path.join(root_dir, "kube-director.sh")
-    subprocess.check_call(f"{kube_director_path} -e {result_path} {arguments}", shell=True)
+    subprocess.check_call([kube_director_path, "-e", result_path, *shlex.split(arguments)])
 
 def print_ascii() -> None:
     """Print ASCII art banner for the application."""

@@ -29,6 +29,12 @@ This project exposes script and utility commands rather than a web API. These co
 - Malformed files are skipped or rejected with a message that identifies the file and problem.
 - The command does not fail on startup due to syntax or import errors when required dependencies are installed.
 
+**Result file format**:
+- Files are pipe-delimited CSV (`|`) with a header row.
+- Numeric values may use comma decimals, matching the runner output format used by the project fixtures.
+- Required fields for plotting are `node_count`, `pod_count`, `timeout_reached`, `mem_exceeded`, `run_time`, `total_cpu_seconds`, `user_cpu_seconds`, `system_cpu_seconds`, `memory_peak_gb`, and `unscheduled_pods`.
+- Preserved backup files named `*.preserved-*.csv` are ignored by default so they do not appear as extra simulator series.
+
 **Validation examples**:
 - Valid fixtures produce line and bar outputs.
 - Missing directory returns a clear error and no traceback for expected input errors.

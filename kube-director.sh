@@ -88,14 +88,10 @@ parse_args() {
         esac
     done
 
-    if [[ ! -z "$OUT_FOLDER" ]] && [[ ! -d "$OUT_FOLDER" ]]; then
-        log ERROR "Output folder does not exist: $OUT_FOLDER" >&2
-        exit 1
-    fi
-
     if [[ -z $OUT_FOLDER ]]; then
         OUT_FOLDER=$DEFAULT_OUTPUT_FOLDER
     fi
+    mkdir -p "$OUT_FOLDER"
 
     if [[ -z $MAX_SIMULATION_TIME ]]; then
         MAX_SIMULATION_TIME=$DEFAULT_MAX_SIMULATION_TIME
@@ -130,7 +126,7 @@ cleanup() {
 }
 
 load_modules() {
-    read -a SIMULATORS -d EOF < SIM_MODULES
+    mapfile -t SIMULATORS < "$LOCAL_PATH/SIM_MODULES"
     if [[ ${#SIMULATORS[@]} -eq 0 ]]; then
         log ERROR "No simulators found in MODULES file" >&2
         exit 1
@@ -152,13 +148,14 @@ load_modules
 log INFO "Modules loaded: ${SIMULATORS[*]}"
 
 parse_args "$@"
-log INFO "[Run all] - Received arguments: $@"
+log INFO "[Run all] - Received arguments: $*"
 if [[ ! -z "${VERBOSE}" ]]; then
     set -euxo pipefail
 fi
 
 trap cleanup SIGINT
-for i in ${!SIMULATORS[@]}; do
+for i in "${!SIMULATORS[@]}"; do
+    [[ -z "${SIMULATORS[i]}" ]] && continue
     log INFO "Starting experiments for ${SIMULATORS[i]}"
     if [[ ${SIMULATORS[i]} =~ ^(kwok|kube-sched)$ ]]; then
         DATA_PATH="${EXPERIMENT_FILES_PATH}/vanilla"
@@ -167,12 +164,12 @@ for i in ${!SIMULATORS[@]}; do
     else
         DATA_PATH="${EXPERIMENT_FILES_PATH}/${SIMULATORS[i]}"
     fi
-    ${LOCAL_PATH}/kube-run.sh -m ${SIMULATORS[i]} \
+    "${LOCAL_PATH}/kube-run.sh" -m "${SIMULATORS[i]}" \
     -e "${DATA_PATH}" \
-    -n ${RUNS} \
-    -s ${START} \
-    -t ${MEMORY_THRESHOLD} \
-    -x ${MAX_SIMULATION_TIME} \
+    -n "${RUNS}" \
+    -s "${START}" \
+    -t "${MEMORY_THRESHOLD}" \
+    -x "${MAX_SIMULATION_TIME}" \
     -o "${OUT_FOLDER}/${SIMULATORS[i]}.csv"
     if [[ $? -ne 0 ]]; then
         log WARN "${SIMULATORS[i]} experiment interrupted."
@@ -183,6 +180,6 @@ for i in ${!SIMULATORS[@]}; do
     log INFO "Deleting all remaining kind clusters"
     clean_cluster "${SIMULATORS[i]}"
 done
-if [[ ! -z $PLOT_RESULTS ]]; then
-    python3 utils/kube-plot.py -d $OUT_FOLDER -l -b
+if [[ -n "$PLOT_RESULTS" ]]; then
+    python "${LOCAL_PATH}/utils/kube-plot.py" -d "$OUT_FOLDER" -o "$OUT_FOLDER/plots" -l -b
 fi

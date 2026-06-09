@@ -10,26 +10,26 @@ create_cluster(){
         log INFO "$CLUSTER_NAME already exists. Deleting..."
         kwokctl delete cluster --name "$CLUSTER_NAME" 2>/dev/null || true
     fi
-    kwokctl create cluster --name $CLUSTER_NAME \
+    kwokctl create cluster --name "$CLUSTER_NAME" \
     --timeout 60s \
     --kind-node-image kindest/node:v1.29.0
 }
 
 cluster_setup(){
-    kubectl config use-context kwok-${CLUSTER_NAME}
+    kubectl config use-context "kwok-${CLUSTER_NAME}"
 }
 
 cleanup_cluster(){
-    kwokctl delete cluster --name $CLUSTER_NAME
+    kwokctl delete cluster --name "$CLUSTER_NAME"
 }
 
 deploy_objects(){
     local NODE_FILE="$1"
     local POD_FILE="$2"
-    kubectl create namespace ${NAMESPACE}
-    wait_for_namespace ${NAMESPACE}
-    kubectl create -f $NODE_FILE
-    kubectl create -f $POD_FILE -n ${NAMESPACE}
+    kubectl create namespace "$NAMESPACE"
+    wait_for_namespace "$NAMESPACE"
+    kubectl create -f "$NODE_FILE"
+    kubectl create -f "$POD_FILE" -n "$NAMESPACE"
 }
 
 log INFO "KWOK module loaded!"

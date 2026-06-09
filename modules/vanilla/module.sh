@@ -16,13 +16,13 @@ create_cluster(){
 }
 
 cluster_setup(){
-    kubectl create namespace $NAMESPACE
+    kubectl create namespace "$NAMESPACE"
 }
 
 deploy_objects(){
     local NODE_FILE="$1" # In this case it is empty
     local POD_FILE="$2"
-    kubectl create -f $POD_FILE --namespace=$NAMESPACE
+    kubectl create -f "$POD_FILE" --namespace="$NAMESPACE"
 }
 
 cleanup_cluster(){

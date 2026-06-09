@@ -22,7 +22,7 @@ create_cluster(){
 cluster_setup(){
     local SIM_CONTEXT="kind-$CLUSTER_NAME"
     cd "${LOCAL_PATH}"
-    kubectl config use-context $SIM_CONTEXT
+    kubectl config use-context "$SIM_CONTEXT"
     kubectl apply -f "https://github.com/kubernetes-sigs/kwok/releases/download/v0.7.0/kwok.yaml"
     kubectl apply -f "https://github.com/kubernetes-sigs/kwok/releases/download/v0.7.0/stage-fast.yaml"
 
@@ -30,7 +30,7 @@ cluster_setup(){
         git clone https://github.com/prometheus-operator/kube-prometheus.git
     fi
 
-    cd kube-prometheus
+    cd "kube-prometheus"
 
     kubectl create -f manifests/setup
     until kubectl get servicemonitors --all-namespaces ; do
@@ -57,7 +57,7 @@ cluster_setup(){
         cd ..
     fi
 
-    cd simkube-src/
+    cd "simkube-src/"
     kubectl create ns simkube
     kubectl apply -k k8s/kustomize/sim
 }
@@ -79,7 +79,7 @@ deploy_objects(){
     --hooks config/hooks/default.yml \
     --disable-metrics \
     --duration +5m \
-    --speed $SIMULATION_SPEED \
+    --speed "$SIMULATION_SPEED" \
     --driver-verbosity debug
 }
 

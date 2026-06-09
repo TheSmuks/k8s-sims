@@ -18,11 +18,11 @@
 
 **Purpose**: Confirm the pre-change release exists and prepare reusable local validation fixtures/scripts.
 
-- [ ] T001 Verify Git tag and GitHub release `sarteco-2026` exist and record the release URL/status in `specs/001-fix-benchmark-reliability/quickstart.md`
-- [ ] T002 [P] Create valid plotting result fixtures in `tests/fixtures/results/valid/`
-- [ ] T003 [P] Create malformed, empty, constant-metric, zero-pod, and unknown-simulator result fixtures in `tests/fixtures/results/edge-cases/`
-- [ ] T004 [P] Create a checkpoint verification log template in `specs/001-fix-benchmark-reliability/checkpoints.md`
-- [ ] T005 [P] Create a lightweight validation helper script in `utils/validate-checkpoint.sh`
+- [X] T001 Verify Git tag and GitHub release `sarteco-2026` exist and record the release URL/status in `specs/001-fix-benchmark-reliability/quickstart.md`
+- [X] T002 [P] Create valid plotting result fixtures in `tests/fixtures/results/valid/`
+- [X] T003 [P] Create malformed, empty, constant-metric, zero-pod, and unknown-simulator result fixtures in `tests/fixtures/results/edge-cases/`
+- [X] T004 [P] Create a checkpoint verification log template in `specs/001-fix-benchmark-reliability/checkpoints.md`
+- [X] T005 [P] Create a lightweight validation helper script in `utils/validate-checkpoint.sh`
 
 ---
 
@@ -32,15 +32,15 @@
 
 **Critical**: No user story implementation should begin until this phase is complete.
 
-- [ ] T006 Add baseline shell/Python validation commands to `utils/validate-checkpoint.sh`
-- [ ] T007 Add fixture-based plotting/summary validation commands to `utils/validate-checkpoint.sh`
-- [ ] T008 Add path-with-spaces validation commands to `utils/validate-checkpoint.sh`
-- [ ] T009 [P] Add generated-output directories and validation artifacts to `.gitignore`
-- [ ] T010 [P] Add project safety and reproducibility documentation skeleton in `SECURITY.md`
-- [ ] T011 [P] Add simulator support inventory skeleton in `SIM_MODULES.md`
-- [ ] T012 [P] Add generated data maintenance policy skeleton in `DATASETS.md`
-- [ ] T013 Run baseline validation from `specs/001-fix-benchmark-reliability/quickstart.md` and record current known failures in `specs/001-fix-benchmark-reliability/checkpoints.md`
-- [ ] T014 Commit setup/foundational checkpoint and record the commit reference in `specs/001-fix-benchmark-reliability/checkpoints.md`
+- [X] T006 Add baseline shell/Python validation commands to `utils/validate-checkpoint.sh`
+- [X] T007 Add fixture-based plotting/summary validation commands to `utils/validate-checkpoint.sh`
+- [X] T008 Add path-with-spaces validation commands to `utils/validate-checkpoint.sh`
+- [X] T009 [P] Add generated-output directories and validation artifacts to `.gitignore`
+- [X] T010 [P] Add project safety and reproducibility documentation skeleton in `SECURITY.md`
+- [X] T011 [P] Add simulator support inventory skeleton in `SIM_MODULES.md`
+- [X] T012 [P] Add generated data maintenance policy skeleton in `DATASETS.md`
+- [X] T013 Run baseline validation from `specs/001-fix-benchmark-reliability/quickstart.md` and record current known failures in `specs/001-fix-benchmark-reliability/checkpoints.md`
+- [X] T014 Commit setup/foundational checkpoint and record the commit reference in `specs/001-fix-benchmark-reliability/checkpoints.md`
 
 **Checkpoint**: Foundation ready. Validation fixtures, policy skeletons, and checkpoint recording exist.
 
@@ -54,18 +54,18 @@
 
 ### Implementation for User Story 1
 
-- [ ] T015 [US1] Fix the plotting startup syntax error in `utils/kube-plot.py`
-- [ ] T016 [US1] Replace the invalid data-directory check with a clear directory validation path in `utils/kube-plot.py`
-- [ ] T017 [US1] Align result numeric parsing with emitted benchmark CSV decimals in `utils/kube-plot.py`
-- [ ] T018 [US1] Handle constant metric normalization without undefined values in `utils/kube-plot.py`
-- [ ] T019 [US1] Add safe default style handling for unknown simulator result names in `utils/kube-plot.py`
-- [ ] T020 [US1] Add empty-directory and malformed-file user messages in `utils/kube-plot.py`
-- [ ] T021 [US1] Harden summary input validation and empty-result behavior in `utils/min-max-avg.py`
-- [ ] T022 [P] [US1] Document plotting and summary result-file expectations in `specs/001-fix-benchmark-reliability/contracts/cli-contracts.md`
-- [ ] T023 [US1] Run `python -m py_compile utils/kube-plot.py utils/min-max-avg.py` and record output in `specs/001-fix-benchmark-reliability/checkpoints.md`
-- [ ] T024 [US1] Run plotting validation against `tests/fixtures/results/valid/` and record generated artifact paths in `specs/001-fix-benchmark-reliability/checkpoints.md`
-- [ ] T025 [US1] Run plotting validation against `tests/fixtures/results/edge-cases/` and record expected error/default-style behavior in `specs/001-fix-benchmark-reliability/checkpoints.md`
-- [ ] T026 [US1] Commit User Story 1 checkpoint and record the commit reference in `specs/001-fix-benchmark-reliability/checkpoints.md`
+- [X] T015 [US1] Fix the plotting startup syntax error in `utils/kube-plot.py`
+- [X] T016 [US1] Replace the invalid data-directory check with a clear directory validation path in `utils/kube-plot.py`
+- [X] T017 [US1] Align result numeric parsing with emitted benchmark CSV decimals in `utils/kube-plot.py`
+- [X] T018 [US1] Handle constant metric normalization without undefined values in `utils/kube-plot.py`
+- [X] T019 [US1] Add safe default style handling for unknown simulator result names in `utils/kube-plot.py`
+- [X] T020 [US1] Add empty-directory and malformed-file user messages in `utils/kube-plot.py`
+- [X] T021 [US1] Harden summary input validation and empty-result behavior in `utils/min-max-avg.py`
+- [X] T022 [P] [US1] Document plotting and summary result-file expectations in `specs/001-fix-benchmark-reliability/contracts/cli-contracts.md`
+- [X] T023 [US1] Run `python -m py_compile utils/kube-plot.py utils/min-max-avg.py` and record output in `specs/001-fix-benchmark-reliability/checkpoints.md`
+- [X] T024 [US1] Run plotting validation against `tests/fixtures/results/valid/` and record generated artifact paths in `specs/001-fix-benchmark-reliability/checkpoints.md`
+- [X] T025 [US1] Run plotting validation against `tests/fixtures/results/edge-cases/` and record expected error/default-style behavior in `specs/001-fix-benchmark-reliability/checkpoints.md`
+- [X] T026 [US1] Commit User Story 1 checkpoint and record the commit reference in `specs/001-fix-benchmark-reliability/checkpoints.md`
 
 **Checkpoint**: User Story 1 is independently functional when plotting and summary validation passes for valid and edge-case fixtures.
 
@@ -79,26 +79,26 @@
 
 ### Implementation for User Story 2
 
-- [ ] T027 [US2] Make simulator module loading use the repository script directory in `kube-run.sh`
-- [ ] T028 [US2] Create default result output directories before writing in `kube-run.sh`
-- [ ] T029 [US2] Make stalled-scheduling timeout calculation always initialized and bounded in `kube-run.sh`
-- [ ] T030 [US2] Make memory-limit cancellation visible to the active scheduling loop in `kube-run.sh`
-- [ ] T031 [US2] Strengthen interrupted-run and failed-run cleanup status handling in `kube-run.sh`
-- [ ] T032 [US2] Quote path-like shell variables in `kube-run.sh`
-- [ ] T033 [P] [US2] Quote path-like shell variables in `kube-director.sh`
-- [ ] T034 [P] [US2] Quote path-like shell variables in `modules/kwok/module.sh`
-- [ ] T035 [P] [US2] Quote path-like shell variables in `modules/kubemark/module.sh`
-- [ ] T036 [P] [US2] Quote path-like shell variables in `modules/opensim/module.sh`
-- [ ] T037 [P] [US2] Quote path-like shell variables in `modules/simkube/module.sh`
-- [ ] T038 [P] [US2] Quote path-like shell variables in `modules/kube-sched/module.sh`
-- [ ] T039 [P] [US2] Quote path-like shell variables in `modules/vanilla/module.sh`
-- [ ] T040 [P] [US2] Quote path-like shell variables in `utils/simkube-tracer.sh`
-- [ ] T041 [US2] Replace unsafe shell command construction for follow-on workflows in `utils/kube-gen.py`
-- [ ] T042 [US2] Add or update path-with-spaces validation coverage in `utils/validate-checkpoint.sh`
-- [ ] T043 [US2] Run `bash -n kube-director.sh kube-run.sh entrypoint.sh modules/*/module.sh utils/*.sh` and record output in `specs/001-fix-benchmark-reliability/checkpoints.md`
-- [ ] T044 [US2] Run `python utils/kube-gen.py -o "/tmp/k8s sims path test" -c 1 -i 1` and record output in `specs/001-fix-benchmark-reliability/checkpoints.md`
-- [ ] T045 [US2] Run best-effort runner validation from outside the repo root or record the Docker/Kubernetes blocker in `specs/001-fix-benchmark-reliability/checkpoints.md`
-- [ ] T046 [US2] Commit User Story 2 checkpoint and record the commit reference in `specs/001-fix-benchmark-reliability/checkpoints.md`
+- [X] T027 [US2] Make simulator module loading use the repository script directory in `kube-run.sh`
+- [X] T028 [US2] Create default result output directories before writing in `kube-run.sh`
+- [X] T029 [US2] Make stalled-scheduling timeout calculation always initialized and bounded in `kube-run.sh`
+- [X] T030 [US2] Make memory-limit cancellation visible to the active scheduling loop in `kube-run.sh`
+- [X] T031 [US2] Strengthen interrupted-run and failed-run cleanup status handling in `kube-run.sh`
+- [X] T032 [US2] Quote path-like shell variables in `kube-run.sh`
+- [X] T033 [P] [US2] Quote path-like shell variables in `kube-director.sh`
+- [X] T034 [P] [US2] Quote path-like shell variables in `modules/kwok/module.sh`
+- [X] T035 [P] [US2] Quote path-like shell variables in `modules/kubemark/module.sh`
+- [X] T036 [P] [US2] Quote path-like shell variables in `modules/opensim/module.sh`
+- [X] T037 [P] [US2] Quote path-like shell variables in `modules/simkube/module.sh`
+- [X] T038 [P] [US2] Quote path-like shell variables in `modules/kube-sched/module.sh`
+- [X] T039 [P] [US2] Quote path-like shell variables in `modules/vanilla/module.sh`
+- [X] T040 [P] [US2] Quote path-like shell variables in `utils/simkube-tracer.sh`
+- [X] T041 [US2] Replace unsafe shell command construction for follow-on workflows in `utils/kube-gen.py`
+- [X] T042 [US2] Add or update path-with-spaces validation coverage in `utils/validate-checkpoint.sh`
+- [X] T043 [US2] Run `bash -n kube-director.sh kube-run.sh entrypoint.sh modules/*/module.sh utils/*.sh` and record output in `specs/001-fix-benchmark-reliability/checkpoints.md`
+- [X] T044 [US2] Run `python utils/kube-gen.py -o "/tmp/k8s sims path test" -c 1 -i 1` and record output in `specs/001-fix-benchmark-reliability/checkpoints.md`
+- [X] T045 [US2] Run best-effort runner validation from outside the repo root or record the Docker/Kubernetes blocker in `specs/001-fix-benchmark-reliability/checkpoints.md`
+- [X] T046 [US2] Commit User Story 2 checkpoint and record the commit reference in `specs/001-fix-benchmark-reliability/checkpoints.md`
 
 **Checkpoint**: User Story 2 is independently functional when script syntax, path-with-spaces behavior, cwd-independent module loading, output creation, and timeout/memory behavior are validated or environment blockers are recorded.
 
@@ -112,20 +112,20 @@
 
 ### Implementation for User Story 3
 
-- [ ] T047 [US3] Make the scheduler simulator image pinning edit persistent in `modules/kube-sched/module.sh`
-- [ ] T048 [US3] Align or document Kubernetes tooling version choices in `Dockerfile`
-- [ ] T049 [US3] Pin or explicitly categorize runtime repository/manifests dependencies in `modules/simkube/module.sh`
-- [ ] T050 [US3] Pin or explicitly categorize runtime repository/image dependencies in `modules/kube-sched/module.sh`
-- [ ] T051 [US3] Make image pulling failures explicit in `entrypoint.sh`
-- [ ] T052 [US3] Document privileged Docker, host cgroup, and Docker-in-Docker risks in `SECURITY.md`
-- [ ] T053 [US3] Document isolated execution recommendations and non-privileged limitations in `SECURITY.md`
-- [ ] T054 [US3] Document active, experimental, unavailable, and legacy simulator modes in `SIM_MODULES.md`
-- [ ] T055 [US3] Reconcile `SIM_MODULES` with documented active simulator modes in `SIM_MODULES`
-- [ ] T056 [US3] Document runtime dependency reproducibility status in `SIM_MODULES.md`
-- [ ] T057 [US3] Document generated dataset categories, retention policy, and regeneration commands in `DATASETS.md`
-- [ ] T058 [US3] Update source-control ignore policy for generated large outputs in `.gitignore`
-- [ ] T059 [US3] Run documentation discovery checks from `specs/001-fix-benchmark-reliability/quickstart.md` and record output in `specs/001-fix-benchmark-reliability/checkpoints.md`
-- [ ] T060 [US3] Commit User Story 3 checkpoint and record the commit reference in `specs/001-fix-benchmark-reliability/checkpoints.md`
+- [X] T047 [US3] Make the scheduler simulator image pinning edit persistent in `modules/kube-sched/module.sh`
+- [X] T048 [US3] Align or document Kubernetes tooling version choices in `Dockerfile`
+- [X] T049 [US3] Pin or explicitly categorize runtime repository/manifests dependencies in `modules/simkube/module.sh`
+- [X] T050 [US3] Pin or explicitly categorize runtime repository/image dependencies in `modules/kube-sched/module.sh`
+- [X] T051 [US3] Make image pulling failures explicit in `entrypoint.sh`
+- [X] T052 [US3] Document privileged Docker, host cgroup, and Docker-in-Docker risks in `SECURITY.md`
+- [X] T053 [US3] Document isolated execution recommendations and non-privileged limitations in `SECURITY.md`
+- [X] T054 [US3] Document active, experimental, unavailable, and legacy simulator modes in `SIM_MODULES.md`
+- [X] T055 [US3] Reconcile `SIM_MODULES` with documented active simulator modes in `SIM_MODULES`
+- [X] T056 [US3] Document runtime dependency reproducibility status in `SIM_MODULES.md`
+- [X] T057 [US3] Document generated dataset categories, retention policy, and regeneration commands in `DATASETS.md`
+- [X] T058 [US3] Update source-control ignore policy for generated large outputs in `.gitignore`
+- [X] T059 [US3] Run documentation discovery checks from `specs/001-fix-benchmark-reliability/quickstart.md` and record output in `specs/001-fix-benchmark-reliability/checkpoints.md`
+- [X] T060 [US3] Commit User Story 3 checkpoint and record the commit reference in `specs/001-fix-benchmark-reliability/checkpoints.md`
 
 **Checkpoint**: User Story 3 is independently functional when a maintainer can identify active modes, dependencies, privileged risks, and dataset policy from project documentation.
 
@@ -139,14 +139,14 @@
 
 ### Implementation for User Story 4
 
-- [ ] T061 [US4] Define explicit result preservation defaults and user-facing messages in `kube-run.sh`
-- [ ] T062 [US4] Apply the same result preservation policy to multi-simulator output paths in `kube-director.sh`
-- [ ] T063 [US4] Ensure preserved result files are excluded or clearly handled by plotting workflows in `utils/kube-plot.py`
-- [ ] T064 [US4] Document result preservation policy in `SIM_MODULES.md`
-- [ ] T065 [US4] Add output-collision validation commands to `utils/validate-checkpoint.sh`
-- [ ] T066 [US4] Run output-collision validation from `specs/001-fix-benchmark-reliability/quickstart.md` and record output in `specs/001-fix-benchmark-reliability/checkpoints.md`
-- [ ] T067 [US4] Review every checkpoint entry for verification output, blocker notes, and commit references in `specs/001-fix-benchmark-reliability/checkpoints.md`
-- [ ] T068 [US4] Commit User Story 4 checkpoint and record the commit reference in `specs/001-fix-benchmark-reliability/checkpoints.md`
+- [X] T061 [US4] Define explicit result preservation defaults and user-facing messages in `kube-run.sh`
+- [X] T062 [US4] Apply the same result preservation policy to multi-simulator output paths in `kube-director.sh`
+- [X] T063 [US4] Ensure preserved result files are excluded or clearly handled by plotting workflows in `utils/kube-plot.py`
+- [X] T064 [US4] Document result preservation policy in `SIM_MODULES.md`
+- [X] T065 [US4] Add output-collision validation commands to `utils/validate-checkpoint.sh`
+- [X] T066 [US4] Run output-collision validation from `specs/001-fix-benchmark-reliability/quickstart.md` and record output in `specs/001-fix-benchmark-reliability/checkpoints.md`
+- [X] T067 [US4] Review every checkpoint entry for verification output, blocker notes, and commit references in `specs/001-fix-benchmark-reliability/checkpoints.md`
+- [X] T068 [US4] Commit User Story 4 checkpoint and record the commit reference in `specs/001-fix-benchmark-reliability/checkpoints.md`
 
 **Checkpoint**: User Story 4 is independently functional when result collision behavior is predictable and every checkpoint has validation evidence or a documented blocker.
 
@@ -156,14 +156,14 @@
 
 **Purpose**: Final consistency checks and cleanup across all user stories.
 
-- [ ] T069 [P] Update validation examples and expected outcomes in `specs/001-fix-benchmark-reliability/quickstart.md`
-- [ ] T070 [P] Update final task completion notes in `specs/001-fix-benchmark-reliability/tasks.md`
-- [ ] T071 Run final shell syntax validation and record output in `specs/001-fix-benchmark-reliability/checkpoints.md`
-- [ ] T072 Run final Python compile validation and record output in `specs/001-fix-benchmark-reliability/checkpoints.md`
-- [ ] T073 Run final fixture plotting and summary validation and record output in `specs/001-fix-benchmark-reliability/checkpoints.md`
-- [ ] T074 Run final dataset generator smoke validation and record output in `specs/001-fix-benchmark-reliability/checkpoints.md`
-- [ ] T075 Run `git status --short` and record clean/expected state in `specs/001-fix-benchmark-reliability/checkpoints.md`
-- [ ] T076 Commit final polish checkpoint and record the commit reference in `specs/001-fix-benchmark-reliability/checkpoints.md`
+- [X] T069 [P] Update validation examples and expected outcomes in `specs/001-fix-benchmark-reliability/quickstart.md`
+- [X] T070 [P] Update final task completion notes in `specs/001-fix-benchmark-reliability/tasks.md`
+- [X] T071 Run final shell syntax validation and record output in `specs/001-fix-benchmark-reliability/checkpoints.md`
+- [X] T072 Run final Python compile validation and record output in `specs/001-fix-benchmark-reliability/checkpoints.md`
+- [X] T073 Run final fixture plotting and summary validation and record output in `specs/001-fix-benchmark-reliability/checkpoints.md`
+- [X] T074 Run final dataset generator smoke validation and record output in `specs/001-fix-benchmark-reliability/checkpoints.md`
+- [X] T075 Run `git status --short` and record clean/expected state in `specs/001-fix-benchmark-reliability/checkpoints.md`
+- [X] T076 Commit final polish checkpoint and record the commit reference in `specs/001-fix-benchmark-reliability/checkpoints.md`
 
 ---
 

@@ -21,10 +21,10 @@ cluster_setup(){
     kind get kubeconfig --name "$CLUSTER_NAME" > "$CONFIG_PATH"
     #sed -i 's|server: https://127.0.0.1:[0-9]\+|server: https://kubernetes.default.svc:443|' "$LOCAL_PATH/config"
     kubectl config use-context "kind-$CLUSTER_NAME"
-    kubectl create ns $NAMESPACE
+    kubectl create ns "$NAMESPACE"
     kubectl create ns "kubemark"
     wait_for_namespace "kubemark"
-    wait_for_namespace ${NAMESPACE}
+    wait_for_namespace "$NAMESPACE"
 
     kubectl create secret generic kubeconfig \
         --type=Opaque --namespace="kubemark" \
@@ -41,7 +41,7 @@ deploy_objects(){
     local NODE_FILE="$1"
     local POD_FILE="$2"
     kubectl create -f "$NODE_FILE" --namespace="kubemark"
-    kubectl create -f "$POD_FILE" --namespace=${NAMESPACE}
+    kubectl create -f "$POD_FILE" --namespace="$NAMESPACE"
 }
 
 log INFO "Kubemark module loaded!"
