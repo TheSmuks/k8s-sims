@@ -160,7 +160,7 @@ parse_args() {
 }
 
 load_simulator_code() {
-    local SCRIPT_FILE="./modules/${SIMULATION_MODE}/module.sh"
+    local SCRIPT_FILE="${SCRIPT_DIR}/modules/${SIMULATION_MODE}/module.sh"
 
     if [[ -f "$SCRIPT_FILE" ]]; then
         source "$SCRIPT_FILE"
@@ -278,14 +278,14 @@ save_metrics() {
     CPU_SYS_SEC=$(awk "BEGIN {printf \"%d\", ${CPU_MEASUREMENTS[2]}}")
 
     TIMEOUT_REACHED="0"
-    if [[ -f $TIMEOUT_FLAG_FILE ]]; then
-        rm $TIMEOUT_FLAG_FILE
+    if [[ -f "$TIMEOUT_FLAG_FILE" ]]; then
+        rm -f "$TIMEOUT_FLAG_FILE"
         TIMEOUT_REACHED="1"
     fi
 
     MAX_MEM_REACHED="0"
-    if [[ -f $MAX_MEM_FLAG_FILE ]]; then
-        rm $MAX_MEM_FLAG_FILE
+    if [[ -f "$MAX_MEM_FLAG_FILE" ]]; then
+        rm -f "$MAX_MEM_FLAG_FILE"
         MAX_MEM_REACHED="1"
     fi
 
@@ -301,8 +301,8 @@ save_metrics() {
 
 wait_for_namespace(){
     local namespace="$1"
-    while ! kubectl get serviceaccount default -n ${NAMESPACE} >/dev/null 2>&1; do
-      log INFO "Waiting for default service account in ${NAMESPACE}..."
+    while ! kubectl get serviceaccount default -n "$namespace" >/dev/null 2>&1; do
+      log INFO "Waiting for default service account in ${namespace}..."
       sleep 1
     done
 }
@@ -317,7 +317,7 @@ check_max_time(){
     if [[ $MAX_SIMULATION_TIME -gt 0 && $ELAPSED_TIME -gt $MAX_SIMULATION_TIME ]]; then
         RUN_CONDITION="false"
         log ERROR "Simulation time exceeded: $ELAPSED_TIME seconds."
-        touch $TIMEOUT_FLAG_FILE
+        touch "$TIMEOUT_FLAG_FILE"
     fi
 }
 
@@ -348,8 +348,9 @@ watch_pod_scheduling(){
         log INFO "Waiting for pods to be scheduled..."
         local LOCAL_RUN_CONDITION="true"
         local INITIAL_TIME=$(date +%s)
-        if [[ $MAX_SIMULATION_TIME -eq -1 ]]; then
-            local SCHEDULE_TIMEOUT=300
+        local SCHEDULE_TIMEOUT=300
+        if [[ "$MAX_SIMULATION_TIME" -gt 0 && "$MAX_SIMULATION_TIME" -lt "$SCHEDULE_TIMEOUT" ]]; then
+            SCHEDULE_TIMEOUT="$MAX_SIMULATION_TIME"
         fi
         local LAST_PENDING_COUNT=-1
         while [[ $LOCAL_RUN_CONDITION = "true" && $RUN_CONDITION = "true" ]]; do
@@ -361,7 +362,7 @@ watch_pod_scheduling(){
                 break
             fi
             local FAILURE_COUNT=0
-            for pod_name in ${PENDING_PODS[@]}; do
+            for pod_name in "${PENDING_PODS[@]}"; do
                 local FAILURE_DETECTED
                 FAILURE_DETECTED=$(kubectl get events -n "$NAMESPACE" \
                     --field-selector "involvedObject.name=$pod_name" 2>/dev/null | \
@@ -382,9 +383,9 @@ watch_pod_scheduling(){
                 LAST_PENDING_COUNT=$CURRENT_PENDING_COUNT
             else
                 local ELAPSED_SCHEDULING_TIME=$(($(date +%s) - $INITIAL_TIME))
-                if [[ $MAX_SIMULATION_TIME -lt $SCHEDULE_TIMEOUT && $ELAPSED_SCHEDULING_TIME -gt $SCHEDULE_TIMEOUT ]]; then
+                if [[ $ELAPSED_SCHEDULING_TIME -gt $SCHEDULE_TIMEOUT ]]; then
                     log INFO "No changes after $SCHEDULE_TIMEOUT seconds. Simulation stopped."
-                    touch $TIMEOUT_FLAG_FILE
+                    touch "$TIMEOUT_FLAG_FILE"
                     break
                 fi
             fi
@@ -404,7 +405,7 @@ track_containers() {
     log INFO "Starting container tracking..."
     local MAX_MEM_ALLOTED=$(get_max_alloted_memory)
     local MAX_MEMORY_MEASUREMENT=0
-    local RUN_CONDITION="true"
+    RUN_CONDITION="true"
     trap 'RUN_CONDITION=false' SIGINT SIGTERM
 
     while [[ $RUN_CONDITION = "true" ]]; do
@@ -418,7 +419,7 @@ track_containers() {
         if [[ $TOTAL_MEM -gt $MAX_MEM_ALLOTED ]]; then
             RUN_CONDITION="false"
             log ERROR "Simulation max memory exceeded: $TOTAL_MEM > $MAX_MEM_ALLOTED."
-            touch $MAX_MEM_FLAG_FILE
+            touch "$MAX_MEM_FLAG_FILE"
             break
         fi
 
@@ -433,58 +434,60 @@ track_containers() {
 
 # Entry point
 print_logo
-log INFO "Received arguments $@"
+log INFO "Received arguments $*"
 parse_args "$@"
 
-load_simulator_code $SIMULATION_MODE
+load_simulator_code "$SIMULATION_MODE"
 
 log INFO "Simulation started with mode: $SIMULATION_MODE"
-if [[ ! -z $CLUSTER_NAME ]]; then
+if [[ -n "$CLUSTER_NAME" ]]; then
     log INFO "Cluster: $CLUSTER_NAME"
 fi
 log INFO "Runs per experiment: $RUNS"
 log INFO "Results file: $OUT_FILE"
+mkdir -p "$(dirname "$OUT_FILE")"
 
 if [[ -f "${OUT_FILE}" ]]; then
     BASE_NAME="${OUT_FILE%.*}"
-    OLD_OUT_FILE="$OUT_FILE"
+    BACKUP_FILE="${BASE_NAME}.preserved-$(date +%Y%m%d-%H%M%S).csv"
     i=1
 
-    while [[ -e "${OLD_OUT_FILE}" ]]; do
-        OLD_OUT_FILE="${BASE_NAME}-${i}.csv"
+    while [[ -e "${BACKUP_FILE}" ]]; do
+        BACKUP_FILE="${BASE_NAME}.preserved-$(date +%Y%m%d-%H%M%S)-${i}.csv"
         ((i++))
     done
 
-    mv "${OUT_FILE}" "${OLD_OUT_FILE}"
+    log WARN "Existing results file found. Preserving it as: ${BACKUP_FILE}"
+    mv "${OUT_FILE}" "${BACKUP_FILE}"
 fi
 
 echo "node_count|pod_count|timeout_reached|mem_exceeded|run_time|total_cpu_seconds|user_cpu_seconds|system_cpu_seconds|memory_peak_gb|unscheduled_pods" > "$OUT_FILE"
 
 trap 'RUN_CONDITION=false; cleanup_cluster; exit 130' SIGINT SIGTERM
 
-for node_file in $(find "$EXPERIMENT_FILES_PATH" -name $FILE_PATTERN -type f | sort -V); do
+while IFS= read -r node_file; do
     # Extract node count from file name
     NODE_COUNT=$(basename "$node_file" | grep -o '[0-9]\+' | tail -1)
-    if [[ $NODE_COUNT -lt $START ]]; then
+    if [[ "$NODE_COUNT" -lt "$START" ]]; then
         log INFO "Skipping $NODE_COUNT nodes"
         continue
     fi
     CLUSTER_CONFIG="$EXPERIMENT_FILES_PATH/cluster-$NODE_COUNT.yaml"
     POD_FILE="$EXPERIMENT_FILES_PATH/pods-$NODE_COUNT.yaml"
-    POD_COUNT=$(cat "$POD_FILE" | grep -c 'kind: Pod')
+    POD_COUNT=$(grep -c 'kind: Pod' "$POD_FILE" 2>/dev/null || echo 0)
 
     if [[ $SIMULATION_MODE = "simkube" ]]; then
         # Simkube does not follow the format
         POD_FILE="$EXPERIMENT_FILES_PATH/trace-$NODE_COUNT.sktrace"
     fi
-    if [[ -f $CLUSTER_CONFIG ]]; then
+    if [[ -f "$CLUSTER_CONFIG" ]]; then
         log INFO "Cluster config file: $CLUSTER_CONFIG"
     fi
     log INFO "Node file: $node_file"
     log INFO "Pod file: $POD_FILE"
 
-    for CURRENT_RUN in $(seq 1 $RUNS); do
-        cd $SCRIPT_DIR
+    for CURRENT_RUN in $(seq 1 "$RUNS"); do
+        cd "$SCRIPT_DIR"
         log INFO "Starting run $CURRENT_RUN for $NODE_COUNT nodes..."
         if [[ $RUN_CONDITION = "false" ]]; then
             log INFO "Experiment interrupted"
@@ -500,7 +503,7 @@ for node_file in $(find "$EXPERIMENT_FILES_PATH" -name $FILE_PATTERN -type f | s
         POLL_PID=-1
         SETUP_OK="false"
         log INFO "Starting cluster setup..."
-        create_cluster $CLUSTER_CONFIG
+        create_cluster "$CLUSTER_CONFIG"
         CREATE_CLUSTER_STATUS=$?
         cluster_setup
         CREATE_CLUSTER_SETUP_STATUS=$?
@@ -514,6 +517,9 @@ for node_file in $(find "$EXPERIMENT_FILES_PATH" -name $FILE_PATTERN -type f | s
         UNSCHEDULED_PODS=0
         if [[ $SETUP_OK = "true" ]] && deploy_objects "$node_file" "$POD_FILE"; then
             watch_pod_scheduling
+        elif [[ $SETUP_OK != "true" ]]; then
+            log ERROR "Cluster setup failed; recording failed run row and attempting cleanup."
+            echo "0|0|0|0|0|0|0" >> "$OUT_FILE"
         fi
 
         if [[ $POLL_PID -ne -1 ]]; then
@@ -524,6 +530,6 @@ for node_file in $(find "$EXPERIMENT_FILES_PATH" -name $FILE_PATTERN -type f | s
         chmod 666 "$OUT_FILE"
         cleanup_cluster
     done
-done
+done < <(find "$EXPERIMENT_FILES_PATH" -name "$FILE_PATTERN" -type f | sort -V)
 
 log INFO "All experiments completed. Results written to: $OUT_FILE"

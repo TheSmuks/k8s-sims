@@ -18,7 +18,7 @@ parse_args() {
             NAMESPACE="$OPTARG"
             ;;
         h)
-            echo "Usage: $(basename $0) <-e EXPERIMENT_FILES_PATH> <-n NAMESPACE>"
+            echo "Usage: $(basename "$0") <-e EXPERIMENT_FILES_PATH> <-n NAMESPACE>"
             exit 0
             ;;
         :)
@@ -47,18 +47,18 @@ parse_args "$@"
 
 check_kwok
 
-for pod_file in $(find "$EXPERIMENT_FILES_PATH" -name "pods-*.yaml" -type f | sort -V); do
+while IFS= read -r pod_file; do
     echo "Processing file: $pod_file"
     kwokctl create cluster --name tracer
-    kubectl create ns ${NAMESPACE}
-    while ! kubectl get serviceaccount default -n ${NAMESPACE} >/dev/null 2>&1; do
+    kubectl create ns "$NAMESPACE"
+    while ! kubectl get serviceaccount default -n "$NAMESPACE" >/dev/null 2>&1; do
       echo "Waiting for default service account in ${NAMESPACE}..."
       sleep 1
     done
     kubectl config use-context kwok-tracer
-    NODE_COUNT=$(echo $pod_file | rev | cut -d '-' -f 1 | rev | cut -d '.' -f 1)
+    NODE_COUNT=$(basename "$pod_file" | rev | cut -d '-' -f 1 | rev | cut -d '.' -f 1)
     echo "Generating pod trace of file with $NODE_COUNT nodes"
-    kubectl apply -f $pod_file --namespace ${NAMESPACE}
-    skctl snapshot -c ${SCRIPT_DIR}/base/config.yml -o "$EXPERIMENT_FILES_PATH/trace-$NODE_COUNT.sktrace"
+    kubectl apply -f "$pod_file" --namespace "$NAMESPACE"
+    skctl snapshot -c "${SCRIPT_DIR}/base/config.yml" -o "$EXPERIMENT_FILES_PATH/trace-$NODE_COUNT.sktrace"
     kwokctl delete cluster --name tracer
-done
+done < <(find "$EXPERIMENT_FILES_PATH" -name "pods-*.yaml" -type f | sort -V)

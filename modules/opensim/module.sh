@@ -73,11 +73,11 @@ cleanup_cluster(){
 deploy_objects(){
     local SIMON_FILE="$1"
     local EXPERIMENT_PATH="$(cd "$(dirname "$1")" && pwd)"
-    echo $SIMON_FILE
+    echo "$SIMON_FILE"
     echo "Superuser needed to run experiment under a cgroup."
     LAST_PATH=$(pwd)
-    cd $EXPERIMENT_PATH
-    sudo cgexec -g memory,cpu:/$CGROUP_NAME ${BINARY_PATH} apply -f $SIMON_FILE > ${TEMP_OUT} &
+    cd "$EXPERIMENT_PATH"
+    sudo cgexec -g "memory,cpu:/$CGROUP_NAME" "${BINARY_PATH}" apply -f "$SIMON_FILE" > "${TEMP_OUT}" &
     EXPERIMENT_PID=$!
     while kill -0 "$EXPERIMENT_PID" 2>/dev/null; do
         if [[ $RUN_CONDITION = "false" ]]; then
@@ -92,13 +92,13 @@ deploy_objects(){
         fi
         sleep 1
     done
-    cd $LAST_PATH
+    cd "$LAST_PATH"
     wait "$EXPERIMENT_PID" 2>/dev/null || true
-    until [[ -f ${TEMP_OUT} ]]; do
+    until [[ -f "${TEMP_OUT}" ]]; do
         sleep 1
     done
-    UNSCHEDULED_PODS=$(awk '/Unscheduled:/ {printf "%d", $2}' ${TEMP_OUT})
-    rm ${TEMP_OUT}
+    UNSCHEDULED_PODS=$(awk '/Unscheduled:/ {printf "%d", $2}' "${TEMP_OUT}")
+    rm -f "${TEMP_OUT}"
     EXPERIMENT_PID=-1
 }
 

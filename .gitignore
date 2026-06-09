@@ -8,3 +8,32 @@
 trace.out
 utils/dummy-sched/*
 .ropeproject
+# Universal
+.DS_Store
+Thumbs.db
+*.swp
+.vscode/
+.idea/
+# Python
+__pycache__/
+*.pyc
+venv/
+dist/
+*.egg-info/
+# Project generated outputs
+results/
+plots/
+coverage/
+test-results/
+playwright-report/
+data/small/
+data/medium/
+data/big/
+*.secret.yaml
+secrets/
+.kube/
+kubeconfig*
+*.key
+*.crt
+.env*
+!.env.example
