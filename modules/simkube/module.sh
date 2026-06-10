@@ -80,7 +80,8 @@ deploy_objects(){
     --disable-metrics \
     --duration +5m \
     --speed "$SIMULATION_SPEED" \
-    --driver-verbosity debug
+    --driver-verbosity debug \
+    --driver-image quay.io/appliedcomputing/sk-driver:v2.3.0
 }
 
 # generate_traces: generate .sktrace files directly via kube-gen.py (no cluster needed)
@@ -100,6 +101,9 @@ wait_for_simulator_state(){
     local MAX_WAIT_TIME=180
     local WAIT_START_TIME=$(date +%s)
     local ELAPSED_TIME=0
+    local LAST_STATE=""
+    local DRIVER_POD=""
+    local TICK=0
     until kubectl get simulations | grep -q "$WANTED_STATE"; do
         ELAPSED_TIME=$(($(date +%s)-$WAIT_START_TIME))
         if [ "$ELAPSED_TIME" -ge "$MAX_WAIT_TIME" ]; then
@@ -109,9 +113,47 @@ wait_for_simulator_state(){
             break
         fi
         check_max_time
-        echo -ne "Waiting for simulation to reach state $WANTED_STATE. Elapsed: $ELAPSED_TIME seconds.\r";
+
+        # Fetch current simulation state
+        local SIM_LINE
+        SIM_LINE=$(kubectl get simulations --no-headers 2>/dev/null | head -1)
+        local CUR_STATE
+        CUR_STATE=$(echo "$SIM_LINE" | awk '{print $NF}')
+
+        # Every 10 seconds, print a detailed status line (avoid log spam)
+        if [ $((TICK % 10)) -eq 0 ]; then
+            local DIAG="state=${CUR_STATE:-unknown}"
+
+            # Check driver pod status
+            if [ -z "$DRIVER_POD" ]; then
+                DRIVER_POD=$(kubectl get pods -n simkube -l app=sk-driver --no-headers -o custom-columns=NAME:.metadata.name,STATUS:.status.phase 2>/dev/null | head -1)
+            fi
+            if [ -n "$DRIVER_POD" ]; then
+                local POD_STATUS
+                POD_STATUS=$(kubectl get pod -n simkube "$DRIVER_POD" --no-headers -o custom-columns=STATUS:.status.phase 2>/dev/null)
+                DIAG="$DIAG driver=$POD_STATUS"
+                # If driver is Error or Failed, grab last log line
+                if [ "$POD_STATUS" = "Error" ] || [ "$POD_STATUS" = "Failed" ]; then
+                    local LAST_LOG
+                    LAST_LOG=$(kubectl logs -n simkube "$DRIVER_POD" --tail=1 2>/dev/null)
+                    DIAG="$DIAG err=$LAST_LOG"
+                fi
+            fi
+
+            log INFO "Waiting for simulation ($WANTED_STATE) elapsed=${ELAPSED_TIME}s $DIAG"
+        fi
+
+        TICK=$((TICK + 1))
+        LAST_STATE="$CUR_STATE"
         sleep 1;
     done
+
+    # Print final state on success
+    if [ "$TIMEOUT_REACHED" != "1" ]; then
+        local FINAL_LINE
+        FINAL_LINE=$(kubectl get simulations --no-headers 2>/dev/null | head -1)
+        log INFO "Simulation reached $WANTED_STATE after ${ELAPSED_TIME}s: $FINAL_LINE"
+    fi
 }
 
 log INFO "SimKube module loaded!"
