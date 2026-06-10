@@ -45,3 +45,8 @@ kubeconfig*
 tests/bash/.bats/
 tests/bash/.reports/
 tests/bash/.cache/
+
+# Runtime artifacts from docker-compose / kube-run
+output/
+modules/simkube/simkube-src/
+modules/simkube/kube-prometheus/
