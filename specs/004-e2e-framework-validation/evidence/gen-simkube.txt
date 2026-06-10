@@ -1,0 +1,23 @@
+skctl validate failed for C:\Users\chill\Syncthing\Projects\k8s-sims-e2e-spec\output\e2e-validation\simkube\trace-10.sktrace: error: unrecognized subcommand 'C:\Users\chill\Syncthing\Projects\k8s-sims-e2e-spec\output\e2e-validation\simkube\trace-10.sktrace'
+
+Usage: skctl validate <COMMAND>
+
+For more information, try '--help'.
+
+      _  __     _           _____
+     | |/ /    | |         / ____|
+     | ' /_   _| |__   ___| |  __  ___ _ __
+     |  <| | | | '_ \ / _ \ | |_ |/ _ \ '__|
+     | . \ |_| | |_) |  __/ |__| |  __/ | | |
+     |_|\_\__,_|_.__/ \___|\_____|\___|_| |_|
+
+-------------------------------------------------
+[12:19:50] - Loading resources...
+Loading... |Loading... /Loading... -Loading... \Loading... |Loading... /Loading... -Loading... \Loading... |Loading... /Loading... -Loading... \Loading... |Loading... /Loading... -Loading... \Loading... |Loading... /Loading... -Loading... \Loading... |Loading... /Loading... -Loading... \Loading... |Loading... /Loading... -Loading... \Loading... |Loading... /Loading... -Loading... \Loading... |Loading... /Loading... -Loading... \Loading... |Loading... /Loading... -Loading... \Loading... |Loading... /Loading... -Loading... \Loading... |Loading... /Loading... -Loading... \Loading... |Loading... /Loading... -Loading... \Loading... |Loading... /Loading... -Loading... \Loading... |Loading... /Loading... -[12:19:56] - Finished loading!                 
+[12:19:56] - SimKube selected.
+[12:19:56] - Generating 10 nodes...
+Generating... |Generating... /Generating... -Generating... \Generating... |Generating... /[12:19:57] - Generated 10 nodes and 84 pods.
+[12:19:57] - Finished!                 
+[12:19:57] - Files saved to output folder: C:\Users\chill\Syncthing\Projects\k8s-sims-e2e-spec\output\e2e-validation\simkube
+[12:19:57] - Validating generated traces...
+[12:19:57] - WARNING: Some traces failed validation. Check logs for details.

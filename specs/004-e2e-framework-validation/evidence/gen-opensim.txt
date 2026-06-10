@@ -1,0 +1,15 @@
+      _  __     _           _____
+     | |/ /    | |         / ____|
+     | ' /_   _| |__   ___| |  __  ___ _ __
+     |  <| | | | '_ \ / _ \ | |_ |/ _ \ '__|
+     | . \ |_| | |_) |  __/ |__| |  __/ | | |
+     |_|\_\__,_|_.__/ \___|\_____|\___|_| |_|
+
+-------------------------------------------------
+[12:20:07] - Loading resources...
+Loading... |Loading... /Loading... -Loading... \Loading... |Loading... /Loading... -Loading... \Loading... |Loading... /Loading... -Loading... \Loading... |Loading... /Loading... -Loading... \Loading... |Loading... /Loading... -Loading... \Loading... |Loading... /Loading... -Loading... \Loading... |Loading... /Loading... -Loading... \Loading... |Loading... /Loading... -Loading... \Loading... |Loading... /Loading... -Loading... \Loading... |Loading... /Loading... -Loading... \Loading... |Loading... /Loading... -Loading... \Loading... |Loading... /Loading... -Loading... \Loading... |Loading... /Loading... -Loading... \Loading... |Loading... /Loading... -Loading... \Loading... |[12:20:13] - Finished loading!                 
+[12:20:13] - OpenSim selected.
+[12:20:13] - Generating 10 nodes...
+Generating... |Generating... /Generating... -[12:20:13] - Generated 10 nodes and 84 pods.
+[12:20:13] - Finished!                 
+[12:20:13] - Files saved to output folder: C:\Users\chill\Syncthing\Projects\k8s-sims-e2e-spec\output\e2e-validation\opensim

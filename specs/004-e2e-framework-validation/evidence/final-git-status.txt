@@ -1,0 +1,21 @@
+## feature/004-e2e-framework-validation
+ M .specify/feature.json
+ M AGENTS.md
+ M Dockerfile
+ M SIM_MODULES
+ M entrypoint.sh
+ M kube-director.sh
+ M kube-run.sh
+ M modules/kube-sched/module.sh
+ M modules/kubemark/module.sh
+ M modules/kwok/module.sh
+ M modules/opensim/module.sh
+ M modules/simkube/module.sh
+ M modules/template/module.sh
+ M modules/vanilla/module.sh
+ M utils/sktrace.py
+?? modules/simkube/kube-prometheus/
+?? modules/simkube/simkube-src/
+?? output/
+?? specs/004-e2e-framework-validation/
+?? tests/test_e2e_validation.py

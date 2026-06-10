@@ -1,0 +1,46 @@
+# Runtime Tools Evidence
+
+## Git version
+git version 2.54.0.windows.1
+
+## Docker version
+Docker version 29.5.2, build 79eb04c
+
+## kubectl version
+clientVersion:
+  buildDate: "2025-09-09T19:44:50Z"
+  compiler: gc
+  gitCommit: 93248f9ae092f571eb870b7664c534bfc7d00f03
+  gitTreeState: clean
+  gitVersion: v1.34.1
+  goVersion: go1.24.6
+  major: "1"
+  minor: "34"
+  platform: windows/amd64
+kustomizeVersion: v5.7.1
+
+
+## kind version
+kind version 0.27.0
+
+## kwokctl help
+kwokctl is a tool to streamline the creation and management of clusters, with nodes simulated by kwok
+
+Usage:
+  kwokctl [command] [flags]
+  kwokctl [command]
+
+Available Commands:
+  completion   Generate the autocompletion script for the specified shell
+  config       Manage [reset, tidy, view] default config
+  create       Creates one of [cluster]
+  delete       Deletes one of [cluster]
+  etcdctl      etcdctl in cluster
+  export       Exports one of [logs]
+  get          Gets one of [artifacts, clusters, components, kubeconfig]
+  help         Help about any command
+  kectl        [experimental] Run kubectl-like commands directly against etcd
+  kubectl      kubectl in cluster
+  logs         Logs one of [audit, etcd, kube-apiserver, kube-controller-manager, kube-scheduler, kwok-controller, dashboard, metrics-server, prometheus, jaeger]
+  port-forward Forward one local ports to a component
+  scale        Scale a resource in cluster

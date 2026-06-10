@@ -1,0 +1,26 @@
+1..21
+ok 1 kube-director.sh prints help and exits 0 with -h
+ok 2 kube-director.sh errors on missing experiment path
+ok 3 kube-director.sh loads SIM_MODULES inventory
+ok 4 entrypoint.sh reports individual image-pull failures
+ok 5 each module script sources without error and prints a log line
+ok 6 kube-gen.py can be invoked with a spaced output path
+ok 7 kube-run.sh prints help and exits 0 with -h
+ok 8 kube-run.sh errors on missing required arguments
+ok 9 kube-run.sh errors on unknown simulator mode
+ok 10 kube-run.sh errors on missing experiment path
+ok 11 kube-run.sh preserves an existing result file as *.preserved-*.csv
+ok 12 validate-checkpoint.sh lists bash-tests in the usage line
+ok 13 validate-checkpoint.sh bash-tests subcommand runs the runner
+ok 14 skip_if_missing_tools emits missing-tool reason for absent tool
+ok 15 skip_if_missing_tools returns empty reason when all tools exist
+ok 16 runtime scripts pass bash -n under set -u and pipefail
+ok 17 inventory is non-empty
+ok 18 every inventory entry has a parseable shell syntax
+ok 19 shim kwokctl is on PATH when --with-mocks is in effect
+ok 20 shim records the matching rule response
+ok 21 run.sh accepts --with-mocks and runs the suite to completion
+
+[run.sh] report: /c/Users/chill/Syncthing/Projects/k8s-sims-e2e-spec/tests/bash/.reports/20260610T101824Z.tap
+[run.sh] summary: /c/Users/chill/Syncthing/Projects/k8s-sims-e2e-spec/tests/bash/.reports/20260610T101824Z.summary
+[run.sh] pass=21 fail=0 skip=0 duration=15s

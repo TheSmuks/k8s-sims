@@ -1,0 +1,133 @@
+  _  __     _          _____             
+ | |/ /    | |        |  __ \            
+ | ' /_   _| |__   ___| |__) |   _ _ __  
+ |  <| | | | '_ \ / _ \  _  / | | | '_ \ 
+ | . \ |_| | |_) |  __/ | \ \ |_| | | | |
+ |_|\_\__,_|_.__/ \___|_|  \_\__,_|_| |_|
+------------------------------------------
+[2026-06-10 12:23:10] [INFO] Received arguments -m kwok -e output/e2e-validation/vanilla -n 1 -x 180
+[2026-06-10 12:23:10] [INFO] kwok: KWOK module loaded!
+[2026-06-10 12:23:10] [INFO] kwok: Simulation started with mode: kwok
+[2026-06-10 12:23:10] [INFO] kwok: Cluster: kwok
+[2026-06-10 12:23:10] [INFO] kwok: Runs per experiment: 1
+[2026-06-10 12:23:10] [INFO] kwok: Results file: /c/Users/chill/Syncthing/Projects/k8s-sims-e2e-spec/results/kwok.csv
+[2026-06-10 12:23:11] [WARN] kwok: Existing results file found. Preserving it as: /c/Users/chill/Syncthing/Projects/k8s-sims-e2e-spec/results/kwok.preserved-20260610-122311.csv
+[2026-06-10 12:23:11] [INFO] kwok: Node file: /c/Users/chill/Syncthing/Projects/k8s-sims-e2e-spec/output/e2e-validation/vanilla/nodes-10.yaml
+[2026-06-10 12:23:11] [INFO] kwok: Pod file: /c/Users/chill/Syncthing/Projects/k8s-sims-e2e-spec/output/e2e-validation/vanilla/pods-10.yaml
+[2026-06-10 12:23:11] [INFO] kwok: Starting run 1 for 10 nodes...
+[2026-06-10 12:23:11] [INFO] kwok: Starting cluster setup...
+{"time":"2026-06-10T12:23:11.4723783+02:00","level":"INFO","source":{"function":"sigs.k8s.io/kwok/pkg/kwokctl/cmd/create/cluster.runE","file":"/home/runner/work/kwok/kwok/pkg/kwokctl/cmd/create/cluster/cluster.go","line":304},"msg":"Cluster is creating","cluster":"kwok"}
+{"time":"2026-06-10T12:23:12.8226649+02:00","level":"INFO","source":{"function":"sigs.k8s.io/kwok/pkg/kwokctl/cmd/create/cluster.runE","file":"/home/runner/work/kwok/kwok/pkg/kwokctl/cmd/create/cluster/cluster.go","line":311},"msg":"Cluster is created","cluster":"kwok","elapsed":{"nanosecond":1350286600,"human":"1.3502866s"}}
+{"time":"2026-06-10T12:23:12.8379849+02:00","level":"INFO","source":{"function":"sigs.k8s.io/kwok/pkg/kwokctl/cmd/create/cluster.runE","file":"/home/runner/work/kwok/kwok/pkg/kwokctl/cmd/create/cluster/cluster.go","line":344},"msg":"Cluster is starting","cluster":"kwok"}
+{"time":"2026-06-10T12:23:13.7885608+02:00","level":"INFO","source":{"function":"sigs.k8s.io/kwok/pkg/kwokctl/cmd/create/cluster.runE","file":"/home/runner/work/kwok/kwok/pkg/kwokctl/cmd/create/cluster/cluster.go","line":349},"msg":"Cluster is started","cluster":"kwok","elapsed":{"nanosecond":950575900,"human":"950.5759ms"}}
+Switched to context "kwok-kwok".
+[2026-06-10 12:23:13] [INFO] kwok: Cluster setup successful
+[2026-06-10 12:23:13] [INFO] kwok: Starting container tracking...
+namespace/paib-gpu created
+[2026-06-10 12:23:14] [INFO] kwok: Waiting for default service account in paib-gpu...
+[2026-06-10 12:23:15] [INFO] kwok: Waiting for default service account in paib-gpu...
+node/openb-node-0000 created
+node/openb-node-0001 created
+node/openb-node-0002 created
+node/openb-node-0003 created
+node/openb-node-0004 created
+node/openb-node-0005 created
+node/openb-node-0006 created
+node/openb-node-0007 created
+node/openb-node-0008 created
+node/openb-node-0009 created
+pod/openb-pod-0000 created
+pod/openb-pod-0001 created
+pod/openb-pod-0002 created
+pod/openb-pod-0003 created
+pod/openb-pod-0004 created
+pod/openb-pod-0005 created
+pod/openb-pod-0006 created
+pod/openb-pod-0007 created
+pod/openb-pod-0008 created
+pod/openb-pod-0009 created
+pod/openb-pod-0010 created
+pod/openb-pod-0011 created
+pod/openb-pod-0012 created
+pod/openb-pod-0013 created
+pod/openb-pod-0014 created
+pod/openb-pod-0016 created
+pod/openb-pod-0017 created
+pod/openb-pod-0018 created
+pod/openb-pod-0019 created
+pod/openb-pod-0020 created
+pod/openb-pod-0021 created
+pod/openb-pod-0022 created
+pod/openb-pod-0023 created
+pod/openb-pod-0024 created
+pod/openb-pod-0025 created
+pod/openb-pod-0026 created
+pod/openb-pod-0027 created
+pod/openb-pod-0028 created
+pod/openb-pod-0029 created
+pod/openb-pod-0030 created
+pod/openb-pod-0031 created
+pod/openb-pod-0032 created
+pod/openb-pod-0033 created
+pod/openb-pod-0034 created
+pod/openb-pod-0035 created
+pod/openb-pod-0036 created
+pod/openb-pod-0037 created
+pod/openb-pod-0038 created
+pod/openb-pod-0039 created
+pod/openb-pod-0040 created
+pod/openb-pod-0041 created
+pod/openb-pod-0042 created
+pod/openb-pod-0043 created
+pod/openb-pod-0044 created
+pod/openb-pod-0045 created
+pod/openb-pod-0046 created
+pod/openb-pod-0047 created
+pod/openb-pod-0048 created
+pod/openb-pod-0049 created
+pod/openb-pod-0050 created
+pod/openb-pod-0051 created
+pod/openb-pod-0052 created
+pod/openb-pod-0053 created
+pod/openb-pod-0054 created
+pod/openb-pod-0055 created
+pod/openb-pod-0056 created
+pod/openb-pod-0057 created
+pod/openb-pod-0058 created
+pod/openb-pod-0059 created
+pod/openb-pod-0060 created
+pod/openb-pod-0061 created
+pod/openb-pod-0062 created
+pod/openb-pod-0063 created
+pod/openb-pod-0064 created
+pod/openb-pod-0065 created
+pod/openb-pod-0066 created
+pod/openb-pod-0067 created
+pod/openb-pod-0068 created
+pod/openb-pod-0069 created
+pod/openb-pod-0070 created
+pod/openb-pod-0071 created
+pod/openb-pod-0075 created
+pod/openb-pod-0281 created
+pod/openb-pod-0592 created
+pod/openb-pod-0716 created
+pod/openb-pod-0848 created
+pod/openb-pod-1314 created
+pod/openb-pod-1332 created
+pod/openb-pod-1846 created
+pod/openb-pod-1877 created
+pod/openb-pod-2019 created
+pod/openb-pod-2037 created
+pod/openb-pod-2057 created
+pod/openb-pod-2084 created
+
+[2026-06-10 12:23:17] [INFO] kwok: Waiting for the count of pending pods to stabilize...
+[2026-06-10 12:23:17] [INFO] kwok: Current pending count: 4, Previous: 4
+
+[2026-06-10 12:23:19] [INFO] kwok: Waiting for pods to be scheduled...
+[2026-06-10 12:23:19] [INFO] kwok: All pending pods can not be scheduled.
+{"time":"2026-06-10T12:23:20.9139048+02:00","level":"INFO","source":{"function":"sigs.k8s.io/kwok/pkg/kwokctl/cmd/delete/cluster.deleteCluster","file":"/home/runner/work/kwok/kwok/pkg/kwokctl/cmd/delete/cluster/cluster.go","line":121},"msg":"Cluster is stopping","cluster":"kwok"}
+{"time":"2026-06-10T12:23:21.6420692+02:00","level":"INFO","source":{"function":"sigs.k8s.io/kwok/pkg/kwokctl/cmd/delete/cluster.deleteCluster","file":"/home/runner/work/kwok/kwok/pkg/kwokctl/cmd/delete/cluster/cluster.go","line":126},"msg":"Cluster is stopped","cluster":"kwok","elapsed":{"nanosecond":728164400,"human":"728.1644ms"}}
+{"time":"2026-06-10T12:23:21.6420692+02:00","level":"INFO","source":{"function":"sigs.k8s.io/kwok/pkg/kwokctl/cmd/delete/cluster.deleteCluster","file":"/home/runner/work/kwok/kwok/pkg/kwokctl/cmd/delete/cluster/cluster.go","line":132},"msg":"Cluster is deleting","cluster":"kwok"}
+{"time":"2026-06-10T12:23:22.3486199+02:00","level":"INFO","source":{"function":"sigs.k8s.io/kwok/pkg/kwokctl/cmd/delete/cluster.deleteCluster","file":"/home/runner/work/kwok/kwok/pkg/kwokctl/cmd/delete/cluster/cluster.go","line":148},"msg":"Cluster is deleted","cluster":"kwok","elapsed":{"nanosecond":706550700,"human":"706.5507ms"}}
+[2026-06-10 12:23:22] [INFO] kwok: All experiments completed. Results written to: /c/Users/chill/Syncthing/Projects/k8s-sims-e2e-spec/results/kwok.csv

@@ -1,0 +1,22 @@
+# Python Tools Evidence
+
+## Python version
+Python 3.11.15 (from hermes-agent venv)
+
+## uv version
+uv 0.11.16 (135a36367 2026-05-21 x86_64-pc-windows-msvc)
+
+## Dependency installation
+First attempt with `uv pip install --system` failed: uv tried to use Python 3.14.3 which lacks a C compiler for pandas.
+Second attempt with `uv pip install -r requirements.txt` succeeded using the hermes-agent venv Python 3.11.15.
+
+Installed: contourpy, cycler, fonttools, kiwisolver, matplotlib 3.10.3, numpy 2.2.6, pandas 2.2.3, scipy 1.15.3, seaborn 0.13.2
+
+## Installed packages verification
+- PyYAML 6.0.2
+- msgpack (1, 1, 2)
+- pandas 2.2.3
+- numpy 2.2.6
+- scipy 1.15.3
+- seaborn 0.13.2
+- matplotlib 3.10.3

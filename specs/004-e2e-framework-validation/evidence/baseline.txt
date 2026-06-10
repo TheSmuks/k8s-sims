@@ -1,0 +1,24 @@
+# Baseline Evidence
+
+## Remote URL
+origin	git@github.com:TheSmuks/k8s-sims.git (fetch)
+origin	git@github.com:TheSmuks/k8s-sims.git (push)
+
+## Branch
+feature/004-e2e-framework-validation
+
+## Revision
+38c4d1f6bfd89744281cd02432aaface3ecccee5
+
+## Working Tree Status
+## feature/004-e2e-framework-validation
+ M .specify/feature.json
+ M AGENTS.md
+?? specs/004-e2e-framework-validation/
+
+## Git Log (last 5)
+38c4d1f Fix table formatting in SIM_MODULES.md
+5e328fe docs(specs): update overlay references from separate patch files to inline patches
+7b9399d refactor(overlays): use standard kustomize inline patches with target selectors
+3a6e931 feat(utils): overhaul SimKube trace generation (003)
+8259763 Merge branch '002-bash-test-suite' into main

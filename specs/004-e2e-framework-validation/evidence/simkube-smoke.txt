@@ -1,0 +1,333 @@
+  _  __     _          _____             
+ | |/ /    | |        |  __ \            
+ | ' /_   _| |__   ___| |__) |   _ _ __  
+ |  <| | | | '_ \ / _ \  _  / | | | '_ \ 
+ | . \ |_| | |_) |  __/ | \ \ |_| | | | |
+ |_|\_\__,_|_.__/ \___|_|  \_\__,_|_| |_|
+------------------------------------------
+[2026-06-10 12:25:08] [INFO] Received arguments -m simkube -e output/e2e-validation/simkube -n 1 -x 300
+[2026-06-10 12:25:08] [INFO] simkube: SimKube module loaded!
+[2026-06-10 12:25:08] [INFO] simkube: Simulation started with mode: simkube
+[2026-06-10 12:25:08] [INFO] simkube: Cluster: simkube
+[2026-06-10 12:25:08] [INFO] simkube: Runs per experiment: 1
+[2026-06-10 12:25:08] [INFO] simkube: Results file: /c/Users/chill/Syncthing/Projects/k8s-sims-e2e-spec/results/simkube.csv
+[2026-06-10 12:25:08] [INFO] simkube: Node file: /c/Users/chill/Syncthing/Projects/k8s-sims-e2e-spec/output/e2e-validation/simkube/nodes-10.yaml
+[2026-06-10 12:25:08] [INFO] simkube: Pod file: /c/Users/chill/Syncthing/Projects/k8s-sims-e2e-spec/output/e2e-validation/simkube/trace-10.sktrace
+[2026-06-10 12:25:08] [INFO] simkube: Starting run 1 for 10 nodes...
+[2026-06-10 12:25:08] [INFO] simkube: Starting cluster setup...
+No kind clusters found.
+[2026-06-10 12:25:08] [INFO] simkube: Creating cluster simkube...
+Creating cluster "simkube" ...
+ • Ensuring node image (kindest/node:v1.29.0) 🖼  ...
+ ✓ Ensuring node image (kindest/node:v1.29.0) 🖼
+ • Preparing nodes 📦 📦   ...
+ ✓ Preparing nodes 📦 📦 
+ • Writing configuration 📜  ...
+ ✓ Writing configuration 📜
+ • Starting control-plane 🕹️  ...
+ ✓ Starting control-plane 🕹️
+ • Installing CNI 🔌  ...
+ ✓ Installing CNI 🔌
+ • Installing StorageClass 💾  ...
+ ✓ Installing StorageClass 💾
+ • Joining worker nodes 🚜  ...
+ ✓ Joining worker nodes 🚜
+Set kubectl context to "kind-simkube"
+You can now use your cluster with:
+
+kubectl cluster-info --context kind-simkube
+
+Not sure what to do next? 😅  Check out https://kind.sigs.k8s.io/docs/user/quick-start/
+Switched to context "kind-simkube".
+customresourcedefinition.apiextensions.k8s.io/attaches.kwok.x-k8s.io created
+customresourcedefinition.apiextensions.k8s.io/clusterattaches.kwok.x-k8s.io created
+customresourcedefinition.apiextensions.k8s.io/clusterexecs.kwok.x-k8s.io created
+customresourcedefinition.apiextensions.k8s.io/clusterlogs.kwok.x-k8s.io created
+customresourcedefinition.apiextensions.k8s.io/clusterportforwards.kwok.x-k8s.io created
+customresourcedefinition.apiextensions.k8s.io/clusterresourceusages.kwok.x-k8s.io created
+customresourcedefinition.apiextensions.k8s.io/execs.kwok.x-k8s.io created
+customresourcedefinition.apiextensions.k8s.io/logs.kwok.x-k8s.io created
+customresourcedefinition.apiextensions.k8s.io/metrics.kwok.x-k8s.io created
+customresourcedefinition.apiextensions.k8s.io/portforwards.kwok.x-k8s.io created
+customresourcedefinition.apiextensions.k8s.io/resourceusages.kwok.x-k8s.io created
+customresourcedefinition.apiextensions.k8s.io/stages.kwok.x-k8s.io created
+serviceaccount/kwok-controller created
+clusterrole.rbac.authorization.k8s.io/kwok-controller created
+clusterrolebinding.rbac.authorization.k8s.io/kwok-controller created
+configmap/kwok created
+service/kwok-controller created
+deployment.apps/kwok-controller created
+flowschema.flowcontrol.apiserver.k8s.io/kwok-controller created
+stage.kwok.x-k8s.io/node-heartbeat-with-lease created
+stage.kwok.x-k8s.io/node-initialize created
+stage.kwok.x-k8s.io/pod-complete created
+stage.kwok.x-k8s.io/pod-delete created
+stage.kwok.x-k8s.io/pod-ready created
+Cloning into 'kube-prometheus'...
+customresourcedefinition.apiextensions.k8s.io/alertmanagerconfigs.monitoring.coreos.com created
+customresourcedefinition.apiextensions.k8s.io/alertmanagers.monitoring.coreos.com created
+customresourcedefinition.apiextensions.k8s.io/podmonitors.monitoring.coreos.com created
+customresourcedefinition.apiextensions.k8s.io/probes.monitoring.coreos.com created
+customresourcedefinition.apiextensions.k8s.io/prometheuses.monitoring.coreos.com created
+customresourcedefinition.apiextensions.k8s.io/prometheusagents.monitoring.coreos.com created
+customresourcedefinition.apiextensions.k8s.io/prometheusrules.monitoring.coreos.com created
+customresourcedefinition.apiextensions.k8s.io/scrapeconfigs.monitoring.coreos.com created
+customresourcedefinition.apiextensions.k8s.io/servicemonitors.monitoring.coreos.com created
+customresourcedefinition.apiextensions.k8s.io/thanosrulers.monitoring.coreos.com created
+namespace/monitoring created
+No resources found
+alertmanager.monitoring.coreos.com/main created
+networkpolicy.networking.k8s.io/alertmanager-main created
+poddisruptionbudget.policy/alertmanager-main created
+prometheusrule.monitoring.coreos.com/alertmanager-main-rules created
+secret/alertmanager-main created
+service/alertmanager-main created
+serviceaccount/alertmanager-main created
+servicemonitor.monitoring.coreos.com/alertmanager-main created
+clusterrole.rbac.authorization.k8s.io/blackbox-exporter created
+clusterrolebinding.rbac.authorization.k8s.io/blackbox-exporter created
+configmap/blackbox-exporter-configuration created
+deployment.apps/blackbox-exporter created
+networkpolicy.networking.k8s.io/blackbox-exporter created
+service/blackbox-exporter created
+serviceaccount/blackbox-exporter created
+servicemonitor.monitoring.coreos.com/blackbox-exporter created
+secret/grafana-config created
+secret/grafana-datasources created
+configmap/grafana-dashboard-alertmanager-overview created
+configmap/grafana-dashboard-apiserver created
+configmap/grafana-dashboard-cluster-total created
+configmap/grafana-dashboard-controller-manager created
+configmap/grafana-dashboard-grafana-overview created
+configmap/grafana-dashboard-k8s-resources-cluster created
+configmap/grafana-dashboard-k8s-resources-multicluster created
+configmap/grafana-dashboard-k8s-resources-namespace created
+configmap/grafana-dashboard-k8s-resources-node created
+configmap/grafana-dashboard-k8s-resources-nodes-overview created
+configmap/grafana-dashboard-k8s-resources-pod created
+configmap/grafana-dashboard-k8s-resources-windows-cluster created
+configmap/grafana-dashboard-k8s-resources-windows-namespace created
+configmap/grafana-dashboard-k8s-resources-windows-pod created
+configmap/grafana-dashboard-k8s-resources-workload created
+configmap/grafana-dashboard-k8s-resources-workloads-namespace created
+configmap/grafana-dashboard-k8s-windows-cluster-rsrc-use created
+configmap/grafana-dashboard-k8s-windows-node-rsrc-use created
+configmap/grafana-dashboard-kubelet created
+configmap/grafana-dashboard-namespace-by-pod created
+configmap/grafana-dashboard-namespace-by-workload created
+configmap/grafana-dashboard-node-cluster-rsrc-use created
+configmap/grafana-dashboard-node-rsrc-use created
+configmap/grafana-dashboard-nodes-aix created
+configmap/grafana-dashboard-nodes-darwin created
+configmap/grafana-dashboard-nodes created
+configmap/grafana-dashboard-persistentvolumesusage created
+configmap/grafana-dashboard-pod-total created
+configmap/grafana-dashboard-prometheus-remote-write created
+configmap/grafana-dashboard-prometheus created
+configmap/grafana-dashboard-proxy created
+configmap/grafana-dashboard-scheduler created
+configmap/grafana-dashboard-workload-total created
+configmap/grafana-dashboards created
+deployment.apps/grafana created
+networkpolicy.networking.k8s.io/grafana created
+prometheusrule.monitoring.coreos.com/grafana-rules created
+service/grafana created
+serviceaccount/grafana created
+servicemonitor.monitoring.coreos.com/grafana created
+prometheusrule.monitoring.coreos.com/kube-prometheus-rules created
+clusterrole.rbac.authorization.k8s.io/kube-state-metrics created
+clusterrolebinding.rbac.authorization.k8s.io/kube-state-metrics created
+deployment.apps/kube-state-metrics created
+networkpolicy.networking.k8s.io/kube-state-metrics created
+prometheusrule.monitoring.coreos.com/kube-state-metrics-rules created
+service/kube-state-metrics created
+serviceaccount/kube-state-metrics created
+servicemonitor.monitoring.coreos.com/kube-state-metrics created
+prometheusrule.monitoring.coreos.com/kubernetes-monitoring-rules created
+servicemonitor.monitoring.coreos.com/kube-apiserver created
+servicemonitor.monitoring.coreos.com/coredns created
+servicemonitor.monitoring.coreos.com/kube-controller-manager created
+servicemonitor.monitoring.coreos.com/kube-scheduler created
+servicemonitor.monitoring.coreos.com/kubelet created
+clusterrole.rbac.authorization.k8s.io/node-exporter created
+clusterrolebinding.rbac.authorization.k8s.io/node-exporter created
+daemonset.apps/node-exporter created
+networkpolicy.networking.k8s.io/node-exporter created
+prometheusrule.monitoring.coreos.com/node-exporter-rules created
+service/node-exporter created
+serviceaccount/node-exporter created
+servicemonitor.monitoring.coreos.com/node-exporter created
+clusterrole.rbac.authorization.k8s.io/prometheus-k8s created
+clusterrolebinding.rbac.authorization.k8s.io/prometheus-k8s created
+networkpolicy.networking.k8s.io/prometheus-k8s created
+poddisruptionbudget.policy/prometheus-k8s created
+prometheus.monitoring.coreos.com/k8s created
+prometheusrule.monitoring.coreos.com/prometheus-k8s-prometheus-rules created
+rolebinding.rbac.authorization.k8s.io/prometheus-k8s-config created
+rolebinding.rbac.authorization.k8s.io/prometheus-k8s created
+rolebinding.rbac.authorization.k8s.io/prometheus-k8s created
+rolebinding.rbac.authorization.k8s.io/prometheus-k8s created
+role.rbac.authorization.k8s.io/prometheus-k8s-config created
+role.rbac.authorization.k8s.io/prometheus-k8s created
+role.rbac.authorization.k8s.io/prometheus-k8s created
+role.rbac.authorization.k8s.io/prometheus-k8s created
+service/prometheus-k8s created
+serviceaccount/prometheus-k8s created
+servicemonitor.monitoring.coreos.com/prometheus-k8s created
+apiservice.apiregistration.k8s.io/v1beta1.metrics.k8s.io created
+clusterrole.rbac.authorization.k8s.io/prometheus-adapter created
+clusterrole.rbac.authorization.k8s.io/system:aggregated-metrics-reader created
+clusterrolebinding.rbac.authorization.k8s.io/prometheus-adapter created
+clusterrolebinding.rbac.authorization.k8s.io/resource-metrics:system:auth-delegator created
+clusterrole.rbac.authorization.k8s.io/resource-metrics-server-resources created
+configmap/adapter-config created
+deployment.apps/prometheus-adapter created
+networkpolicy.networking.k8s.io/prometheus-adapter created
+poddisruptionbudget.policy/prometheus-adapter created
+rolebinding.rbac.authorization.k8s.io/resource-metrics-auth-reader created
+service/prometheus-adapter created
+serviceaccount/prometheus-adapter created
+servicemonitor.monitoring.coreos.com/prometheus-adapter created
+clusterrole.rbac.authorization.k8s.io/prometheus-operator created
+clusterrolebinding.rbac.authorization.k8s.io/prometheus-operator created
+deployment.apps/prometheus-operator created
+networkpolicy.networking.k8s.io/prometheus-operator created
+prometheusrule.monitoring.coreos.com/prometheus-operator-rules created
+service/prometheus-operator created
+serviceaccount/prometheus-operator created
+servicemonitor.monitoring.coreos.com/prometheus-operator created
+namespace/cert-manager created
+customresourcedefinition.apiextensions.k8s.io/certificaterequests.cert-manager.io created
+customresourcedefinition.apiextensions.k8s.io/certificates.cert-manager.io created
+customresourcedefinition.apiextensions.k8s.io/challenges.acme.cert-manager.io created
+customresourcedefinition.apiextensions.k8s.io/clusterissuers.cert-manager.io created
+customresourcedefinition.apiextensions.k8s.io/issuers.cert-manager.io created
+customresourcedefinition.apiextensions.k8s.io/orders.acme.cert-manager.io created
+serviceaccount/cert-manager-cainjector created
+serviceaccount/cert-manager created
+serviceaccount/cert-manager-webhook created
+clusterrole.rbac.authorization.k8s.io/cert-manager-cainjector created
+clusterrole.rbac.authorization.k8s.io/cert-manager-controller-issuers created
+clusterrole.rbac.authorization.k8s.io/cert-manager-controller-clusterissuers created
+clusterrole.rbac.authorization.k8s.io/cert-manager-controller-certificates created
+clusterrole.rbac.authorization.k8s.io/cert-manager-controller-orders created
+clusterrole.rbac.authorization.k8s.io/cert-manager-controller-challenges created
+clusterrole.rbac.authorization.k8s.io/cert-manager-controller-ingress-shim created
+clusterrole.rbac.authorization.k8s.io/cert-manager-cluster-view created
+clusterrole.rbac.authorization.k8s.io/cert-manager-view created
+clusterrole.rbac.authorization.k8s.io/cert-manager-edit created
+clusterrole.rbac.authorization.k8s.io/cert-manager-controller-approve:cert-manager-io created
+clusterrole.rbac.authorization.k8s.io/cert-manager-controller-certificatesigningrequests created
+clusterrole.rbac.authorization.k8s.io/cert-manager-webhook:subjectaccessreviews created
+clusterrolebinding.rbac.authorization.k8s.io/cert-manager-cainjector created
+clusterrolebinding.rbac.authorization.k8s.io/cert-manager-controller-issuers created
+clusterrolebinding.rbac.authorization.k8s.io/cert-manager-controller-clusterissuers created
+clusterrolebinding.rbac.authorization.k8s.io/cert-manager-controller-certificates created
+clusterrolebinding.rbac.authorization.k8s.io/cert-manager-controller-orders created
+clusterrolebinding.rbac.authorization.k8s.io/cert-manager-controller-challenges created
+clusterrolebinding.rbac.authorization.k8s.io/cert-manager-controller-ingress-shim created
+clusterrolebinding.rbac.authorization.k8s.io/cert-manager-controller-approve:cert-manager-io created
+clusterrolebinding.rbac.authorization.k8s.io/cert-manager-controller-certificatesigningrequests created
+clusterrolebinding.rbac.authorization.k8s.io/cert-manager-webhook:subjectaccessreviews created
+role.rbac.authorization.k8s.io/cert-manager-cainjector:leaderelection created
+role.rbac.authorization.k8s.io/cert-manager:leaderelection created
+role.rbac.authorization.k8s.io/cert-manager-webhook:dynamic-serving created
+rolebinding.rbac.authorization.k8s.io/cert-manager-cainjector:leaderelection created
+rolebinding.rbac.authorization.k8s.io/cert-manager:leaderelection created
+rolebinding.rbac.authorization.k8s.io/cert-manager-webhook:dynamic-serving created
+service/cert-manager created
+service/cert-manager-webhook created
+deployment.apps/cert-manager-cainjector created
+deployment.apps/cert-manager created
+deployment.apps/cert-manager-webhook created
+mutatingwebhookconfiguration.admissionregistration.k8s.io/cert-manager-webhook created
+validatingwebhookconfiguration.admissionregistration.k8s.io/cert-manager-webhook created
+[2026-06-10 12:25:59] [INFO] simkube: cert-manager.yaml applied
+pod/cert-manager-5b54fc556f-h5xt2 condition met
+pod/cert-manager-webhook-7d4744b5ff-fxvvv condition met
+pod/cert-manager-cainjector-7d8b6cf7b9-8r5gb condition met
+clusterissuer.cert-manager.io/selfsigned created
+[2026-06-10 12:27:10] [INFO] simkube: self-signed.yaml applied
+Cloning into 'simkube-src'...
+Note: switching to 'v2.3.0'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 6920f25 release: version v2.3.0
+namespace/simkube created
+Warning: resource namespaces/simkube is missing the kubectl.kubernetes.io/last-applied-configuration annotation which is required by kubectl apply. kubectl apply should only be used on resources created declaratively by either kubectl create --save-config or kubectl apply. The missing annotation will be patched automatically.
+namespace/simkube configured
+customresourcedefinition.apiextensions.k8s.io/simulationroots.simkube.io created
+customresourcedefinition.apiextensions.k8s.io/simulations.simkube.io created
+serviceaccount/sk-ctrl-sa created
+clusterrolebinding.rbac.authorization.k8s.io/sk-ctrl-crb created
+deployment.apps/sk-ctrl-depl created
+[2026-06-10 12:27:12] [INFO] simkube: Cluster setup successful
+[2026-06-10 12:27:12] [INFO] simkube: Starting container tracking...
+secret/simkube created
+node/openb-node-0000 created
+node/openb-node-0001 created
+node/openb-node-0002 created
+node/openb-node-0003 created
+node/openb-node-0004 created
+node/openb-node-0005 created
+node/openb-node-0006 created
+node/openb-node-0007 created
+node/openb-node-0008 created
+node/openb-node-0009 created
+running simulation with configuration:
+
+---
+name: test-sim
+duration: +5m
+speed: 4.0
+repetitions: 1
+start_paused: false
+hooks:
+- config/hooks/default.yml
+driver_image: quay.io/appliedcomputing/sk-driver:v2.3.0
+driver_port: 8888
+trace_path: file:///data/trace.out
+driver_namespace: simkube
+skip_local_volume_mount: false
+driver_verbosity: debug
+disable_metrics: true
+metrics_namespace: monitoring
+metrics_service_account: prometheus-k8s
+metrics_pod_monitor_namespaces:
+- monitoring-hd
+metrics_pod_monitor_names: null
+metrics_service_monitor_namespaces:
+- monitoring-hd
+metrics_service_monitor_names: null
+prometheus_shards: null
+remote_write_endpoint: http://prom2parquet-svc:1234/receive
+
+Waiting for simulation to reach state Running. Elapsed: 0 seconds.Waiting for simulation to reach state Running. Elapsed: 1 seconds.Waiting for simulation to reach state Running. Elapsed: 3 seconds.Waiting for simulation to reach state Running. Elapsed: 4 seconds.Waiting for simulation to reach state Running. Elapsed: 5 seconds.Waiting for simulation to reach state Running. Elapsed: 6 seconds.Waiting for simulation to reach state Running. Elapsed: 7 seconds.Waiting for simulation to reach state Running. Elapsed: 8 seconds.Waiting for simulation to reach state Running. Elapsed: 10 seconds.Waiting for simulation to reach state Running. Elapsed: 11 seconds.Waiting for simulation to reach state Running. Elapsed: 12 seconds.
+[2026-06-10 12:27:50] [INFO] simkube: Waiting for the count of pending pods to stabilize...
+[2026-06-10 12:27:50] [INFO] simkube: Current pending count: 84, Previous: 84
+
+[2026-06-10 12:27:51] [INFO] simkube: Waiting for pods to be scheduled...
+[2026-06-10 12:28:00] [INFO] simkube: Pending pods: 84
+[2026-06-10 12:28:09] [INFO] simkube: Pending pods: 84
+[2026-06-10 12:28:19] [INFO] simkube: Pending pods: 84
+[2026-06-10 12:28:29] [INFO] simkube: Pending pods: 84
+[2026-06-10 12:28:38] [INFO] simkube: Pending pods: 84
+[2026-06-10 12:28:48] [INFO] simkube: Pending pods: 84
+[2026-06-10 12:28:58] [INFO] simkube: Pending pods: 84
+[2026-06-10 12:29:07] [INFO] simkube: Pending pods: 84
+[2026-06-10 12:29:11] [INFO] simkube: All pending pods can not be scheduled.
+[2026-06-10 12:29:13] [INFO] simkube: All experiments completed. Results written to: /c/Users/chill/Syncthing/Projects/k8s-sims-e2e-spec/results/simkube.csv

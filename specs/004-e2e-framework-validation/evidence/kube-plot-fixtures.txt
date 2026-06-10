@@ -1,0 +1,25 @@
+
+  _  __     _          _____  _       _
+ | |/ /    | |        |  __ \| |     | |
+ | ' /_   _| |__   ___| |__) | | ___ | |_
+ |  <| | | | '_ \ / _ \  ___/| |/ _ \| __|
+ | . \ |_| | |_) |  __/ |    | | (_) | |_
+ |_|\_\__,_|_.__/ \___|_|    |_|\___/ \__|
+-------------------------------------------
+Processing results-kwok from tests\fixtures\results\valid\results-kwok.csv...
+Saved plot: C:\Users\chill\AppData\Local\Temp\e2e-val-plots\run_time_vs_node_count.png
+Saved plot: C:\Users\chill\AppData\Local\Temp\e2e-val-plots\pod_count_vs_node_count.png
+Saved plot: C:\Users\chill\AppData\Local\Temp\e2e-val-plots\unscheduled_pods_vs_node_count.png
+Saved plot: C:\Users\chill\AppData\Local\Temp\e2e-val-plots\total_cpu_seconds_vs_node_count.png
+Saved plot: C:\Users\chill\AppData\Local\Temp\e2e-val-plots\user_cpu_seconds_vs_node_count.png
+Saved plot: C:\Users\chill\AppData\Local\Temp\e2e-val-plots\system_cpu_seconds_vs_node_count.png
+Saved plot: C:\Users\chill\AppData\Local\Temp\e2e-val-plots\memory_peak_gb_vs_node_count.png
+Saved plot: C:\Users\chill\AppData\Local\Temp\e2e-val-plots\scheduling_success_rate_vs_node_count.png
+Saved plot: C:\Users\chill\AppData\Local\Temp\e2e-val-plots\cpu_efficiency_vs_node_count.png
+Saved plot: C:\Users\chill\AppData\Local\Temp\e2e-val-plots\pod_count_vs_run_time.png
+Saved plot: C:\Users\chill\AppData\Local\Temp\e2e-val-plots\results-kwok_correlation_matrix.png
+Saved plot: C:\Users\chill\AppData\Local\Temp\e2e-val-plots\cpu_ratio.png
+Saved plot: C:\Users\chill\AppData\Local\Temp\e2e-val-plots\bars_resource_metrics.png
+Saved plot: C:\Users\chill\AppData\Local\Temp\e2e-val-plots\bars_calculated_metrics.png
+
+Plots saved to 'C:\Users\chill\AppData\Local\Temp\e2e-val-plots' directory.

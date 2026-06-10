@@ -1,0 +1,256 @@
+
+== shell syntax ==
++ bash -n /c/Users/chill/Syncthing/Projects/k8s-sims-e2e-spec/kube-director.sh /c/Users/chill/Syncthing/Projects/k8s-sims-e2e-spec/kube-run.sh /c/Users/chill/Syncthing/Projects/k8s-sims-e2e-spec/entrypoint.sh /c/Users/chill/Syncthing/Projects/k8s-sims-e2e-spec/modules/kubemark/module.sh /c/Users/chill/Syncthing/Projects/k8s-sims-e2e-spec/modules/kube-sched/module.sh /c/Users/chill/Syncthing/Projects/k8s-sims-e2e-spec/modules/kwok/module.sh /c/Users/chill/Syncthing/Projects/k8s-sims-e2e-spec/modules/opensim/module.sh /c/Users/chill/Syncthing/Projects/k8s-sims-e2e-spec/modules/simkube/module.sh /c/Users/chill/Syncthing/Projects/k8s-sims-e2e-spec/modules/template/module.sh /c/Users/chill/Syncthing/Projects/k8s-sims-e2e-spec/modules/vanilla/module.sh /c/Users/chill/Syncthing/Projects/k8s-sims-e2e-spec/utils/benchmark-gen.sh /c/Users/chill/Syncthing/Projects/k8s-sims-e2e-spec/utils/validate-checkpoint.sh
+
+== python compile ==
++ python -m py_compile /c/Users/chill/Syncthing/Projects/k8s-sims-e2e-spec/utils/binpack.py /c/Users/chill/Syncthing/Projects/k8s-sims-e2e-spec/utils/kube-gen.py /c/Users/chill/Syncthing/Projects/k8s-sims-e2e-spec/utils/kube-plot.py /c/Users/chill/Syncthing/Projects/k8s-sims-e2e-spec/utils/min-max-avg.py /c/Users/chill/Syncthing/Projects/k8s-sims-e2e-spec/utils/sktrace.py
+
+== dataset generator ==
++ python /c/Users/chill/Syncthing/Projects/k8s-sims-e2e-spec/utils/kube-gen.py -o /tmp/k8s-sims-validation/gen -c 1 -i 1
+      _  __     _           _____
+     | |/ /    | |         / ____|
+     | ' /_   _| |__   ___| |  __  ___ _ __
+     |  <| | | | '_ \ / _ \ | |_ |/ _ \ '__|
+     | . \ |_| | |_) |  __/ |__| |  __/ | | |
+     |_|\_\__,_|_.__/ \___|\_____|\___|_| |_|
+
+-------------------------------------------------
+[12:18:40] - Loading resources...
+Loading... |Loading... /Loading... -Loading... \Loading... |Loading... /Loading... -Loading... \Loading... |Loading... /Loading... -Loading... \Loading... |Loading... /Loading... -Loading... \Loading... |Loading... /Loading... -Loading... \Loading... |Loading... /Loading... -Loading... \Loading... |Loading... /Loading... -Loading... \Loading... |Loading... /Loading... -Loading... \Loading... |Loading... /Loading... -Loading... \Loading... |Loading... /Loading... -Loading... \Loading... |Loading... /Loading... -Loading... \Loading... |Loading... /Loading... -Loading... \Loading... |Loading... /Loading... -Loading... \Loading... |Loading... /Loading... -Loading... \Loading... |Loading... /[12:18:47] - Finished loading!                 
+[12:18:47] - Generating 1 nodes...
+Generating... |[12:18:47] - Generated 1 nodes and 7 pods.
+[12:18:47] - Finished!                 
+[12:18:47] - Files saved to output folder: C:\Users\chill\AppData\Local\Temp\k8s-sims-validation\gen
+
+== plot valid fixtures ==
++ python /c/Users/chill/Syncthing/Projects/k8s-sims-e2e-spec/utils/kube-plot.py -d /c/Users/chill/Syncthing/Projects/k8s-sims-e2e-spec/tests/fixtures/results/valid -o /tmp/k8s-sims-validation/plots -l -b
+Error: Data directory 'C:\Users\chill\Syncthing\Projects\k8s-sims-e2e-spec\tests\fixtures\results\valid' does not exist or is not a directory.
+
+  _  __     _          _____  _       _
+ | |/ /    | |        |  __ \| |     | |
+ | ' /_   _| |__   ___| |__) | | ___ | |_
+ |  <| | | | '_ \ / _ \  ___/| |/ _ \| __|
+ | . \ |_| | |_) |  __/ |    | | (_) | |_
+ |_|\_\__,_|_.__/ \___|_|    |_|\___/ \__|
+-------------------------------------------
++ python /c/Users/chill/Syncthing/Projects/k8s-sims-e2e-spec/utils/min-max-avg.py -d /c/Users/chill/Syncthing/Projects/k8s-sims-e2e-spec/tests/fixtures/results/valid -o /tmp/k8s-sims-validation/summary
+Error: Data directory 'C:\Users\chill\Syncthing\Projects\k8s-sims-e2e-spec\tests\fixtures\results\valid' does not exist or is not a directory.
+
+== plot edge fixtures ==
++ python /c/Users/chill/Syncthing/Projects/k8s-sims-e2e-spec/utils/kube-plot.py -d /c/Users/chill/Syncthing/Projects/k8s-sims-e2e-spec/tests/fixtures/results/edge-cases -o /tmp/k8s-sims-validation/edge-plots -l -b
+Error: Data directory 'C:\Users\chill\Syncthing\Projects\k8s-sims-e2e-spec\tests\fixtures\results\edge-cases' does not exist or is not a directory.
+
+  _  __     _          _____  _       _
+ | |/ /    | |        |  __ \| |     | |
+ | ' /_   _| |__   ___| |__) | | ___ | |_
+ |  <| | | | '_ \ / _ \  ___/| |/ _ \| __|
+ | . \ |_| | |_) |  __/ |    | | (_) | |_
+ |_|\_\__,_|_.__/ \___|_|    |_|\___/ \__|
+-------------------------------------------
+
+== missing directory expected failure ==
+Error: Data directory 'C:\Users\chill\AppData\Local\Temp\k8s-sims-validation\does-not-exist' does not exist or is not a directory.
+
+  _  __     _          _____  _       _
+ | |/ /    | |        |  __ \| |     | |
+ | ' /_   _| |__   ___| |__) | | ___ | |_
+ |  <| | | | '_ \ / _ \  ___/| |/ _ \| __|
+ | . \ |_| | |_) |  __/ |    | | (_) | |_
+ |_|\_\__,_|_.__/ \___|_|    |_|\___/ \__|
+-------------------------------------------
++ python /c/Users/chill/Syncthing/Projects/k8s-sims-e2e-spec/utils/kube-gen.py -o /tmp/k8s-sims-validation/path with spaces -c 1 -i 1
+      _  __     _           _____
+     | |/ /    | |         / ____|
+     | ' /_   _| |__   ___| |  __  ___ _ __
+     |  <| | | | '_ \ / _ \ | |_ |/ _ \ '__|
+     | . \ |_| | |_) |  __/ |__| |  __/ | | |
+     |_|\_\__,_|_.__/ \___|\_____|\___|_| |_|
+
+-------------------------------------------------
+[12:18:51] - Loading resources...
+Loading... |Loading... /Loading... -Loading... \Loading... |Loading... /Loading... -Loading... \Loading... |Loading... /Loading... -Loading... \Loading... |Loading... /Loading... -Loading... \Loading... |Loading... /Loading... -Loading... \Loading... |Loading... /Loading... -Loading... \Loading... |Loading... /Loading... -Loading... \Loading... |Loading... /Loading... -Loading... \Loading... |Loading... /Loading... -Loading... \Loading... |Loading... /Loading... -Loading... \Loading... |Loading... /Loading... -Loading... \Loading... |Loading... /Loading... -Loading... \Loading... |Loading... /Loading... -Loading... \Loading... |Loading... /Loading... -Loading... \Loading... |Loading... /[12:18:57] - Finished loading!                 
+[12:18:57] - Generating 1 nodes...
+Generating... |[12:18:57] - Generated 1 nodes and 7 pods.
+[12:18:57] - Finished!                 
+[12:18:57] - Files saved to output folder: C:\Users\chill\AppData\Local\Temp\k8s-sims-validation\path with spaces
++ bash /c/Users/chill/Syncthing/Projects/k8s-sims-e2e-spec/kube-run.sh -e /tmp/k8s-sims-validation/path with spaces -m kwok -n 1 -x 1
+  _  __     _          _____             
+ | |/ /    | |        |  __ \            
+ | ' /_   _| |__   ___| |__) |   _ _ __  
+ |  <| | | | '_ \ / _ \  _  / | | | '_ \ 
+ | . \ |_| | |_) |  __/ | \ \ |_| | | | |
+ |_|\_\__,_|_.__/ \___|_|  \_\__,_|_| |_|
+------------------------------------------
+[2026-06-10 12:18:58] [INFO] Received arguments -e /tmp/k8s-sims-validation/path with spaces -m kwok -n 1 -x 1
+[2026-06-10 12:18:58] [INFO] kwok: KWOK module loaded!
+[2026-06-10 12:18:58] [INFO] kwok: Simulation started with mode: kwok
+[2026-06-10 12:18:58] [INFO] kwok: Cluster: kwok
+[2026-06-10 12:18:58] [INFO] kwok: Runs per experiment: 1
+[2026-06-10 12:18:58] [INFO] kwok: Results file: /c/Users/chill/Syncthing/Projects/k8s-sims-e2e-spec/results/kwok.csv
+[2026-06-10 12:18:58] [INFO] kwok: Node file: /tmp/k8s-sims-validation/path with spaces/nodes-1.yaml
+[2026-06-10 12:18:58] [INFO] kwok: Pod file: /tmp/k8s-sims-validation/path with spaces/pods-1.yaml
+[2026-06-10 12:18:58] [INFO] kwok: Starting run 1 for 1 nodes...
+[2026-06-10 12:18:58] [INFO] kwok: Starting cluster setup...
+{"time":"2026-06-10T12:18:58.5916444+02:00","level":"INFO","source":{"function":"sigs.k8s.io/kwok/pkg/kwokctl/cmd/create/cluster.runE","file":"/home/runner/work/kwok/kwok/pkg/kwokctl/cmd/create/cluster/cluster.go","line":304},"msg":"Cluster is creating","cluster":"kwok"}
+{"time":"2026-06-10T12:18:59.8067404+02:00","level":"INFO","source":{"function":"sigs.k8s.io/kwok/pkg/kwokctl/cmd/create/cluster.runE","file":"/home/runner/work/kwok/kwok/pkg/kwokctl/cmd/create/cluster/cluster.go","line":311},"msg":"Cluster is created","cluster":"kwok","elapsed":{"nanosecond":1215607600,"human":"1.2156076s"}}
+{"time":"2026-06-10T12:18:59.8332691+02:00","level":"INFO","source":{"function":"sigs.k8s.io/kwok/pkg/kwokctl/cmd/create/cluster.runE","file":"/home/runner/work/kwok/kwok/pkg/kwokctl/cmd/create/cluster/cluster.go","line":344},"msg":"Cluster is starting","cluster":"kwok"}
+{"time":"2026-06-10T12:19:00.8033317+02:00","level":"INFO","source":{"function":"sigs.k8s.io/kwok/pkg/kwokctl/cmd/create/cluster.runE","file":"/home/runner/work/kwok/kwok/pkg/kwokctl/cmd/create/cluster/cluster.go","line":349},"msg":"Cluster is started","cluster":"kwok","elapsed":{"nanosecond":970062600,"human":"970.0626ms"}}
+Switched to context "kwok-kwok".
+[2026-06-10 12:19:00] [INFO] kwok: Cluster setup successful
+[2026-06-10 12:19:00] [INFO] kwok: Starting container tracking...
+namespace/paib-gpu created
+[2026-06-10 12:19:01] [INFO] kwok: Waiting for default service account in paib-gpu...
+[2026-06-10 12:19:01] [ERROR] kwok: Simulation time exceeded: 3 seconds.
+[2026-06-10 12:19:02] [INFO] kwok: Waiting for default service account in paib-gpu...
+node/openb-node-0000 created
+pod/openb-pod-0000 created
+pod/openb-pod-0001 created
+pod/openb-pod-0002 created
+pod/openb-pod-0003 created
+pod/openb-pod-0004 created
+pod/openb-pod-0005 created
+pod/openb-pod-0006 created
+
+[2026-06-10 12:19:04] [INFO] kwok: Waiting for the count of pending pods to stabilize...
+[2026-06-10 12:19:04] [INFO] kwok: Current pending count: 0, Previous: 0
+
+[2026-06-10 12:19:05] [INFO] kwok: Waiting for pods to be scheduled...
+[2026-06-10 12:19:06] [INFO] kwok: All pods scheduled successfully
+{"time":"2026-06-10T12:19:06.2055457+02:00","level":"INFO","source":{"function":"sigs.k8s.io/kwok/pkg/kwokctl/cmd/delete/cluster.deleteCluster","file":"/home/runner/work/kwok/kwok/pkg/kwokctl/cmd/delete/cluster/cluster.go","line":121},"msg":"Cluster is stopping","cluster":"kwok"}
+{"time":"2026-06-10T12:19:06.9771429+02:00","level":"INFO","source":{"function":"sigs.k8s.io/kwok/pkg/kwokctl/cmd/delete/cluster.deleteCluster","file":"/home/runner/work/kwok/kwok/pkg/kwokctl/cmd/delete/cluster/cluster.go","line":126},"msg":"Cluster is stopped","cluster":"kwok","elapsed":{"nanosecond":771597200,"human":"771.5972ms"}}
+{"time":"2026-06-10T12:19:06.9771429+02:00","level":"INFO","source":{"function":"sigs.k8s.io/kwok/pkg/kwokctl/cmd/delete/cluster.deleteCluster","file":"/home/runner/work/kwok/kwok/pkg/kwokctl/cmd/delete/cluster/cluster.go","line":132},"msg":"Cluster is deleting","cluster":"kwok"}
+{"time":"2026-06-10T12:19:07.6468778+02:00","level":"INFO","source":{"function":"sigs.k8s.io/kwok/pkg/kwokctl/cmd/delete/cluster.deleteCluster","file":"/home/runner/work/kwok/kwok/pkg/kwokctl/cmd/delete/cluster/cluster.go","line":148},"msg":"Cluster is deleted","cluster":"kwok","elapsed":{"nanosecond":669734900,"human":"669.7349ms"}}
+[2026-06-10 12:19:07] [INFO] kwok: All experiments completed. Results written to: /c/Users/chill/Syncthing/Projects/k8s-sims-e2e-spec/results/kwok.csv
+Existing output remained untouched when validation failed before writing.
+
+== documentation discovery ==
+.specify/memory/constitution.md:71:Full simulator execution requires Docker-in-Docker, host cgroup access, or network pulls. Non-privileged validation paths (syntax checks, Python compilation, fixture plotting, bash test suite) must always remain available and passing.
+ARCHITECTURE.md:12:├── docker-compose.yaml   # One-command reproducible benchmark environment
+ARCHITECTURE.md:105:**Description**: Iterates over simulator modes and dataset sizes, invoking `kube-run.sh` for each combination. Reads the active module list from `SIM_MODULES` file. Supports path-specific experiment overrides.
+ARCHITECTURE.md:113:**Description**: Docker container entrypoint that runs `kube-director.sh` with environment-variable arguments. Reports individual image-pull failures. Runs in privileged mode with host cgroup access.
+ARCHITECTURE.md:207:**Privilege Level**: `privileged: true`, `cgroup: host` — required for kind, KWOK, and cgroup access
+ARCHITECTURE.md:217:**Privileged Execution**: Container runs as privileged with host cgroup and Docker socket access. See `SECURITY.md` for isolation guidance.
+ARCHITECTURE.md:224:- Non-privileged validation path available for environments without Docker/cgroups
+ARCHITECTURE.md:247:- Explore rootless or less-privileged simulator execution modes
+LICENSE:9:      "License" shall mean the terms and conditions for use, reproduction,
+LICENSE:69:      copyright license to reproduce, prepare Derivative Works of,
+LICENSE:89:   4. Redistribution. You may reproduce and distribute copies of the
+LICENSE:125:      for use, reproduction, or distribution of Your modifications, or
+LICENSE:127:      reproduction, and distribution of the Work otherwise complies with
+LICENSE:141:      origin of the Work and reproducing the content of the NOTICE file.
+README.md:41:To reproduce the default experiments just deploy the [docker-compose.yaml](docker-compose.yaml) provided. This will pull the proper image and run all the experiments using the [big dataset](data/big).
+SECURITY.md:3:This benchmark toolkit can run privileged container and simulator workflows. Treat full simulator execution as a local infrastructure operation, not as a harmless plotting command.
+SECURITY.md:15:Some modules clone repositories or pull manifests/images at runtime. Network availability and upstream changes can affect reproducibility. See `SIM_MODULES.md` for pinned and intentionally variable dependencies.
+SECURITY.md:24:- Avoid running privileged benchmarks on a personal workstation with important containers.
+SECURITY.md:28:## Non-privileged limitations
+SECURITY.md:30:Without Docker, privileged cgroups, and Kubernetes tooling, maintainers can still run syntax checks, Python compilation, fixture plotting, dataset generation, and documentation checks through `utils/validate-checkpoint.sh`.
+SIM_MODULES.md:5:## Active simulator modes
+SIM_MODULES.md:26:## Generated data and reproducibility
+SIM_MODULES.md:28:Runtime dependencies are categorized as pinned, intentionally variable, or unavailable above. Generated datasets should be reproducible through `utils/kube-gen.py` and should not be treated as authoritative benchmark results unless the exact generator command and simulator mode are recorded in a checkpoint.
+docker-compose.yaml:5:    privileged: true
+Binary file modules/opensim/cmd matches
+specs/001-fix-benchmark-reliability/checkpoints.md:8:- Release: https://github.com/TheSmuks/k8s-sims/releases/tag/sarteco-2026
+specs/001-fix-benchmark-reliability/checkpoints.md:9:  - Local tag `sarteco-2026` exists.
+specs/001-fix-benchmark-reliability/checkpoints.md:60:## User Story 3 - Simulator setup, mode inventory, and reproducibility
+specs/001-fix-benchmark-reliability/checkpoints.md:66:- `SECURITY.md`: documents privileged Docker, Docker-in-Docker, host cgroup access, and local environment file risks; recommends disposable VMs and reviews of module scripts.
+specs/001-fix-benchmark-reliability/checkpoints.md:68:- Validation: `git grep -n "sarteco-2026\|privileged\|simulator mode\|reproduc" -- . ':!data/**'` returns matches in `quickstart.md`, `plan.md`, `research.md`, `contracts/cli-contracts.md`, and `SIM_MODULES.md`.
+specs/001-fix-benchmark-reliability/data-model.md:50:- Runtime dependencies must be categorized by reproducibility status.
+specs/001-fix-benchmark-reliability/data-model.md:64:- `simulator_mode`: Associated simulator mode or shared input type.
+specs/001-fix-benchmark-reliability/plan.md:9:Stabilize the Kubernetes simulator benchmarking toolkit by first preserving the pre-implementation state as the `sarteco-2026` release, then fixing broken result plotting, hardening run orchestration, documenting privileged/reproducibility risks, clarifying simulator/data policies, and adding validation paths that make each improvement independently verifiable and committable. The implementation will be split into review checkpoints so each part can be tested and committed before the next part begins.
+specs/001-fix-benchmark-reliability/plan.md:27:**Constraints**: Full simulator verification may require privileged Docker, host cgroup access, and network access; local Windows/Git-Bash development may lack Docker Compose, python3 alias, or Linux cgroup behavior; implementation must avoid accidental secret exposure from local environment files
+specs/001-fix-benchmark-reliability/quickstart.md:10:- Docker, privileged container support, and Linux cgroup access only for full simulator validation.
+specs/001-fix-benchmark-reliability/quickstart.md:18:git tag -a sarteco-2026 -m "sarteco-2026 pre-implementation release"
+specs/001-fix-benchmark-reliability/quickstart.md:19:git push origin sarteco-2026
+specs/001-fix-benchmark-reliability/quickstart.md:20:gh release create sarteco-2026 --title "sarteco-2026" --notes "Pre-implementation release before benchmark reliability stabilization changes."
+specs/001-fix-benchmark-reliability/quickstart.md:24:- Tag `sarteco-2026` exists locally and on the remote.
+specs/001-fix-benchmark-reliability/quickstart.md:25:- GitHub release `sarteco-2026` is visible.
+specs/001-fix-benchmark-reliability/quickstart.md:29:- Release created: https://github.com/TheSmuks/k8s-sims/releases/tag/sarteco-2026
+specs/001-fix-benchmark-reliability/quickstart.md:90:## Checkpoint 3: Simulator setup, mode inventory, and reproducibility
+specs/001-fix-benchmark-reliability/quickstart.md:96:git grep -n "sarteco-2026\|privileged\|simulator mode\|reproduc" -- . ':!data/**'
+specs/001-fix-benchmark-reliability/research.md:13:**Rationale**: Full simulator execution requires Docker-in-Docker, privileged host access, Linux cgroups, and network access. The planning workflow must remain usable on Windows/Git-Bash and machines without Docker Compose. Syntax checks, Python compilation, generated fixture runs, path-with-spaces checks, and small result fixtures provide reliable baseline validation. Full simulator validation remains a higher-confidence check when prerequisites exist.
+specs/001-fix-benchmark-reliability/research.md:43:## Decision: Document privileged execution as accepted risk, not a defect to remove immediately
+specs/001-fix-benchmark-reliability/research.md:45:**Rationale**: Full benchmark runs appear to require Docker-in-Docker, host cgroup access, kind/KWOK/Kubemark behavior, and privileged containers. Removing that would likely change the benchmark architecture. The reliability feature should make risks visible and recommend isolated execution.
+specs/001-fix-benchmark-reliability/research.md:48:- Remove all privileged execution: rejected as likely incompatible with existing simulator requirements.
+specs/001-fix-benchmark-reliability/research.md:51:## Decision: Categorize runtime dependencies by reproducibility status
+specs/001-fix-benchmark-reliability/research.md:53:**Rationale**: Some dependencies are version-pinned, some are pulled or cloned dynamically, and some are constrained by simulator ecosystems. A dependency inventory that marks pinned, intentionally variable, or unavailable makes reproducibility gaps visible and actionable.
+specs/001-fix-benchmark-reliability/research.md:57:- Leave dynamic downloads implicit: rejected because benchmark results need reproducible setup context.
+specs/001-fix-benchmark-reliability/research.md:77:**Rationale**: The requested feature targets reliability, safety, and reproducibility. Changing scheduling workload composition, simulator scoring, or metric definitions would make results incomparable with prior runs and expand scope.
+specs/001-fix-benchmark-reliability/spec.md:9:**Input**: User description: "Address the identified benchmark toolkit weaknesses: repair plotting failures, correct data validation, make simulator setup and timeout behavior reliable, remove unsafe command construction, improve path handling, document privileged execution risks, improve reproducibility, handle result edge cases, manage generated data and environment-file risks, clarify supported simulator modes, strengthen error handling, make memory-limit cancellation reliable, and make CSV backup behavior explicit. Commit and verify after each part is solved."
+specs/001-fix-benchmark-reliability/spec.md:48:### User Story 3 - Trust simulator setup and reproducibility (Priority: P2)
+specs/001-fix-benchmark-reliability/spec.md:50:A maintainer can understand and reproduce the simulator environment, including which simulator modes are supported, which runtime dependencies are expected, and what privileged execution risks are accepted.
+specs/001-fix-benchmark-reliability/spec.md:52:**Why this priority**: Benchmark comparisons are only useful when users can reproduce the environment and understand operational risk.
+specs/001-fix-benchmark-reliability/spec.md:54:**Independent Test**: Can be tested by reviewing the supported-mode registry and safety/reproducibility documentation, then performing a clean setup dry run that reports pinned or intentionally variable dependencies.
+specs/001-fix-benchmark-reliability/spec.md:59:2. **Given** a user evaluates containerized execution, **When** they read the project safety guidance, **Then** they can identify privileged host access requirements and decide whether to run in an isolated environment.
+specs/001-fix-benchmark-reliability/spec.md:60:3. **Given** a maintainer needs reproducible benchmark results, **When** they review setup dependencies, **Then** pinned dependencies, intentionally floating dependencies, and runtime downloads are clearly distinguished.
+specs/001-fix-benchmark-reliability/spec.md:110:- **FR-015**: The containerized execution path MUST disclose privileged host access requirements and provide guidance for isolated use.
+specs/001-fix-benchmark-reliability/spec.md:111:- **FR-016**: Setup dependencies MUST be either pinned to a reproducible version or explicitly documented as intentionally variable.
+specs/001-fix-benchmark-reliability/spec.md:112:- **FR-017**: Supported simulator modes MUST be documented in one authoritative place, including whether each mode is active, experimental, or unavailable.
+specs/001-fix-benchmark-reliability/spec.md:125:- **Safety Notice**: User-facing guidance that describes privileged execution requirements, host access, isolation expectations, and acceptable risk boundaries.
+specs/001-fix-benchmark-reliability/spec.md:137:- **SC-006**: Every active simulator mode has documented status, data expectations, setup requirements, and cleanup expectations.
+specs/001-fix-benchmark-reliability/spec.md:141:- **SC-010**: A maintainer can identify privileged execution risks and safe-run expectations in under 2 minutes from project guidance.
+specs/001-fix-benchmark-reliability/spec.md:146:- The feature focuses on reliability, safety, reproducibility, and workflow clarity rather than changing benchmark methodology or simulator scoring.
+specs/001-fix-benchmark-reliability/tasks.md:21:- [X] T001 Verify Git tag and GitHub release `sarteco-2026` exist and record the release URL/status in `specs/001-fix-benchmark-reliability/quickstart.md`
+specs/001-fix-benchmark-reliability/tasks.md:39:- [X] T010 [P] Add project safety and reproducibility documentation skeleton in `SECURITY.md`
+specs/001-fix-benchmark-reliability/tasks.md:107:## Phase 5: User Story 3 - Trust simulator setup and reproducibility (Priority: P2)
+specs/001-fix-benchmark-reliability/tasks.md:109:**Goal**: Maintainers can understand supported simulator modes, setup dependencies, privileged execution risks, and reproducibility gaps before running benchmarks.
+specs/001-fix-benchmark-reliability/tasks.md:120:- [X] T052 [US3] Document privileged Docker, host cgroup, and Docker-in-Docker risks in `SECURITY.md`
+specs/001-fix-benchmark-reliability/tasks.md:121:- [X] T053 [US3] Document isolated execution recommendations and non-privileged limitations in `SECURITY.md`
+specs/001-fix-benchmark-reliability/tasks.md:122:- [X] T054 [US3] Document active, experimental, unavailable, and legacy simulator modes in `SIM_MODULES.md`
+specs/001-fix-benchmark-reliability/tasks.md:123:- [X] T055 [US3] Reconcile `SIM_MODULES` with documented active simulator modes in `SIM_MODULES`
+specs/001-fix-benchmark-reliability/tasks.md:124:- [X] T056 [US3] Document runtime dependency reproducibility status in `SIM_MODULES.md`
+specs/001-fix-benchmark-reliability/tasks.md:130:**Checkpoint**: User Story 3 is independently functional when a maintainer can identify active modes, dependencies, privileged risks, and dataset policy from project documentation.
+specs/001-fix-benchmark-reliability/tasks.md:231:Task: "T052 [US3] Document privileged Docker, host cgroup, and Docker-in-Docker risks in SECURITY.md"
+specs/001-fix-benchmark-reliability/tasks.md:232:Task: "T054 [US3] Document active, experimental, unavailable, and legacy simulator modes in SIM_MODULES.md"
+specs/001-fix-benchmark-reliability/tasks.md:261:4. US3: simulator support, safety, reproducibility, and dataset policies are documented and aligned.
+specs/001-fix-benchmark-reliability/tasks.md:273:- The `sarteco-2026` release was created before implementation changes and should remain the pre-implementation recovery point.
+specs/002-bash-test-suite/plan.md:21:**Target Platform**: POSIX shell environment. Validated on Windows/Git-Bash 5.x and on Linux. No privileged execution required.
+specs/002-bash-test-suite/plan.md:44:- The bash test suite must run end to end without privileged execution.
+specs/002-bash-test-suite/research.md:29:**Rationale**: bats tests run in a subshell. Prepending a directory of small shell scripts (e.g., `mock-kwokctl`, `mock-kind`, `mock-docker`) to `PATH` for the duration of the test lets the suite exercise real script behavior without the real tools. This is cheaper and more deterministic than container-based mocking, works on Windows/Git-Bash, and supports the user's "no privileged execution" requirement.
+specs/002-bash-test-suite/spec.md:84:- **FR-014**: The suite MUST be runnable in the local environment on this Windows/Git-Bash host without privileged execution and MUST NOT require network access for the test code itself (test fixtures are local; mocks are local).
+specs/003-trace-gen-overhaul/research.md:117:**Rationale**: SimKube's `jsonutils::hash_option(obj.data.get("spec"))` computes a hash of the pod's spec field for the index. The Rust implementation uses `DefaultHasher` (SipHash 1-3) which produces a `u64`. However, since this hash is only used for pod lifecycle deduplication (which we don't need for static snapshots), the exact hash algorithm doesn't matter as long as it's deterministic. We'll use a stable hash for reproducibility.
+tests/bash/tests/behavioral-runner.bats:26:@test "kube-run.sh errors on unknown simulator mode" {
+utils/base/hollow-node.yml:14:      privileged: true
+utils/base/hollow-node.yml:62:      privileged: true
+utils/base/hollow-node.yml:89:      privileged: true
+utils/validate-checkpoint.sh:71:  git -C "$ROOT_DIR" grep -n "sarteco-2026\|privileged\|simulator mode\|reproduc" -- . ':!data/**'
+
+== bash test suite ==
++ bash /c/Users/chill/Syncthing/Projects/k8s-sims-e2e-spec/tests/bash/run.sh --report-dir /tmp/k8s-sims-validation/bash-tests
+1..21
+ok 1 kube-director.sh prints help and exits 0 with -h
+ok 2 kube-director.sh errors on missing experiment path
+ok 3 kube-director.sh loads SIM_MODULES inventory
+ok 4 entrypoint.sh reports individual image-pull failures
+ok 5 each module script sources without error and prints a log line
+ok 6 kube-gen.py can be invoked with a spaced output path
+ok 7 kube-run.sh prints help and exits 0 with -h
+ok 8 kube-run.sh errors on missing required arguments
+ok 9 kube-run.sh errors on unknown simulator mode
+ok 10 kube-run.sh errors on missing experiment path
+ok 11 kube-run.sh preserves an existing result file as *.preserved-*.csv
+ok 12 validate-checkpoint.sh lists bash-tests in the usage line
+ok 13 validate-checkpoint.sh bash-tests subcommand runs the runner
+ok 14 skip_if_missing_tools emits missing-tool reason for absent tool
+ok 15 skip_if_missing_tools returns empty reason when all tools exist
+ok 16 runtime scripts pass bash -n under set -u and pipefail
+ok 17 inventory is non-empty
+ok 18 every inventory entry has a parseable shell syntax
+ok 19 shim kwokctl is on PATH when --with-mocks is in effect
+ok 20 shim records the matching rule response
+ok 21 run.sh accepts --with-mocks and runs the suite to completion
+
+[run.sh] report: /tmp/k8s-sims-validation/bash-tests/20260610T101908Z.tap
+[run.sh] summary: /tmp/k8s-sims-validation/bash-tests/20260610T101908Z.summary
+[run.sh] pass=21 fail=0 skip=0 duration=14s
+
+Bash test summary (/tmp/k8s-sims-validation/bash-tests/latest.summary):
+timestamp=20260610T101908Z
+branch=feature/004-e2e-framework-validation
+bats_path=/c/Users/chill/Syncthing/Projects/k8s-sims-e2e-spec/tests/bash/.bats/install/bin/bats
+framework_version=1.11.0
+mocked=false
+inventory_size=12
+pass_count=21
+fail_count=0
+skip_count=0
+duration_seconds=14

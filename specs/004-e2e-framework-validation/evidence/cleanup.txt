@@ -1,0 +1,21 @@
+# Cleanup Evidence
+
+## Active kind clusters
+No kind clusters found.
+
+## Active kwokctl clusters
+
+## Current kubectl context
+error: current-context is not set
+
+## Docker containers running
+NAMES     STATUS
+
+## Results files
+total 12
+drwxr-xr-x 1 chill 197609   0 Jun 10 12:25 .
+drwxr-xr-x 1 chill 197609   0 Jun 10 12:19 ..
+-rw-r--r-- 1 chill 197609 172 Jun 10 12:24 kubemark.csv
+-rw-r--r-- 1 chill 197609 170 Jun 10 12:23 kwok.csv
+-rw-r--r-- 1 chill 197609 168 Jun 10 12:19 kwok.preserved-20260610-122311.csv
+-rw-r--r-- 1 chill 197609 173 Jun 10 12:29 simkube.csv

@@ -1,0 +1,8 @@
+Keys: ['version', 'config', 'events', 'index', 'pod_lifecycles']
+Version: 2
+Config: {'trackedObjects': {'v1.Pod': {}}}
+Events count: 1
+Event 0 keys: ['ts', 'applied_objs', 'deleted_objs']
+Index keys: ['v1.Pod']
+Pod lifecycles: {}
+Applied objs in event 0: 84

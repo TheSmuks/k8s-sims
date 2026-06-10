@@ -1,0 +1,11 @@
+output/e2e-validation/kubemark/nodes-10.yaml
+output/e2e-validation/kubemark/pods-10.yaml
+output/e2e-validation/opensim/new-node.yaml
+output/e2e-validation/opensim/nodes-10.yaml
+output/e2e-validation/opensim/pods-10.yaml
+output/e2e-validation/opensim/simon-config-10.yaml
+output/e2e-validation/simkube/nodes-10.yaml
+output/e2e-validation/simkube/pods-10.yaml
+output/e2e-validation/simkube/trace-10.sktrace
+output/e2e-validation/vanilla/nodes-10.yaml
+output/e2e-validation/vanilla/pods-10.yaml

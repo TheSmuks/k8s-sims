@@ -1,0 +1,15 @@
+# Python Dependencies Evidence
+
+Command: uv pip install -r requirements.txt
+Result: SUCCESS
+
+All required dependencies importable:
+- yaml (PyYAML)
+- msgpack
+- pandas
+- numpy
+- scipy
+- seaborn
+- matplotlib
+
+Note: `uv pip install --system` failed because it resolved Python 3.14.3 which lacks Visual Studio build tools for pandas C extensions. Using the hermes-agent venv Python 3.11.15 resolved this.

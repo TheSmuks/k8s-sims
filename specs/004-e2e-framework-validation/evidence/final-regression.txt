@@ -1,0 +1,92 @@
+=== Final Regression: 2026-06-10T10:34:01Z ===
+
+--- pytest ---
+============================= test session starts =============================
+platform win32 -- Python 3.11.15, pytest-9.0.2, pluggy-1.6.0 -- C:\Users\chill\AppData\Local\hermes\hermes-agent\venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\chill\Syncthing\Projects\k8s-sims-e2e-spec
+plugins: anyio-4.12.1, asyncio-1.3.0, timeout-2.4.0
+asyncio: mode=Mode.STRICT, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collecting ... collected 36 items
+
+tests/test_binpack.py::TestFirstFit::test_basic_placement PASSED         [  2%]
+tests/test_binpack.py::TestFirstFit::test_fills_nodes_sequentially PASSED [  5%]
+tests/test_binpack.py::TestAffinityConstraint::test_affinity_targets_half_nodes PASSED [  8%]
+tests/test_binpack.py::TestAffinityConstraint::test_affinity_no_matching_nodes PASSED [ 11%]
+tests/test_binpack.py::TestInsufficientResources::test_more_demand_than_capacity PASSED [ 13%]
+tests/test_binpack.py::TestInsufficientResources::test_single_oversized_pod PASSED [ 16%]
+tests/test_binpack.py::TestZeroCostPods::test_no_resource_requests_always_placed PASSED [ 19%]
+tests/test_binpack.py::TestZeroCostPods::test_zero_cost_pod_on_full_node PASSED [ 22%]
+tests/test_binpack.py::TestHeterogeneousNodes::test_mixed_capacities PASSED [ 25%]
+tests/test_binpack.py::TestHeterogeneousNodes::test_node_remaining_tracks_correctly PASSED [ 27%]
+tests/test_binpack.py::TestNodeSelectorPlusAffinity::test_both_must_match PASSED [ 30%]
+tests/test_binpack.py::TestNodeSelectorPlusAffinity::test_selector_match_affinity_miss PASSED [ 33%]
+tests/test_binpack.py::TestNodeSelectorPlusAffinity::test_affinity_match_selector_miss PASSED [ 36%]
+tests/test_e2e_validation.py::TestSkctlValidateSyntax::test_validate_sktrace_uses_check_subcommand PASSED [ 38%]
+tests/test_e2e_validation.py::TestSkctlValidateSyntax::test_validate_sktrace_degrades_gracefully_without_skctl PASSED [ 41%]
+tests/test_sktrace.py::TestTopLevelKeys::test_trace_has_required_keys PASSED [ 44%]
+tests/test_sktrace.py::TestTopLevelKeys::test_trace_has_exactly_five_keys PASSED [ 47%]
+tests/test_sktrace.py::TestVersion::test_version_is_2 PASSED             [ 50%]
+tests/test_sktrace.py::TestVersion::test_version_is_int PASSED           [ 52%]
+tests/test_sktrace.py::TestConfig::test_config_has_tracked_objects_camel_case PASSED [ 55%]
+tests/test_sktrace.py::TestConfig::test_config_tracks_v1_pod PASSED      [ 58%]
+tests/test_sktrace.py::TestConfig::test_tracked_objects_key_is_camel_case PASSED [ 61%]
+tests/test_sktrace.py::TestEvent::test_event_has_ts PASSED               [ 63%]
+tests/test_sktrace.py::TestEvent::test_event_has_applied_objs PASSED     [ 66%]
+tests/test_sktrace.py::TestEvent::test_event_has_deleted_objs PASSED     [ 69%]
+tests/test_sktrace.py::TestEvent::test_deleted_objs_is_empty_for_snapshot PASSED [ 72%]
+tests/test_sktrace.py::TestEvent::test_ts_is_int PASSED                  [ 75%]
+tests/test_sktrace.py::TestEvent::test_applied_objs_is_list PASSED       [ 77%]
+tests/test_sktrace.py::TestPodLifecycles::test_pod_lifecycles_is_empty_dict PASSED [ 80%]
+tests/test_sktrace.py::TestPodLifecycles::test_pod_lifecycles_is_dict PASSED [ 83%]
+tests/test_sktrace.py::TestMsgpackRoundtrip::test_roundtrip_preserves_structure PASSED [ 86%]
+tests/test_sktrace.py::TestMsgpackRoundtrip::test_roundtrip_file_write_read PASSED [ 88%]
+tests/test_sktrace.py::TestIndex::test_index_has_gvk_key PASSED          [ 91%]
+tests/test_sktrace.py::TestIndex::test_index_has_namespace_name_entries PASSED [ 94%]
+tests/test_sktrace.py::TestIndex::test_index_values_are_int_hashes PASSED [ 97%]
+tests/test_sktrace.py::TestIndex::test_index_covers_all_placed_pods PASSED [100%]
+
+============================= 36 passed in 0.07s ==============================
+
+--- bats ---
+1..21
+ok 1 kube-director.sh prints help and exits 0 with -h
+ok 2 kube-director.sh errors on missing experiment path
+ok 3 kube-director.sh loads SIM_MODULES inventory
+ok 4 entrypoint.sh reports individual image-pull failures
+ok 5 each module script sources without error and prints a log line
+ok 6 kube-gen.py can be invoked with a spaced output path
+ok 7 kube-run.sh prints help and exits 0 with -h
+ok 8 kube-run.sh errors on missing required arguments
+ok 9 kube-run.sh errors on unknown simulator mode
+ok 10 kube-run.sh errors on missing experiment path
+ok 11 kube-run.sh preserves an existing result file as *.preserved-*.csv
+ok 12 validate-checkpoint.sh lists bash-tests in the usage line
+ok 13 validate-checkpoint.sh bash-tests subcommand runs the runner
+ok 14 skip_if_missing_tools emits missing-tool reason for absent tool
+ok 15 skip_if_missing_tools returns empty reason when all tools exist
+ok 16 runtime scripts pass bash -n under set -u and pipefail
+ok 17 inventory is non-empty
+ok 18 every inventory entry has a parseable shell syntax
+ok 19 shim kwokctl is on PATH when --with-mocks is in effect
+ok 20 shim records the matching rule response
+ok 21 run.sh accepts --with-mocks and runs the suite to completion
+
+[run.sh] report: /c/Users/chill/Syncthing/Projects/k8s-sims-e2e-spec/tests/bash/.reports/20260610T103402Z.tap
+[run.sh] summary: /c/Users/chill/Syncthing/Projects/k8s-sims-e2e-spec/tests/bash/.reports/20260610T103402Z.summary
+[run.sh] pass=21 fail=0 skip=0 duration=15s
+
+--- shell syntax ---
+kube-director.sh: OK
+kube-run.sh: OK
+entrypoint.sh: OK
+validate-checkpoint.sh: OK
+
+--- python compile ---
+kube-gen.py: OK
+kube-plot.py: OK
+min-max-avg.py: OK
+binpack.py: OK
+sktrace.py: OK
+
+=== All regression checks complete ===

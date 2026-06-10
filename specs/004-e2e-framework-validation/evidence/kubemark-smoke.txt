@@ -1,0 +1,147 @@
+  _  __     _          _____             
+ | |/ /    | |        |  __ \            
+ | ' /_   _| |__   ___| |__) |   _ _ __  
+ |  <| | | | '_ \ / _ \  _  / | | | '_ \ 
+ | . \ |_| | |_) |  __/ | \ \ |_| | | | |
+ |_|\_\__,_|_.__/ \___|_|  \_\__,_|_| |_|
+------------------------------------------
+[2026-06-10 12:23:34] [INFO] Received arguments -m kubemark -e output/e2e-validation/kubemark -n 1 -x 300
+[2026-06-10 12:23:34] [INFO] kubemark: Kubemark module loaded!
+[2026-06-10 12:23:34] [INFO] kubemark: Simulation started with mode: kubemark
+[2026-06-10 12:23:34] [INFO] kubemark: Cluster: kubemark
+[2026-06-10 12:23:34] [INFO] kubemark: Runs per experiment: 1
+[2026-06-10 12:23:34] [INFO] kubemark: Results file: /c/Users/chill/Syncthing/Projects/k8s-sims-e2e-spec/results/kubemark.csv
+[2026-06-10 12:23:34] [INFO] kubemark: Node file: /c/Users/chill/Syncthing/Projects/k8s-sims-e2e-spec/output/e2e-validation/kubemark/nodes-10.yaml
+[2026-06-10 12:23:34] [INFO] kubemark: Pod file: /c/Users/chill/Syncthing/Projects/k8s-sims-e2e-spec/output/e2e-validation/kubemark/pods-10.yaml
+[2026-06-10 12:23:34] [INFO] kubemark: Starting run 1 for 10 nodes...
+[2026-06-10 12:23:34] [INFO] kubemark: Starting cluster setup...
+No kind clusters found.
+Creating cluster kubemark...
+Creating cluster "kubemark" ...
+ • Ensuring node image (kindest/node:v1.29.0) 🖼  ...
+ ✓ Ensuring node image (kindest/node:v1.29.0) 🖼
+ • Preparing nodes 📦 📦 📦   ...
+ ✓ Preparing nodes 📦 📦 📦 
+ • Writing configuration 📜  ...
+ ✓ Writing configuration 📜
+ • Starting control-plane 🕹️  ...
+ ✓ Starting control-plane 🕹️
+ • Installing CNI 🔌  ...
+ ✓ Installing CNI 🔌
+ • Installing StorageClass 💾  ...
+ ✓ Installing StorageClass 💾
+ • Joining worker nodes 🚜  ...
+ ✓ Joining worker nodes 🚜
+Set kubectl context to "kind-kubemark"
+You can now use your cluster with:
+
+kubectl cluster-info --context kind-kubemark
+
+Have a question, bug, or feature request? Let us know! https://kind.sigs.k8s.io/#community 🙂
+Switched to context "kind-kubemark".
+namespace/paib-gpu created
+namespace/kubemark created
+secret/kubeconfig created
+[2026-06-10 12:24:07] [INFO] kubemark: Cluster setup successful
+[2026-06-10 12:24:07] [INFO] kubemark: Starting container tracking...
+node/openb-node-0000 created
+node/openb-node-0001 created
+node/openb-node-0002 created
+node/openb-node-0003 created
+node/openb-node-0004 created
+node/openb-node-0005 created
+node/openb-node-0006 created
+node/openb-node-0007 created
+node/openb-node-0008 created
+node/openb-node-0009 created
+pod/openb-pod-0000 created
+pod/openb-pod-0001 created
+pod/openb-pod-0002 created
+pod/openb-pod-0003 created
+pod/openb-pod-0004 created
+pod/openb-pod-0005 created
+pod/openb-pod-0006 created
+pod/openb-pod-0007 created
+pod/openb-pod-0008 created
+pod/openb-pod-0009 created
+pod/openb-pod-0010 created
+pod/openb-pod-0011 created
+pod/openb-pod-0012 created
+pod/openb-pod-0013 created
+pod/openb-pod-0014 created
+pod/openb-pod-0016 created
+pod/openb-pod-0017 created
+pod/openb-pod-0018 created
+pod/openb-pod-0019 created
+pod/openb-pod-0020 created
+pod/openb-pod-0021 created
+pod/openb-pod-0022 created
+pod/openb-pod-0023 created
+pod/openb-pod-0024 created
+pod/openb-pod-0025 created
+pod/openb-pod-0026 created
+pod/openb-pod-0027 created
+pod/openb-pod-0028 created
+pod/openb-pod-0029 created
+pod/openb-pod-0030 created
+pod/openb-pod-0031 created
+pod/openb-pod-0032 created
+pod/openb-pod-0033 created
+pod/openb-pod-0034 created
+pod/openb-pod-0035 created
+pod/openb-pod-0036 created
+pod/openb-pod-0037 created
+pod/openb-pod-0038 created
+pod/openb-pod-0039 created
+pod/openb-pod-0040 created
+pod/openb-pod-0041 created
+pod/openb-pod-0042 created
+pod/openb-pod-0043 created
+pod/openb-pod-0044 created
+pod/openb-pod-0045 created
+pod/openb-pod-0046 created
+pod/openb-pod-0047 created
+pod/openb-pod-0048 created
+pod/openb-pod-0049 created
+pod/openb-pod-0050 created
+pod/openb-pod-0051 created
+pod/openb-pod-0052 created
+pod/openb-pod-0053 created
+pod/openb-pod-0054 created
+pod/openb-pod-0055 created
+pod/openb-pod-0056 created
+pod/openb-pod-0057 created
+pod/openb-pod-0058 created
+pod/openb-pod-0059 created
+pod/openb-pod-0060 created
+pod/openb-pod-0061 created
+pod/openb-pod-0062 created
+pod/openb-pod-0063 created
+pod/openb-pod-0064 created
+pod/openb-pod-0065 created
+pod/openb-pod-0066 created
+pod/openb-pod-0067 created
+pod/openb-pod-0068 created
+pod/openb-pod-0069 created
+pod/openb-pod-0070 created
+pod/openb-pod-0071 created
+pod/openb-pod-0075 created
+pod/openb-pod-0281 created
+pod/openb-pod-0592 created
+pod/openb-pod-0716 created
+pod/openb-pod-0848 created
+pod/openb-pod-1314 created
+pod/openb-pod-1332 created
+pod/openb-pod-1846 created
+pod/openb-pod-1877 created
+pod/openb-pod-2019 created
+pod/openb-pod-2037 created
+pod/openb-pod-2057 created
+pod/openb-pod-2084 created
+
+[2026-06-10 12:24:08] [INFO] kubemark: Waiting for the count of pending pods to stabilize...
+[2026-06-10 12:24:09] [INFO] kubemark: Current pending count: 84, Previous: 84
+
+[2026-06-10 12:24:10] [INFO] kubemark: Waiting for pods to be scheduled...
+[2026-06-10 12:24:18] [INFO] kubemark: All pending pods can not be scheduled.
+[2026-06-10 12:24:20] [INFO] kubemark: All experiments completed. Results written to: /c/Users/chill/Syncthing/Projects/k8s-sims-e2e-spec/results/kubemark.csv
