@@ -157,7 +157,7 @@ def validate_sktrace(path: str) -> bool:
     """
     try:
         result = subprocess.run(
-            ["skctl", "validate", path],
+            ["skctl", "validate", "check", path],
             capture_output=True,
             text=True,
             timeout=30,
