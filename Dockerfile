@@ -17,7 +17,11 @@ ENV PATH="/root/.cargo/bin:/root/go/bin:${PATH}"
 RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | bash -s -- -y
 RUN rustup default stable && rustup update
 
-RUN cargo install skctl && \
+RUN git clone --branch v2.3.0 --depth 1 https://github.com/acrlabs/simkube.git /tmp/simkube-build && \
+    cd /tmp/simkube-build && \
+    cargo install --path sk-cli && \
+    rm -rf /tmp/simkube-build && \
+    cd / && \
     go install sigs.k8s.io/kind@v0.29.0 && \
     go install sigs.k8s.io/kwok/cmd/kwok@v0.7.0 && \
     go install sigs.k8s.io/kwok/cmd/kwokctl@v0.7.0
@@ -61,7 +65,7 @@ RUN mkdir -p /utils /results
 COPY utils/base /utils/base
 COPY utils/kube-gen.py /utils/kube-gen.py
 COPY utils/kube-plot.py /utils/kube-plot.py
-COPY utils/simkube-tracer.sh /utils/simkube-tracer.sh
+COPY utils/sktrace.py /utils/sktrace.py
 COPY entrypoint.sh /entrypoint.sh
 
 RUN sed -i 's/\bsudo\b//g' /modules/opensim/module.sh
