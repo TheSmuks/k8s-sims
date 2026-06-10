@@ -21,7 +21,11 @@ venv/
 dist/
 *.egg-info/
 # Project generated outputs
+output/
 results/
+# Local simulator vendor clones
+modules/simkube/simkube-src/
+modules/simkube/kube-prometheus/
 plots/
 coverage/
 test-results/
